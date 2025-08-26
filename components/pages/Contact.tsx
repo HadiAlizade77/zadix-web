@@ -349,7 +349,7 @@ const Contact = () => {
                           required
                         />
                         <label htmlFor="consent" className="text-sm text-[#6B7280]">
-                          I agree to the <a href="/privacy" className="text-[#00B3A4] hover:underline">Privacy Policy</a> and <a href="/dpa" className=\"text-[#00B3A4] hover:underline">DPA</a> *
+                          I agree to the <a href="/privacy" className="text-[#00B3A4] hover:underline">Privacy Policy</a> and <a href="/dpa" className="text-[#00B3A4] hover:underline">DPA</a> *
                         </label>
                       </div>
 
