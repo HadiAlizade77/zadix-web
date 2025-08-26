@@ -27,9 +27,9 @@ export function getBusinessConfig(): BusinessConfig {
   return {
     name: 'Zadix',
     email: 'hello@zadix.ai',
-    phone: '+971 4 123 4567',
-    whatsapp: '+971501234567',
-    calendlyUrl: 'https://calendly.com/zadix/demo',
+    phone: '+91 541 416 1008',
+    whatsapp: '+91 541 416 1008',
+    calendlyUrl: 'https://calendly.com/admin-zadix/meeting-with-zadix-ai',
     address: {
       street: 'Dubai Internet City',
       city: 'Dubai',
