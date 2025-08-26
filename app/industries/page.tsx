@@ -1,5 +1,8 @@
 import type { Metadata } from 'next'
 import Industries from '@/components/pages/Industries'
+import Header from '@/components/layout/Header'
+import Footer from '@/components/layout/Footer'
+import MobileCTABar from '@/components/layout/MobileCTABar'
 
 export const metadata: Metadata = {
   title: 'Industry Solutions - Zadix',
@@ -11,5 +14,14 @@ export const metadata: Metadata = {
 }
 
 export default function IndustriesPage() {
-  return <Industries />
+  return (
+    <div className="min-h-screen">
+      <Header locale="en" />
+      <main>
+        <Industries />
+      </main>
+      <Footer locale="en" />
+      <MobileCTABar locale="en" />
+    </div>
+  )
 }

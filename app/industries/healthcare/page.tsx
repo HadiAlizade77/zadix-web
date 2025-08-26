@@ -1,5 +1,8 @@
 import type { Metadata } from 'next'
 import Healthcare from '@/components/pages/industries/Healthcare'
+import Header from '@/components/layout/Header'
+import Footer from '@/components/layout/Footer'
+import MobileCTABar from '@/components/layout/MobileCTABar'
 
 export const metadata: Metadata = {
   title: 'Healthcare AI Automation - Zadix',
@@ -11,5 +14,14 @@ export const metadata: Metadata = {
 }
 
 export default function HealthcarePage() {
-  return <Healthcare />
+  return (
+    <div className="min-h-screen">
+      <Header locale="en" />
+      <main>
+        <Healthcare />
+      </main>
+      <Footer locale="en" />
+      <MobileCTABar locale="en" />
+    </div>
+  )
 }

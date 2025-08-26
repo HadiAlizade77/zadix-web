@@ -1,5 +1,8 @@
 import type { Metadata } from 'next'
 import Construction from '@/components/pages/industries/Construction'
+import Header from '@/components/layout/Header'
+import Footer from '@/components/layout/Footer'
+import MobileCTABar from '@/components/layout/MobileCTABar'
 
 export const metadata: Metadata = {
   title: 'Construction & EPC AI Automation - Zadix',
@@ -11,5 +14,14 @@ export const metadata: Metadata = {
 }
 
 export default function ConstructionPage() {
-  return <Construction />
+  return (
+    <div className="min-h-screen">
+      <Header locale="en" />
+      <main>
+        <Construction />
+      </main>
+      <Footer locale="en" />
+      <MobileCTABar locale="en" />
+    </div>
+  )
 }

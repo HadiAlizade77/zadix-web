@@ -11,27 +11,27 @@ const Solutions = () => {
   const solutionPillars = [
     {
       icon: Bot,
-      title: 'Agent Orchestration (LangGraph)',
-      description: 'Multi-step reasoning with tools, memory, and decision constraints',
-      features: ['Tool calling', 'Persistent memory', 'Multi-step planning', 'Decision constraints']
+      title: 'Orchestration',
+      description: 'Multi-step decisions with tools, memory, and business rule constraints',
+      features: ['Tool integration', 'Persistent memory', 'Multi-step planning', 'Decision constraints']
     },
     {
       icon: Workflow,
-      title: 'Workflow Glue (n8n)',
-      description: 'Production-grade automation with retries, backoffs, and error handling',
+      title: 'Workflows',
+      description: 'Production-grade automation with triggers, retries, and error handling',
       features: ['Trigger systems', 'Exponential backoff', 'Dead letter queues', 'Rate limiting']
     },
     {
       icon: Database,
-      title: 'Knowledge (RAG)',
-      description: 'Embeddings, chunking strategies, and quality gates for accurate retrieval',
-      features: ['Vector embeddings', 'Smart chunking', 'Quality evaluations', 'Retrieval optimization']
+      title: 'Knowledge',
+      description: 'Private documents become accurate, contextual answers with quality gates',
+      features: ['Document processing', 'Smart chunking', 'Quality evaluations', 'Accurate retrieval']
     },
     {
       icon: BarChart3,
-      title: 'Observability (Langfuse + OTel)',
-      description: 'Comprehensive monitoring with traces, metrics, and drift detection',
-      features: ['LLM traces', 'Cost tracking', 'Quality metrics', 'Drift alerts']
+      title: 'Observability',
+      description: 'Complete visibility into decisions, costs, and quality with alerts',
+      features: ['Decision traces', 'Cost tracking', 'Quality metrics', 'Performance alerts']
     },
     {
       icon: Shield,
@@ -110,10 +110,10 @@ const Solutions = () => {
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-4xl md:text-5xl font-bold text-[#111827] mb-6">
-              Five Pillars of Production AI
+              Five Pillars of Reliable Automation
             </h2>
             <p className="text-xl text-[#6B7280] max-w-3xl mx-auto">
-              Every automation we build rests on these proven technical foundations
+              Every automation we build includes these essential components for production reliability
             </p>
           </motion.div>
 
@@ -184,6 +184,47 @@ const Solutions = () => {
                 <div className="bg-gradient-to-r from-[#00B3A4]/10 to-[#2563EB]/10 rounded-lg p-3">
                   <span className="text-sm font-medium text-[#00B3A4]">Typical outcome: {useCase.outcome}</span>
                 </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Tech Stack Reveal (Bottom Section) */}
+      <section className="py-16 bg-[#F8FAFC] border-t border-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            className="text-center mb-12"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <h3 className="text-2xl font-bold text-[#111827] mb-4">
+              Built with Enterprise-Grade Components
+            </h3>
+            <p className="text-lg text-[#6B7280] max-w-2xl mx-auto">
+              We use proven, production-ready technologies to ensure reliability and scalability
+            </p>
+          </motion.div>
+          
+          <div className="flex flex-wrap justify-center gap-6">
+            {[
+              'Agent Framework',
+              'Workflow Engine', 
+              'Vector Database',
+              'Observability Platform',
+              'Security Controls'
+            ].map((tech, index) => (
+              <motion.div
+                key={tech}
+                className="px-4 py-2 bg-white rounded-full border border-gray-200 text-[#6B7280] font-medium"
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: index * 0.1 }}
+              >
+                {tech}
               </motion.div>
             ))}
           </div>

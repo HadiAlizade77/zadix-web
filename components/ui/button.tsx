@@ -10,7 +10,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant = 'default', size = 'md', asChild = false, children, ...props }, ref) => {
-    const baseClasses = 'inline-flex items-center justify-center rounded-lg font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none';
+    const baseClasses = 'inline-flex items-center justify-center rounded-lg font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none whitespace-nowrap';
     
     const variants = {
       default: 'bg-gradient-to-r from-[#00B3A4] to-[#2563EB] text-white hover:shadow-lg hover:scale-105 focus:ring-[#00B3A4]',
@@ -29,12 +29,12 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       baseClasses,
       variants[variant],
       sizes[size],
-    className ?? ''
+      className
     );
 
     if (asChild && React.isValidElement(children)) {
-      return React.cloneElement(children as React.ReactElement<any>, {
-        className: cn(classes, (children as React.ReactElement<any>).props.className),
+      return React.cloneElement(children, {
+        className: cn(classes, children.props.className),
         ref,
         ...props
       });

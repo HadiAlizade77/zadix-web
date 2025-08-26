@@ -13,8 +13,15 @@ const Contact = () => {
     email: '',
     company: '',
     role: '',
+    phone: '',
+    industry: '',
+    systems: '',
+    sensitivity: '',
+    volume: '',
+    deadline: '',
+    budget: '',
     message: '',
-    useCase: ''
+    consent: false
   });
 
   const business = getBusinessConfig();
@@ -54,12 +61,23 @@ const Contact = () => {
   ];
 
   const useCases = [
-    'Invoice/PO Processing',
-    'Lead Qualification',
-    'Customer Support',
-    'Document Analysis',
-    'Workflow Automation',
+    'Real Estate',
+    'Investment/Family Office',
+    'Logistics & Freight',
+    'Healthcare',
+    'Legal & Corporate',
+    'Construction/EPC',
+    'B2B SaaS',
+    'Hospitality',
     'Other'
+  ];
+
+  const budgetRanges = [
+    '5-10k',
+    '10-20k', 
+    '20-50k',
+    '50k+',
+    'Not sure yet'
   ];
 
   return (
@@ -76,7 +94,7 @@ const Contact = () => {
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
               Let's Build Your{' '}
               <span className="bg-gradient-to-r from-[#00B3A4] to-[#2563EB] bg-clip-text text-transparent">
-                Automation
+                Demo
               </span>
             </h1>
             <p className="text-xl text-gray-300 max-w-4xl mx-auto mb-8 leading-relaxed">
@@ -102,7 +120,7 @@ const Contact = () => {
                   <CardHeader>
                     <CardTitle className="text-2xl mb-4">Get Started</CardTitle>
                     <p className="text-[#6B7280]">
-                      Fill out the form below and we'll get back to you within 24 hours with a personalized demo.
+                      Share your workflow details and we'll show you exactly how the automation would work—with your data and business rules.
                     </p>
                   </CardHeader>
                   <CardContent>
@@ -158,6 +176,20 @@ const Contact = () => {
                         </div>
                         <div>
                           <label htmlFor="role" className="block text-sm font-medium text-[#111827] mb-2">
+                            Phone / WhatsApp
+                          </label>
+                          <input
+                            type="tel"
+                            id="phone"
+                            name="phone"
+                            value={formData.phone}
+                            onChange={handleChange}
+                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00B3A4] focus:border-transparent"
+                            placeholder="+971 50 123 4567"
+                          />
+                        </div>
+                        <div>
+                          <label htmlFor="role" className="block text-sm font-medium text-[#111827] mb-2">
                             Your Role
                           </label>
                           <input
@@ -173,17 +205,18 @@ const Contact = () => {
                       </div>
 
                       <div>
-                        <label htmlFor="useCase" className="block text-sm font-medium text-[#111827] mb-2">
-                          Primary Use Case
+                        <label htmlFor="industry" className="block text-sm font-medium text-[#111827] mb-2">
+                          Industry *
                         </label>
                         <select
-                          id="useCase"
-                          name="useCase"
-                          value={formData.useCase}
+                          id="industry"
+                          name="industry"
+                          required
+                          value={formData.industry}
                           onChange={handleChange}
                           className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00B3A4] focus:border-transparent"
                         >
-                          <option value="">Select a use case</option>
+                          <option value="">Select your industry</option>
                           {useCases.map((useCase) => (
                             <option key={useCase} value={useCase}>
                               {useCase}
@@ -193,8 +226,92 @@ const Contact = () => {
                       </div>
 
                       <div>
+                        <label htmlFor="systems" className="block text-sm font-medium text-[#111827] mb-2">
+                          Systems in use (CRM/ERP/Helpdesk/DB) *
+                        </label>
+                        <input
+                          type="text"
+                          id="systems"
+                          name="systems"
+                          required
+                          value={formData.systems}
+                          onChange={handleChange}
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00B3A4] focus:border-transparent"
+                          placeholder="e.g., Salesforce, SAP, Zendesk, PostgreSQL"
+                        />
+                      </div>
+
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                          <label htmlFor="sensitivity" className="block text-sm font-medium text-[#111827] mb-2">
+                            Contains PII/PHI?
+                          </label>
+                          <select
+                            id="sensitivity"
+                            name="sensitivity"
+                            value={formData.sensitivity}
+                            onChange={handleChange}
+                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00B3A4] focus:border-transparent"
+                          >
+                            <option value="">Select</option>
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                            <option value="unsure">Not sure</option>
+                          </select>
+                        </div>
+                        <div>
+                          <label htmlFor="volume" className="block text-sm font-medium text-[#111827] mb-2">
+                            Daily/weekly volume
+                          </label>
+                          <input
+                            type="text"
+                            id="volume"
+                            name="volume"
+                            value={formData.volume}
+                            onChange={handleChange}
+                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00B3A4] focus:border-transparent"
+                            placeholder="e.g., 50 emails/day, 200 docs/week"
+                          />
+                        </div>
+                      </div>
+
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                          <label htmlFor="deadline" className="block text-sm font-medium text-[#111827] mb-2">
+                            Target deadline
+                          </label>
+                          <input
+                            type="text"
+                            id="deadline"
+                            name="deadline"
+                            value={formData.deadline}
+                            onChange={handleChange}
+                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00B3A4] focus:border-transparent"
+                            placeholder="e.g., Q1 2024, ASAP, 3 months"
+                          />
+                        </div>
+                        <div>
+                          <label htmlFor="budget" className="block text-sm font-medium text-[#111827] mb-2">
+                            Budget bracket
+                          </label>
+                          <select
+                            id="budget"
+                            name="budget"
+                            value={formData.budget}
+                            onChange={handleChange}
+                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00B3A4] focus:border-transparent"
+                          >
+                            <option value="">Select budget range</option>
+                            {budgetRanges.map((range) => (
+                              <option key={range} value={range}>{range}</option>
+                            ))}
+                          </select>
+                        </div>
+                      </div>
+
+                      <div>
                         <label htmlFor="message" className="block text-sm font-medium text-[#111827] mb-2">
-                          Tell us about your workflow challenge *
+                          Describe your workflow challenge *
                         </label>
                         <textarea
                           id="message"
@@ -204,13 +321,41 @@ const Contact = () => {
                           value={formData.message}
                           onChange={handleChange}
                           className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00B3A4] focus:border-transparent"
-                          placeholder="Describe the manual process you'd like to automate..."
+                          placeholder="Share a few sample emails/PDFs and the systems you use. We'll show exactly how the automation would run."
                         />
+                      </div>
+
+                      <div>
+                        <label className="block text-sm font-medium text-[#111827] mb-2">
+                          Upload sample docs/emails (optional)
+                        </label>
+                        <input
+                          type="file"
+                          multiple
+                          accept=".pdf,.doc,.docx,.txt,.eml"
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00B3A4] focus:border-transparent"
+                        />
+                        <p className="text-xs text-[#6B7280] mt-1">PDF, DOC, TXT, EML files up to 10MB each</p>
+                      </div>
+
+                      <div className="flex items-start">
+                        <input
+                          type="checkbox"
+                          id="consent"
+                          name="consent"
+                          checked={formData.consent}
+                          onChange={handleChange}
+                          className="mt-1 mr-3"
+                          required
+                        />
+                        <label htmlFor="consent" className="text-sm text-[#6B7280]">
+                          I agree to the <a href="/privacy" className="text-[#00B3A4] hover:underline">Privacy Policy</a> and <a href="/dpa" className=\"text-[#00B3A4] hover:underline">DPA</a> *
+                        </label>
                       </div>
 
                       <Button type="submit" size="lg" className="w-full">
                         <Send className="mr-2 h-5 w-5" />
-                        Send Message
+                        Send & Pick a Demo Slot
                       </Button>
                     </form>
                   </CardContent>
@@ -264,7 +409,7 @@ const Contact = () => {
                     <CheckCircle className="h-12 w-12 mb-4" />
                     <h4 className="text-xl font-bold mb-2">What to Expect</h4>
                     <ul className="space-y-2 text-sm opacity-90">
-                      <li>• 30-minute personalized demo</li>
+                      <li>• 20-minute personalized demo</li>
                       <li>• See your automation in action</li>
                       <li>• Fixed-price proposal</li>
                       <li>• No sales pitch, just solutions</li>

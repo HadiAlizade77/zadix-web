@@ -1,5 +1,8 @@
 import type { Metadata } from 'next'
 import Legal from '@/components/pages/industries/Legal'
+import Header from '@/components/layout/Header'
+import Footer from '@/components/layout/Footer'
+import MobileCTABar from '@/components/layout/MobileCTABar'
 
 export const metadata: Metadata = {
   title: 'Legal AI Automation - Zadix',
@@ -11,5 +14,14 @@ export const metadata: Metadata = {
 }
 
 export default function LegalPage() {
-  return <Legal />
+  return (
+    <div className="min-h-screen">
+      <Header locale="en" />
+      <main>
+        <Legal />
+      </main>
+      <Footer locale="en" />
+      <MobileCTABar locale="en" />
+    </div>
+  )
 }

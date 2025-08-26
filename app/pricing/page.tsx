@@ -1,5 +1,8 @@
 import type { Metadata } from 'next'
 import Pricing from '@/components/pages/Pricing'
+import Header from '@/components/layout/Header'
+import Footer from '@/components/layout/Footer'
+import MobileCTABar from '@/components/layout/MobileCTABar'
 
 export const metadata: Metadata = {
   title: 'Pricing - Fixed Scope, Fixed Timeline - Zadix',
@@ -11,5 +14,14 @@ export const metadata: Metadata = {
 }
 
 export default function PricingPage() {
-  return <Pricing />
+  return (
+    <div className="min-h-screen">
+      <Header locale="en" />
+      <main>
+        <Pricing />
+      </main>
+      <Footer locale="en" />
+      <MobileCTABar locale="en" />
+    </div>
+  )
 }

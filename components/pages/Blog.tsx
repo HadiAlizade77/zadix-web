@@ -6,58 +6,10 @@ import { Calendar, User, ArrowRight, BookOpen } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { getAllBlogPosts } from '@/lib/blog-data';
 
 const Blog = () => {
-  const posts = [
-    {
-      title: 'Building Production-Ready AI Agents with LangGraph',
-      excerpt: 'Deep dive into architecting reliable AI agents that can handle real-world business processes with proper error handling and observability.',
-      author: 'Engineering Team',
-      date: '2024-01-15',
-      readTime: '8 min read',
-      category: 'Engineering'
-    },
-    {
-      title: 'Why Most AI Automations Fail in Production',
-      excerpt: 'Common pitfalls we see in AI automation projects and how to avoid them. From prompt engineering to system integration challenges.',
-      author: 'CTO',
-      date: '2024-01-10',
-      readTime: '6 min read',
-      category: 'Strategy'
-    },
-    {
-      title: 'The Economics of AI Automation: ROI Analysis',
-      excerpt: 'Breaking down the real costs and benefits of implementing AI automation in business operations with actual case study data.',
-      author: 'Business Team',
-      date: '2024-01-05',
-      readTime: '10 min read',
-      category: 'Business'
-    },
-    {
-      title: 'Observability for AI Systems: Langfuse + OpenTelemetry',
-      excerpt: 'How we implement comprehensive monitoring and debugging for AI agents in production environments.',
-      author: 'DevOps Team',
-      date: '2023-12-28',
-      readTime: '12 min read',
-      category: 'Engineering'
-    },
-    {
-      title: 'Human-in-the-Loop: Designing Approval Workflows',
-      excerpt: 'Best practices for implementing human oversight in AI automation systems without killing efficiency.',
-      author: 'Product Team',
-      date: '2023-12-20',
-      readTime: '7 min read',
-      category: 'Product'
-    },
-    {
-      title: 'Multi-Agent Systems: When One Agent Isn\'t Enough',
-      excerpt: 'Designing complex workflows with multiple specialized agents working together to solve business problems.',
-      author: 'Engineering Team',
-      date: '2023-12-15',
-      readTime: '9 min read',
-      category: 'Engineering'
-    }
-  ];
+  const posts = getAllBlogPosts();
 
   const categories = ['All', 'Engineering', 'Strategy', 'Business', 'Product'];
 
@@ -148,7 +100,9 @@ const Blog = () => {
                       </div>
                     </div>
                     <div className="mt-4 flex items-center text-[#2563EB] font-medium group-hover:translate-x-2 transition-transform">
-                      Read More
+                      <Link href={`/blog/${post.id}`}>
+                        Read More
+                      </Link>
                       <ArrowRight className="ml-2 h-4 w-4" />
                     </div>
                   </CardContent>

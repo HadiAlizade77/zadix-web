@@ -1,5 +1,8 @@
 import type { Metadata } from 'next'
 import Investment from '@/components/pages/industries/Investment'
+import Header from '@/components/layout/Header'
+import Footer from '@/components/layout/Footer'
+import MobileCTABar from '@/components/layout/MobileCTABar'
 
 export const metadata: Metadata = {
   title: 'Investment & Family Office AI Automation - Zadix',
@@ -11,5 +14,14 @@ export const metadata: Metadata = {
 }
 
 export default function InvestmentPage() {
-  return <Investment />
+  return (
+    <div className="min-h-screen">
+      <Header locale="en" />
+      <main>
+        <Investment />
+      </main>
+      <Footer locale="en" />
+      <MobileCTABar locale="en" />
+    </div>
+  )
 }

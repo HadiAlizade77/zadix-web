@@ -1,5 +1,8 @@
 import type { Metadata } from 'next'
 import CaseStudies from '@/components/pages/CaseStudies'
+import Header from '@/components/layout/Header'
+import Footer from '@/components/layout/Footer'
+import MobileCTABar from '@/components/layout/MobileCTABar'
 
 export const metadata: Metadata = {
   title: 'Case Studies - Real Results from Real Clients - Zadix',
@@ -11,5 +14,14 @@ export const metadata: Metadata = {
 }
 
 export default function CaseStudiesPage() {
-  return <CaseStudies />
+  return (
+    <div className="min-h-screen">
+      <Header locale="en" />
+      <main>
+        <CaseStudies />
+      </main>
+      <Footer locale="en" />
+      <MobileCTABar locale="en" />
+    </div>
+  )
 }

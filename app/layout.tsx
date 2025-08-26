@@ -1,15 +1,24 @@
-import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
-import './globals.css'
-import Header from '@/components/layout/Header'
-import Footer from '@/components/layout/Footer'
+import type { Metadata } from 'next';
+import { Inter, Sora } from 'next/font/google';
+import './globals.css';
+import { cn } from '@/lib/utils';
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ 
+  subsets: ['latin'],
+  variable: '--font-inter',
+  display: 'swap',
+});
+
+const sora = Sora({ 
+  subsets: ['latin'],
+  variable: '--font-sora',
+  display: 'swap',
+});
 
 export const metadata: Metadata = {
-  title: 'Zadix - Agentic AI Automation for Business Operations',
-  description: 'We build agentic AI automations that eliminate repetitive ops. Production-ready systems with LangGraph + n8n that ship real business outcomes in days, not months.',
-  keywords: 'AI automation, agentic AI, business process automation, LangGraph, n8n, Dubai AI company, workflow automation',
+  title: 'Agentic AI Automation for Business — Production-Ready in 7–14 Days | Zadix',
+  description: 'We build AI automations that cut manual work 50–80% and respond in under a minute. Fixed scope, fixed timeline, 30-day value guarantee.',
+  keywords: 'ai automation dubai, agentic ai for business, workflow automation uae, real estate ai automation, logistics rfq automation, investment memo ai',
   authors: [{ name: 'Zadix' }],
   creator: 'Zadix',
   publisher: 'Zadix',
@@ -21,10 +30,16 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://zadix.ai'),
   alternates: {
     canonical: '/',
+    languages: {
+      'en': '/',
+      'ar': '/ar',
+      'tr': '/tr',
+      'ru': '/ru',
+    },
   },
   openGraph: {
-    title: 'Zadix - Agentic AI Automation for Business Operations',
-    description: 'We build agentic AI automations that eliminate repetitive ops. Production-ready systems that ship real business outcomes in days, not months.',
+    title: 'Agentic AI Automation for Business — Production-Ready in 7–14 Days | Zadix',
+    description: 'We build AI automations that cut manual work 50–80% and respond in under a minute. Fixed scope, fixed timeline, 30-day value guarantee.',
     url: 'https://zadix.ai',
     siteName: 'Zadix',
     locale: 'en_US',
@@ -40,8 +55,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Zadix - Agentic AI Automation for Business Operations',
-    description: 'We build agentic AI automations that eliminate repetitive ops. Production-ready systems that ship real business outcomes in days, not months.',
+    title: 'Agentic AI Automation for Business — Production-Ready in 7–14 Days | Zadix',
+    description: 'We build AI automations that cut manual work 50–80% and respond in under a minute. Fixed scope, fixed timeline, 30-day value guarantee.',
     images: ['/og-image.jpg'],
   },
   robots: {
@@ -55,31 +70,52 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-}
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className={cn(inter.variable, sora.variable)} suppressHydrationWarning>
       <head>
         <link rel="icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
         <link rel="manifest" href="/site.webmanifest" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'Organization',
+              name: 'Zadix',
+              url: 'https://zadix.ai',
+              logo: 'https://zadix.ai/logo.png',
+              description: 'We build AI automations that cut manual work 50–80% and respond in under a minute.',
+              address: {
+                '@type': 'PostalAddress',
+                addressLocality: 'Dubai',
+                addressCountry: 'UAE',
+              },
+              contactPoint: {
+                '@type': 'ContactPoint',
+                telephone: '+971-4-123-4567',
+                contactType: 'customer service',
+                email: 'hello@zadix.ai',
+              },
+              sameAs: [
+                'https://linkedin.com/company/zadix-ai',
+              ],
+            }),
+          }}
+        />
       </head>
-      <body className={inter.className}>
-        <div className="min-h-screen flex flex-col">
-          <Header />
-          <main className="flex-grow">
-            {children}
-          </main>
-          <Footer />
-        </div>
+      <body className={cn('min-h-screen bg-white font-inter antialiased')}>
+        {children}
       </body>
     </html>
-  )
+  );
 }
