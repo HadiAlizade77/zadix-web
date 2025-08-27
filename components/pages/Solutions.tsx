@@ -86,14 +86,13 @@ const Solutions = () => {
             transition={{ duration: 0.8 }}
           >
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
-              From inbox to system-of-record—
+              From inbox to system‑of‑record—
               <span className="bg-gradient-to-r from-[#00B3A4] to-[#2563EB] bg-clip-text text-transparent">
-                automated, approved, and auditable
+                automated, approved, auditable
               </span>
             </h1>
             <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-              We build agents that understand documents and emails, make decisions with your business rules, 
-              and update your systems safely with full traceability and human oversight.
+              We build automations that understand your documents and emails, make decisions with your rules, route approvals, and safely update the systems your business runs on.
             </p>
           </motion.div>
         </div>

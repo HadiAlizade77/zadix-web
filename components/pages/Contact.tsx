@@ -305,28 +305,39 @@ const Contact = () => {
                           className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00B3A4] focus:border-transparent"
                         >
                           <option value="">Select your industry</option>
-                          {useCases.map((useCase) => (
-                            <option key={useCase} value={useCase}>
-                              {useCase}
-                            </option>
-                          ))}
+                          <option value="real-estate">Real Estate</option>
+                          <option value="investment">Investment/Family Office</option>
+                          <option value="logistics">Logistics & Freight</option>
+                          <option value="healthcare">Healthcare</option>
+                          <option value="legal">Legal & Corporate</option>
+                          <option value="construction">Construction/EPC</option>
+                          <option value="saas">B2B SaaS</option>
+                          <option value="hospitality">Hospitality</option>
+                          <option value="other">Other</option>
                         </select>
                       </div>
 
                       <div>
                         <label htmlFor="systems" className="block text-sm font-medium text-[#111827] mb-2">
-                          Systems in use (CRM/ERP/Helpdesk/DB) *
+                          Systems in use *
                         </label>
-                        <input
-                          type="text"
+                        <select
                           id="systems"
                           name="systems"
                           required
                           value={formData.systems}
                           onChange={handleChange}
                           className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00B3A4] focus:border-transparent"
-                          placeholder="e.g., Salesforce, SAP, Zendesk, PostgreSQL"
-                        />
+                        >
+                          <option value="">Select the tools you use today</option>
+                          <option value="crm">CRM (Salesforce, HubSpot, etc.)</option>
+                          <option value="erp">ERP (SAP, NetSuite, etc.)</option>
+                          <option value="helpdesk">Helpdesk (Zendesk, ServiceNow, etc.)</option>
+                          <option value="databases">Databases (PostgreSQL, MySQL, etc.)</option>
+                          <option value="storage">Storage (SharePoint, Google Drive, etc.)</option>
+                          <option value="multiple">Multiple systems</option>
+                          <option value="other">Other</option>
+                        </select>
                       </div>
 
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -358,7 +369,7 @@ const Contact = () => {
                             value={formData.volume}
                             onChange={handleChange}
                             className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00B3A4] focus:border-transparent"
-                            placeholder="e.g., 50 emails/day, 200 docs/week"
+                            placeholder="e.g., 120 RFQs/week, 300 invoices/month, 50 tickets/day"
                           />
                         </div>
                       </div>
@@ -380,7 +391,7 @@ const Contact = () => {
                         </div>
                         <div>
                           <label htmlFor="budget" className="block text-sm font-medium text-[#111827] mb-2">
-                            Budget bracket
+                            Budget bracket (helps us recommend the right package)
                           </label>
                           <select
                             id="budget"
@@ -390,9 +401,11 @@ const Contact = () => {
                             className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00B3A4] focus:border-transparent"
                           >
                             <option value="">Select budget range</option>
-                            {budgetRanges.map((range) => (
-                              <option key={range} value={range}>{range}</option>
-                            ))}
+                            <option value="5-10k">5–10k</option>
+                            <option value="10-20k">10–20k</option>
+                            <option value="20-50k">20–50k</option>
+                            <option value="50k+">50k+</option>
+                            <option value="not-sure">Not sure yet</option>
                           </select>
                         </div>
                       </div>
@@ -437,7 +450,7 @@ const Contact = () => {
                           required
                         />
                         <label htmlFor="consent" className="text-sm text-[#6B7280]">
-                          I agree to the <a href="/privacy" className="text-[#00B3A4] hover:underline">Privacy Policy</a> and <a href="/dpa" className="text-[#00B3A4] hover:underline">DPA</a> *
+                          I agree to the <a href="/privacy" className="text-[#00B3A4] hover:underline">Privacy Policy</a> and <a href="/dpa" className="text-[#00B3A4] hover:underline">Data Processing Addendum (DPA)</a> *
                         </label>
                       </div>
 
