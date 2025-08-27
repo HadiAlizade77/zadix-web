@@ -54,7 +54,7 @@ export default function VideoOverview() {
         </motion.div>
       </div>
       <VideoModal 
-        videoUrl="https://youtu.be/FwOTs4UxQS4?si=YuzcqVaOfQUtDRBo"
+        videoUrl="https://youtu.be/FwOTs4UxQS4"
         title="Zadix AI Automation Overview"
       />
     </section>

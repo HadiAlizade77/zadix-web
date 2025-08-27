@@ -101,10 +101,13 @@ export function VideoModal({ videoUrl, title }: VideoModalProps) {
 
             {/* Video Content */}
             <div className="aspect-video bg-gray-900 relative">
-              {videoUrl ? (
+              {videoUrl && videoUrl !== "https://youtu.be/XXXXXXXXXXX" ? (
                 <div className="w-full h-full">
                   <iframe
-                    src={videoUrl.replace('youtu.be/', 'www.youtube.com/embed/').replace('?si=', '?')}
+                    src={videoUrl.includes('youtu.be/') 
+                      ? videoUrl.replace('youtu.be/', 'www.youtube.com/embed/').split('?')[0]
+                      : videoUrl
+                    }
                     title={title || 'Zadix Overview Video'}
                     className="w-full h-full"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

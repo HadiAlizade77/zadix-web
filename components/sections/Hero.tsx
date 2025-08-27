@@ -21,7 +21,7 @@ export default function Hero({ locale }: HeroProps) {
       {/* Background Elements */}
       <div className="absolute inset-0">
         <motion.div 
-          className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-br from-accent-teal/20 to-accent-blue/20 rounded-full blur-3xl"
+          className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-br from-[#00B3A4]/20 to-[#2563EB]/20 rounded-full blur-3xl"
           animate={{
             x: [0, 50, 0],
             y: [0, -30, 0],
@@ -34,7 +34,7 @@ export default function Hero({ locale }: HeroProps) {
           }}
         ></motion.div>
         <motion.div 
-          className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-br from-accent-blue/20 to-purple-500/20 rounded-full blur-3xl"
+          className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-br from-[#2563EB]/20 to-purple-500/20 rounded-full blur-3xl"
           animate={{
             x: [0, -40, 0],
             y: [0, 40, 0],
@@ -71,7 +71,7 @@ export default function Hero({ locale }: HeroProps) {
         >
           <h1 className="text-5xl md:text-7xl font-bold font-sora text-white mb-8 leading-tight">
             Automate your operations with AI—
-            <span className="bg-gradient-to-r from-accent-teal to-accent-blue bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#00B3A4] to-[#2563EB] bg-clip-text text-transparent">
               fast.
             </span>
           </h1>

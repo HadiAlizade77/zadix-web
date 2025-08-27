@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import { TrendingDown, Clock, Rocket, Shield } from 'lucide-react';
 import { Locale } from '@/lib/i18n';
 import { getTranslation } from '@/lib/translations';
 
@@ -11,10 +12,26 @@ interface MetricsStripProps {
 
 export default function MetricsStrip({ locale }: MetricsStripProps) {
   const metrics = [
-    '50–80% less manual work',
-    'Replies in under 1 minute', 
-    'Go live in 7–14 days',
-    '30‑day value guarantee',
+    {
+      icon: TrendingDown,
+      text: '50–80% less manual work',
+      color: 'from-green-500 to-emerald-500'
+    },
+    {
+      icon: Clock,
+      text: 'Replies in under 1 minute',
+      color: 'from-blue-500 to-cyan-500'
+    },
+    {
+      icon: Rocket,
+      text: 'Go live in 7–14 days',
+      color: 'from-purple-500 to-pink-500'
+    },
+    {
+      icon: Shield,
+      text: '30‑day value guarantee',
+      color: 'from-orange-500 to-red-500'
+    },
   ];
 
   return (
@@ -24,14 +41,17 @@ export default function MetricsStrip({ locale }: MetricsStripProps) {
           {metrics.map((metric, index) => (
             <motion.div
               key={index}
-              className="text-center"
+              className="text-center group"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
             >
-              <div className="text-2xl md:text-3xl font-bold font-sora text-headline-slate mb-2">
-                {metric}
+              <div className={`w-16 h-16 bg-gradient-to-br ${metric.color} rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                <metric.icon className="h-8 w-8 text-white" />
+              </div>
+              <div className="text-xl md:text-2xl font-bold font-sora text-headline-slate">
+                {metric.text}
               </div>
             </motion.div>
           ))}
