@@ -189,6 +189,123 @@ const Solutions = () => {
         </div>
       </section>
 
+      {/* Integration Capabilities */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-[#111827] mb-6">
+              Connect to Everything
+            </h2>
+            <p className="text-xl text-[#6B7280] max-w-3xl mx-auto">
+              Seamless integration with 400+ services and growing. If it has an API, we can connect to it.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+            {[
+              {
+                title: 'Communication & Collaboration',
+                items: ['Slack, Microsoft Teams, Discord', 'Email providers (Gmail, Outlook, SendGrid)', 'Video conferencing (Zoom, Google Meet)', 'Project management (Asana, Trello, Monday.com, Notion)']
+              },
+              {
+                title: 'CRM & Sales',
+                items: ['Salesforce, HubSpot, Pipedrive', 'Zoho CRM, Freshworks', 'Customer support (Zendesk, Intercom, Freshdesk)']
+              },
+              {
+                title: 'E-commerce & Payments',
+                items: ['Shopify, WooCommerce, Magento', 'Stripe, PayPal, Square', 'Inventory management systems']
+              },
+              {
+                title: 'Marketing & Analytics',
+                items: ['Google Analytics, Facebook Ads, LinkedIn', 'Mailchimp, Constant Contact', 'Social media platforms (Twitter, Instagram, TikTok)']
+              },
+              {
+                title: 'Development & IT',
+                items: ['GitHub, GitLab, Bitbucket', 'AWS, Google Cloud, Azure', 'Databases (MySQL, PostgreSQL, MongoDB)', 'APIs and webhooks']
+              },
+              {
+                title: 'Productivity & File Management',
+                items: ['Google Workspace, Microsoft 365', 'Dropbox, OneDrive, Box', 'Document processing and automation']
+              }
+            ].map((category, index) => (
+              <motion.div
+                key={category.title}
+                className="bg-[#F8FAFC] rounded-2xl p-6"
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+              >
+                <h3 className="text-lg font-bold text-[#111827] mb-4">{category.title}</h3>
+                <ul className="space-y-2">
+                  {category.items.map((item, idx) => (
+                    <li key={idx} className="text-[#6B7280] text-sm leading-relaxed">
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Beyond Standard List */}
+          <motion.div
+            className="bg-gradient-to-br from-[#00B3A4] to-[#2563EB] rounded-3xl p-12 text-white mb-16"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <h3 className="text-3xl font-bold mb-6 text-center">Beyond the Standard List</h3>
+            <p className="text-xl mb-8 text-center opacity-90">
+              Don't see your specific tool? That's not a problem. Our integration capabilities extend far beyond pre-built connectors.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {[
+                { title: 'Custom API Integrations', desc: 'Connect to any service with a REST API' },
+                { title: 'Webhook Support', desc: 'Real-time data synchronization' },
+                { title: 'Database Connections', desc: 'Direct integration with any database' },
+                { title: 'Custom Code Execution', desc: 'JavaScript and Python support' }
+              ].map((item, index) => (
+                <div key={item.title} className="text-center">
+                  <h4 className="font-semibold mb-2">{item.title}</h4>
+                  <p className="text-sm opacity-80">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Enterprise & Legacy */}
+          <motion.div
+            className="text-center"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <h3 className="text-2xl font-bold text-[#111827] mb-6">Enterprise & Legacy Systems</h3>
+            <p className="text-lg text-[#6B7280] mb-8 max-w-4xl mx-auto">
+              We specialize in connecting modern workflows with legacy enterprise software, on-premise systems, 
+              custom internal applications, industry-specific tools, and proprietary databases.
+            </p>
+            <div className="bg-[#F8FAFC] rounded-2xl p-8">
+              <p className="text-xl font-medium text-[#111827] mb-4">
+                If it has an API, webhook, database connection, or file interface - we can integrate with it.
+              </p>
+              <p className="text-[#6B7280]">
+                Our technical team works with you to ensure seamless connectivity, regardless of how unique or specialized your requirements are.
+              </p>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Tech Stack Reveal (Bottom Section) */}
       <section className="py-16 bg-[#F8FAFC] border-t border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
