@@ -1,188 +1,266 @@
 'use client';
 
 import React from 'react';
-import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { Play, ArrowRight } from 'lucide-react';
+import { Bot, Workflow, Database, BarChart3, Shield, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { VideoModal, useVideoModal } from '@/components/ui/video-modal';
-import { Locale, isRtlLocale } from '@/lib/i18n';
-import { getTranslation } from '@/lib/translations';
-import { cn, getLocaleFromCookie } from '@/lib/utils';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
-interface HeroProps {
-  locale: Locale;
-}
+const Solutions = () => {
+  const solutionPillars = [
+    {
+      icon: Bot,
+      title: 'Orchestration',
+      description: 'multi‑step decisions with tools & memory',
+      features: ['Tool integration', 'Persistent memory', 'Multi-step planning', 'Decision constraints']
+    },
+    {
+      icon: Workflow,
+      title: 'Workflows',
+      description: 'triggers, retries, rate limits, error handling',
+      features: ['Trigger systems', 'Exponential backoff', 'Dead letter queues', 'Rate limiting']
+    },
+    {
+      icon: Database,
+      title: 'Knowledge',
+      features: ['Document processing', 'Smart chunking', 'Quality evaluations', 'Accurate retrieval']
+    },
+    {
+      icon: BarChart3,
+      title: 'Observability',
+      description: 'Complete visibility into decisions, costs, and quality with alerts',
+      features: ['Decision traces', 'Cost tracking', 'Quality metrics', 'Performance alerts']
+    },
+    {
+      icon: Shield,
+      title: 'Safety & Compliance',
+      description: 'Built-in guardrails, approval workflows, and audit capabilities',
+      features: ['Tool whitelists', 'Content filters', 'Human approvals', 'Audit logs']
+    }
+  ];
 
-export default function Hero({ locale }: HeroProps) {
-  const { isOpen, openModal, closeModal } = useVideoModal();
-  const [currentLocale, setCurrentLocale] = useState<Locale>('en');
-
-  // Initialize locale from cookie on client side
-  useEffect(() => {
-    const cookieLocale = getLocaleFromCookie();
-    setCurrentLocale(cookieLocale);
-  }, []);
+  const useCases = [
+    {
+      title: 'Invoice/PO Triage',
+      description: 'Extract data from invoices and purchase orders, validate against business rules, and write back to ERP systems',
+      outcome: '70% faster processing'
+    },
+    {
+      title: 'RFQ to Quote',
+      description: 'Parse RFQs, lookup rates, apply margin rules, generate quotes, and update CRM automatically',
+      outcome: '20+ hours/week saved'
+    },
+    {
+      title: 'Sales Operations',
+      description: 'Enrich leads, score against ICP, assign to reps, and trigger follow-up sequences',
+      outcome: '3x faster qualification'
+    },
+    {
+      title: 'Support L1 Deflection',
+      description: 'Understand customer queries, search knowledge base, provide answers, and route complex issues',
+      outcome: '60% deflection rate'
+    },
+    {
+      title: 'HR Onboarding',
+      description: 'Process forms, create accounts, generate documents, and track completion status',
+      outcome: '5 days to 2 days'
+    },
+    {
+      title: 'Legal Document Review',
+      description: 'Extract clauses, flag risks, check compliance, and generate summaries for review',
+      outcome: '80% time reduction'
+    }
+  ];
 
   return (
-    <section className={cn(
-      "relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-dark-ink via-gray-900 to-dark-ink",
-      isRtlLocale(currentLocale) && "rtl"
-    )}>
-      {/* Background Elements */}
-      <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-accent-teal/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent-blue/10 rounded-full blur-3xl"></div>
-      </div>
-
-      <div className={cn(
-        "relative max-w-container mx-auto px-4 sm:px-6 lg:px-8",
-        isRtlLocale(currentLocale) && "dir-rtl"
-      )}>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Left Column - Content */}
+    <div className="min-h-screen pt-20">
+      {/* Hero Section */}
+      <section className="py-20 bg-gradient-to-br from-[#0B1220] via-[#0F1629] to-[#0B1220]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
+            className="text-center"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center lg:text-left"
           >
-            <h1 className="text-h1 font-sora text-white mb-6 leading-tight">
-              Automate your operations with AI—fast.
+            <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
+              From inbox to system-of-record—
+              <span className="bg-gradient-to-r from-[#00B3A4] to-[#2563EB] bg-clip-text text-transparent">
+                automated, approved, and auditable
+              </span>
             </h1>
-            
-            <p className="text-body text-gray-300 mb-8 leading-relaxed max-w-2xl">
-              We deploy production‑ready automations that cut manual work <strong>50–80%</strong> and speed up response times to <strong>under a minute</strong>—with clear scope and delivery in <strong>7–14 days</strong>.
+            <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+              We build agents that understand documents and emails, make decisions with your business rules, 
+              and update your systems safely with full traceability and human oversight.
             </p>
+          </motion.div>
+        </div>
+      </section>
 
-            {/* Key Benefits */}
-            <div className="flex flex-wrap justify-center lg:justify-start gap-6 mb-8 text-gray-300">
-              <div className="flex items-center">
-                <div className="w-2 h-2 bg-success rounded-full mr-2"></div>
-                <span className="text-sm">Fixed scope, fixed timeline</span>
-              </div>
-              <div className="flex items-center">
-                <div className="w-2 h-2 bg-success rounded-full mr-2"></div>
-                <span className="text-sm">30-day value guarantee</span>
-              </div>
-              <div className="flex items-center">
-                <div className="w-2 h-2 bg-success rounded-full mr-2"></div>
-                <span className="text-sm">Full source code handover</span>
-              </div>
-            </div>
+      {/* Solution Pillars */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-[#111827] mb-6">
+              Five Pillars of Reliable Automation
+            </h2>
+            <p className="text-xl text-[#6B7280] max-w-3xl mx-auto">
+              Every automation we build includes these essential components for production reliability
+            </p>
+          </motion.div>
 
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {solutionPillars.map((pillar, index) => (
+              <motion.div
+                key={pillar.title}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+              >
+                <Card className="h-full hover:shadow-xl transition-all duration-300">
+                  <CardHeader>
+                    <div className="w-16 h-16 bg-gradient-to-br from-[#00B3A4] to-[#2563EB] rounded-2xl flex items-center justify-center mb-4">
+                      <pillar.icon className="h-8 w-8 text-white" />
+                    </div>
+                    <CardTitle className="text-xl mb-3">{pillar.title}</CardTitle>
+                    <p className="text-[#6B7280] leading-relaxed">{pillar.description}</p>
+                  </CardHeader>
+                  <CardContent>
+                    <ul className="space-y-2">
+                      {pillar.features.map((feature, idx) => (
+                        <li key={idx} className="flex items-center text-[#6B7280]">
+                          <div className="w-1.5 h-1.5 bg-[#00B3A4] rounded-full mr-3"></div>
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Use Cases */}
+      <section className="py-20 bg-[#F8FAFC]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-[#111827] mb-6">
+              Common Use Cases
+            </h2>
+            <p className="text-xl text-[#6B7280] max-w-3xl mx-auto">
+              Proven automation patterns that deliver immediate value
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {useCases.map((useCase, index) => (
+              <motion.div
+                key={useCase.title}
+                className="bg-white rounded-2xl p-8 shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100"
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+              >
+                <h3 className="text-xl font-bold text-[#111827] mb-3">{useCase.title}</h3>
+                <p className="text-[#6B7280] mb-4 leading-relaxed">{useCase.description}</p>
+                <div className="bg-gradient-to-r from-[#00B3A4]/10 to-[#2563EB]/10 rounded-lg p-3">
+                  <span className="text-sm font-medium text-[#00B3A4]">Typical outcome: {useCase.outcome}</span>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Tech Stack Reveal (Bottom Section) */}
+      <section className="py-16 bg-[#F8FAFC] border-t border-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            className="text-center mb-12"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <h3 className="text-2xl font-bold text-[#111827] mb-4">
+              Built with Enterprise-Grade Components
+            </h3>
+            <p className="text-lg text-[#6B7280] max-w-2xl mx-auto">
+              We use proven, production-ready technologies to ensure reliability and scalability
+            </p>
+          </motion.div>
+          
+          <div className="flex flex-wrap justify-center gap-6">
+            {[
+              'Agent Framework',
+              'Workflow Engine', 
+              'Vector Database',
+              'Observability Platform',
+              'Security Controls'
+            ].map((tech, index) => (
+              <motion.div
+                key={tech}
+                className="px-4 py-2 bg-white rounded-full border border-gray-200 text-[#6B7280] font-medium"
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: index * 0.1 }}
+              >
+                {tech}
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-[#111827] mb-6">
+              Ready to automate your operations?
+            </h2>
+            <p className="text-lg text-[#6B7280] mb-8">
+              Let's discuss your specific use case and design a solution that fits your workflow
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="xl" asChild>
-                <Link href="/contact">
-                  Book a 20‑min demo
-                  <ArrowRight className={cn(
-                    "h-5 w-5",
-                    isRtlLocale(currentLocale) ? "mr-2" : "ml-2"
-                  )} />
+                <Link href="/industries">
+                  See Industries
+                  <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
-              <Button 
-                size="xl" 
-                variant="outline" 
-                className="bg-white/10 border-white/20 text-white hover:bg-white/20" 
-                onClick={openModal}
-              >
-                <Play className={cn(
-                  "h-5 w-5",
-                  isRtlLocale(currentLocale) ? "ml-2" : "mr-2"
-                )} />
+              <Button size="xl" variant="outline" asChild>
                 Watch 2‑min overview
               </Button>
             </div>
-
-            {/* Trust Logos Row */}
-            <div className="text-gray-400 text-sm">
-              Trusted by companies in Dubai, London, and New York
-            </div>
-          </motion.div>
-
-          {/* Right Column - Visual */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative"
-          >
-            <div className="relative w-full h-96 lg:h-[500px]">
-              {/* Abstract workflow visualization */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="relative w-80 h-80">
-                  {/* Central node */}
-                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-16 h-16 bg-gradient-to-br from-accent-teal to-accent-blue rounded-full flex items-center justify-center">
-                    <div className="w-8 h-8 bg-white rounded-full"></div>
-                  </div>
-                  
-                  {/* Surrounding nodes */}
-                  {[0, 1, 2, 3, 4, 5].map((i) => (
-                    <motion.div
-                      key={i}
-                      className="absolute w-12 h-12 bg-gradient-to-br from-accent-teal/20 to-accent-blue/20 rounded-full border-2 border-accent-teal/30"
-                      style={{
-                        top: `${50 + 35 * Math.sin((i * Math.PI) / 3)}%`,
-                        left: `${50 + 35 * Math.cos((i * Math.PI) / 3)}%`,
-                        transform: 'translate(-50%, -50%)',
-                      }}
-                      animate={{
-                        scale: [1, 1.1, 1],
-                        opacity: [0.5, 0.8, 0.5],
-                      }}
-                      transition={{
-                        duration: 2,
-                        delay: i * 0.3,
-                        repeat: Infinity,
-                        repeatType: 'reverse',
-                      }}
-                    >
-                      <div className="w-full h-full bg-white/10 rounded-full"></div>
-                    </motion.div>
-                  ))}
-                  
-                  {/* Connection lines */}
-                  {[0, 1, 2, 3, 4, 5].map((i) => (
-                    <div
-                      key={`line-${i}`}
-                      className="absolute w-0.5 bg-gradient-to-b from-accent-teal/30 to-transparent"
-                      style={{
-                        height: '35%',
-                        top: '50%',
-                        left: '50%',
-                        transformOrigin: 'top center',
-                        transform: `translate(-50%, 0) rotate(${i * 60}deg)`,
-                      }}
-                    />
-                  ))}
-                </div>
-              </div>
-            </div>
           </motion.div>
         </div>
-      </div>
-
-      {/* Scroll Indicator */}
-      <motion.div
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-        animate={{ y: [0, 10, 0] }}
-        transition={{ duration: 2, repeat: Infinity }}
-      >
-        <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-white/50 rounded-full mt-2"></div>
-        </div>
-      </motion.div>
-
-      {/* Video Modal */}
-      <VideoModal
-        isOpen={isOpen}
-        onClose={closeModal}
-        title="Zadix AI Automation Overview"
-        // videoUrl="https://www.youtube.com/embed/your-video-id" // Add when video is ready
-      />
-    </section>
+      </section>
+    </div>
   );
-}
+};
+
+export default Solutions;
