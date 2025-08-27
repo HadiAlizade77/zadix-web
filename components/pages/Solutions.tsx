@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Bot, Workflow, Database, BarChart3, Shield, ArrowRight } from 'lucide-react';
+import { Bot, Workflow, Database, BarChart3, Shield, ArrowRight, Zap, Code } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -809,37 +809,9 @@ const Solutions = () => {
               </div>
             </motion.div>
           </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-[#111827] mb-6">
-              Ready to Connect Everything?
-            </h2>
-            <p className="text-lg text-[#6B7280] mb-8">
-              Contact us to discuss your specific integration needs and discover how we can streamline your entire digital ecosystem.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="xl" asChild>
-                <Link href="/industries">
-                <Link href="/contact">
-                  Discuss Your Integrations
-                  <ArrowRight className="ml-2 h-5 w-5" />
-              <Button size="xl" variant="outline" className="border-white text-white hover:bg-white hover:text-[#0B1220]" asChild>
-                <Link href="/pricing">View Pricing</Link>
-              </Button>
-            </div>
-          </motion.div>
         </div>
       </section>
-    </div>
+
       {/* Beyond Standard Integrations */}
       <section className="py-20 bg-[#F8FAFC]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -941,7 +913,37 @@ const Solutions = () => {
         </div>
       </section>
 
-      {/* CTA */}
+      {/* CTA Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-[#111827] mb-6">
+              Ready to Connect Everything?
+            </h2>
+            <p className="text-lg text-[#6B7280] mb-8">
+              Contact us to discuss your specific integration needs and discover how we can streamline your entire digital ecosystem.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button size="xl" asChild>
+                <Link href="/contact">
+                  Discuss Your Integrations
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
+              </Button>
+              <Button size="xl" variant="outline" asChild>
+                <Link href="/pricing">View Pricing</Link>
+              </Button>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+    </div>
+  );
 };
 
 export default Solutions;
