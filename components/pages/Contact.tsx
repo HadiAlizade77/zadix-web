@@ -214,6 +214,42 @@ const Contact = () => {
         </div>
       </section>
 
+  {/* Alternative Contact Methods */}
+      <section className="pt-16 pb-8 bg-[#F8FAFC]">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h3 className="text-2xl font-bold text-[#111827] mb-8">
+            Prefer to chat directly?
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <Card className="hover:shadow-lg transition-all duration-300">
+              <CardContent className="p-6 text-center">
+                <MessageCircle className="h-12 w-12 text-[#00B3A4] mx-auto mb-4" />
+                <h4 className="text-lg font-bold text-[#111827] mb-2">WhatsApp</h4>
+                <p className="text-[#6B7280] mb-4">Quick questions and instant responses</p>
+                <Button asChild>
+                  <a href="https://wa.me/0000000000" target="_blank" rel="noopener noreferrer">
+                    Chat Now
+                  </a>
+                </Button>
+              </CardContent>
+            </Card>
+            
+            <Card className="hover:shadow-lg transition-all duration-300">
+              <CardContent className="p-6 text-center">
+                <MessageCircle className="h-12 w-12 text-[#2563EB] mx-auto mb-4" />
+                <h4 className="text-lg font-bold text-[#111827] mb-2">Schedule a Call</h4>
+                <p className="text-[#6B7280] mb-4">Book a time that works for you</p>
+                <Button variant="outline" asChild>
+                  <a href="https://calendly.com/admin-zadix/meeting-with-zadix-ai" target="_blank" rel="noopener noreferrer">
+                    View Calendar
+                  </a>
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* Contact Form */}
       <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -512,41 +548,7 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Alternative Contact Methods */}
-      <section className="py-16 bg-[#F8FAFC]">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h3 className="text-2xl font-bold text-[#111827] mb-8">
-            Prefer to chat directly?
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <Card className="hover:shadow-lg transition-all duration-300">
-              <CardContent className="p-6 text-center">
-                <MessageCircle className="h-12 w-12 text-[#00B3A4] mx-auto mb-4" />
-                <h4 className="text-lg font-bold text-[#111827] mb-2">WhatsApp</h4>
-                <p className="text-[#6B7280] mb-4">Quick questions and instant responses</p>
-                <Button asChild>
-                  <a href="https://wa.me/0000000000" target="_blank" rel="noopener noreferrer">
-                    Chat Now
-                  </a>
-                </Button>
-              </CardContent>
-            </Card>
-            
-            <Card className="hover:shadow-lg transition-all duration-300">
-              <CardContent className="p-6 text-center">
-                <MessageCircle className="h-12 w-12 text-[#2563EB] mx-auto mb-4" />
-                <h4 className="text-lg font-bold text-[#111827] mb-2">Schedule a Call</h4>
-                <p className="text-[#6B7280] mb-4">Book a time that works for you</p>
-                <Button variant="outline" asChild>
-                  <a href="https://calendly.com/admin-zadix/meeting-with-zadix-ai" target="_blank" rel="noopener noreferrer">
-                    View Calendar
-                  </a>
-                </Button>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
+    
     </div>
   );
 };
