@@ -11,39 +11,39 @@ const Security = () => {
   const securityControls = [
     {
       icon: Shield,
-      title: 'SOC-Aligned Controls',
-      description: 'Comprehensive security framework with audit trails, access controls, and monitoring',
-      details: ['Security policies & procedures', 'Risk assessment framework', 'Incident response plan', 'Vendor management']
+      title: 'RBAC with least‑privilege access',
+      description: 'Role-based access control ensuring users only access what they need',
+      details: ['Multi-factor authentication', 'Role-based permissions', 'Session management', 'Access reviews']
     },
     {
       icon: Lock,
-      title: 'Data Encryption',
-      description: 'End-to-end encryption for data in transit and at rest with key management',
+      title: 'Encryption in transit and at rest',
+      description: 'All data protected with enterprise-grade encryption',
       details: ['TLS 1.3 for data in transit', 'AES-256 encryption at rest', 'Key rotation policies', 'Secure key storage']
     },
     {
       icon: Eye,
-      title: 'Full Observability',
+      title: 'Observability for decisions and costs',
       description: 'Complete visibility into AI decisions, data flows, and system performance',
-      details: ['Decision audit trails', 'Data lineage tracking', 'Performance monitoring', 'Quality metrics']
+      details: ['Decision audit trails', 'Cost tracking', 'Performance monitoring', 'Quality metrics']
     },
     {
       icon: FileCheck,
-      title: 'Audit Logging',
+      title: 'Audit trails for key actions',
       description: 'Comprehensive logs for compliance, debugging, and forensic analysis',
       details: ['Immutable audit logs', 'User activity tracking', 'System event logging', 'Log retention policies']
     },
     {
       icon: Users,
-      title: 'Role-Based Access Control',
-      description: 'Granular permissions and approval workflows with principle of least privilege',
-      details: ['Multi-factor authentication', 'Role-based permissions', 'Approval workflows', 'Session management']
+      title: 'Backups with retention',
+      description: 'Automated backups with configurable retention policies',
+      details: ['Encrypted backups', 'Point-in-time recovery', 'Cross-region replication', 'Retention policies']
     },
     {
       icon: Globe,
-      title: 'Privacy & Compliance',
-      description: 'GDPR-ready with data residency controls and privacy-first design',
-      details: ['Data minimization', 'Right to erasure', 'Data portability', 'Consent management']
+      title: 'Incident response with defined SLAs',
+      description: 'Structured incident response with clear escalation procedures',
+      details: ['24/7 monitoring', 'Automated alerting', 'Escalation procedures', 'SLA guarantees']
     }
   ];
 
@@ -83,9 +83,9 @@ const Security = () => {
               <Shield className="h-10 w-10 text-white" />
             </div>
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
-              Enterprise-Grade{' '}
+              SOC‑aligned controls{' '}
               <span className="bg-gradient-to-r from-[#00B3A4] to-[#2563EB] bg-clip-text text-transparent">
-                Security
+                by default
               </span>
             </h1>
             <p className="text-xl text-gray-300 max-w-4xl mx-auto mb-8 leading-relaxed">
@@ -229,15 +229,16 @@ const Security = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h3 className="text-2xl font-bold mb-4">Compliance & Data</h3>
+            <h3 className="text-2xl font-bold text-[#111827] mb-4">Compliance & Data</h3>
             <p className="text-lg mb-6 opacity-90">
-              We minimize PII, honor data retention requests, and provide a DPA on request.
+              We minimize PII, honor data retention requests, and provide a <strong>DPA</strong> on request.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="xl" asChild>
-                <Link href="/dpa">
+              <Button size="lg" asChild>
                 <Link href="/dpa">
                   Request our DPA
+                </Link>
+              </Button>
             </div>
           </motion.div>
         </div>

@@ -23,10 +23,10 @@ export default function GuaranteeBanner({ locale }: GuaranteeBannerProps) {
         >
           <div className="flex items-center justify-center mb-6">
             <Shield className="h-12 w-12 mr-4" />
-            <h2 className="text-h3 font-sora">30-Day Value Guarantee</h2>
+            <h2 className="text-3xl md:text-4xl font-bold font-sora">30‑day value guarantee</h2>
           </div>
           <p className="text-xl max-w-4xl mx-auto leading-relaxed">
-            If you don't see measurable time saved in 30 days, we keep working until you do.
+            If you don't see measurable time saved, we keep working until you do.
           </p>
         </motion.div>
       </div>

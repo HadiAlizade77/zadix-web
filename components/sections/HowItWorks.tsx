@@ -20,7 +20,7 @@ export default function HowItWorks({ locale }: HowItWorksProps) {
     },
     {
       number: '2',
-      title: 'Understand',
+      title: 'Understand', 
       description: 'we extract what matters',
       color: 'from-purple-500 to-pink-500',
     },

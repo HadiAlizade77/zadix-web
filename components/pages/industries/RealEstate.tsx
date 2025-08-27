@@ -203,15 +203,20 @@ const RealEstate = () => {
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-4xl md:text-5xl font-bold text-[#111827] mb-6">
-              Measurable Results
+              Real Estate Impact
             </h2>
             <p className="text-xl text-[#6B7280] max-w-3xl mx-auto">
-              Real outcomes from Dubai's top real estate agencies
+              Real outcomes from luxury real estate agencies
             </p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {outcomes.map((outcome, index) => (
+            {[
+              { metric: '+2–3', label: 'deals per month', description: 'From faster lead processing' },
+              { metric: '5×', label: 'faster first response', description: 'Automated within 60 seconds' },
+              { metric: '100%', label: 'follow‑up coverage', description: 'Never miss a high-value lead' },
+              { metric: '40%', label: 'higher conversion rate', description: 'Better qualified leads' }
+            ].map((outcome, index) => (
               <motion.div
                 key={outcome.label}
                 className="text-center"
@@ -226,6 +231,93 @@ const RealEstate = () => {
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Suggested Package */}
+      <section className="py-12 bg-[#F8FAFC]">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="inline-flex items-center bg-white rounded-full px-6 py-3 shadow-md">
+              <span className="text-[#6B7280] mr-2">Suggested package:</span>
+              <span className="font-bold text-[#00B3A4]">Pro ($12,900)</span>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Mini-FAQ */}
+      <section className="py-20 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            className="text-center mb-12"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <h2 className="text-3xl font-bold text-[#111827] mb-6">Common Questions</h2>
+          </motion.div>
+
+          <div className="space-y-6">
+            {[
+              {
+                question: 'How long does it take?',
+                answer: 'Initial workflows ship in 7–14 business days.'
+              },
+              {
+                question: 'Will this work with our tools?',
+                answer: 'Yes—email, docs, CRM/ERP, helpdesk, and databases. We start with the systems you already use.'
+              },
+              {
+                question: 'How do you measure ROI?',
+                answer: 'We set a success metric on Day 1 (e.g., hours saved, response time) and track it in the first 30 days.'
+              },
+              {
+                question: 'Is our data safe?',
+                answer: 'Yes—SOC‑aligned controls, audit trails, role‑based access, and encryption by default.'
+              }
+            ].map((faq, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+              >
+                <div className="bg-[#F8FAFC] rounded-xl p-6">
+                  <h3 className="text-lg font-bold text-[#111827] mb-3">{faq.question}</h3>
+                  <p className="text-[#6B7280] leading-relaxed">{faq.answer}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Stack Badges */}
+      <section className="py-12 bg-[#F8FAFC] border-t border-gray-100">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="flex flex-wrap justify-center gap-4 mb-4">
+            {['Orchestration', 'Workflows', 'Knowledge', 'Security', 'Observability'].map((tech, index) => (
+              <motion.div
+                key={tech}
+                className="px-4 py-2 bg-white rounded-full border border-gray-200 text-[#6B7280] font-medium text-sm"
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: index * 0.1 }}
+              >
+                {tech}
+              </motion.div>
+            ))}
+          </div>
+          <p className="text-[#6B7280] text-sm">Built with enterprise‑grade components</p>
         </div>
       </section>
 

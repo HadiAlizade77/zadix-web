@@ -238,14 +238,14 @@ const Pricing = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
             {[
-              { name: 'Additional Workflow', price: '$2,500', description: 'Extra automation workflow' },
-              { name: 'Custom Integration', price: '$1,500', description: 'Specialized system connection' },
-              { name: 'Advanced Evaluations', price: '$1,000', description: 'Quality metrics & monitoring' },
-              { name: 'Custom Dashboard', price: '$2,000', description: 'Branded analytics interface' },
-              { name: 'Region Pinning', price: '$500', description: 'Data residency controls' },
-              { name: 'HA/DR Setup', price: '$3,000', description: 'High availability & disaster recovery' },
-              { name: '24/7 On-call', price: '$1,500/month', description: 'Emergency support coverage' },
-              { name: 'Extended Training', price: '$2,000', description: 'Team training workshop' }
+              { name: 'Additional workflow', price: '$2,500', description: 'Extra automation workflow' },
+              { name: 'Custom integration', price: '$1,500', description: 'Specialized system connection' },
+              { name: 'Advanced evaluations', price: '$1,000', description: 'Quality metrics & monitoring' },
+              { name: 'Custom dashboard', price: '$2,000', description: 'Branded analytics interface' },
+              { name: 'Region pinning', price: '$500', description: 'Data residency controls' },
+              { name: 'High availability / disaster recovery', price: '$3,000', description: 'HA/DR setup' },
+              { name: '24/7 on‑call', price: '$1,500/month', description: 'Emergency support coverage' },
+              { name: 'Extended training', price: '$2,000', description: 'Team training workshop' }
             ].map((addon, index) => (
               <motion.div
                 key={addon.name}
@@ -270,23 +270,23 @@ const Pricing = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h3 className="text-2xl font-bold text-[#111827] mb-6 text-center">Enterprise SLA</h3>
+            <h3 className="text-2xl font-bold text-[#111827] mb-6 text-center">SLA (Enterprise)</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               <div className="text-center">
-                <h4 className="font-semibold text-[#111827] mb-2">Incident Response</h4>
-                <p className="text-[#6B7280] text-sm">Business hours or 24/7</p>
+                <h4 className="font-semibold text-[#111827] mb-2">Incident response</h4>
+                <p className="text-[#6B7280] text-sm">business hours or 24/7 (per plan)</p>
               </div>
               <div className="text-center">
-                <h4 className="font-semibold text-[#111827] mb-2">Uptime Target</h4>
-                <p className="text-[#6B7280] text-sm">99.9% availability</p>
+                <h4 className="font-semibold text-[#111827] mb-2">Uptime target</h4>
+                <p className="text-[#6B7280] text-sm">e.g., 99.5% (define if applicable)</p>
               </div>
               <div className="text-center">
-                <h4 className="font-semibold text-[#111827] mb-2">Change Windows</h4>
-                <p className="text-[#6B7280] text-sm">Defined maintenance windows</p>
+                <h4 className="font-semibold text-[#111827] mb-2">Change windows</h4>
+                <p className="text-[#6B7280] text-sm">defined maintenance windows</p>
               </div>
               <div className="text-center">
-                <h4 className="font-semibold text-[#111827] mb-2">Support Channel</h4>
-                <p className="text-[#6B7280] text-sm">Email + WhatsApp + ticketing</p>
+                <h4 className="font-semibold text-[#111827] mb-2">Support channel</h4>
+                <p className="text-[#6B7280] text-sm">email + WhatsApp + ticketing</p>
               </div>
             </div>
           </motion.div>

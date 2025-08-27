@@ -266,8 +266,7 @@ const Process = () => {
                 </CardHeader>
                 <CardContent>
                   <p className="text-[#6B7280] mb-4">
-                    We ship with runbooks, rollback steps, idempotency keys, retries/dead‑letter queues, 
-                    and rate limits so changes are safe and reversible.
+                    We ship with runbooks, rollback steps, idempotency keys, retries/dead‑letter queues, and rate limits so changes are safe and reversible.
                   </p>
                   <ul className="space-y-2 text-sm text-[#6B7280]">
                     <li>• Emergency rollback procedures</li>

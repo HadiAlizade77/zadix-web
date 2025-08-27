@@ -24,10 +24,10 @@ export default function SecuritySnippet({ locale }: SecuritySnippetProps) {
         >
           <div className="flex items-center justify-center mb-6">
             <Lock className="h-8 w-8 text-accent-teal mr-3" />
-            <h3 className="text-h3 font-sora text-headline-slate">Enterprise-Grade Security</h3>
+            <h3 className="text-2xl md:text-3xl font-bold font-sora text-headline-slate">SOC‑aligned controls by default</h3>
           </div>
           <p className="text-body text-gray-600 max-w-4xl mx-auto mb-6">
-            SOC‑aligned controls by default: audit trails, RBAC, encryption, and full observability of decisions.
+            Audit trails, RBAC, encryption, and full observability of decisions.
           </p>
           <Link 
             href="/security" 

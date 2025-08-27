@@ -208,7 +208,7 @@ const CaseStudies = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h3 className="text-2xl font-bold text-[#111827] mb-4">How We Measured</h3>
+            <h3 className="text-2xl font-bold text-[#111827] mb-4">How we measured</h3>
             <p className="text-lg text-[#6B7280] mb-8">
               We compared pre‑automation baselines with a 30‑day post‑launch window using the same workload characteristics.
             </p>
@@ -224,7 +224,7 @@ const CaseStudies = () => {
                 "The team delivered exactly on scope and timeline."
               </blockquote>
               <cite className="text-[#6B7280] text-sm mt-2 block">
-                — Head of Ops, Property Group
+                — <strong>Head of Ops, Property Group</strong>
               </cite>
             </div>
           </motion.div>

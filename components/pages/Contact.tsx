@@ -480,7 +480,7 @@ const Contact = () => {
                     className="mt-1 h-4 w-4 text-[#00B3A4] focus:ring-[#00B3A4] border-gray-300 rounded"
                   />
                   <label htmlFor="consent" className="ml-3 text-sm text-[#6B7280]">
-                    I agree to the <a href="/privacy" className="text-[#00B3A4] hover:underline">Privacy Policy</a> and <a href="/dpa" className="text-[#00B3A4] hover:underline">DPA</a> *
+                    I agree to the <a href="/privacy" className="text-[#00B3A4] hover:underline">Privacy Policy</a> and <a href="/dpa" className="text-[#00B3A4] hover:underline">Data Processing Addendum (DPA)</a> *
                   </label>
                 </div>
 

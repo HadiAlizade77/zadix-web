@@ -12,8 +12,11 @@ import FinalCTA from '@/components/sections/FinalCTA';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import MobileCTABar from '@/components/layout/MobileCTABar';
+import { VideoModal, useVideoModal } from '@/components/ui/video-modal';
 
 export default function Home() {
+  const { isOpen, closeModal } = useVideoModal();
+
   return (
     <div className="min-h-screen">
       <Header locale="en" />
@@ -32,6 +35,12 @@ export default function Home() {
       </main>
       <Footer locale="en" />
       <MobileCTABar locale="en" />
+      <VideoModal 
+        isOpen={isOpen} 
+        onClose={closeModal}
+        videoUrl="https://youtu.be/XXXXXXXXXXX"
+        title="Zadix AI Automation Overview"
+      />
     </div>
   );
 }

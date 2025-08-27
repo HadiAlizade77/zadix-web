@@ -20,11 +20,11 @@ export default function ContactThankYou() {
           </div>
           
           <h1 className="text-4xl md:text-5xl font-bold text-[#111827] mb-6">
-              Thanks—pick a demo slot
+            Thanks—pick a demo slot
           </h1>
           
           <p className="text-xl text-[#6B7280] mb-12 max-w-2xl mx-auto">
-              We've received your details. Choose a time for a quick walkthrough and scoping call.
+            We've received your details. Choose a time for a quick walkthrough and scoping call.
           </p>
 
           {/* Calendly Embed Placeholder */}

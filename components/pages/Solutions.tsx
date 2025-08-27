@@ -12,31 +12,31 @@ const Solutions = () => {
     {
       icon: Bot,
       title: 'Orchestration',
-      description: 'Multi‑step decisions with tools & memory',
+      description: 'multi‑step decisions with tools & memory',
       features: ['Tool integration', 'Persistent memory', 'Multi-step planning', 'Decision constraints']
     },
     {
       icon: Workflow,
       title: 'Workflows',
-      description: 'Triggers, retries, rate limits, error handling',
+      description: 'triggers, retries, rate limits, error handling',
       features: ['Trigger systems', 'Exponential backoff', 'Dead letter queues', 'Rate limiting']
     },
     {
       icon: Database,
-      title: 'Knowledge', 
-      description: 'Your private docs → accurate answers',
+      title: 'Knowledge',
+      description: 'your private docs → accurate answers',
       features: ['Document processing', 'Smart chunking', 'Quality evaluations', 'Accurate retrieval']
     },
     {
       icon: BarChart3,
       title: 'Observability',
-      description: 'Traces, metrics, cost/quality tracking',
+      description: 'traces, metrics, cost/quality tracking',
       features: ['Decision traces', 'Cost tracking', 'Quality metrics', 'Performance alerts']
     },
     {
       icon: Shield,
       title: 'Safety',
-      description: 'Guardrails, approvals, audit logs',
+      description: 'guardrails, approvals, audit logs',
       features: ['Tool whitelists', 'Content filters', 'Human approvals', 'Audit logs']
     }
   ];
@@ -44,32 +44,32 @@ const Solutions = () => {
   const useCases = [
     {
       title: 'Invoice/PO triage → ERP write‑back',
-      description: 'Extract, validate, route, and post entries',
+      description: 'extract, validate, route, and post entries',
       outcome: '70% faster processing'
     },
     {
       title: 'RFQ → Quote (logistics)',
-      description: 'Parse requests, look up rates, enforce margin rules, draft quotes',
+      description: 'parse requests, look up rates, enforce margin rules, draft quotes',
       outcome: '20+ hours/week saved'
     },
     {
       title: 'Sales ops enrichment & routing',
-      description: 'Enrich leads, score, dedupe, assign, and kick off sequences',
+      description: 'enrich leads, score, dedupe, assign, and kick off sequences',
       outcome: '3x faster qualification'
     },
     {
       title: 'Support L1 deflection + routing',
-      description: 'Instant answers from your knowledge, smart hand‑offs',
+      description: 'instant answers from your knowledge, smart hand‑offs',
       outcome: '60% deflection rate'
     },
     {
       title: 'HR onboarding assistant',
-      description: 'Forms to accounts to docs, without the back‑and‑forth',
+      description: 'forms to accounts to docs, without the back‑and‑forth',
       outcome: '5 days to 2 days'
     },
     {
       title: 'Legal doc extract + clause check',
-      description: 'Structured terms, risk flags, and draft changes',
+      description: 'structured terms, risk flags, and draft changes',
       outcome: '80% time reduction'
     }
   ];
@@ -93,6 +93,7 @@ const Solutions = () => {
             </h1>
             <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
               We build automations that understand your documents and emails, make decisions with your rules, route approvals, and safely update the systems your business runs on.
+            </p>
           </motion.div>
         </div>
       </section>
