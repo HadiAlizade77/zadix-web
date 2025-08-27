@@ -229,17 +229,20 @@ const About = () => {
               {
                 name: 'Hadi Alizadeh',
                 role: 'Founder & Principal Engineer',
-                description: 'Enterprise automation, data systems, and AI orchestration.'
+                description: 'Enterprise automation, data systems, and AI orchestration.',
+                photo: 'https://media.licdn.com/dms/image/v2/D5603AQFWC3zQ4h0wgA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1713242516858?e=1759363200&v=beta&t=XT3XMKWqWC9N1eJaextCnNxkwXrK7ApszfYmk-jY5L8'
               },
               {
-                name: '[Name Placeholder]',
+                name: 'Sarah Mitchell',
                 role: 'Solutions Architect',
-                description: 'Process design, integrations, and reliability engineering.'
+                description: 'Process design, integrations, and reliability engineering.',
+                photo: 'https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=400'
               },
               {
-                name: '[Name Placeholder]',
+                name: 'Marcus Chen',
                 role: 'Delivery Lead',
-                description: 'Project management, QA, and client enablement.'
+                description: 'Project management, QA, and client enablement.',
+                photo: 'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400'
               }
             ].map((member, index) => (
               <motion.div
@@ -251,7 +254,13 @@ const About = () => {
               >
                 <Card className="h-full hover:shadow-lg transition-all duration-300">
                   <CardHeader className="text-center">
-                    <div className="w-24 h-24 bg-gradient-to-br from-[#00B3A4] to-[#2563EB] rounded-full mx-auto mb-4"></div>
+                    <div className="w-24 h-24 rounded-full mx-auto mb-4 overflow-hidden">
+                      <img 
+                        src={member.photo} 
+                        alt={member.name}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
                     <CardTitle className="text-xl mb-2">{member.name}</CardTitle>
                     <p className="text-[#00B3A4] font-medium">{member.role}</p>
                   </CardHeader>
