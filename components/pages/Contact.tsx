@@ -157,7 +157,7 @@ const Contact = () => {
             </h1>
             
             <p className="text-xl text-[#6B7280] mb-12 max-w-2xl mx-auto">
-              We've received your details. Choose a time for a quick walkthrough and scoping call.
+              We&apos;ve received your details. Choose a time for a quick walkthrough and scoping call.
             </p>
 
             {/* Calendly Embed Placeholder */}
@@ -208,7 +208,7 @@ const Contact = () => {
               Book a Demo
             </h1>
             <p className="text-xl text-gray-300 max-w-4xl mx-auto mb-8 leading-relaxed">
-              Tell us about your workflow challenge and we'll show you exactly how our automation would handle it—with real data and your specific business rules.
+              Tell us about your workflow challenge and we&apos;ll show you exactly how our automation would handle it—with real data and your specific business rules.
             </p>
           </motion.div>
         </div>

@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
 import MobileCTABar from '@/components/layout/MobileCTABar'
+import { ArrowRight } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Data Processing Agreement (DPA) | Zadix',
@@ -29,8 +30,8 @@ export default function DPAPage() {
               
               <h2 className="text-2xl font-bold text-[#111827] mt-8 mb-4">1. Definitions</h2>
               <p className="text-[#6B7280] mb-4">
-                This Data Processing Addendum ("DPA") forms part of the service agreement between 
-                Zadix ("Processor") and the Client ("Controller").
+                This Data Processing Addendum (&quot;DPA&quot;) forms part of the service agreement between 
+                Zadix (&quot;Processor&quot;) and the Client (&quot;Controller&quot;).
               </p>
               
               <h2 className="text-2xl font-bold text-[#111827] mt-8 mb-4">2. Processing of Personal Data</h2>
@@ -96,7 +97,6 @@ export default function DPAPage() {
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </a>
               </div>
-              </p>
             </div>
           </div>
         </div>

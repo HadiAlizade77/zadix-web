@@ -52,7 +52,7 @@
 
 ## Email Template Variables
 
-The following variables are sent to your EmailJS template:
+**⚠️ UPDATED:** The following variables are sent to your EmailJS template:
 
 - `{{from_name}}` - Shows as "Name (via Zadix Contact Form)" in subject
 - `{{user_name}}` - User's actual full name for email body
@@ -62,23 +62,37 @@ The following variables are sent to your EmailJS template:
 - `{{role}}` - User's job role
 - `{{phone}}` - User's phone number
 - `{{industry}}` - Selected industry
-- `{{systems}}` - Systems they currently use
+- `{{systems}}` - **⭐ NEW:** Comma-separated list of selected systems
 - `{{sensitivity}}` - Whether data contains PII/PHI
 - `{{volume}}` - Daily/weekly volume of work
 - `{{deadline}}` - Target deadline
 - `{{budget}}` - Budget bracket
 - `{{message}}` - Their workflow challenge description
-- `{{to_name}}` - Your team name (Zadix Request)
+- `{{to_name}}` - Your team name (Zadix Team)
 - `{{to_email}}` - Your email address
+
+### System Options (Multiple Selection):
+- CRM (Salesforce, HubSpot, etc.)
+- ERP (SAP, NetSuite, etc.)
+- Helpdesk (Zendesk, ServiceNow, etc.)
+- Databases (MySQL, PostgreSQL, etc.)
+- Storage (SharePoint, Google Drive, etc.)
+- Email Systems
+- Other
 
 ## File Uploads
 
-The form includes a file upload field for sample documents, but this requires additional backend processing (not handled by EmailJS). You may want to integrate with a service like:
+⚠️ **NEW FEATURE:** The form includes a file upload field for sample documents, but **EmailJS cannot handle file attachments**. 
 
-- Uploadthing
-- Cloudinary  
-- AWS S3
-- Or remove the file upload field if not needed
+**Current Status:**
+- Users can select files but they won't be sent via email
+- Form will still submit successfully
+- Files are captured in form state but not transmitted
+
+**Future Options:**
+- Integrate with Uploadthing, Cloudinary, or AWS S3
+- Remove the file upload field if not needed
+- Add a separate file handling service
 
 ## Troubleshooting
 
