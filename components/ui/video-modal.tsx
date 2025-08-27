@@ -5,14 +5,36 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { X, Play } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
+// Global state for video modal
+let globalModalState = {
+  isOpen: false,
+  setIsOpen: (open: boolean) => {
+    globalModalState.isOpen = open;
+    // Trigger re-render for all components using this state
+    globalModalState.listeners.forEach(listener => listener());
+  },
+  listeners: [] as (() => void)[]
+};
+
 interface VideoModalProps {
-  isOpen: boolean;
-  onClose: () => void;
   videoUrl?: string;
   title?: string;
 }
 
-export function VideoModal({ isOpen, onClose, videoUrl, title }: VideoModalProps) {
+export function VideoModal({ videoUrl, title }: VideoModalProps) {
+  const [isOpen, setIsOpen] = useState(globalModalState.isOpen);
+
+  useEffect(() => {
+    const listener = () => setIsOpen(globalModalState.isOpen);
+    globalModalState.listeners.push(listener);
+    return () => {
+      const index = globalModalState.listeners.indexOf(listener);
+      if (index > -1) globalModalState.listeners.splice(index, 1);
+    };
+  }, []);
+
+  const onClose = () => globalModalState.setIsOpen(false);
+
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
@@ -143,10 +165,19 @@ export function VideoModal({ isOpen, onClose, videoUrl, title }: VideoModalProps
 
 // Hook for managing video modal state
 export function useVideoModal() {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(globalModalState.isOpen);
 
-  const openModal = () => setIsOpen(true);
-  const closeModal = () => setIsOpen(false);
+  useEffect(() => {
+    const listener = () => setIsOpen(globalModalState.isOpen);
+    globalModalState.listeners.push(listener);
+    return () => {
+      const index = globalModalState.listeners.indexOf(listener);
+      if (index > -1) globalModalState.listeners.splice(index, 1);
+    };
+  }, []);
+
+  const openModal = () => globalModalState.setIsOpen(true);
+  const closeModal = () => globalModalState.setIsOpen(false);
 
   return {
     isOpen,

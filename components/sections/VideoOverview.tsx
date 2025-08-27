@@ -3,7 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Play } from 'lucide-react';
-import { useVideoModal } from '@/components/ui/video-modal';
+import { VideoModal, useVideoModal } from '@/components/ui/video-modal';
 
 export default function VideoOverview() {
   const { openModal } = useVideoModal();
@@ -53,6 +53,10 @@ export default function VideoOverview() {
           </div>
         </motion.div>
       </div>
+      <VideoModal 
+        videoUrl="https://youtu.be/XXXXXXXXXXX"
+        title="Zadix AI Automation Overview"
+      />
     </section>
   );
 }
