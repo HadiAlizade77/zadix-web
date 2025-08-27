@@ -2,10 +2,11 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { MessageCircle, Mail, MapPin, Phone, Send, CheckCircle } from 'lucide-react';
+import { MessageCircle, Mail, MapPin, Send, CheckCircle, Loader2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { getBusinessConfig } from '@/lib/utils';
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -24,12 +25,73 @@ const Contact = () => {
     consent: false
   });
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showSuccess, setShowSuccess] = useState(false);
+  const [submitError, setSubmitError] = useState('');
+
   const business = getBusinessConfig();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
+    setIsSubmitting(true);
+    setSubmitError('');
+
+    try {
+      // EmailJS configuration
+      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || 'YOUR_SERVICE_ID';
+      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || 'YOUR_TEMPLATE_ID';
+      const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || 'YOUR_PUBLIC_KEY';
+
+      // Prepare template parameters
+      const templateParams = {
+        from_name: `${formData.name} (via Zadix Contact Form)`,
+        from_email: formData.email,
+        reply_to: formData.email,
+        user_name: formData.name,
+        user_email: formData.email,
+        company: formData.company,
+        role: formData.role,
+        phone: formData.phone,
+        industry: formData.industry,
+        systems: formData.systems,
+        sensitivity: formData.sensitivity,
+        volume: formData.volume,
+        deadline: formData.deadline,
+        budget: formData.budget,
+        message: formData.message,
+        to_name: 'Zadix Request',
+        to_email: 'alizadehadi08@gmail.com' // Replace with your actual email
+      };
+
+      // Send email using EmailJS
+      await emailjs.send(serviceId, templateId, templateParams, publicKey);
+      
+      // Show success message
+      setShowSuccess(true);
+      
+      // Reset form
+      setFormData({
+        name: '',
+        email: '',
+        company: '',
+        role: '',
+        phone: '',
+        industry: '',
+        systems: '',
+        sensitivity: '',
+        volume: '',
+        deadline: '',
+        budget: '',
+        message: '',
+        consent: false
+      });
+
+    } catch (error) {
+      console.error('EmailJS error:', error);
+      setSubmitError('Failed to send message. Please try again or contact us directly.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -82,6 +144,32 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen pt-20">
+      {/* Success Modal */}
+      {showSuccess && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 px-4">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.9 }}
+            className="bg-white rounded-lg p-8 max-w-md w-full text-center"
+          >
+            <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <CheckCircle className="h-8 w-8 text-green-600" />
+            </div>
+            <h3 className="text-2xl font-bold text-gray-900 mb-2">Message Sent!</h3>
+            <p className="text-gray-600 mb-6">
+              Thank you for reaching out. We&apos;ll review your requirements and get back to you within 24 hours to schedule your personalized demo.
+            </p>
+            <Button 
+              onClick={() => setShowSuccess(false)}
+              className="w-full"
+            >
+              Close
+            </Button>
+          </motion.div>
+        </div>
+      )}
+
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-[#0B1220] via-[#0F1629] to-[#0B1220]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -353,9 +441,29 @@ const Contact = () => {
                         </label>
                       </div>
 
-                      <Button type="submit" size="lg" className="w-full">
-                        <Send className="mr-2 h-5 w-5" />
-                        Send & Pick a Demo Slot
+                      {submitError && (
+                        <div className="p-4 bg-red-50 border border-red-200 rounded-lg">
+                          <p className="text-red-600 text-sm">{submitError}</p>
+                        </div>
+                      )}
+
+                      <Button 
+                        type="submit" 
+                        size="lg" 
+                        className="w-full"
+                        disabled={isSubmitting}
+                      >
+                        {isSubmitting ? (
+                          <>
+                            <Loader2 className="mr-2 h-5 w-5 animate-spin" />
+                            Sending...
+                          </>
+                        ) : (
+                          <>
+                            <Send className="mr-2 h-5 w-5" />
+                            Send & Pick a Demo Slot
+                          </>
+                        )}
                       </Button>
                     </form>
                   </CardContent>
@@ -373,7 +481,7 @@ const Contact = () => {
               >
                 <h3 className="text-2xl font-bold text-[#111827] mb-6">Get in Touch</h3>
                 <div className="space-y-6">
-                  {contactInfo.map((info, index) => (
+                  {contactInfo.map((info) => (
                     <div key={info.title} className="flex items-start">
                       <div className="w-12 h-12 bg-gradient-to-br from-[#00B3A4] to-[#2563EB] rounded-lg flex items-center justify-center mr-4">
                         <info.icon className="h-6 w-6 text-white" />
