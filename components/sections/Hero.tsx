@@ -49,11 +49,11 @@ export default function Hero({ locale }: HeroProps) {
             className="text-center lg:text-left"
           >
             <h1 className="text-h1 font-sora text-white mb-6 leading-tight">
-              {getTranslation(currentLocale, 'home.hero.title')}
+              Automate your operations with AI—fast.
             </h1>
             
             <p className="text-body text-gray-300 mb-8 leading-relaxed max-w-2xl">
-              {getTranslation(currentLocale, 'home.hero.subtitle')}
+              We deploy production‑ready automations that cut manual work <strong>50–80%</strong> and speed up response times to <strong>under a minute</strong>—with clear scope and delivery in <strong>7–14 days</strong>.
             </p>
 
             {/* Key Benefits */}
@@ -76,7 +76,7 @@ export default function Hero({ locale }: HeroProps) {
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
               <Button size="xl" asChild>
                 <Link href="/contact">
-                  {getTranslation(currentLocale, 'cta.bookDemo')}
+                  Book a 20‑min demo
                   <ArrowRight className={cn(
                     "h-5 w-5",
                     isRtlLocale(currentLocale) ? "mr-2" : "ml-2"
@@ -93,7 +93,7 @@ export default function Hero({ locale }: HeroProps) {
                   "h-5 w-5",
                   isRtlLocale(currentLocale) ? "ml-2" : "mr-2"
                 )} />
-                {getTranslation(currentLocale, 'cta.watchVideo')}
+                Watch 2‑min overview
               </Button>
             </div>
 

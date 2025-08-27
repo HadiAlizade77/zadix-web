@@ -11,10 +11,10 @@ interface MetricsStripProps {
 
 export default function MetricsStrip({ locale }: MetricsStripProps) {
   const metrics = [
-    getTranslation(locale, 'home.metrics.1'),
-    getTranslation(locale, 'home.metrics.2'),
-    getTranslation(locale, 'home.metrics.3'),
-    getTranslation(locale, 'home.metrics.4'),
+    '50–80% less manual work',
+    'Replies in under 1 minute',
+    'Go live in 7–14 days',
+    '30‑day value guarantee',
   ];
 
   return (

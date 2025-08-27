@@ -15,25 +15,25 @@ export default function HowItWorks({ locale }: HowItWorksProps) {
     {
       number: '1',
       title: 'Connect',
-      description: 'Link your existing systems and data sources',
+      description: 'your email, docs, and systems',
       color: 'from-blue-500 to-cyan-500',
     },
     {
       number: '2',
       title: 'Understand',
-      description: 'AI learns your business rules and processes',
+      description: 'we extract what matters',
       color: 'from-purple-500 to-pink-500',
     },
     {
       number: '3',
       title: 'Approve',
-      description: 'Human oversight for critical decisions',
+      description: 'you confirm critical actions',
       color: 'from-green-500 to-emerald-500',
     },
     {
       number: '4',
       title: 'Update',
-      description: 'Automated actions with full audit trails',
+      description: 'records changed, tasks done',
       color: 'from-orange-500 to-red-500',
     },
   ];

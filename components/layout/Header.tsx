@@ -185,9 +185,22 @@ export default function Header({ locale }: HeaderProps) {
             isRtlLocale(currentLocale) ? "space-x-reverse space-x-4 order-first" : "space-x-4"
           )}>
             <LanguageSwitcher currentLocale={currentLocale} />
+            <a
+              href="https://wa.me/0000000000"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={cn(
+                'px-4 py-2 text-sm font-medium rounded-lg transition-colors whitespace-nowrap',
+                isHomePage && !isScrolled 
+                  ? 'text-gray-300 hover:text-white hover:bg-white/10'
+                  : 'text-gray-600 hover:text-headline-slate hover:bg-gray-50'
+              )}
+            >
+              WhatsApp
+            </a>
             <Button size="lg" asChild>
               <Link href="/contact">
-                {getTranslation(currentLocale, 'cta.bookDemo')}
+                Book a 20‑min demo
               </Link>
             </Button>
           </div>

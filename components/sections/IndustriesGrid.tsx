@@ -66,7 +66,7 @@ export default function IndustriesGrid({ locale }: IndustriesGridProps) {
                     </CardHeader>
                     <CardContent className="text-center">
                       <p className="text-gray-600 mb-4 leading-relaxed">
-                        {industry.description}
+                        {industry.shortDescription}
                       </p>
                       <div className="flex items-center justify-center text-accent-blue font-medium group-hover:translate-x-2 transition-transform">
                         Learn More

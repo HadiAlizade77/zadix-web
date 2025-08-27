@@ -15,19 +15,19 @@ export default function WhatWeDeliver({ locale }: WhatWeDeliverProps) {
     {
       icon: Workflow,
       title: 'Workflow Automation',
-      description: 'Intake → extract → validate → route → update',
+      description: 'Intake → extract → validate → route → update—without the busywork.',
       color: 'from-accent-teal to-accent-blue',
     },
     {
       icon: Brain,
       title: 'Decision Support',
-      description: 'Contextual recommendations with approvals',
+      description: 'Context‑aware recommendations with simple approvals so you stay in control.',
       color: 'from-purple-500 to-pink-500',
     },
     {
       icon: Zap,
       title: 'System Integration',
-      description: 'Your tools working together end-to-end',
+      description: 'Your inbox, docs, CRM/ERP, and databases working together end‑to‑end.',
       color: 'from-orange-500 to-red-500',
     },
   ];

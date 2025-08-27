@@ -26,7 +26,7 @@ export default function GuaranteeBanner({ locale }: GuaranteeBannerProps) {
             <h2 className="text-h3 font-sora">30-Day Value Guarantee</h2>
           </div>
           <p className="text-xl max-w-4xl mx-auto leading-relaxed">
-            {getTranslation(locale, 'home.guarantee')}
+            If you don't see measurable time saved in 30 days, we keep working until you do.
           </p>
         </motion.div>
       </div>

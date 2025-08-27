@@ -89,14 +89,14 @@ export default function PricingSnapshot({ locale }: PricingSnapshotProps) {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <p className="text-gray-600 mb-6">
-            All plans include full source code handover and 30-day value guarantee
-          </p>
+          <div className="text-lg font-medium text-[#111827] mb-6">
+            <span className="text-[#00B3A4]">Starter $3,900</span> • <span className="text-[#2563EB]">Pro $12,900</span> • <span className="text-[#6B7280]">Enterprise $28k+</span>
+          </div>
           <Link 
             href="/pricing" 
             className="inline-flex items-center text-accent-blue font-medium hover:text-accent-teal transition-colors group"
           >
-            {getTranslation(locale, 'cta.viewPricing')}
+            Compare packages
             <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
           </Link>
         </motion.div>

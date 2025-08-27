@@ -1,4 +1,6 @@
 import Hero from '@/components/sections/Hero';
+import TrustStrip from '@/components/sections/TrustStrip';
+import VideoOverview from '@/components/sections/VideoOverview';
 import MetricsStrip from '@/components/sections/MetricsStrip';
 import WhatWeDeliver from '@/components/sections/WhatWeDeliver';
 import HowItWorks from '@/components/sections/HowItWorks';
@@ -17,6 +19,8 @@ export default function Home() {
       <Header locale="en" />
       <main>
         <Hero locale="en" />
+        <TrustStrip />
+        <VideoOverview />
         <MetricsStrip locale="en" />
         <WhatWeDeliver locale="en" />
         <HowItWorks locale="en" />

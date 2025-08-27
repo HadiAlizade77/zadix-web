@@ -27,13 +27,13 @@ export default function SecuritySnippet({ locale }: SecuritySnippetProps) {
             <h3 className="text-h3 font-sora text-headline-slate">Enterprise-Grade Security</h3>
           </div>
           <p className="text-body text-gray-600 max-w-4xl mx-auto mb-6">
-            {getTranslation(locale, 'home.security')}
+            SOC‑aligned controls by default: audit trails, RBAC, encryption, and full observability of decisions.
           </p>
           <Link 
             href="/security" 
             className="inline-flex items-center text-accent-blue font-medium hover:text-accent-teal transition-colors group"
           >
-            Learn About Our Security
+            Read our Security basics
             <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
           </Link>
         </motion.div>
