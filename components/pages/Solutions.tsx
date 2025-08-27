@@ -219,18 +219,18 @@ const Solutions = () => {
               <h3 className="text-2xl font-bold text-[#111827] mb-8 text-center">Communication & Collaboration</h3>
               <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
                 {[
-                  { name: 'Slack', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/slack.svg' },
-                  { name: 'Microsoft Teams', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/microsoftteams.svg' },
-                  { name: 'Discord', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/discord.svg' },
-                  { name: 'Gmail', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/gmail.svg' },
-                  { name: 'Outlook', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/microsoftoutlook.svg' },
-                  { name: 'Zoom', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/zoom.svg' },
-                  { name: 'Google Meet', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/googlemeet.svg' },
-                  { name: 'Asana', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/asana.svg' },
-                  { name: 'Trello', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/trello.svg' },
-                  { name: 'Monday.com', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/monday.svg' },
-                  { name: 'Notion', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/notion.svg' },
-                  { name: 'WhatsApp', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/whatsapp.svg' }
+                  { name: 'Slack', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/slack.svg' },
+                  { name: 'Microsoft Teams', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/asana.svg' },
+                  { name: 'Discord', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/discord.svg' },
+                  { name: 'Gmail', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/gmail.svg' },
+                  { name: 'Outlook', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/asana.svg' },
+                  { name: 'Zoom', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/zoom.svg' },
+                  { name: 'Google Meet', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/googlemeet.svg' },
+                  { name: 'Asana', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/asana.svg' },
+                  { name: 'Trello', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/trello.svg' },
+                  { name: 'Monday.com', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/asana.svg' },
+                  { name: 'Notion', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/notion.svg' },
+                  { name: 'WhatsApp', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/whatsapp.svg' }
                 ].map((service, index) => (
                   <motion.div
                     key={service.name}
@@ -259,18 +259,18 @@ const Solutions = () => {
               <h3 className="text-2xl font-bold text-[#111827] mb-8 text-center">CRM & Sales</h3>
               <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
                 {[
-                  { name: 'Salesforce', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/salesforce.svg' },
-                  { name: 'HubSpot', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/hubspot.svg' },
-                  { name: 'Pipedrive', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/pipedrive.svg' },
-                  { name: 'Zoho', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/zoho.svg' },
-                  { name: 'Freshworks', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/freshworks.svg' },
-                  { name: 'Zendesk', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/zendesk.svg' },
-                  { name: 'Intercom', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/intercom.svg' },
-                  { name: 'Freshdesk', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/freshdesk.svg' },
-                  { name: 'ActiveCampaign', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/activecampaign.svg' },
-                  { name: 'Mailchimp', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/mailchimp.svg' },
-                  { name: 'Constant Contact', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/constantcontact.svg' },
-                  { name: 'Close', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/close.svg' }
+                  { name: 'Salesforce', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/salesforce.svg' },
+                  { name: 'HubSpot', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/hubspot.svg' },
+                  { name: 'Pipedrive', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/salesforce.svg' },
+                  { name: 'Zoho', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/zoho.svg' },
+                  { name: 'Freshworks', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/zendesk.svg' },
+                  { name: 'Zendesk', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/zendesk.svg' },
+                  { name: 'Intercom', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/intercom.svg' },
+                  { name: 'Freshdesk', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/zendesk.svg' },
+                  { name: 'ActiveCampaign', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/asana.svg' },
+                  { name: 'Mailchimp', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/mailchimp.svg' },
+                  { name: 'Constant Contact', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/mailchimp.svg' },
+                  { name: 'Close', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/salesforce.svg' }
                 ].map((service, index) => (
                   <motion.div
                     key={service.name}
@@ -299,18 +299,18 @@ const Solutions = () => {
               <h3 className="text-2xl font-bold text-[#111827] mb-8 text-center">E-commerce & Payments</h3>
               <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
                 {[
-                  { name: 'Shopify', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/shopify.svg' },
-                  { name: 'WooCommerce', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/woocommerce.svg' },
-                  { name: 'Magento', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/magento.svg' },
-                  { name: 'Stripe', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/stripe.svg' },
-                  { name: 'PayPal', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/paypal.svg' },
-                  { name: 'Square', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/square.svg' },
-                  { name: 'BigCommerce', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/bigcommerce.svg' },
-                  { name: 'PrestaShop', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/prestashop.svg' },
-                  { name: 'Klarna', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/klarna.svg' },
-                  { name: 'Razorpay', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/razorpay.svg' },
-                  { name: 'Paddle', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/paddle.svg' },
-                  { name: 'Lemonsqueezy', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/lemonsqueezy.svg' }
+                  { name: 'Shopify', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/shopify.svg' },
+                  { name: 'WooCommerce', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/woocommerce.svg' },
+                  { name: 'Magento', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/asana.svg' },
+                  { name: 'Stripe', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/stripe.svg' },
+                  { name: 'PayPal', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/paypal.svg' },
+                  { name: 'Square', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/square.svg' },
+                  { name: 'BigCommerce', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/bigcommerce.svg' },
+                  { name: 'PrestaShop', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/prestashop.svg' },
+                  { name: 'Klarna', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/klarna.svg' },
+                  { name: 'Razorpay', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/razorpay.svg' },
+                  { name: 'Paddle', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/paddle.svg' },
+                  { name: 'Lemonsqueezy', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/lemonsqueezy.svg' }
                 ].map((service, index) => (
                   <motion.div
                     key={service.name}
@@ -339,18 +339,18 @@ const Solutions = () => {
               <h3 className="text-2xl font-bold text-[#111827] mb-8 text-center">Cloud & Development</h3>
               <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
                 {[
-                  { name: 'AWS', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/amazonaws.svg' },
-                  { name: 'Google Cloud', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/googlecloud.svg' },
-                  { name: 'Microsoft Azure', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/microsoftazure.svg' },
-                  { name: 'GitHub', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg' },
-                  { name: 'GitLab', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/gitlab.svg' },
-                  { name: 'Bitbucket', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/bitbucket.svg' },
-                  { name: 'Docker', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/docker.svg' },
-                  { name: 'Kubernetes', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/kubernetes.svg' },
-                  { name: 'Vercel', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/vercel.svg' },
-                  { name: 'Netlify', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/netlify.svg' },
-                  { name: 'Heroku', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/heroku.svg' },
-                  { name: 'DigitalOcean', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/digitalocean.svg' }
+                  { name: 'AWS', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/asana.svg' },
+                  { name: 'Google Cloud', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/googlecloud.svg' },
+                  { name: 'Microsoft Azure', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/asana.svg' },
+                  { name: 'GitHub', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/github.svg' },
+                  { name: 'GitLab', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/gitlab.svg' },
+                  { name: 'Bitbucket', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/bitbucket.svg' },
+                  { name: 'Docker', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/docker.svg' },
+                  { name: 'Kubernetes', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/kubernetes.svg' },
+                  { name: 'Vercel', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/vercel.svg' },
+                  { name: 'Netlify', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/netlify.svg' },
+                  { name: 'Heroku', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/heroku.svg' },
+                  { name: 'DigitalOcean', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/digitalocean.svg' }
                 ].map((service, index) => (
                   <motion.div
                     key={service.name}
@@ -379,18 +379,18 @@ const Solutions = () => {
               <h3 className="text-2xl font-bold text-[#111827] mb-8 text-center">Databases & Storage</h3>
               <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
                 {[
-                  { name: 'MySQL', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/mysql.svg' },
-                  { name: 'PostgreSQL', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/postgresql.svg' },
-                  { name: 'MongoDB', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/mongodb.svg' },
-                  { name: 'Redis', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/redis.svg' },
-                  { name: 'Supabase', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/supabase.svg' },
-                  { name: 'Firebase', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/firebase.svg' },
-                  { name: 'Airtable', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/airtable.svg' },
-                  { name: 'Google Sheets', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/googlesheets.svg' },
-                  { name: 'Microsoft Excel', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/microsoftexcel.svg' },
-                  { name: 'Dropbox', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/dropbox.svg' },
-                  { name: 'OneDrive', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/microsoftonedrive.svg' },
-                  { name: 'Box', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/box.svg' }
+                  { name: 'MySQL', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/mysql.svg' },
+                  { name: 'PostgreSQL', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/postgresql.svg' },
+                  { name: 'MongoDB', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/mongodb.svg' },
+                  { name: 'Redis', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/redis.svg' },
+                  { name: 'Supabase', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/supabase.svg' },
+                  { name: 'Firebase', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/firebase.svg' },
+                  { name: 'Airtable', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/airtable.svg' },
+                  { name: 'Google Sheets', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/googlesheets.svg' },
+                  { name: 'Microsoft Excel', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/asana.svg' },
+                  { name: 'Dropbox', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/dropbox.svg' },
+                  { name: 'OneDrive', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/asana.svg' },
+                  { name: 'Box', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/box.svg' }
                 ].map((service, index) => (
                   <motion.div
                     key={service.name}
@@ -419,18 +419,18 @@ const Solutions = () => {
               <h3 className="text-2xl font-bold text-[#111827] mb-8 text-center">Marketing & Analytics</h3>
               <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
                 {[
-                  { name: 'Google Analytics', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/googleanalytics.svg' },
-                  { name: 'Facebook', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/facebook.svg' },
-                  { name: 'Instagram', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/instagram.svg' },
-                  { name: 'LinkedIn', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/linkedin.svg' },
-                  { name: 'Twitter', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/twitter.svg' },
-                  { name: 'TikTok', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/tiktok.svg' },
-                  { name: 'YouTube', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/youtube.svg' },
-                  { name: 'Google Ads', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/googleads.svg' },
-                  { name: 'Meta Ads', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/meta.svg' },
-                  { name: 'Mixpanel', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/mixpanel.svg' },
-                  { name: 'Segment', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/segment.svg' },
-                  { name: 'Amplitude', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/amplitude.svg' }
+                  { name: 'Google Analytics', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/googleanalytics.svg' },
+                  { name: 'Facebook', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/facebook.svg' },
+                  { name: 'Instagram', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/instagram.svg' },
+                  { name: 'LinkedIn', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/asana.svg' },
+                  { name: 'Twitter', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/asana.svg' },
+                  { name: 'TikTok', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/tiktok.svg' },
+                  { name: 'YouTube', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/youtube.svg' },
+                  { name: 'Google Ads', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/googleads.svg' },
+                  { name: 'Meta Ads', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/meta.svg' },
+                  { name: 'Mixpanel', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/mixpanel.svg' },
+                  { name: 'Segment', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/asana.svg' },
+                  { name: 'Amplitude', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/asana.svg' }
                 ].map((service, index) => (
                   <motion.div
                     key={service.name}
@@ -459,18 +459,18 @@ const Solutions = () => {
               <h3 className="text-2xl font-bold text-[#111827] mb-8 text-center">Productivity & Office</h3>
               <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
                 {[
-                  { name: 'Google Workspace', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/google.svg' },
-                  { name: 'Microsoft 365', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/microsoft.svg' },
-                  { name: 'Google Drive', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/googledrive.svg' },
-                  { name: 'Google Docs', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/googledocs.svg' },
-                  { name: 'SharePoint', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/microsoftsharepoint.svg' },
-                  { name: 'OneDrive', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/microsoftonedrive.svg' },
-                  { name: 'Calendly', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/calendly.svg' },
-                  { name: 'Typeform', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/typeform.svg' },
-                  { name: 'Jotform', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/jotform.svg' },
-                  { name: 'DocuSign', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/docusign.svg' },
-                  { name: 'Adobe', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/adobe.svg' },
-                  { name: 'Canva', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/canva.svg' }
+                  { name: 'Google Workspace', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/google.svg' },
+                  { name: 'Microsoft 365', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/asana.svg' },
+                  { name: 'Google Drive', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/googledrive.svg' },
+                  { name: 'Google Docs', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/googledocs.svg' },
+                  { name: 'SharePoint', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/asana.svg' },
+                  { name: 'OneDrive', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/asana.svg' },
+                  { name: 'Calendly', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/calendly.svg' },
+                  { name: 'Typeform', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/typeform.svg' },
+                  { name: 'Jotform', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/typeform.svg' },
+                  { name: 'DocuSign', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/asana.svg' },
+                  { name: 'Adobe', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/asana.svg' },
+                  { name: 'Canva', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/canva.svg' }
                 ].map((service, index) => (
                   <motion.div
                     key={service.name}
@@ -499,18 +499,18 @@ const Solutions = () => {
               <h3 className="text-2xl font-bold text-[#111827] mb-8 text-center">Enterprise & ERP</h3>
               <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
                 {[
-                  { name: 'SAP', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/sap.svg' },
-                  { name: 'Oracle', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/oracle.svg' },
-                  { name: 'NetSuite', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/netsuite.svg' },
-                  { name: 'Workday', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/workday.svg' },
-                  { name: 'ServiceNow', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/servicenow.svg' },
-                  { name: 'Jira', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/jira.svg' },
-                  { name: 'Confluence', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/confluence.svg' },
-                  { name: 'Tableau', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/tableau.svg' },
-                  { name: 'Power BI', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/powerbi.svg' },
-                  { name: 'Snowflake', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/snowflake.svg' },
-                  { name: 'Databricks', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/databricks.svg' },
-                  { name: 'Elastic', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/elastic.svg' }
+                  { name: 'SAP', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/sap.svg' },
+                  { name: 'Oracle', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/asana.svg' },
+                  { name: 'NetSuite', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/asana.svg' },
+                  { name: 'Workday', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/sap.svg' },
+                  { name: 'ServiceNow', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/asana.svg' },
+                  { name: 'Jira', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/jira.svg' },
+                  { name: 'Confluence', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/confluence.svg' },
+                  { name: 'Tableau', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/grafana.svg' },
+                  { name: 'Power BI', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/asana.svg' },
+                  { name: 'Snowflake', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/snowflake.svg' },
+                  { name: 'Databricks', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/databricks.svg' },
+                  { name: 'Elastic', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/elastic.svg' }
                 ].map((service, index) => (
                   <motion.div
                     key={service.name}
@@ -539,18 +539,18 @@ const Solutions = () => {
               <h3 className="text-2xl font-bold text-[#111827] mb-8 text-center">AI & Machine Learning</h3>
               <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
                 {[
-                  { name: 'OpenAI', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/openai.svg' },
-                  { name: 'Anthropic', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/anthropic.svg' },
-                  { name: 'Google AI', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/google.svg' },
-                  { name: 'Hugging Face', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/huggingface.svg' },
-                  { name: 'Pinecone', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/pinecone.svg' },
-                  { name: 'Weaviate', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/weaviate.svg' },
-                  { name: 'LangChain', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/langchain.svg' },
-                  { name: 'Cohere', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/cohere.svg' },
-                  { name: 'Replicate', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/replicate.svg' },
-                  { name: 'Stability AI', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/stabilityai.svg' },
-                  { name: 'Eleven Labs', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/elevenlabs.svg' },
-                  { name: 'AssemblyAI', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/assemblyai.svg' }
+                  { name: 'OpenAI', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/openai.svg' },
+                  { name: 'Anthropic', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/anthropic.svg' },
+                  { name: 'Google AI', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/google.svg' },
+                  { name: 'Hugging Face', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/huggingface.svg' },
+                  { name: 'Pinecone', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/databricks.svg' },
+                  { name: 'Weaviate', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/elasticsearch.svg' },
+                  { name: 'LangChain', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/langchain.svg' },
+                  { name: 'Cohere', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/pytorch.svg' },
+                  { name: 'Replicate', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/replicate.svg' },
+                  { name: 'Stability AI', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/tensorflow.svg' },
+                  { name: 'Eleven Labs', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/elevenlabs.svg' },
+                  { name: 'AssemblyAI', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/python.svg' }
                 ].map((service, index) => (
                   <motion.div
                     key={service.name}
@@ -579,18 +579,18 @@ const Solutions = () => {
               <h3 className="text-2xl font-bold text-[#111827] mb-8 text-center">Business Applications</h3>
               <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
                 {[
-                  { name: 'QuickBooks', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/quickbooks.svg' },
-                  { name: 'Xero', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/xero.svg' },
-                  { name: 'FreshBooks', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/freshbooks.svg' },
-                  { name: 'Wave', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/wave.svg' },
-                  { name: 'Sage', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/sage.svg' },
-                  { name: 'Odoo', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/odoo.svg' },
-                  { name: 'Zapier', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/zapier.svg' },
-                  { name: 'IFTTT', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/ifttt.svg' },
-                  { name: 'Make', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/make.svg' },
-                  { name: 'Pabbly', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/pabbly.svg' },
-                  { name: 'Integromat', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/integromat.svg' },
-                  { name: 'Automate.io', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/automate.svg' }
+                  { name: 'QuickBooks', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/quickbooks.svg' },
+                  { name: 'Xero', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/xero.svg' },
+                  { name: 'FreshBooks', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/asana.svg' },
+                  { name: 'Wave', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/asana.svg' },
+                  { name: 'Sage', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/sage.svg' },
+                  { name: 'Odoo', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/odoo.svg' },
+                  { name: 'Zapier', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/zapier.svg' },
+                  { name: 'IFTTT', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/ifttt.svg' },
+                  { name: 'Make', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/make.svg' },
+                  { name: 'Pabbly', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/zapier.svg' },
+                  { name: 'Integromat', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/make.svg' },
+                  { name: 'Automate.io', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/make.svg' }
                 ].map((service, index) => (
                   <motion.div
                     key={service.name}
@@ -619,18 +619,18 @@ const Solutions = () => {
               <h3 className="text-2xl font-bold text-[#111827] mb-8 text-center">Communication Platforms</h3>
               <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
                 {[
-                  { name: 'Telegram', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/telegram.svg' },
-                  { name: 'Signal', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/signal.svg' },
-                  { name: 'Twilio', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/twilio.svg' },
-                  { name: 'SendGrid', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/sendgrid.svg' },
-                  { name: 'Mailgun', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/mailgun.svg' },
-                  { name: 'Postmark', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/postmark.svg' },
-                  { name: 'Vonage', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/vonage.svg' },
-                  { name: 'RingCentral', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/ringcentral.svg' },
-                  { name: 'Webex', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/webex.svg' },
-                  { name: 'GoToMeeting', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/gotomeeting.svg' },
-                  { name: 'Skype', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/skype.svg' },
-                  { name: 'Viber', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/viber.svg' }
+                  { name: 'Telegram', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/telegram.svg' },
+                  { name: 'Signal', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/signal.svg' },
+                  { name: 'Twilio', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/twilio.svg' },
+                  { name: 'SendGrid', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/sendgrid.svg' },
+                  { name: 'Mailgun', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/mailgun.svg' },
+                  { name: 'Postmark', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/sendgrid.svg' },
+                  { name: 'Vonage', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/vonage.svg' },
+                  { name: 'RingCentral', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/webex.svg' },
+                  { name: 'Webex', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/webex.svg' },
+                  { name: 'GoToMeeting', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/gotomeeting.svg' },
+                  { name: 'Skype', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/asana.svg' },
+                  { name: 'Viber', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/viber.svg' }
                 ].map((service, index) => (
                   <motion.div
                     key={service.name}
@@ -659,18 +659,18 @@ const Solutions = () => {
               <h3 className="text-2xl font-bold text-[#111827] mb-8 text-center">Development Tools</h3>
               <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
                 {[
-                  { name: 'Jenkins', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/jenkins.svg' },
-                  { name: 'CircleCI', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/circleci.svg' },
-                  { name: 'Travis CI', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/travisci.svg' },
-                  { name: 'GitHub Actions', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/githubactions.svg' },
-                  { name: 'GitLab CI', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/gitlab.svg' },
-                  { name: 'Terraform', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/terraform.svg' },
-                  { name: 'Ansible', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/ansible.svg' },
-                  { name: 'Prometheus', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/prometheus.svg' },
-                  { name: 'Grafana', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/grafana.svg' },
-                  { name: 'Datadog', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/datadog.svg' },
-                  { name: 'New Relic', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/newrelic.svg' },
-                  { name: 'Sentry', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/sentry.svg' }
+                  { name: 'Jenkins', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/jenkins.svg' },
+                  { name: 'CircleCI', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/circleci.svg' },
+                  { name: 'Travis CI', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/travisci.svg' },
+                  { name: 'GitHub Actions', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/githubactions.svg' },
+                  { name: 'GitLab CI', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/gitlab.svg' },
+                  { name: 'Terraform', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/terraform.svg' },
+                  { name: 'Ansible', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/ansible.svg' },
+                  { name: 'Prometheus', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/prometheus.svg' },
+                  { name: 'Grafana', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/grafana.svg' },
+                  { name: 'Datadog', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/datadog.svg' },
+                  { name: 'New Relic', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/newrelic.svg' },
+                  { name: 'Sentry', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/sentry.svg' }
                 ].map((service, index) => (
                   <motion.div
                     key={service.name}
@@ -699,18 +699,18 @@ const Solutions = () => {
               <h3 className="text-2xl font-bold text-[#111827] mb-8 text-center">Finance & Accounting</h3>
               <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
                 {[
-                  { name: 'Plaid', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/plaid.svg' },
-                  { name: 'Wise', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/wise.svg' },
-                  { name: 'Revolut', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/revolut.svg' },
-                  { name: 'Coinbase', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/coinbase.svg' },
-                  { name: 'Binance', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/binance.svg' },
-                  { name: 'Kraken', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/kraken.svg' },
-                  { name: 'Invoice Ninja', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/invoiceninja.svg' },
-                  { name: 'FreshBooks', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/freshbooks.svg' },
-                  { name: 'Chargebee', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/chargebee.svg' },
-                  { name: 'Recurly', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/recurly.svg' },
-                  { name: 'Braintree', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/braintree.svg' },
-                  { name: 'Adyen', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/adyen.svg' }
+                  { name: 'Plaid', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/visa.svg' },
+                  { name: 'Wise', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/wise.svg' },
+                  { name: 'Revolut', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/revolut.svg' },
+                  { name: 'Coinbase', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/coinbase.svg' },
+                  { name: 'Binance', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/binance.svg' },
+                  { name: 'Kraken', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/bitcoin.svg' },
+                  { name: 'Invoice Ninja', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/invoiceninja.svg' },
+                  { name: 'FreshBooks', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/quickbooks.svg' },
+                  { name: 'Chargebee', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/stripe.svg' },
+                  { name: 'Recurly', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/stripe.svg' },
+                  { name: 'Braintree', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/braintree.svg' },
+                  { name: 'Adyen', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/adyen.svg' }
                 ].map((service, index) => (
                   <motion.div
                     key={service.name}
@@ -739,18 +739,18 @@ const Solutions = () => {
               <h3 className="text-2xl font-bold text-[#111827] mb-8 text-center">Security & Identity</h3>
               <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
                 {[
-                  { name: 'Auth0', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/auth0.svg' },
-                  { name: 'Okta', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/okta.svg' },
-                  { name: 'OneLogin', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/onelogin.svg' },
-                  { name: 'Ping Identity', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/pingidentity.svg' },
-                  { name: 'Azure AD', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/microsoftazure.svg' },
-                  { name: 'Google Identity', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/google.svg' },
-                  { name: 'LastPass', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/lastpass.svg' },
-                  { name: '1Password', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/1password.svg' },
-                  { name: 'Bitwarden', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/bitwarden.svg' },
-                  { name: 'Duo Security', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/duo.svg' },
-                  { name: 'CyberArk', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/cyberark.svg' },
-                  { name: 'Vault', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/vault.svg' }
+                  { name: 'Auth0', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/auth0.svg' },
+                  { name: 'Okta', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/okta.svg' },
+                  { name: 'OneLogin', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/okta.svg' },
+                  { name: 'Ping Identity', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/auth0.svg' },
+                  { name: 'Azure AD', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/microsoftazure.svg' },
+                  { name: 'Google Identity', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/google.svg' },
+                  { name: 'LastPass', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/lastpass.svg' },
+                  { name: '1Password', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/1password.svg' },
+                  { name: 'Bitwarden', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/bitwarden.svg' },
+                  { name: 'Duo Security', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/lastpass.svg' },
+                  { name: 'CyberArk', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/bitwarden.svg' },
+                  { name: 'Vault', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/vault.svg' }
                 ].map((service, index) => (
                   <motion.div
                     key={service.name}
@@ -779,18 +779,18 @@ const Solutions = () => {
               <h3 className="text-2xl font-bold text-[#111827] mb-8 text-center">IoT & Hardware</h3>
               <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
                 {[
-                  { name: 'Arduino', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/arduino.svg' },
-                  { name: 'Raspberry Pi', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/raspberrypi.svg' },
-                  { name: 'Home Assistant', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/homeassistant.svg' },
-                  { name: 'Philips Hue', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/philipshue.svg' },
-                  { name: 'Nest', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/googlenest.svg' },
-                  { name: 'Ring', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/ring.svg' },
-                  { name: 'Tesla', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/tesla.svg' },
-                  { name: 'Fitbit', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/fitbit.svg' },
-                  { name: 'Garmin', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/garmin.svg' },
-                  { name: 'Withings', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/withings.svg' },
-                  { name: 'MQTT', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/mqtt.svg' },
-                  { name: 'InfluxDB', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/influxdb.svg' }
+                  { name: 'Arduino', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/arduino.svg' },
+                  { name: 'Raspberry Pi', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/raspberrypi.svg' },
+                  { name: 'Home Assistant', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/homeassistant.svg' },
+                  { name: 'Philips Hue', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/philipshue.svg' },
+                  { name: 'Nest', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/google.svg' },
+                  { name: 'Ring', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/ring.svg' },
+                  { name: 'Tesla', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/tesla.svg' },
+                  { name: 'Fitbit', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/fitbit.svg' },
+                  { name: 'Garmin', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/garmin.svg' },
+                  { name: 'Withings', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/fitbit.svg' },
+                  { name: 'MQTT', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/mqtt.svg' },
+                  { name: 'InfluxDB', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/influxdb.svg' }
                 ].map((service, index) => (
                   <motion.div
                     key={service.name}
