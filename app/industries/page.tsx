@@ -5,11 +5,11 @@ import Footer from '@/components/layout/Footer'
 import MobileCTABar from '@/components/layout/MobileCTABar'
 
 export const metadata: Metadata = {
-  title: 'Industry Solutions - Zadix',
-  description: 'Purpose-built AI automation workflows for Real Estate, Investment, Logistics, Healthcare, Legal, Construction, SaaS, and Hospitality sectors.',
+  title: 'Purpose‑Built Automations for Your Sector | Zadix',
+  description: 'Real Estate, Investment, Logistics, Healthcare, Legal, EPC, SaaS, Hospitality.',
   openGraph: {
-    title: 'Industry Solutions - Zadix',
-    description: 'Purpose-built AI automation workflows for Real Estate, Investment, Logistics, Healthcare, Legal, Construction, SaaS, and Hospitality sectors.',
+    title: 'Purpose‑Built Automations for Your Sector | Zadix',
+    description: 'Real Estate, Investment, Logistics, Healthcare, Legal, EPC, SaaS, Hospitality.',
   },
 }
 

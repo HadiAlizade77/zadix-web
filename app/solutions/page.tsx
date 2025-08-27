@@ -5,11 +5,11 @@ import Footer from '@/components/layout/Footer'
 import MobileCTABar from '@/components/layout/MobileCTABar'
 
 export const metadata: Metadata = {
-  title: 'AI Automation Solutions - Production-Ready in 7-14 Days | Zadix',
-  description: 'From inbox to system-of-record—automated, approved, and auditable. Enterprise-grade AI automation with full observability and human oversight.',
+  title: 'From Inbox to System of Record — Solutions | Zadix',
+  description: 'Automations that understand documents and emails, route approvals, and safely update your systems.',
   openGraph: {
-    title: 'AI Automation Solutions - Production-Ready in 7-14 Days | Zadix',
-    description: 'From inbox to system-of-record—automated, approved, and auditable. Enterprise-grade AI automation with full observability and human oversight.',
+    title: 'From Inbox to System of Record — Solutions | Zadix',
+    description: 'Automations that understand documents and emails, route approvals, and safely update your systems.',
   },
 }
 

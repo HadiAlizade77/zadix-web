@@ -199,6 +199,38 @@ const CaseStudies = () => {
         </div>
       </section>
 
+      {/* Measurement Note */}
+      <section className="py-16 bg-white border-t border-gray-100">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <h3 className="text-2xl font-bold text-[#111827] mb-4">How We Measured</h3>
+            <p className="text-lg text-[#6B7280] mb-8">
+              We compared pre‑automation baselines with a 30‑day post‑launch window using the same workload characteristics.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button size="lg" variant="outline" asChild>
+                <a href="#" target="_blank" rel="noopener noreferrer">
+                  Download one‑pager (PDF)
+                </a>
+              </Button>
+            </div>
+            <div className="mt-8 bg-[#F8FAFC] rounded-lg p-6">
+              <blockquote className="text-[#111827] font-medium italic">
+                "The team delivered exactly on scope and timeline."
+              </blockquote>
+              <cite className="text-[#6B7280] text-sm mt-2 block">
+                — Head of Ops, Property Group
+              </cite>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">

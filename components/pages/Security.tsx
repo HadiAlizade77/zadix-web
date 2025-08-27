@@ -89,8 +89,7 @@ const Security = () => {
               </span>
             </h1>
             <p className="text-xl text-gray-300 max-w-4xl mx-auto mb-8 leading-relaxed">
-              SOC-aligned controls by default: audit trails, RBAC, encryption, and full observability of AI decisions. 
-              Built for production environments from day one.
+              We implement SOC‑aligned controls by default so every action is traceable and safe.
             </p>
           </motion.div>
         </div>
@@ -230,23 +229,15 @@ const Security = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-[#111827] mb-6">
-              Data Processing Agreement
-            </h2>
-            <p className="text-lg text-[#6B7280] mb-8">
-              We provide a comprehensive Data Processing Agreement (DPA) that covers GDPR requirements, 
-              data handling procedures, and security measures.
+            <h3 className="text-2xl font-bold mb-4">Compliance & Data</h3>
+            <p className="text-lg mb-6 opacity-90">
+              We minimize PII, honor data retention requests, and provide a DPA on request.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="xl" asChild>
                 <Link href="/dpa">
-                  View DPA
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-              </Button>
-              <Button size="xl" variant="outline" asChild>
-                <Link href="/contact">Discuss Security Requirements</Link>
-              </Button>
+                <Link href="/dpa">
+                  Request our DPA
             </div>
           </motion.div>
         </div>

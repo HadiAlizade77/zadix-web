@@ -2,75 +2,91 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Bot, Workflow, Database, BarChart3, Shield, ArrowRight } from 'lucide-react';
+import { Check, ArrowRight, Shield, Clock, Code } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
-const Solutions = () => {
-  const solutionPillars = [
+const Pricing = () => {
+  const plans = [
     {
-      icon: Bot,
-      title: 'Orchestration',
-      description: 'multi‑step decisions with tools & memory',
-      features: ['Tool integration', 'Persistent memory', 'Multi-step planning', 'Decision constraints']
+      name: 'Starter',
+      price: '$3,900',
+      description: 'Perfect for single workflow automation',
+      features: [
+        'One automation workflow',
+        'Basic integrations (3-5 systems)',
+        'Standard deployment',
+        '30-day support',
+        'Documentation & handover',
+        'Source code included'
+      ],
+      popular: false,
+      deliveryTime: '5-7 days',
+      ideal: 'Small teams, single process'
     },
     {
-      icon: Workflow,
-      title: 'Workflows',
-      description: 'triggers, retries, rate limits, error handling',
-      features: ['Trigger systems', 'Exponential backoff', 'Dead letter queues', 'Rate limiting']
+      name: 'Pro',
+      price: '$12,900',
+      description: 'Most popular for growing businesses',
+      features: [
+        'Up to 3 automation workflows',
+        'Advanced integrations (5-10 systems)',
+        'Custom business logic',
+        'Human approval workflows',
+        '90-day support',
+        'Training & documentation',
+        'Source code included',
+        'Priority support'
+      ],
+      popular: true,
+      deliveryTime: '7-10 days',
+      ideal: 'Growing companies, multiple processes'
     },
     {
-      icon: Database,
-      title: 'Knowledge',
-      features: ['Document processing', 'Smart chunking', 'Quality evaluations', 'Accurate retrieval']
-    },
-    {
-      icon: BarChart3,
-      title: 'Observability',
-      description: 'Complete visibility into decisions, costs, and quality with alerts',
-      features: ['Decision traces', 'Cost tracking', 'Quality metrics', 'Performance alerts']
-    },
-    {
-      icon: Shield,
-      title: 'Safety & Compliance',
-      description: 'Built-in guardrails, approval workflows, and audit capabilities',
-      features: ['Tool whitelists', 'Content filters', 'Human approvals', 'Audit logs']
+      name: 'Enterprise',
+      price: '$28k+',
+      description: 'For complex, multi-department automation',
+      features: [
+        'Unlimited workflows',
+        'Enterprise integrations',
+        'Custom AI models',
+        'Advanced security & compliance',
+        '6-month support',
+        'Dedicated success manager',
+        'Source code included',
+        'SLA guarantees',
+        'Custom training program'
+      ],
+      popular: false,
+      deliveryTime: '2-3 weeks',
+      ideal: 'Large enterprises, complex requirements'
     }
   ];
 
-  const useCases = [
+  const guarantees = [
     {
-      title: 'Invoice/PO Triage',
-      description: 'Extract data from invoices and purchase orders, validate against business rules, and write back to ERP systems',
-      outcome: '70% faster processing'
+      icon: Shield,
+      title: '30-Day Value Guarantee',
+      description: 'If you don\'t see measurable value within 30 days, we\'ll refund your investment.'
     },
     {
-      title: 'RFQ to Quote',
-      description: 'Parse RFQs, lookup rates, apply margin rules, generate quotes, and update CRM automatically',
-      outcome: '20+ hours/week saved'
+      icon: Clock,
+      title: 'Fixed Timeline',
+      description: 'We deliver on time, every time. No scope creep, no surprise delays.'
     },
     {
-      title: 'Sales Operations',
-      description: 'Enrich leads, score against ICP, assign to reps, and trigger follow-up sequences',
-      outcome: '3x faster qualification'
-    },
-    {
-      title: 'Support L1 Deflection',
-      description: 'Understand customer queries, search knowledge base, provide answers, and route complex issues',
-      outcome: '60% deflection rate'
-    },
-    {
-      title: 'HR Onboarding',
-      description: 'Process forms, create accounts, generate documents, and track completion status',
-      outcome: '5 days to 2 days'
-    },
-    {
-      title: 'Legal Document Review',
-      description: 'Extract clauses, flag risks, check compliance, and generate summaries for review',
-      outcome: '80% time reduction'
+      icon: Code,
+      title: 'Full Source Code',
+      description: 'You own everything we build. Complete source code handover with documentation.'
     }
+  ];
+
+  const addOns = [
+    { name: 'Additional Workflow', price: '$2,500', description: 'Extra automation workflow' },
+    { name: 'Custom Integration', price: '$1,500', description: 'Specialized system connection' },
+    { name: 'Extended Support', price: '$500/month', description: 'Ongoing maintenance & updates' },
+    { name: 'Training Workshop', price: '$2,000', description: 'Team training session' }
   ];
 
   return (
@@ -85,63 +101,71 @@ const Solutions = () => {
             transition={{ duration: 0.8 }}
           >
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
-              From inbox to system-of-record—
+              Fixed Scope,{' '}
               <span className="bg-gradient-to-r from-[#00B3A4] to-[#2563EB] bg-clip-text text-transparent">
-                automated, approved, and auditable
+                Fixed Timeline
               </span>
             </h1>
-            <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-              We build agents that understand documents and emails, make decisions with your business rules, 
-              and update your systems safely with full traceability and human oversight.
+            <p className="text-xl text-gray-300 max-w-4xl mx-auto mb-8 leading-relaxed">
+              Transparent pricing for production-ready AI automation. No surprises, no scope creep, no hidden costs.
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* Solution Pillars */}
+      {/* Pricing Plans */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-[#111827] mb-6">
-              Five Pillars of Reliable Automation
-            </h2>
-            <p className="text-xl text-[#6B7280] max-w-3xl mx-auto">
-              Every automation we build includes these essential components for production reliability
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {solutionPillars.map((pillar, index) => (
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+            {plans.map((plan, index) => (
               <motion.div
-                key={pillar.title}
+                key={plan.name}
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
+                transition={{ duration: 0.6, delay: index * 0.2 }}
+                className="relative"
               >
-                <Card className="h-full hover:shadow-xl transition-all duration-300">
-                  <CardHeader>
-                    <div className="w-16 h-16 bg-gradient-to-br from-[#00B3A4] to-[#2563EB] rounded-2xl flex items-center justify-center mb-4">
-                      <pillar.icon className="h-8 w-8 text-white" />
+                {plan.popular && (
+                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                    <span className="bg-gradient-to-r from-[#00B3A4] to-[#2563EB] text-white px-4 py-2 rounded-full text-sm font-medium">
+                      Most Popular
+                    </span>
+                  </div>
+                )}
+                <Card className={`h-full ${plan.popular ? 'ring-2 ring-[#00B3A4] shadow-2xl scale-105' : 'hover:shadow-lg'} transition-all duration-300`}>
+                  <CardHeader className="text-center pb-4">
+                    <CardTitle className="text-2xl mb-2">{plan.name}</CardTitle>
+                    <div className="text-5xl font-bold text-[#111827] mb-2">{plan.price}</div>
+                    <p className="text-[#6B7280] mb-4">{plan.description}</p>
+                    <div className="space-y-2 text-sm">
+                      <div className="flex items-center justify-center text-[#00B3A4]">
+                        <Clock className="h-4 w-4 mr-2" />
+                        <span>{plan.deliveryTime}</span>
+                      </div>
+                      <div className="text-[#6B7280]">{plan.ideal}</div>
                     </div>
-                    <CardTitle className="text-xl mb-3">{pillar.title}</CardTitle>
-                    <p className="text-[#6B7280] leading-relaxed">{pillar.description}</p>
                   </CardHeader>
                   <CardContent>
-                    <ul className="space-y-2">
-                      {pillar.features.map((feature, idx) => (
-                        <li key={idx} className="flex items-center text-[#6B7280]">
-                          <div className="w-1.5 h-1.5 bg-[#00B3A4] rounded-full mr-3"></div>
-                          {feature}
+                    <ul className="space-y-4 mb-8">
+                      {plan.features.map((feature, idx) => (
+                        <li key={idx} className="flex items-start">
+                          <Check className="h-5 w-5 text-[#10B981] mr-3 mt-0.5 flex-shrink-0" />
+                          <span className="text-[#6B7280]">{feature}</span>
                         </li>
                       ))}
                     </ul>
+                    <Button 
+                      className={`w-full ${plan.popular ? 'bg-gradient-to-r from-[#00B3A4] to-[#2563EB]' : ''}`} 
+                      variant={plan.popular ? 'default' : 'outline'}
+                      size="lg"
+                      asChild
+                    >
+                      <Link href="/contact">
+                        Get Started
+                        <ArrowRight className="ml-2 h-4 w-4" />
+                      </Link>
+                    </Button>
                   </CardContent>
                 </Card>
               </motion.div>
@@ -150,7 +174,7 @@ const Solutions = () => {
         </div>
       </section>
 
-      {/* Use Cases */}
+      {/* Guarantees */}
       <section className="py-20 bg-[#F8FAFC]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -161,77 +185,78 @@ const Solutions = () => {
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-4xl md:text-5xl font-bold text-[#111827] mb-6">
-              Common Use Cases
+              Our Guarantees
             </h2>
             <p className="text-xl text-[#6B7280] max-w-3xl mx-auto">
-              Proven automation patterns that deliver immediate value
+              We stand behind our work with industry-leading guarantees
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {useCases.map((useCase, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {guarantees.map((guarantee, index) => (
               <motion.div
-                key={useCase.title}
-                className="bg-white rounded-2xl p-8 shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100"
+                key={guarantee.title}
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
+                transition={{ duration: 0.6, delay: index * 0.2 }}
               >
-                <h3 className="text-xl font-bold text-[#111827] mb-3">{useCase.title}</h3>
-                <p className="text-[#6B7280] mb-4 leading-relaxed">{useCase.description}</p>
-                <div className="bg-gradient-to-r from-[#00B3A4]/10 to-[#2563EB]/10 rounded-lg p-3">
-                  <span className="text-sm font-medium text-[#00B3A4]">Typical outcome: {useCase.outcome}</span>
-                </div>
+                <Card className="h-full text-center hover:shadow-lg transition-all duration-300">
+                  <CardHeader>
+                    <div className="w-16 h-16 bg-gradient-to-br from-[#00B3A4] to-[#2563EB] rounded-2xl flex items-center justify-center mx-auto mb-4">
+                      <guarantee.icon className="h-8 w-8 text-white" />
+                    </div>
+                    <CardTitle className="text-xl mb-3">{guarantee.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-[#6B7280] leading-relaxed">{guarantee.description}</p>
+                  </CardContent>
+                </Card>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Tech Stack Reveal (Bottom Section) */}
-      <section className="py-16 bg-[#F8FAFC] border-t border-gray-100">
+      {/* Add-ons */}
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
-            className="text-center mb-12"
+            className="text-center mb-16"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h3 className="text-2xl font-bold text-[#111827] mb-4">
-              Built with Enterprise-Grade Components
-            </h3>
-            <p className="text-lg text-[#6B7280] max-w-2xl mx-auto">
-              We use proven, production-ready technologies to ensure reliability and scalability
+            <h2 className="text-4xl md:text-5xl font-bold text-[#111827] mb-6">
+              Optional Add-ons
+            </h2>
+            <p className="text-xl text-[#6B7280] max-w-3xl mx-auto">
+              Extend your automation with additional services
             </p>
           </motion.div>
-          
-          <div className="flex flex-wrap justify-center gap-6">
-            {[
-              'Agent Framework',
-              'Workflow Engine', 
-              'Vector Database',
-              'Observability Platform',
-              'Security Controls'
-            ].map((tech, index) => (
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {addOns.map((addon, index) => (
               <motion.div
-                key={tech}
-                className="px-4 py-2 bg-white rounded-full border border-gray-200 text-[#6B7280] font-medium"
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
+                key={addon.name}
+                className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-all duration-300"
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: index * 0.1 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
               >
-                {tech}
+                <h3 className="text-lg font-bold text-[#111827] mb-2">{addon.name}</h3>
+                <div className="text-2xl font-bold text-[#00B3A4] mb-3">{addon.price}</div>
+                <p className="text-[#6B7280] text-sm">{addon.description}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-white">
+      {/* CTA */}
+      <section className="py-20 bg-gradient-to-r from-[#0B1220] via-[#0F1629] to-[#0B1220]">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -239,23 +264,21 @@ const Solutions = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-[#111827] mb-6">
-              Ready to automate your operations?
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+              Ready to get started?
             </h2>
-            <p className="text-lg text-[#6B7280] mb-8">
-              Let's discuss your specific use case and design a solution that fits your workflow
+            <p className="text-xl text-gray-300 mb-8">
+              Book a demo to see exactly how we'll automate your workflow and get a fixed-price proposal
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="xl" asChild>
-                <Link href="/industries">
-                  See Industries
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-              </Button>
-              <Button size="xl" variant="outline" asChild>
-                Watch 2‑min overview
-              </Button>
-            </div>
+            <Button size="xl" asChild>
+              <Link href="/contact">
+                Book Your Demo
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
+            </Button>
+            <p className="text-gray-400 text-sm mt-6">
+              30-minute demo • No sales pitch • Fixed-price proposal
+            </p>
           </motion.div>
         </div>
       </section>
@@ -263,4 +286,4 @@ const Solutions = () => {
   );
 };
 
-export default Solutions;
+export default Pricing;

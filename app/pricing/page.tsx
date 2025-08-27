@@ -5,11 +5,11 @@ import Footer from '@/components/layout/Footer'
 import MobileCTABar from '@/components/layout/MobileCTABar'
 
 export const metadata: Metadata = {
-  title: 'Pricing - Fixed Scope, Fixed Timeline - Zadix',
-  description: 'Transparent pricing for production-ready AI automation. Starter ($3,900), Pro ($12,900), Enterprise ($28k+). 30-day value guarantee.',
+  title: 'Pricing & Packages — Fixed Scope, Fixed Timeline | Zadix',
+  description: 'Starter $3,900 • Pro $12,900 • Enterprise $28k+. Add‑ons and SLAs available.',
   openGraph: {
-    title: 'Pricing - Fixed Scope, Fixed Timeline - Zadix',
-    description: 'Transparent pricing for production-ready AI automation. Starter ($3,900), Pro ($12,900), Enterprise ($28k+). 30-day value guarantee.',
+    title: 'Pricing & Packages — Fixed Scope, Fixed Timeline | Zadix',
+    description: 'Starter $3,900 • Pro $12,900 • Enterprise $28k+. Add‑ons and SLAs available.',
   },
 }
 

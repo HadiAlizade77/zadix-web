@@ -5,11 +5,11 @@ import Footer from '@/components/layout/Footer'
 import MobileCTABar from '@/components/layout/MobileCTABar'
 
 export const metadata: Metadata = {
-  title: 'About Us - Engineers First, Outcomes Always - Zadix',
-  description: 'Built by senior engineers with enterprise microservices and AI orchestration backgrounds. Headquartered in Dubai Free Zone, serving global clients.',
+  title: 'About Zadix — Engineers First, Outcomes Always | Zadix',
+  description: 'Senior engineers delivering production‑grade automations for MENA/EU.',
   openGraph: {
-    title: 'About Us - Engineers First, Outcomes Always - Zadix',
-    description: 'Built by senior engineers with enterprise microservices and AI orchestration backgrounds. Headquartered in Dubai Free Zone, serving global clients.',
+    title: 'About Zadix — Engineers First, Outcomes Always | Zadix',
+    description: 'Senior engineers delivering production‑grade automations for MENA/EU.',
   },
 }
 

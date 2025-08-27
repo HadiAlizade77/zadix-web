@@ -206,6 +206,79 @@ const About = () => {
         </div>
       </section>
 
+      {/* Team Bios */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-[#111827] mb-6">
+              Meet the Team
+            </h2>
+            <p className="text-xl text-[#6B7280] max-w-3xl mx-auto">
+              Senior engineers and process experts building production-ready automation systems
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            {[
+              {
+                name: 'Hadi Alizadeh',
+                role: 'Founder & Principal Engineer',
+                description: 'Enterprise automation, data systems, and AI orchestration.'
+              },
+              {
+                name: '[Name Placeholder]',
+                role: 'Solutions Architect',
+                description: 'Process design, integrations, and reliability engineering.'
+              },
+              {
+                name: '[Name Placeholder]',
+                role: 'Delivery Lead',
+                description: 'Project management, QA, and client enablement.'
+              }
+            ].map((member, index) => (
+              <motion.div
+                key={member.name}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.2 }}
+              >
+                <Card className="h-full hover:shadow-lg transition-all duration-300">
+                  <CardHeader className="text-center">
+                    <div className="w-24 h-24 bg-gradient-to-br from-[#00B3A4] to-[#2563EB] rounded-full mx-auto mb-4"></div>
+                    <CardTitle className="text-xl mb-2">{member.name}</CardTitle>
+                    <p className="text-[#00B3A4] font-medium">{member.role}</p>
+                  </CardHeader>
+                  <CardContent className="text-center">
+                    <p className="text-[#6B7280] leading-relaxed">{member.description}</p>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+
+          <motion.div
+            className="text-center"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <Button size="lg" asChild>
+              <a href="mailto:engineering@zadix.ai?subject=Technical Discussion">
+                Talk to engineering
+              </a>
+            </Button>
+          </motion.div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="py-20 bg-gradient-to-r from-[#0B1220] via-[#0F1629] to-[#0B1220]">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">

@@ -20,11 +20,11 @@ export default function ContactThankYou() {
           </div>
           
           <h1 className="text-4xl md:text-5xl font-bold text-[#111827] mb-6">
-            Thanks—pick a demo slot
+              Thanks—pick a demo slot
           </h1>
           
           <p className="text-xl text-[#6B7280] mb-12 max-w-2xl mx-auto">
-            We've received your details. Choose a time for a quick walkthrough and scoping call.
+              We've received your details. Choose a time for a quick walkthrough and scoping call.
           </p>
 
           {/* Calendly Embed Placeholder */}
@@ -44,7 +44,7 @@ export default function ContactThankYou() {
               <MessageCircle className="h-8 w-8 mr-3" />
               <h3 className="text-xl font-bold">Prefer WhatsApp?</h3>
             </div>
-            <p className="mb-6">Get instant answers and schedule directly via chat</p>
+            <p className="mb-6">Chat with us now</p>
             <Button size="lg" variant="secondary" asChild>
               <a href="https://wa.me/0000000000" target="_blank" rel="noopener noreferrer">
                 Chat with us now

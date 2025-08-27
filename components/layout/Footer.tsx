@@ -91,14 +91,8 @@ export default function Footer({ locale }: FooterProps) {
               </div>
               <div className="flex items-center space-x-3">
                 <MessageCircle className="h-5 w-5 text-accent-teal" />
-                <a href={`https://wa.me/${business.whatsapp.replace('+', '')}`} target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-accent-teal transition-colors">
-                  WhatsApp
-                </a>
-              </div>
-              <div className="flex items-center space-x-3">
-                <MessageCircle className="h-5 w-5 text-accent-teal" />
                 <a href="https://wa.me/0000000000" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-accent-teal transition-colors">
-                  Chat Now
+                  WhatsApp
                 </a>
               </div>
             </div>

@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Inter, Sora } from 'next/font/google';
 import './globals.css';
 import { cn } from '@/lib/utils';
+import CookieBanner from '@/components/ui/cookie-banner';
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -16,8 +17,8 @@ const sora = Sora({
 });
 
 export const metadata: Metadata = {
-  title: 'Agentic AI Automation for Business — Production-Ready in 7–14 Days | Zadix',
-  description: 'We build AI automations that cut manual work 50–80% and respond in under a minute. Fixed scope, fixed timeline, 30-day value guarantee.',
+  title: 'AI Automation for Business — Production‑Ready in 7–14 Days | Zadix',
+  description: 'We build automations that cut manual work 50–80% and respond in under a minute. Fixed scope, fixed timeline, 30-day value guarantee.',
   keywords: 'ai automation dubai, agentic ai for business, workflow automation uae, real estate ai automation, logistics rfq automation, investment memo ai',
   authors: [{ name: 'Zadix' }],
   creator: 'Zadix',
@@ -38,8 +39,8 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'Agentic AI Automation for Business — Production-Ready in 7–14 Days | Zadix',
-    description: 'We build AI automations that cut manual work 50–80% and respond in under a minute. Fixed scope, fixed timeline, 30-day value guarantee.',
+    title: 'AI Automation for Business — Production‑Ready in 7–14 Days | Zadix',
+    description: 'We build automations that cut manual work 50–80% and respond in under a minute. Fixed scope, fixed timeline, 30-day value guarantee.',
     url: 'https://zadix.ai',
     siteName: 'Zadix',
     locale: 'en_US',
@@ -55,8 +56,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Agentic AI Automation for Business — Production-Ready in 7–14 Days | Zadix',
-    description: 'We build AI automations that cut manual work 50–80% and respond in under a minute. Fixed scope, fixed timeline, 30-day value guarantee.',
+    title: 'AI Automation for Business — Production‑Ready in 7–14 Days | Zadix',
+    description: 'We build automations that cut manual work 50–80% and respond in under a minute. Fixed scope, fixed timeline, 30-day value guarantee.',
     images: ['/og-image.jpg'],
   },
   robots: {
@@ -115,6 +116,7 @@ export default function RootLayout({
       </head>
       <body className={cn('min-h-screen bg-white font-inter antialiased')}>
         {children}
+        <CookieBanner />
       </body>
     </html>
   );

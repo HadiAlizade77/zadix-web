@@ -5,11 +5,11 @@ import Footer from '@/components/layout/Footer'
 import MobileCTABar from '@/components/layout/MobileCTABar'
 
 export const metadata: Metadata = {
-  title: '7-Day Delivery Process - Zadix',
-  description: 'From requirements to production-ready automation in 7 days. Daily updates, sandbox access by Day 3, complete handover with documentation.',
+  title: '7‑Day Delivery — Acceptance Criteria & Rollback | Zadix',
+  description: 'From scope to production with guardrails, observability, and training.',
   openGraph: {
-    title: '7-Day Delivery Process - Zadix',
-    description: 'From requirements to production-ready automation in 7 days. Daily updates, sandbox access by Day 3, complete handover with documentation.',
+    title: '7‑Day Delivery — Acceptance Criteria & Rollback | Zadix',
+    description: 'From scope to production with guardrails, observability, and training.',
   },
 }
 

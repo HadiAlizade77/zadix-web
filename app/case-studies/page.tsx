@@ -5,11 +5,11 @@ import Footer from '@/components/layout/Footer'
 import MobileCTABar from '@/components/layout/MobileCTABar'
 
 export const metadata: Metadata = {
-  title: 'Case Studies - Real Results from Real Clients - Zadix',
-  description: 'See how companies are using our AI automation to eliminate busywork. Real case studies with measurable outcomes and ROI.',
+  title: 'Case Studies — Measurable Outcomes | Zadix',
+  description: 'See how teams saved hours each week and sped responses.',
   openGraph: {
-    title: 'Case Studies - Real Results from Real Clients - Zadix',
-    description: 'See how companies are using our AI automation to eliminate busywork. Real case studies with measurable outcomes and ROI.',
+    title: 'Case Studies — Measurable Outcomes | Zadix',
+    description: 'See how teams saved hours each week and sped responses.',
   },
 }
 

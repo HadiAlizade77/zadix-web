@@ -5,11 +5,11 @@ import Footer from '@/components/layout/Footer'
 import MobileCTABar from '@/components/layout/MobileCTABar'
 
 export const metadata: Metadata = {
-  title: 'Book a Demo - See Your Automation in Action | Zadix',
-  description: 'Tell us about your workflow challenge and we\'ll show you exactly how our automation would handle it—with real data and your specific business rules.',
+  title: 'Book a Demo — Qualify Your Project | Zadix',
+  description: 'Tell us about your process, systems, and goals. We\'ll scope a 7–14 day build.',
   openGraph: {
-    title: 'Book a Demo - See Your Automation in Action | Zadix',
-    description: 'Tell us about your workflow challenge and we\'ll show you exactly how our automation would handle it—with real data and your specific business rules.',
+    title: 'Book a Demo — Qualify Your Project | Zadix',
+    description: 'Tell us about your process, systems, and goals. We\'ll scope a 7–14 day build.',
   },
 }
 

@@ -202,6 +202,87 @@ const Process = () => {
         </div>
       </section>
 
+      {/* Acceptance Criteria */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-[#111827] mb-6">
+              Acceptance Criteria
+            </h2>
+            <p className="text-xl text-[#6B7280] max-w-3xl mx-auto">
+              Clear success metrics and quality standards for every delivery
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <Card>
+                <CardHeader>
+                  <CardTitle className="text-xl">Success Metrics</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-3">
+                    <li className="flex items-center">
+                      <CheckCircle className="h-5 w-5 text-[#10B981] mr-3" />
+                      <span className="text-[#6B7280]">Success metric defined (e.g., hours saved, response time)</span>
+                    </li>
+                    <li className="flex items-center">
+                      <CheckCircle className="h-5 w-5 text-[#10B981] mr-3" />
+                      <span className="text-[#6B7280]">Latency/accuracy bands agreed</span>
+                    </li>
+                    <li className="flex items-center">
+                      <CheckCircle className="h-5 w-5 text-[#10B981] mr-3" />
+                      <span className="text-[#6B7280]">≥ 20 representative test cases</span>
+                    </li>
+                    <li className="flex items-center">
+                      <CheckCircle className="h-5 w-5 text-[#10B981] mr-3" />
+                      <span className="text-[#6B7280]">Error budget and alerting configured</span>
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <Card>
+                <CardHeader>
+                  <CardTitle className="text-xl">Runbooks & Rollback</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-[#6B7280] mb-4">
+                    We ship with runbooks, rollback steps, idempotency keys, retries/dead‑letter queues, 
+                    and rate limits so changes are safe and reversible.
+                  </p>
+                  <ul className="space-y-2 text-sm text-[#6B7280]">
+                    <li>• Emergency rollback procedures</li>
+                    <li>• Idempotency for safe retries</li>
+                    <li>• Dead letter queue handling</li>
+                    <li>• Rate limiting and circuit breakers</li>
+                    <li>• Monitoring and alerting setup</li>
+                  </ul>
+                </CardContent>
+              </Card>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* What You Get */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

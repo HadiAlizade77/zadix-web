@@ -5,11 +5,11 @@ import Footer from '@/components/layout/Footer'
 import MobileCTABar from '@/components/layout/MobileCTABar'
 
 export const metadata: Metadata = {
-  title: 'Security & Compliance - SOC-Aligned Controls | Zadix',
-  description: 'Enterprise-grade security with audit trails, RBAC, encryption, and full observability. SOC-aligned controls for production AI automation.',
+  title: 'Security — SOC‑Aligned Controls by Default | Zadix',
+  description: 'Audit trails, RBAC, encryption, observability, backups, incident response.',
   openGraph: {
-    title: 'Security & Compliance - SOC-Aligned Controls | Zadix',
-    description: 'Enterprise-grade security with audit trails, RBAC, encryption, and full observability. SOC-aligned controls for production AI automation.',
+    title: 'Security — SOC‑Aligned Controls by Default | Zadix',
+    description: 'Audit trails, RBAC, encryption, observability, backups, incident response.',
   },
 }
 

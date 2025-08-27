@@ -2,10 +2,9 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { MessageCircle, Mail, MapPin, Send, CheckCircle, Loader2 } from 'lucide-react';
+import { MessageCircle, Upload, CheckCircle, Loader2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { getBusinessConfig } from '@/lib/utils';
 import emailjs from '@emailjs/browser';
 
 const Contact = () => {
@@ -16,12 +15,13 @@ const Contact = () => {
     role: '',
     phone: '',
     industry: '',
-    systems: '',
+    systems: [] as string[],
     sensitivity: '',
     volume: '',
     deadline: '',
     budget: '',
     message: '',
+    files: null as FileList | null,
     consent: false
   });
 
@@ -29,7 +29,29 @@ const Contact = () => {
   const [showSuccess, setShowSuccess] = useState(false);
   const [submitError, setSubmitError] = useState('');
 
-  const business = getBusinessConfig();
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value, type } = e.target;
+    
+    if (type === 'checkbox') {
+      const checked = (e.target as HTMLInputElement).checked;
+      if (name === 'systems') {
+        const systemValue = value;
+        setFormData(prev => ({
+          ...prev,
+          systems: checked 
+            ? [...prev.systems, systemValue]
+            : prev.systems.filter(s => s !== systemValue)
+        }));
+      } else {
+        setFormData(prev => ({ ...prev, [name]: checked }));
+      }
+    } else if (type === 'file') {
+      const files = (e.target as HTMLInputElement).files;
+      setFormData(prev => ({ ...prev, files }));
+    } else {
+      setFormData(prev => ({ ...prev, [name]: value }));
+    }
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -37,36 +59,35 @@ const Contact = () => {
     setSubmitError('');
 
     try {
-      // EmailJS configuration
-      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || 'YOUR_SERVICE_ID';
-      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || 'YOUR_TEMPLATE_ID';
-      const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || 'YOUR_PUBLIC_KEY';
-
-      // Prepare template parameters
+      // Prepare template parameters for EmailJS
       const templateParams = {
         from_name: `${formData.name} (via Zadix Contact Form)`,
-        from_email: formData.email,
-        reply_to: formData.email,
         user_name: formData.name,
         user_email: formData.email,
+        reply_to: formData.email,
         company: formData.company,
         role: formData.role,
         phone: formData.phone,
         industry: formData.industry,
-        systems: formData.systems,
+        systems: formData.systems.join(', '),
         sensitivity: formData.sensitivity,
         volume: formData.volume,
         deadline: formData.deadline,
         budget: formData.budget,
         message: formData.message,
-        to_name: 'Zadix Request',
-        to_email: 'alizadehadi08@gmail.com' // Replace with your actual email
+        to_name: 'Zadix Team',
+        to_email: 'admin@zadix.ai'
       };
 
-      // Send email using EmailJS
-      await emailjs.send(serviceId, templateId, templateParams, publicKey);
-      
-      // Show success message
+      // Send email via EmailJS
+      await emailjs.send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+        templateParams,
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+      );
+
+      // Show success modal
       setShowSuccess(true);
       
       // Reset form
@@ -77,99 +98,100 @@ const Contact = () => {
         role: '',
         phone: '',
         industry: '',
-        systems: '',
+        systems: [],
         sensitivity: '',
         volume: '',
         deadline: '',
         budget: '',
         message: '',
+        files: null,
         consent: false
       });
 
     } catch (error) {
-      console.error('EmailJS error:', error);
+      console.error('Form submission error:', error);
       setSubmitError('Failed to send message. Please try again or contact us directly.');
     } finally {
       setIsSubmitting(false);
     }
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
-
-  const contactInfo = [
-    {
-      icon: Mail,
-      title: 'Email',
-      value: business.email,
-      link: `mailto:${business.email}`
-    },
-    {
-      icon: MessageCircle,
-      title: 'Schedule a Call',
-      value: 'Book a 30-min demo',
-      link: business.calendlyUrl
-    },
-    {
-      icon: MapPin,
-      title: 'Location',
-      value: 'Dubai, UAE',
-      link: null
-    }
-  ];
-
-  const useCases = [
+  const industries = [
     'Real Estate',
-    'Investment/Family Office',
+    'Investment / Family Office',
     'Logistics & Freight',
     'Healthcare',
-    'Legal & Corporate',
-    'Construction/EPC',
+    'Legal & Corporate Services',
+    'Construction / EPC',
     'B2B SaaS',
-    'Hospitality',
+    'Hospitality & Luxury Retail',
     'Other'
   ];
 
-  const budgetRanges = [
-    '5-10k',
-    '10-20k', 
-    '20-50k',
-    '50k+',
-    'Not sure yet'
+  const systemOptions = [
+    'CRM (Salesforce, HubSpot, etc.)',
+    'ERP (SAP, NetSuite, etc.)',
+    'Helpdesk (Zendesk, ServiceNow, etc.)',
+    'Databases (MySQL, PostgreSQL, etc.)',
+    'Storage (SharePoint, Google Drive, etc.)',
+    'Email Systems',
+    'Other'
   ];
+
+  if (showSuccess) {
+    return (
+      <div className="min-h-screen pt-20 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+          <motion.div
+            className="text-center"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-8">
+              <CheckCircle className="h-10 w-10 text-green-600" />
+            </div>
+            
+            <h1 className="text-4xl md:text-5xl font-bold text-[#111827] mb-6">
+              Thanks—pick a demo slot
+            </h1>
+            
+            <p className="text-xl text-[#6B7280] mb-12 max-w-2xl mx-auto">
+              We've received your details. Choose a time for a quick walkthrough and scoping call.
+            </p>
+
+            {/* Calendly Embed Placeholder */}
+            <div className="bg-[#F8FAFC] rounded-2xl p-8 mb-8">
+              <div className="w-full h-96 bg-white rounded-lg border-2 border-dashed border-gray-300 flex items-center justify-center">
+                <div className="text-center">
+                  <MessageCircle className="h-12 w-12 text-gray-400 mx-auto mb-4" />
+                  <p className="text-gray-500">Calendly embed will appear here</p>
+                  <p className="text-sm text-gray-400 mt-2">Integration pending</p>
+                </div>
+              </div>
+            </div>
+
+            {/* WhatsApp Alternative */}
+            <div className="bg-gradient-to-r from-[#00B3A4] to-[#2563EB] rounded-2xl p-6 text-white">
+              <div className="flex items-center justify-center mb-4">
+                <MessageCircle className="h-8 w-8 mr-3" />
+                <h3 className="text-xl font-bold">Prefer WhatsApp?</h3>
+              </div>
+              <p className="mb-6">Chat with us now</p>
+              <Button size="lg" variant="secondary" asChild>
+                <a href="https://wa.me/0000000000" target="_blank" rel="noopener noreferrer">
+                  Chat with us now
+                </a>
+              </Button>
+            </div>
+          </motion.div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen pt-20">
-      {/* Success Modal */}
-      {showSuccess && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 px-4">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.9 }}
-            className="bg-white rounded-lg p-8 max-w-md w-full text-center"
-          >
-            <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <CheckCircle className="h-8 w-8 text-green-600" />
-            </div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-2">Message Sent!</h3>
-            <p className="text-gray-600 mb-6">
-              Thank you for reaching out. We&apos;ll review your requirements and get back to you within 24 hours to schedule your personalized demo.
-            </p>
-            <Button 
-              onClick={() => setShowSuccess(false)}
-              className="w-full"
-            >
-              Close
-            </Button>
-          </motion.div>
-        </div>
-      )}
-
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-[#0B1220] via-[#0F1629] to-[#0B1220]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -179,11 +201,11 @@ const Contact = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
+            <div className="w-20 h-20 bg-gradient-to-br from-[#00B3A4] to-[#2563EB] rounded-3xl flex items-center justify-center mx-auto mb-8">
+              <MessageCircle className="h-10 w-10 text-white" />
+            </div>
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
-              Let's Build Your{' '}
-              <span className="bg-gradient-to-r from-[#00B3A4] to-[#2563EB] bg-clip-text text-transparent">
-                Demo
-              </span>
+              Book a Demo
             </h1>
             <p className="text-xl text-gray-300 max-w-4xl mx-auto mb-8 leading-relaxed">
               Tell us about your workflow challenge and we'll show you exactly how our automation would handle it—with real data and your specific business rules.
@@ -192,353 +214,336 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Contact Form & Info */}
+      {/* Contact Form */}
       <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-            {/* Contact Form */}
-            <div className="lg:col-span-2">
-              <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8 }}
-              >
-                <Card className="shadow-xl">
-                  <CardHeader>
-                    <CardTitle className="text-2xl mb-4">Get Started</CardTitle>
-                    <p className="text-[#6B7280]">
-                      Share your workflow details and we'll show you exactly how the automation would work—with your data and business rules.
-                    </p>
-                  </CardHeader>
-                  <CardContent>
-                    <form onSubmit={handleSubmit} className="space-y-6">
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div>
-                          <label htmlFor="name" className="block text-sm font-medium text-[#111827] mb-2">
-                            Full Name *
-                          </label>
-                          <input
-                            type="text"
-                            id="name"
-                            name="name"
-                            required
-                            value={formData.name}
-                            onChange={handleChange}
-                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00B3A4] focus:border-transparent"
-                            placeholder="John Smith"
-                          />
-                        </div>
-                        <div>
-                          <label htmlFor="email" className="block text-sm font-medium text-[#111827] mb-2">
-                            Email Address *
-                          </label>
-                          <input
-                            type="email"
-                            id="email"
-                            name="email"
-                            required
-                            value={formData.email}
-                            onChange={handleChange}
-                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00B3A4] focus:border-transparent"
-                            placeholder="john@company.com"
-                          />
-                        </div>
-                      </div>
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Card className="shadow-xl">
+            <CardHeader className="text-center">
+              <CardTitle className="text-3xl mb-4">Tell us about your workflow</CardTitle>
+              <p className="text-[#6B7280] text-lg">
+                The more details you provide, the better we can tailor the demo to your specific needs
+              </p>
+            </CardHeader>
+            <CardContent className="p-8">
+              <form onSubmit={handleSubmit} className="space-y-6">
+                {/* Basic Info */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <label htmlFor="name" className="block text-sm font-medium text-[#111827] mb-2">
+                      Name *
+                    </label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      required
+                      value={formData.name}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00B3A4] focus:border-transparent"
+                      placeholder="John Doe"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="email" className="block text-sm font-medium text-[#111827] mb-2">
+                      Work Email *
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      required
+                      value={formData.email}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00B3A4] focus:border-transparent"
+                      placeholder="john@company.com"
+                    />
+                  </div>
+                </div>
 
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div>
-                          <label htmlFor="company" className="block text-sm font-medium text-[#111827] mb-2">
-                            Company *
-                          </label>
-                          <input
-                            type="text"
-                            id="company"
-                            name="company"
-                            required
-                            value={formData.company}
-                            onChange={handleChange}
-                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00B3A4] focus:border-transparent"
-                            placeholder="Acme Corp"
-                          />
-                        </div>
-                        <div>
-                          <label htmlFor="role" className="block text-sm font-medium text-[#111827] mb-2">
-                            Phone / WhatsApp
-                          </label>
-                          <input
-                            type="tel"
-                            id="phone"
-                            name="phone"
-                            value={formData.phone}
-                            onChange={handleChange}
-                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00B3A4] focus:border-transparent"
-                            placeholder="+971 50 123 4567"
-                          />
-                        </div>
-                        <div>
-                          <label htmlFor="role" className="block text-sm font-medium text-[#111827] mb-2">
-                            Your Role
-                          </label>
-                          <input
-                            type="text"
-                            id="role"
-                            name="role"
-                            value={formData.role}
-                            onChange={handleChange}
-                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00B3A4] focus:border-transparent"
-                            placeholder="Operations Manager"
-                          />
-                        </div>
-                      </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <label htmlFor="company" className="block text-sm font-medium text-[#111827] mb-2">
+                      Company *
+                    </label>
+                    <input
+                      type="text"
+                      id="company"
+                      name="company"
+                      required
+                      value={formData.company}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00B3A4] focus:border-transparent"
+                      placeholder="Acme Corp"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="role" className="block text-sm font-medium text-[#111827] mb-2">
+                      Role *
+                    </label>
+                    <input
+                      type="text"
+                      id="role"
+                      name="role"
+                      required
+                      value={formData.role}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00B3A4] focus:border-transparent"
+                      placeholder="Operations Manager"
+                    />
+                  </div>
+                </div>
 
-                      <div>
-                        <label htmlFor="industry" className="block text-sm font-medium text-[#111827] mb-2">
-                          Industry *
-                        </label>
-                        <select
-                          id="industry"
-                          name="industry"
-                          required
-                          value={formData.industry}
-                          onChange={handleChange}
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00B3A4] focus:border-transparent"
-                        >
-                          <option value="">Select your industry</option>
-                          <option value="real-estate">Real Estate</option>
-                          <option value="investment">Investment/Family Office</option>
-                          <option value="logistics">Logistics & Freight</option>
-                          <option value="healthcare">Healthcare</option>
-                          <option value="legal">Legal & Corporate</option>
-                          <option value="construction">Construction/EPC</option>
-                          <option value="saas">B2B SaaS</option>
-                          <option value="hospitality">Hospitality</option>
-                          <option value="other">Other</option>
-                        </select>
-                      </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <label htmlFor="phone" className="block text-sm font-medium text-[#111827] mb-2">
+                      Phone / WhatsApp
+                    </label>
+                    <input
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00B3A4] focus:border-transparent"
+                      placeholder="+1 (555) 123-4567"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="industry" className="block text-sm font-medium text-[#111827] mb-2">
+                      Industry *
+                    </label>
+                    <select
+                      id="industry"
+                      name="industry"
+                      required
+                      value={formData.industry}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00B3A4] focus:border-transparent"
+                    >
+                      <option value="">Select your industry</option>
+                      {industries.map((industry) => (
+                        <option key={industry} value={industry}>
+                          {industry}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+                </div>
 
-                      <div>
-                        <label htmlFor="systems" className="block text-sm font-medium text-[#111827] mb-2">
-                          Systems in use *
-                        </label>
-                        <select
-                          id="systems"
-                          name="systems"
-                          required
-                          value={formData.systems}
-                          onChange={handleChange}
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00B3A4] focus:border-transparent"
-                        >
-                          <option value="">Select the tools you use today</option>
-                          <option value="crm">CRM (Salesforce, HubSpot, etc.)</option>
-                          <option value="erp">ERP (SAP, NetSuite, etc.)</option>
-                          <option value="helpdesk">Helpdesk (Zendesk, ServiceNow, etc.)</option>
-                          <option value="databases">Databases (PostgreSQL, MySQL, etc.)</option>
-                          <option value="storage">Storage (SharePoint, Google Drive, etc.)</option>
-                          <option value="multiple">Multiple systems</option>
-                          <option value="other">Other</option>
-                        </select>
-                      </div>
-
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div>
-                          <label htmlFor="sensitivity" className="block text-sm font-medium text-[#111827] mb-2">
-                            Contains PII/PHI?
-                          </label>
-                          <select
-                            id="sensitivity"
-                            name="sensitivity"
-                            value={formData.sensitivity}
-                            onChange={handleChange}
-                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00B3A4] focus:border-transparent"
-                          >
-                            <option value="">Select</option>
-                            <option value="yes">Yes</option>
-                            <option value="no">No</option>
-                            <option value="unsure">Not sure</option>
-                          </select>
-                        </div>
-                        <div>
-                          <label htmlFor="volume" className="block text-sm font-medium text-[#111827] mb-2">
-                            Daily/weekly volume
-                          </label>
-                          <input
-                            type="text"
-                            id="volume"
-                            name="volume"
-                            value={formData.volume}
-                            onChange={handleChange}
-                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00B3A4] focus:border-transparent"
-                            placeholder="e.g., 120 RFQs/week, 300 invoices/month, 50 tickets/day"
-                          />
-                        </div>
-                      </div>
-
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div>
-                          <label htmlFor="deadline" className="block text-sm font-medium text-[#111827] mb-2">
-                            Target deadline
-                          </label>
-                          <input
-                            type="text"
-                            id="deadline"
-                            name="deadline"
-                            value={formData.deadline}
-                            onChange={handleChange}
-                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00B3A4] focus:border-transparent"
-                            placeholder="e.g., Q1 2024, ASAP, 3 months"
-                          />
-                        </div>
-                        <div>
-                          <label htmlFor="budget" className="block text-sm font-medium text-[#111827] mb-2">
-                            Budget bracket (helps us recommend the right package)
-                          </label>
-                          <select
-                            id="budget"
-                            name="budget"
-                            value={formData.budget}
-                            onChange={handleChange}
-                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00B3A4] focus:border-transparent"
-                          >
-                            <option value="">Select budget range</option>
-                            <option value="5-10k">5–10k</option>
-                            <option value="10-20k">10–20k</option>
-                            <option value="20-50k">20–50k</option>
-                            <option value="50k+">50k+</option>
-                            <option value="not-sure">Not sure yet</option>
-                          </select>
-                        </div>
-                      </div>
-
-                      <div>
-                        <label htmlFor="message" className="block text-sm font-medium text-[#111827] mb-2">
-                          Describe your workflow challenge *
-                        </label>
-                        <textarea
-                          id="message"
-                          name="message"
-                          required
-                          rows={4}
-                          value={formData.message}
-                          onChange={handleChange}
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00B3A4] focus:border-transparent"
-                          placeholder="Share a few sample emails/PDFs and the systems you use. We'll show exactly how the automation would run."
-                        />
-                      </div>
-
-                      <div>
-                        <label className="block text-sm font-medium text-[#111827] mb-2">
-                          Upload sample docs/emails (optional)
-                        </label>
-                        <input
-                          type="file"
-                          multiple
-                          accept=".pdf,.doc,.docx,.txt,.eml"
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00B3A4] focus:border-transparent"
-                        />
-                        <p className="text-xs text-[#6B7280] mt-1">PDF, DOC, TXT, EML files up to 10MB each</p>
-                      </div>
-
-                      <div className="flex items-start">
+                {/* Systems in Use */}
+                <div>
+                  <label className="block text-sm font-medium text-[#111827] mb-3">
+                    Systems in use (CRM/ERP/Helpdesk/DB) *
+                  </label>
+                  <p className="text-sm text-[#6B7280] mb-3">Select the tools you use today</p>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    {systemOptions.map((system) => (
+                      <label key={system} className="flex items-center">
                         <input
                           type="checkbox"
-                          id="consent"
-                          name="consent"
-                          checked={formData.consent}
+                          name="systems"
+                          value={system}
+                          checked={formData.systems.includes(system)}
                           onChange={handleChange}
-                          className="mt-1 mr-3"
-                          required
+                          className="mr-3 h-4 w-4 text-[#00B3A4] focus:ring-[#00B3A4] border-gray-300 rounded"
                         />
-                        <label htmlFor="consent" className="text-sm text-[#6B7280]">
-                          I agree to the <a href="/privacy" className="text-[#00B3A4] hover:underline">Privacy Policy</a> and <a href="/dpa" className="text-[#00B3A4] hover:underline">Data Processing Addendum (DPA)</a> *
-                        </label>
-                      </div>
-
-                      {submitError && (
-                        <div className="p-4 bg-red-50 border border-red-200 rounded-lg">
-                          <p className="text-red-600 text-sm">{submitError}</p>
-                        </div>
-                      )}
-
-                      <Button 
-                        type="submit" 
-                        size="lg" 
-                        className="w-full"
-                        disabled={isSubmitting}
-                      >
-                        {isSubmitting ? (
-                          <>
-                            <Loader2 className="mr-2 h-5 w-5 animate-spin" />
-                            Sending...
-                          </>
-                        ) : (
-                          <>
-                            <Send className="mr-2 h-5 w-5" />
-                            Send & Pick a Demo Slot
-                          </>
-                        )}
-                      </Button>
-                    </form>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            </div>
-
-            {/* Contact Info */}
-            <div className="space-y-8">
-              <motion.div
-                initial={{ opacity: 0, x: 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8 }}
-              >
-                <h3 className="text-2xl font-bold text-[#111827] mb-6">Get in Touch</h3>
-                <div className="space-y-6">
-                  {contactInfo.map((info) => (
-                    <div key={info.title} className="flex items-start">
-                      <div className="w-12 h-12 bg-gradient-to-br from-[#00B3A4] to-[#2563EB] rounded-lg flex items-center justify-center mr-4">
-                        <info.icon className="h-6 w-6 text-white" />
-                      </div>
-                      <div>
-                        <h4 className="font-semibold text-[#111827] mb-1">{info.title}</h4>
-                        {info.link ? (
-                          <a
-                            href={info.link}
-                            target={info.link.startsWith('http') ? '_blank' : undefined}
-                            rel={info.link.startsWith('http') ? 'noopener noreferrer' : undefined}
-                            className="text-[#00B3A4] hover:text-[#2563EB] transition-colors"
-                          >
-                            {info.value}
-                          </a>
-                        ) : (
-                          <span className="text-[#6B7280]">{info.value}</span>
-                        )}
-                      </div>
-                    </div>
-                  ))}
+                        <span className="text-[#6B7280]">{system}</span>
+                      </label>
+                    ))}
+                  </div>
                 </div>
-              </motion.div>
 
-              <motion.div
-                initial={{ opacity: 0, x: 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-              >
-                <Card className="bg-gradient-to-br from-[#00B3A4] to-[#2563EB] text-white">
-                  <CardContent className="p-6">
-                    <CheckCircle className="h-12 w-12 mb-4" />
-                    <h4 className="text-xl font-bold mb-2">What to Expect</h4>
-                    <ul className="space-y-2 text-sm opacity-90">
-                      <li>• 20-minute personalized demo</li>
-                      <li>• See your automation in action</li>
-                      <li>• Fixed-price proposal</li>
-                      <li>• No sales pitch, just solutions</li>
-                    </ul>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            </div>
+                {/* Process Details */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <label htmlFor="sensitivity" className="block text-sm font-medium text-[#111827] mb-2">
+                      Contains PII/PHI? *
+                    </label>
+                    <select
+                      id="sensitivity"
+                      name="sensitivity"
+                      required
+                      value={formData.sensitivity}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00B3A4] focus:border-transparent"
+                    >
+                      <option value="">Select sensitivity level</option>
+                      <option value="No">No sensitive data</option>
+                      <option value="PII">Contains PII</option>
+                      <option value="PHI">Contains PHI</option>
+                      <option value="Both">Contains both PII and PHI</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label htmlFor="volume" className="block text-sm font-medium text-[#111827] mb-2">
+                      Daily/weekly volume *
+                    </label>
+                    <input
+                      type="text"
+                      id="volume"
+                      name="volume"
+                      required
+                      value={formData.volume}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00B3A4] focus:border-transparent"
+                      placeholder="e.g., 120 RFQs/week, 300 invoices/month"
+                    />
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <label htmlFor="deadline" className="block text-sm font-medium text-[#111827] mb-2">
+                      Target deadline
+                    </label>
+                    <input
+                      type="text"
+                      id="deadline"
+                      name="deadline"
+                      value={formData.deadline}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00B3A4] focus:border-transparent"
+                      placeholder="Q2 2024, End of March, ASAP"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="budget" className="block text-sm font-medium text-[#111827] mb-2">
+                      Budget bracket
+                    </label>
+                    <select
+                      id="budget"
+                      name="budget"
+                      value={formData.budget}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00B3A4] focus:border-transparent"
+                    >
+                      <option value="">Helps us recommend the right package</option>
+                      <option value="5-10k">$5k - $10k</option>
+                      <option value="10-20k">$10k - $20k</option>
+                      <option value="20-50k">$20k - $50k</option>
+                      <option value="50k+">$50k+</option>
+                    </select>
+                  </div>
+                </div>
+
+                {/* File Upload */}
+                <div>
+                  <label htmlFor="files" className="block text-sm font-medium text-[#111827] mb-2">
+                    Upload sample docs/emails (optional)
+                  </label>
+                  <div className="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center hover:border-[#00B3A4] transition-colors">
+                    <Upload className="h-8 w-8 text-gray-400 mx-auto mb-2" />
+                    <input
+                      type="file"
+                      id="files"
+                      name="files"
+                      multiple
+                      onChange={handleChange}
+                      className="hidden"
+                      accept=".pdf,.doc,.docx,.txt,.csv,.xlsx"
+                    />
+                    <label htmlFor="files" className="cursor-pointer">
+                      <span className="text-[#00B3A4] font-medium">Click to upload</span>
+                      <span className="text-[#6B7280]"> or drag and drop</span>
+                    </label>
+                    <p className="text-sm text-[#6B7280] mt-1">
+                      PDF, DOC, TXT, CSV, XLSX up to 10MB each
+                    </p>
+                  </div>
+                </div>
+
+                {/* Message */}
+                <div>
+                  <label htmlFor="message" className="block text-sm font-medium text-[#111827] mb-2">
+                    Describe your workflow challenge
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows={4}
+                    value={formData.message}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00B3A4] focus:border-transparent"
+                    placeholder="Tell us about the manual process you'd like to automate..."
+                  />
+                </div>
+
+                {/* Consent */}
+                <div className="flex items-start">
+                  <input
+                    type="checkbox"
+                    id="consent"
+                    name="consent"
+                    required
+                    checked={formData.consent}
+                    onChange={handleChange}
+                    className="mt-1 h-4 w-4 text-[#00B3A4] focus:ring-[#00B3A4] border-gray-300 rounded"
+                  />
+                  <label htmlFor="consent" className="ml-3 text-sm text-[#6B7280]">
+                    I agree to the <a href="/privacy" className="text-[#00B3A4] hover:underline">Privacy Policy</a> and <a href="/dpa" className="text-[#00B3A4] hover:underline">DPA</a> *
+                  </label>
+                </div>
+
+                {/* Submit Button */}
+                <div className="text-center">
+                  <Button 
+                    type="submit" 
+                    size="xl" 
+                    disabled={isSubmitting}
+                    className="w-full md:w-auto"
+                  >
+                    {isSubmitting ? (
+                      <>
+                        <Loader2 className="mr-2 h-5 w-5 animate-spin" />
+                        Sending...
+                      </>
+                    ) : (
+                      'Send & Pick a Demo Slot'
+                    )}
+                  </Button>
+                  
+                  {submitError && (
+                    <p className="text-red-600 text-sm mt-4">{submitError}</p>
+                  )}
+                </div>
+              </form>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      {/* Alternative Contact Methods */}
+      <section className="py-16 bg-[#F8FAFC]">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h3 className="text-2xl font-bold text-[#111827] mb-8">
+            Prefer to chat directly?
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <Card className="hover:shadow-lg transition-all duration-300">
+              <CardContent className="p-6 text-center">
+                <MessageCircle className="h-12 w-12 text-[#00B3A4] mx-auto mb-4" />
+                <h4 className="text-lg font-bold text-[#111827] mb-2">WhatsApp</h4>
+                <p className="text-[#6B7280] mb-4">Quick questions and instant responses</p>
+                <Button asChild>
+                  <a href="https://wa.me/0000000000" target="_blank" rel="noopener noreferrer">
+                    Chat Now
+                  </a>
+                </Button>
+              </CardContent>
+            </Card>
+            
+            <Card className="hover:shadow-lg transition-all duration-300">
+              <CardContent className="p-6 text-center">
+                <MessageCircle className="h-12 w-12 text-[#2563EB] mx-auto mb-4" />
+                <h4 className="text-lg font-bold text-[#111827] mb-2">Schedule a Call</h4>
+                <p className="text-[#6B7280] mb-4">Book a time that works for you</p>
+                <Button variant="outline" asChild>
+                  <a href="https://calendly.com/admin-zadix/meeting-with-zadix-ai" target="_blank" rel="noopener noreferrer">
+                    View Calendar
+                  </a>
+                </Button>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>

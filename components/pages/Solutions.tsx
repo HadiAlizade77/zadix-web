@@ -12,64 +12,64 @@ const Solutions = () => {
     {
       icon: Bot,
       title: 'Orchestration',
-      description: 'Multi-step decisions with tools, memory, and business rule constraints',
+      description: 'Multi‑step decisions with tools & memory',
       features: ['Tool integration', 'Persistent memory', 'Multi-step planning', 'Decision constraints']
     },
     {
       icon: Workflow,
       title: 'Workflows',
-      description: 'Production-grade automation with triggers, retries, and error handling',
+      description: 'Triggers, retries, rate limits, error handling',
       features: ['Trigger systems', 'Exponential backoff', 'Dead letter queues', 'Rate limiting']
     },
     {
       icon: Database,
-      title: 'Knowledge',
-      description: 'Private documents become accurate, contextual answers with quality gates',
+      title: 'Knowledge', 
+      description: 'Your private docs → accurate answers',
       features: ['Document processing', 'Smart chunking', 'Quality evaluations', 'Accurate retrieval']
     },
     {
       icon: BarChart3,
       title: 'Observability',
-      description: 'Complete visibility into decisions, costs, and quality with alerts',
+      description: 'Traces, metrics, cost/quality tracking',
       features: ['Decision traces', 'Cost tracking', 'Quality metrics', 'Performance alerts']
     },
     {
       icon: Shield,
-      title: 'Safety & Compliance',
-      description: 'Built-in guardrails, approval workflows, and audit capabilities',
+      title: 'Safety',
+      description: 'Guardrails, approvals, audit logs',
       features: ['Tool whitelists', 'Content filters', 'Human approvals', 'Audit logs']
     }
   ];
 
   const useCases = [
     {
-      title: 'Invoice/PO Triage',
-      description: 'Extract data from invoices and purchase orders, validate against business rules, and write back to ERP systems',
+      title: 'Invoice/PO triage → ERP write‑back',
+      description: 'Extract, validate, route, and post entries',
       outcome: '70% faster processing'
     },
     {
-      title: 'RFQ to Quote',
-      description: 'Parse RFQs, lookup rates, apply margin rules, generate quotes, and update CRM automatically',
+      title: 'RFQ → Quote (logistics)',
+      description: 'Parse requests, look up rates, enforce margin rules, draft quotes',
       outcome: '20+ hours/week saved'
     },
     {
-      title: 'Sales Operations',
-      description: 'Enrich leads, score against ICP, assign to reps, and trigger follow-up sequences',
+      title: 'Sales ops enrichment & routing',
+      description: 'Enrich leads, score, dedupe, assign, and kick off sequences',
       outcome: '3x faster qualification'
     },
     {
-      title: 'Support L1 Deflection',
-      description: 'Understand customer queries, search knowledge base, provide answers, and route complex issues',
+      title: 'Support L1 deflection + routing',
+      description: 'Instant answers from your knowledge, smart hand‑offs',
       outcome: '60% deflection rate'
     },
     {
-      title: 'HR Onboarding',
-      description: 'Process forms, create accounts, generate documents, and track completion status',
+      title: 'HR onboarding assistant',
+      description: 'Forms to accounts to docs, without the back‑and‑forth',
       outcome: '5 days to 2 days'
     },
     {
-      title: 'Legal Document Review',
-      description: 'Extract clauses, flag risks, check compliance, and generate summaries for review',
+      title: 'Legal doc extract + clause check',
+      description: 'Structured terms, risk flags, and draft changes',
       outcome: '80% time reduction'
     }
   ];
@@ -93,7 +93,6 @@ const Solutions = () => {
             </h1>
             <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
               We build automations that understand your documents and emails, make decisions with your rules, route approvals, and safely update the systems your business runs on.
-            </p>
           </motion.div>
         </div>
       </section>
@@ -209,11 +208,11 @@ const Solutions = () => {
           
           <div className="flex flex-wrap justify-center gap-6">
             {[
-              'Agent Framework',
-              'Workflow Engine', 
-              'Vector Database',
-              'Observability Platform',
-              'Security Controls'
+              'Orchestration',
+              'Workflows', 
+              'Knowledge',
+              'Security',
+              'Observability'
             ].map((tech, index) => (
               <motion.div
                 key={tech}
@@ -227,6 +226,9 @@ const Solutions = () => {
               </motion.div>
             ))}
           </div>
+          <p className="text-center text-[#6B7280] mt-4">
+            Built with enterprise‑grade components
+          </p>
         </div>
       </section>
 
