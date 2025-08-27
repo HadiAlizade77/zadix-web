@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Menu, X, ChevronDown, Brain } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { LanguageSwitcher } from '@/components/ui/language-switcher';
 import { getBusinessConfig } from '@/lib/utils';
@@ -90,7 +90,7 @@ export default function Header({ locale }: HeaderProps) {
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-3">
             <div className="w-10 h-10 bg-gradient-to-br from-accent-teal to-accent-blue rounded-xl flex items-center justify-center">
-              <span className="text-white font-bold text-lg">Z</span>
+              <Brain className="text-white w-6 h-6" />
             </div>
             <span className={cn(
               'text-2xl font-bold font-sora transition-colors',
