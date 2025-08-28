@@ -33,17 +33,22 @@ const clientLogos = [
             {clientLogos.map((logo, index) => (
               <motion.div
                 key={logo.name}
-                className="w-32 h-16 bg-white rounded-lg flex items-center justify-center opacity-60 hover:opacity-80 transition-opacity p-4 shadow-sm border border-gray-200"
+                className="flex flex-col items-center gap-3 opacity-60 hover:opacity-80 transition-opacity"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
-                <img
-                  src={logo.url}
-                  alt={logo.alt}
-                  className="max-w-full max-h-full object-contain filter grayscale opacity-60"
-                />
+                <div className="w-32 h-16 bg-white rounded-lg flex items-center justify-center p-4 shadow-sm border border-gray-200">
+                  <img
+                    src={logo.url}
+                    alt={logo.alt}
+                    className="max-w-full max-h-full object-contain filter grayscale opacity-60"
+                  />
+                </div>
+                <span className="text-xs font-inter text-gray-500 text-center font-medium">
+                  {logo.name}
+                </span>
               </motion.div>
             ))}
           </div>
