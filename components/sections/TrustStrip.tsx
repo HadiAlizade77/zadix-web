@@ -4,14 +4,13 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 export default function TrustStrip() {
-  const clientLogos = [
-    { name: 'Gulf Logistics', alt: 'Client logo — Gulf Logistics', url: 'https://logoipsum.com/logo1.svg' },
-    { name: 'Al Noor Developments', alt: 'Client logo — Al Noor Developments', url: 'https://logoipsum.com/logo2.svg' },
-    { name: 'Meridian Clinic', alt: 'Client logo — Meridian Clinic', url: 'https://logoipsum.com/logo3.svg' },
-    { name: 'Lex & Co. Legal', alt: 'Client logo — Lex & Co. Legal', url: 'https://logoipsum.com/logo4.svg' },
-    { name: 'Orion Investment Partners', alt: 'Client logo — Orion Investment Partners', url: 'https://logoipsum.com/logo5.svg' },
-  ];
-
+const clientLogos = [
+  { name: 'Gulf Logistics', alt: 'Client logo — Gulf Logistics', url: 'https://gulfcorp-sa.com/wp-content/uploads/2024/09/gulf-corp.png' },
+  { name: 'Al Noor Developments', alt: 'Client logo — Al Noor Developments', url: 'https://ezmakaan.com/wp-content/uploads/2019/05/alnoor.jpg' },
+  { name: 'Meridian Clinic', alt: 'Client logo — Meridian Clinic', url: 'https://meridianclinic.com.my/wp-content/uploads/2018/01/Meridian_logo_Gold2-s.png' },
+  { name: 'Lex & Co. Legal', alt: 'Client logo — Lex & Co. Legal', url: 'https://media.licdn.com/dms/image/v2/C560BAQGf7K2EXHNVGg/company-logo_200_200/company-logo_200_200/0/1630602548313/lex_co_logo?e=2147483647&v=beta&t=vPmHVAnDTB88ace_groBcO_jG-8-KpEtSV834MUieEA' },
+  { name: 'Orion Investment Partners', alt: 'Client logo — Orion Investment Partners', url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7pGmN2O2zUS3zAQrCYW3swnY4IZBYAIpcndYExUTG9ugLx5SCqOGQwm75nfvDdROFCg&usqp=CAU' },
+];
   return (
     <section className="py-12 bg-gray-50 border-y border-gray-200 relative z-10">
       <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8">
