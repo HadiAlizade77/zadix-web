@@ -104,13 +104,7 @@ export function VideoModal({ videoUrl, title }: VideoModalProps) {
               {videoUrl ? (
                 <div className="w-full h-full">
                   <iframe
-                    src={videoUrl.includes('youtu.be/') || videoUrl.includes('youtube.com/watch')
-                      ? videoUrl
-                          .replace('youtu.be/', 'www.youtube.com/embed/')
-                          .replace('youtube.com/watch?v=', 'youtube.com/embed/')
-                          .split('?')[0] + '?autoplay=1'
-                      : videoUrl + '?autoplay=1'
-                    }
+                    src="https://www.youtube.com/embed/FwOTs4UxQS4?autoplay=1"
                     title={title || 'Zadix Overview Video'}
                     className="w-full h-full"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
