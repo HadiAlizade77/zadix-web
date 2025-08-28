@@ -48,6 +48,9 @@ export default function TrustStrip() {
               </motion.div>
             ))}
           </div>
+            )
+            )
+            }
         </div>
       </div>
     </section>
