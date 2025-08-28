@@ -15,7 +15,7 @@ export default function VideoOverview() {
           className="text-center"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            See how it works in 2 minutes
+            See how it works 
           </h2>
           <p className="text-xl text-gray-300 mb-12 max-w-3xl mx-auto">
             From intake to decision to approval — watch an automation run end-to-end.
