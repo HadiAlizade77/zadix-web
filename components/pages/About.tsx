@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Users, MapPin, Award, Target, ArrowRight } from 'lucide-react';
+import { Users, MapPin, Award, Target, ArrowRight, CheckCircle } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -11,44 +11,40 @@ const About = () => {
   const values = [
     {
       icon: Target,
-      title: 'Outcomes First',
-      description: 'We measure success by business impact, not technical complexity. Every automation must deliver measurable value.'
+      title: 'Reliability',
+      description: 'Every workflow is tested, observable, and reversible. We build systems that work consistently in production.'
     },
     {
-      icon: Users,
-      title: 'Engineers First',
-      description: 'Built by senior engineers who understand enterprise systems, microservices, and production challenges.'
+      icon: CheckCircle,
+      title: 'Clarity',
+      description: 'Fixed scope, fixed timeline, clear documentation. No surprises, no scope creep, no hidden costs.'
     },
     {
       icon: Award,
-      title: 'Production Ready',
-      description: 'No prototypes or MVPs. We build systems that scale, monitor, and maintain themselves in production.'
+      title: 'Impact',
+      description: 'ROI measured in days, not months. We focus on delivering measurable business value quickly.'
     }
   ];
 
   const team = [
     {
-      name: 'Senior Engineering Team',
-      role: 'Technical Leadership',
-      description: 'Former enterprise architects with deep experience in microservices, AI orchestration, and production systems.'
+      name: 'Hadi Alizadeh',
+      role: 'Founder & Principal Engineer',
+      description: 'SignumTTE Technical Manager: enterprise microservices, AI orchestration, and data systems.',
+      photo: 'https://media.licdn.com/dms/image/v2/D5603AQFWC3zQ4h0wgA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1713242516858?e=1759363200&v=beta&t=XT3XMKWqWC9N1eJaextCnNxkwXrK7ApszfYmk-jY5L8'
     },
     {
-      name: 'Business Operations',
-      role: 'Process Experts',
-      description: 'Domain experts who understand the operational challenges across different industries and business functions.'
+      name: 'Solutions Architect',
+      role: 'Integration & Reliability',
+      description: 'Integration design, automation reliability, and client onboarding.',
+      photo: 'https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=400'
     },
     {
-      name: 'AI Research',
-      role: 'Innovation Team',
-      description: 'Researchers focused on practical applications of LLMs, agent systems, and production AI workflows.'
+      name: 'Delivery Lead',
+      role: 'Project Execution',
+      description: 'Project execution, testing, and customer enablement.',
+      photo: 'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400'
     }
-  ];
-
-  const stats = [
-    { number: '50+', label: 'Automations Delivered', description: 'Production systems in operation' },
-    { number: '7', label: 'Day Average Delivery', description: 'From requirements to production' },
-    { number: '99.9%', label: 'System Uptime', description: 'Reliable, monitored operations' },
-    { number: '3', label: 'Global Offices', description: 'Dubai, London, New York' }
   ];
 
   return (
@@ -63,25 +59,42 @@ const About = () => {
             transition={{ duration: 0.8 }}
           >
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
-              Engineers First,{' '}
+              Engineers first.{' '}
               <span className="bg-gradient-to-r from-[#00B3A4] to-[#2563EB] bg-clip-text text-transparent">
-                Outcomes Always
+                Outcomes always.
               </span>
             </h1>
             <p className="text-xl text-gray-300 max-w-4xl mx-auto mb-8 leading-relaxed">
-              Built by senior engineers with enterprise microservices and AI orchestration backgrounds. 
-              Headquartered in Dubai Free Zone, serving global clients.
+              Zadix was founded to deliver production-ready AI automations to businesses in MENA and Europe — 
+              with a clear focus on measurable impact and enterprise reliability.
             </p>
             <div className="flex items-center justify-center text-gray-300 mb-8">
               <MapPin className="h-5 w-5 mr-2" />
-              <span>Dubai, UAE • London, UK • New York, USA</span>
+              <span>Based in Dubai, serving clients across GCC, Türkiye, CIS, and Europe</span>
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Values */}
+      {/* Story Block */}
       <section className="py-20 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            className="text-center"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <blockquote className="text-2xl md:text-3xl text-[#111827] leading-relaxed font-medium italic mb-8">
+              "We've spent years building complex enterprise systems — from facility management platforms to AI-powered analytics — and saw how much time gets lost in repetitive processes. Zadix exists to fix that. Our mission is simple: cut manual work by 50–80% in the first 30 days, without compromising compliance or control."
+            </blockquote>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Values */}
+      <section className="py-20 bg-[#F8FAFC]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-16"
@@ -124,43 +137,6 @@ const About = () => {
         </div>
       </section>
 
-      {/* Stats */}
-      <section className="py-20 bg-[#F8FAFC]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-[#111827] mb-6">
-              By the Numbers
-            </h2>
-            <p className="text-xl text-[#6B7280] max-w-3xl mx-auto">
-              Our track record of delivering production-ready AI automation systems
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {stats.map((stat, index) => (
-              <motion.div
-                key={stat.label}
-                className="text-center"
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-              >
-                <div className="text-5xl font-bold text-[#111827] mb-2">{stat.number}</div>
-                <div className="text-lg font-semibold text-[#00B3A4] mb-2">{stat.label}</div>
-                <p className="text-[#6B7280]">{stat.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Team */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -175,76 +151,12 @@ const About = () => {
               Our Team
             </h2>
             <p className="text-xl text-[#6B7280] max-w-3xl mx-auto">
-              Cross-functional expertise in engineering, business operations, and AI research
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {team.map((member, index) => (
-              <motion.div
-                key={member.name}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
-              >
-                <Card className="h-full hover:shadow-lg transition-all duration-300">
-                  <CardHeader className="text-center">
-                    <div className="w-20 h-20 bg-gradient-to-br from-[#00B3A4] to-[#2563EB] rounded-full flex items-center justify-center mx-auto mb-4">
-                      <Users className="h-10 w-10 text-white" />
-                    </div>
-                    <CardTitle className="text-xl mb-2">{member.name}</CardTitle>
-                    <p className="text-[#00B3A4] font-medium">{member.role}</p>
-                  </CardHeader>
-                  <CardContent className="text-center">
-                    <p className="text-[#6B7280] leading-relaxed">{member.description}</p>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Team Bios */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-[#111827] mb-6">
-              Meet the Team
-            </h2>
-            <p className="text-xl text-[#6B7280] max-w-3xl mx-auto">
               Senior engineers and process experts building production-ready automation systems
             </p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-            {[
-              {
-                name: 'Hadi Alizadeh',
-                role: 'Founder & Principal Engineer',
-                description: 'Enterprise automation, data systems, and AI orchestration.',
-                photo: 'https://media.licdn.com/dms/image/v2/D5603AQFWC3zQ4h0wgA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1713242516858?e=1759363200&v=beta&t=XT3XMKWqWC9N1eJaextCnNxkwXrK7ApszfYmk-jY5L8'
-              },
-              {
-                name: 'Sarah Mitchell',
-                role: 'Solutions Architect',
-                description: 'Process design, integrations, and reliability engineering.',
-                photo: 'https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=400'
-              },
-              {
-                name: 'Marcus Chen',
-                role: 'Delivery Lead',
-                description: 'Project management, QA, and client enablement.',
-                photo: 'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400'
-              }
-            ].map((member, index) => (
+            {team.map((member, index) => (
               <motion.div
                 key={member.name}
                 initial={{ opacity: 0, y: 40 }}
@@ -280,7 +192,7 @@ const About = () => {
             transition={{ duration: 0.8 }}
           >
             <Button size="lg" asChild>
-              <a href="mailto:engineering@zadix.ai?subject=Technical Discussion">
+              <a href="mailto:hello@zadix.ai?subject=Technical Discussion">
                 Talk to engineering
               </a>
             </Button>

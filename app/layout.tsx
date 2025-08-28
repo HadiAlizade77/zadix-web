@@ -17,7 +17,7 @@ const sora = Sora({
 });
 
 export const metadata: Metadata = {
-  title: 'AI Automation for Business — Production‑Ready in 7–14 Days | Zadix',
+  title: 'AI Automation for Business — Production-Ready in 7–14 Days | Zadix',
   description: 'We build automations that cut manual work 50–80% and respond in under a minute. Fixed scope, fixed timeline, 30-day value guarantee.',
   keywords: 'ai automation dubai, agentic ai for business, workflow automation uae, real estate ai automation, logistics rfq automation, investment memo ai',
   authors: [{ name: 'Zadix' }],
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'AI Automation for Business — Production‑Ready in 7–14 Days | Zadix',
+    title: 'AI Automation for Business — Production-Ready in 7–14 Days | Zadix',
     description: 'We build automations that cut manual work 50–80% and respond in under a minute. Fixed scope, fixed timeline, 30-day value guarantee.',
     url: 'https://zadix.ai',
     siteName: 'Zadix',
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'AI Automation for Business — Production‑Ready in 7–14 Days | Zadix',
+    title: 'AI Automation for Business — Production-Ready in 7–14 Days | Zadix',
     description: 'We build automations that cut manual work 50–80% and respond in under a minute. Fixed scope, fixed timeline, 30-day value guarantee.',
     images: ['/og-image.jpg'],
   },

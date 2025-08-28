@@ -28,11 +28,11 @@ const Blog = () => {
               <BookOpen className="h-10 w-10 text-white" />
             </div>
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
-              Engineering Blog
+              Insights on AI Automation
             </h1>
             <p className="text-xl text-gray-300 max-w-4xl mx-auto mb-8 leading-relaxed">
-              Deep technical content on building reliable, observable, and scalable AI automation systems. 
-              From architecture decisions to production war stories.
+              Practical guides on AI workflows, ROI, and guardrails for enterprises. 
+              Real insights from building production automation systems.
             </p>
             <div className="flex flex-wrap justify-center gap-4 mb-8">
               {categories.map((category) => (

@@ -11,6 +11,266 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: 'how-to-measure-roi-ai-automations-30-days',
+    title: 'How to Measure ROI from AI Automations in 30 Days',
+    author: 'Hadi Alizadeh',
+    date: '2024-01-22',
+    readTime: '8 min read',
+    category: 'Strategy',
+    excerpt: 'To build confidence in AI automations, measure impact. Here\'s how: baseline processes, define a success metric (hours saved, reduced response time), and track results over 30 days — no advanced analytics needed.',
+    content: `Many AI projects fail not because the technology doesn't work, but because impact isn't measured. Use a 3-step framework: (1) Benchmark current workflow time and error rate; (2) Choose a clear ROI metric (e.g., documents processed per hour, first-response time, error reduction); (3) Compare pre- vs. post-launch data over 30 days. Deloitte found that 69% of companies report ROI in IT ops and 74% in customer service from automation.
+
+## The 30-Day Measurement Framework
+
+Most teams struggle to measure automation ROI because they overcomplicate it. You don't need complex analytics or data science—just three simple metrics tracked consistently.
+
+### Metric 1: Time Saved Per Task
+
+**Before automation:** Track how long your current process takes from start to finish. Include all the hidden time—waiting for approvals, switching between systems, manual data entry.
+
+**After automation:** Measure the same process with automation. Don't forget to include the time for any human review or approval steps.
+
+**Formula:** (Old Time - New Time) × Volume Per Week = Hours Saved
+
+### Metric 2: Response Time Improvement
+
+**Before:** How long from initial request to first meaningful response?
+
+**After:** Same measurement with automation handling the initial processing.
+
+This metric is especially powerful for customer-facing processes like lead qualification or support tickets.
+
+### Metric 3: Error Rate Reduction
+
+**Before:** Track errors that require rework—wrong data entry, missed steps, compliance issues.
+
+**After:** Monitor the same error types with automation plus human oversight.
+
+## Simple Tracking Template
+
+Create a simple spreadsheet with these columns:
+- Date
+- Process Name
+- Volume (how many items processed)
+- Time Per Item (minutes)
+- Errors Found
+- Notes
+
+Track for 2 weeks before automation, then 4 weeks after go-live.
+
+## Real Example: Logistics RFQ Processing
+
+**Before Automation:**
+- Average time per RFQ: 2.5 hours
+- Weekly volume: 40 RFQs
+- Total weekly time: 100 hours
+- Error rate: 15% (pricing mistakes, missed requirements)
+
+**After Automation:**
+- Average time per RFQ: 20 minutes (including human review)
+- Weekly volume: 40 RFQs
+- Total weekly time: 13.3 hours
+- Error rate: 3% (mostly edge cases)
+
+**Result:** 86.7 hours saved per week, 80% error reduction.
+
+## The ROI Calculator
+
+**Weekly Time Saved:** 86.7 hours
+**Hourly Rate:** $50 (loaded cost)
+**Weekly Value:** $4,335
+**Annual Value:** $225,420
+
+**Investment:** $12,900 (Pro package)
+**Payback Period:** 3 weeks
+**Annual ROI:** 1,647%
+
+## Common Measurement Mistakes
+
+**Mistake 1:** Only measuring the "happy path"
+Include edge cases, errors, and exception handling in your measurements.
+
+**Mistake 2:** Forgetting about setup time
+Include the time to configure, test, and train your team.
+
+**Mistake 3:** Not tracking quality
+Speed without quality is worthless. Always measure both.
+
+## Getting Started
+
+1. Pick one process to automate first
+2. Track baseline metrics for 2 weeks
+3. Implement automation
+4. Track the same metrics for 4 weeks
+5. Calculate ROI and decide on next process
+
+The key is starting simple and building confidence through measurement.`
+  },
+  {
+    id: 'inbox-to-system-7-day-build-plan',
+    title: 'From Inbox to System of Record — A 7-Day Build Plan',
+    author: 'Engineering Team',
+    date: '2024-01-20',
+    readTime: '12 min read',
+    category: 'Engineering',
+    excerpt: 'With clear scope and smart tooling, you can turn manual workflows into production automation in just one week.',
+    content: `Automation doesn't need months of runway. Here's our 7-day blueprint: Day 1–2: scope kickoff and access setup; Day 3–4: flow build + approvals + guardrails; Day 5: monitoring and refinement; Day 6: UAT + error handling; Day 7: production handoff + training. Many organizations see visible benefits within this tight timeframe, aligning with industry case studies showing immediate ROI from workflow automation.
+
+## Day 1-2: Scope Kickoff and Access Setup
+
+**Day 1 Morning:** Requirements gathering session with stakeholders
+- Map current workflow step-by-step
+- Identify pain points and bottlenecks
+- Define success metrics (time saved, accuracy, response time)
+- Document business rules and edge cases
+
+**Day 1 Afternoon:** Technical architecture design
+- System integration points identified
+- Data flow mapping
+- Security and compliance requirements
+- Error handling and rollback procedures
+
+**Day 2:** Access setup and environment preparation
+- API access and credentials configured
+- Development environment setup
+- Initial system connections tested
+- Security protocols implemented
+
+## Day 3-4: Flow Build + Approvals + Guardrails
+
+**Day 3:** Core workflow development
+- Implement main automation logic
+- Build primary system integrations
+- Create human approval checkpoints
+- Add basic error handling
+
+**Day 4:** Guardrails and safety measures
+- Implement retry mechanisms with exponential backoff
+- Set up dead letter queues for failed items
+- Add rate limiting and resource controls
+- Create audit logging and tracing
+
+## Day 5: Monitoring and Refinement
+
+**Focus:** Observability and performance optimization
+- Set up comprehensive monitoring dashboards
+- Implement alerting for critical failures
+- Performance testing and optimization
+- Quality metrics and evaluation setup
+
+## Day 6: UAT + Error Handling
+
+**User Acceptance Testing:**
+- End-to-end workflow testing with real data
+- Edge case handling verification
+- User feedback incorporation
+- Documentation and training material creation
+
+## Day 7: Production Handoff + Training
+
+**Final day activities:**
+- Production deployment with monitoring
+- Team training and knowledge transfer
+- Complete source code handover
+- Support channel setup and escalation procedures
+
+## Why 7 Days Works
+
+**Tight Scope:** We focus on one core workflow, not everything at once.
+
+**Real Data:** We test with your actual data from Day 3 onwards.
+
+**Daily Updates:** You see progress every day with screenshots and demos.
+
+**Production Focus:** We build for production from Day 1, not prototypes.
+
+Seven days to prove value. Then we scale from there.`
+  },
+  {
+    id: 'five-guardrails-ai-workflow-needs',
+    title: 'Five Guardrails Every AI Workflow Needs',
+    author: 'Engineering Team',
+    date: '2024-01-18',
+    readTime: '10 min read',
+    category: 'Engineering',
+    excerpt: 'Reliable automation is engineered, not accidental. Here are the 5 guardrails that keep automations safe, auditable, and operational.',
+    content: `Without safeguards, automations can break silently. Trustworthy AI workflows include: retries and dead-letter handling for failures, human-in-loop approvals for critical decisions, observability (traces + metrics) to spot drift, audit logs for accountability, and rate limits for resource control. Together, these guardrails ensure automations don't just work today — they keep working tomorrow.
+
+## Guardrail 1: Human Approval Workflows
+
+**The Problem:** AI makes mistakes, especially with high-stakes decisions like financial transactions or customer communications.
+
+**The Solution:** Strategic approval checkpoints for critical actions.
+
+**Implementation:**
+- Flag high-value transactions for human review
+- Route sensitive customer communications through approval
+- Set confidence thresholds for automatic vs. manual processing
+- Create escalation paths for edge cases
+
+**Example:** In our logistics automation, quotes over $50k or with unusual terms automatically route to a senior operations manager for approval before sending.
+
+## Guardrail 2: Exponential Backoff & Retries
+
+**The Problem:** External systems fail, APIs go down, and networks have hiccups.
+
+**The Solution:** Intelligent retry mechanisms that don't overwhelm failing systems.
+
+**Implementation:**
+- Start with 1-second delay, double each retry
+- Maximum of 5 retry attempts
+- Different retry strategies for different error types
+- Circuit breaker pattern for persistent failures
+
+## Guardrail 3: Dead Letter Queues (DLQs)
+
+**The Problem:** Some items will always fail processing—corrupted files, invalid data, system outages.
+
+**The Solution:** Separate queue for failed items with manual review process.
+
+**Implementation:**
+- Automatic routing of failed items to DLQ
+- Daily review process for DLQ items
+- Root cause analysis and pattern detection
+- Process improvements based on failure patterns
+
+## Guardrail 4: Full Observability
+
+**The Problem:** When automation fails, you need to understand why—fast.
+
+**The Solution:** Comprehensive logging and tracing of every decision and action.
+
+**Implementation:**
+- Trace every workflow execution end-to-end
+- Log all AI decisions with confidence scores
+- Track performance metrics and costs
+- Create dashboards for real-time monitoring
+
+## Guardrail 5: Rate Limiting & Resource Protection
+
+**The Problem:** Runaway automation can overwhelm systems and rack up costs.
+
+**The Solution:** Built-in rate limits and resource controls.
+
+**Implementation:**
+- API rate limiting to respect external system limits
+- Cost budgets for AI model usage
+- Concurrency limits for parallel processing
+- Resource monitoring and automatic scaling
+
+## The Engineering Mindset
+
+These guardrails aren't just technical features—they're a mindset:
+
+**Assume failure will happen** and design for it.
+**Make everything observable** so you can debug quickly.
+**Protect your systems** from runaway automation.
+**Keep humans in the loop** for critical decisions.
+**Learn from failures** to improve the system.
+
+Automation without guardrails is just expensive chaos. With proper engineering, it becomes a reliable business asset.`
+  },
+  {
     id: 'how-to-measure-ai-automation-roi',
     title: 'How to Measure AI Automation ROI in 30 Days',
     author: 'Hadi Alizadeh',

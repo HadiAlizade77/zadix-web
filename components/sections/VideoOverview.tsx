@@ -21,42 +21,33 @@ export default function VideoOverview() {
             See how it works in 2 minutes
           </h2>
           <p className="text-xl text-[#6B7280] mb-12 max-w-2xl mx-auto">
-            From intake to decision to approval—watch an automation run end‑to‑end.
+            From intake to decision to approval — watch an automation run end-to-end.
           </p>
           
           <div className="relative">
-            <motion.button
-              onClick={openModal}
-              className="relative group"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <div className="w-full max-w-2xl mx-auto aspect-video bg-gradient-to-br from-[#0B1220] to-[#2563EB] rounded-2xl flex items-center justify-center relative overflow-hidden">
-                {/* Background pattern */}
-                <div className="absolute inset-0 opacity-10">
-                  <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-white rounded-full blur-xl"></div>
-                  <div className="absolute bottom-1/4 right-1/4 w-24 h-24 bg-white rounded-full blur-xl"></div>
-                </div>
-                
-                {/* Play button */}
-                <div className="relative z-10 w-20 h-20 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:bg-white/30 transition-all duration-300">
-                  <Play className="h-8 w-8 text-white ml-1" />
-                </div>
-                
-                {/* Overlay text */}
-                <div className="absolute bottom-6 left-6 text-white">
-                  <div className="text-sm font-medium opacity-90">Zadix Overview</div>
-                  <div className="text-xs opacity-70">2:15 duration</div>
-                </div>
+            <div className="w-full max-w-2xl mx-auto aspect-video bg-gray-900 rounded-2xl overflow-hidden shadow-2xl">
+              <iframe
+                src="https://www.youtube.com/embed/XXXXXXXXXXX"
+                title="Zadix AI Automation Overview"
+                className="w-full h-full"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            </div>
+            
+            {/* Video placeholder overlay for demo */}
+            <div className="absolute inset-0 w-full max-w-2xl mx-auto aspect-video bg-gradient-to-br from-[#0B1220] to-[#2563EB] rounded-2xl flex items-center justify-center">
+              <div className="text-center text-white">
+                <Play className="h-16 w-16 mx-auto mb-4 opacity-50" />
+                <h3 className="text-xl font-semibold mb-2">Video Coming Soon</h3>
+                <p className="text-gray-300 text-sm">
+                  2-minute overview of our automation process
+                </p>
               </div>
-            </motion.button>
+            </div>
           </div>
         </motion.div>
       </div>
-      <VideoModal 
-        videoUrl="https://youtu.be/FwOTs4UxQS4"
-        title="Zadix AI Automation Overview"
-      />
     </section>
   );
 }

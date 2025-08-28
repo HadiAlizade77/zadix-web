@@ -5,11 +5,11 @@ import Footer from '@/components/layout/Footer'
 import MobileCTABar from '@/components/layout/MobileCTABar'
 
 export const metadata: Metadata = {
-  title: 'Engineering Blog - Production AI Insights - Zadix',
-  description: 'Deep technical content on building reliable, observable, and scalable AI automation systems. From architecture decisions to production war stories.',
+  title: 'Insights on AI Automation — Zadix Blog',
+  description: 'Practical guides on AI workflows, ROI, and guardrails for enterprises.',
   openGraph: {
-    title: 'Engineering Blog - Production AI Insights - Zadix',
-    description: 'Deep technical content on building reliable, observable, and scalable AI automation systems. From architecture decisions to production war stories.',
+    title: 'Insights on AI Automation — Zadix Blog',
+    description: 'Practical guides on AI workflows, ROI, and guardrails for enterprises.',
   },
 }
 

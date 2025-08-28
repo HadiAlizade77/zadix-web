@@ -371,7 +371,7 @@ const Contact = () => {
                   <label className="block text-sm font-medium text-[#111827] mb-3">
                     Systems in use (CRM/ERP/Helpdesk/DB) *
                   </label>
-                  <p className="text-sm text-[#6B7280] mb-3">Select the tools you use today</p>
+                  <p className="text-sm text-[#6B7280] mb-3">Choose the tools you use today</p>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                     {systemOptions.map((system) => (
                       <label key={system} className="flex items-center">
@@ -392,6 +392,22 @@ const Contact = () => {
                 {/* Process Details */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
+                    <label htmlFor="volume" className="block text-sm font-medium text-[#111827] mb-2">
+                      Process volume *
+                    </label>
+                    <input
+                      type="text"
+                      id="volume"
+                      name="volume"
+                      required
+                      value={formData.volume}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00B3A4] focus:border-transparent"
+                      placeholder="e.g., 120 RFQs/week, 300 invoices/month"
+                    />
+                    <p className="text-xs text-[#6B7280] mt-1">Estimate your daily/weekly workload</p>
+                  </div>
+                  <div>
                     <label htmlFor="sensitivity" className="block text-sm font-medium text-[#111827] mb-2">
                       Contains PII/PHI? *
                     </label>
@@ -409,21 +425,6 @@ const Contact = () => {
                       <option value="PHI">Contains PHI</option>
                       <option value="Both">Contains both PII and PHI</option>
                     </select>
-                  </div>
-                  <div>
-                    <label htmlFor="volume" className="block text-sm font-medium text-[#111827] mb-2">
-                      Daily/weekly volume *
-                    </label>
-                    <input
-                      type="text"
-                      id="volume"
-                      name="volume"
-                      required
-                      value={formData.volume}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00B3A4] focus:border-transparent"
-                      placeholder="e.g., 120 RFQs/week, 300 invoices/month"
-                    />
                   </div>
                 </div>
 
@@ -459,6 +460,7 @@ const Contact = () => {
                       <option value="20-50k">$20k - $50k</option>
                       <option value="50k+">$50k+</option>
                     </select>
+                    <p className="text-xs text-[#6B7280] mt-1">Helps us recommend the right package</p>
                   </div>
                 </div>
 
@@ -467,22 +469,12 @@ const Contact = () => {
                   <label htmlFor="files" className="block text-sm font-medium text-[#111827] mb-2">
                     Upload sample docs/emails (optional)
                   </label>
-                  <div className="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center hover:border-[#00B3A4] transition-colors">
-                    <Upload className="h-8 w-8 text-gray-400 mx-auto mb-2" />
-                    <input
-                      type="file"
-                      id="files"
-                      name="files"
-                      multiple
-                      onChange={handleChange}
-                      className="hidden"
-                      accept=".pdf,.doc,.docx,.txt,.csv,.xlsx"
-                    />
-                    <label htmlFor="files" className="cursor-pointer">
-                      <span className="text-[#00B3A4] font-medium">Click to upload</span>
-                      <span className="text-[#6B7280]"> or drag and drop</span>
-                    </label>
-                    <p className="text-sm text-[#6B7280] mt-1">
+                  <div className="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center hover:border-[#00B3A4] transition-colors opacity-50">
+                    <div className="text-center">
+                      <div className="text-gray-400 mb-2">📎</div>
+                      <span className="text-gray-400 text-sm">File upload coming soon</span>
+                    </div>
+                    <p className="text-xs text-[#6B7280] mt-2">
                       PDF, DOC, TXT, CSV, XLSX up to 10MB each
                     </p>
                   </div>
@@ -490,18 +482,20 @@ const Contact = () => {
 
                 {/* Message */}
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-[#111827] mb-2">
-                    Describe your workflow challenge
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows={4}
-                    value={formData.message}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00B3A4] focus:border-transparent"
-                    placeholder="Tell us about the manual process you'd like to automate..."
-                  />
+                  <div>
+                    <label htmlFor="message" className="block text-sm font-medium text-[#111827] mb-2">
+                      Describe your workflow challenge
+                    </label>
+                    <textarea
+                      id="message"
+                      name="message"
+                      rows={4}
+                      value={formData.message}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00B3A4] focus:border-transparent"
+                      placeholder="Tell us about the manual process you'd like to automate..."
+                    />
+                  </div>
                 </div>
 
                 {/* Consent */}
