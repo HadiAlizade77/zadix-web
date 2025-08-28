@@ -34,23 +34,20 @@ export default function TrustStrip() {
             {clientLogos.map((logo, index) => (
               <motion.div
                 key={logo.name}
-                className="w-32 h-16 bg-white/10 rounded-lg flex items-center justify-center opacity-60 hover:opacity-80 transition-opacity p-4"
+                className="w-32 h-16 bg-white rounded-lg flex items-center justify-center opacity-60 hover:opacity-80 transition-opacity p-4 shadow-sm border border-gray-200"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
-                <div className="w-32 h-16 bg-white rounded-lg flex items-center justify-center opacity-60 hover:opacity-80 transition-opacity p-4 shadow-sm border border-gray-200">
-                  src={logo.url} 
-                    className="max-w-full max-h-full object-contain filter grayscale opacity-60"
-                  className="max-w-full max-h-full object-contain filter brightness-0 invert opacity-60"
+                <img
+                  src={logo.url}
+                  alt={logo.alt}
+                  className="max-w-full max-h-full object-contain filter grayscale opacity-60"
                 />
               </motion.div>
             ))}
           </div>
-            )
-            )
-            }
         </div>
       </div>
     </section>
