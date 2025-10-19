@@ -30,19 +30,19 @@ const About = () => {
     {
       name: 'Hadi Alizadeh',
       role: 'Founder & Principal Engineer',
-      description: 'SignumTTE Technical Manager: enterprise microservices, AI orchestration, and data systems.',
-      photo: 'https://media.licdn.com/dms/image/v2/D5603AQFWC3zQ4h0wgA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1713242516858?e=1759363200&v=beta&t=XT3XMKWqWC9N1eJaextCnNxkwXrK7ApszfYmk-jY5L8'
+      description: 'CEO',
+      photo: 'https://media.licdn.com/dms/image/v2/D5603AQFWC3zQ4h0wgA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1713242516858?e=1762387200&v=beta&t=UmAULipugpKWviwPEOyEdPrrY0j4s87LdXBPIjN5U7o'
     },
     {
-      name: 'Solutions Architect',
-      role: 'Integration & Reliability',
-      description: 'Integration design, automation reliability, and client onboarding.',
-      photo: 'https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=400'
-    },
-    {
-      name: 'Delivery Lead',
-      role: 'Project Execution',
+      name: 'Irmak Aslan',
+      role: 'Software Engineer',
       description: 'Project execution, testing, and customer enablement.',
+      photo: 'https://media.licdn.com/dms/image/v2/D4E03AQFj0fN6RoqJ0Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1708183974643?e=1762387200&v=beta&t=vBO0jbVLHjAYNhyYo4pVWJUioKcW7a0ece4iPn_Oj_w'
+    },
+    {
+      name: 'Mehmet Aydin',
+      role: 'Project Execution',
+      description: 'Integration design, automation reliability, and client onboarding.',
       photo: 'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400'
     }
   ];
@@ -65,12 +65,13 @@ const About = () => {
               </span>
             </h1>
             <p className="text-xl text-gray-300 max-w-4xl mx-auto mb-8 leading-relaxed">
-              Zadix was founded to deliver production-ready AI automations to businesses in MENA and Europe — 
+              Zadix was founded to deliver production-ready AI automations to businesses — 
               with a clear focus on measurable impact and enterprise reliability.
+              <p>Registered in England and Wales No. 16792922 ·</p>
             </p>
             <div className="flex items-center justify-center text-gray-300 mb-8">
               <MapPin className="h-5 w-5 mr-2" />
-              <span>Based in Dubai, serving clients across GCC, Türkiye, CIS, and Europe</span>
+              <p>© 2026 Zadix AI Ltd · 71-75 Shelton Street, Covent Garden, London WC2H 9JQ, United Kingdom ·</p>
             </div>
           </motion.div>
         </div>

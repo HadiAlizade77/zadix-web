@@ -179,7 +179,7 @@ const Contact = () => {
               </div>
               <p className="mb-6">Chat with us now</p>
               <Button size="lg" variant="secondary" asChild>
-                <a href="https://wa.me/0000000000" target="_blank" rel="noopener noreferrer">
+                <a href="https://wa.me/+447418635600" target="_blank" rel="noopener noreferrer">
                   Chat with us now
                 </a>
               </Button>
@@ -227,7 +227,7 @@ const Contact = () => {
                 <h4 className="text-lg font-bold text-[#111827] mb-2">WhatsApp</h4>
                 <p className="text-[#6B7280] mb-4">Quick questions and instant responses</p>
                 <Button asChild>
-                  <a href="https://wa.me/0000000000" target="_blank" rel="noopener noreferrer">
+                  <a href="https://wa.me/+447418635600" target="_blank" rel="noopener noreferrer">
                     Chat Now
                   </a>
                 </Button>

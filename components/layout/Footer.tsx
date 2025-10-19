@@ -75,7 +75,7 @@ export default function Footer({ locale }: FooterProps) {
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <MapPin className="h-5 w-5 text-accent-teal" />
-                <span className="text-gray-300">{business.address.city}, {business.address.country}</span>
+                <span className="text-gray-300">71-75 Shelton Street, London, WC2H 9JQ, United Kingdom</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 text-accent-teal" />
@@ -91,7 +91,7 @@ export default function Footer({ locale }: FooterProps) {
               </div>
               <div className="flex items-center space-x-3">
                 <MessageCircle className="h-5 w-5 text-accent-teal" />
-                <a href="https://wa.me/0000000000" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-accent-teal transition-colors">
+                <a href="https://wa.me/+447418635600" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-accent-teal transition-colors">
                   WhatsApp
                 </a>
               </div>

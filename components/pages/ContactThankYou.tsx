@@ -46,7 +46,7 @@ export default function ContactThankYou() {
             </div>
             <p className="mb-6">Chat with us now</p>
             <Button size="lg" variant="secondary" asChild>
-              <a href="https://wa.me/0000000000" target="_blank" rel="noopener noreferrer">
+              <a href="https://wa.me/+447418635600" target="_blank" rel="noopener noreferrer">
                 Chat with us now
               </a>
             </Button>

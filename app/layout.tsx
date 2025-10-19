@@ -98,12 +98,12 @@ export default function RootLayout({
               description: 'We build AI automations that cut manual work 50–80% and respond in under a minute.',
               address: {
                 '@type': 'PostalAddress',
-                addressLocality: 'Dubai',
-                addressCountry: 'UAE',
+                addressLocality: '71-75 Shelton Street, London WC2H 9JQ',
+                addressCountry: 'UK',
               },
               contactPoint: {
                 '@type': 'ContactPoint',
-                telephone: '+971-4-123-4567',
+                telephone: '+447418635600',
                 contactType: 'customer service',
                 email: 'hello@zadix.ai',
               },

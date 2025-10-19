@@ -27,13 +27,13 @@ export function getBusinessConfig(): BusinessConfig {
   return {
     name: 'Zadix',
     email: 'hello@zadix.ai',
-    phone: '+91 541 416 1008',
-    whatsapp: '+91 541 416 1008',
+    phone: '+44 7418 635600',
+    whatsapp: '+44 7418 635600',
     calendlyUrl: 'https://calendly.com/admin-zadix/meeting-with-zadix-ai',
     address: {
-      street: 'Dubai Internet City',
-      city: 'Dubai',
-      country: 'UAE',
+      street: '71-75 Shelton Street, London WC2H 9JQ',
+      city: 'London',
+      country: 'United Kingdom',
     },
     social: {
       linkedin: 'http://linkedin.com/company/zadix-ai',

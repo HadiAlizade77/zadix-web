@@ -186,7 +186,7 @@ export default function Header({ locale }: HeaderProps) {
           )}>
             <LanguageSwitcher currentLocale={currentLocale} />
             <a
-              href="https://wa.me/0000000000"
+              href="https://wa.me/+447418635600"
               target="_blank"
               rel="noopener noreferrer"
               className={cn(
