@@ -1,24 +1,20 @@
 'use client';
 
-import { useRef, useMemo } from 'react';
-import { Canvas, useFrame, useThree } from '@react-three/fiber';
+import { useEffect, useRef } from 'react';
 import * as THREE from 'three';
 
 // ─── constants ───────────────────────────────────────────────
-const AMBER       = '#E8963C';
-const AMBER_GLOW  = '#FFB86C';
+const AMBER       = 0xE8963C;
+const AMBER_GLOW  = 0xFFB86C;
 const NODE_COUNT  = 58;
 const SPHERE_R    = 3.6;
 const CONNECT_D   = 2.3;
 
-// ─── geometry helpers ─────────────────────────────────────────
 function buildNodes(): THREE.Vector3[] {
   const pts: THREE.Vector3[] = [];
   for (let i = 0; i < NODE_COUNT; i++) {
-    // Fibonacci-sphere distribution — even but organic
     const phi   = Math.acos(1 - 2 * (i + 0.5) / NODE_COUNT);
     const theta = Math.PI * (1 + Math.sqrt(5)) * i;
-    // Vary radius per node so depth feels real
     const r = SPHERE_R * (0.42 + (((i * 7919) % 100) / 100) * 0.62);
     pts.push(new THREE.Vector3(
       r * Math.sin(phi) * Math.cos(theta),
@@ -45,133 +41,146 @@ function buildEdges(nodes: THREE.Vector3[]): [number, number][] {
   return edges;
 }
 
-// ─── instanced nodes ─────────────────────────────────────────
-function Nodes({ nodes, hubs }: { nodes: THREE.Vector3[]; hubs: Set<number> }) {
-  const mesh = useRef<THREE.InstancedMesh>(null!);
-  const obj  = useMemo(() => new THREE.Object3D(), []);
+export default function NeuralLattice() {
+  const mountRef = useRef<HTMLDivElement>(null);
 
-  useFrame(({ clock }) => {
-    nodes.forEach((pos, i) => {
-      const base  = hubs.has(i) ? 1.1 : 0.38 + ((i * 31) % 10) * 0.055;
-      const pulse = hubs.has(i)
-        ? 1 + Math.sin(clock.elapsedTime * 1.6 + i * 0.9) * 0.32
-        : 1;
-      obj.position.copy(pos);
-      obj.scale.setScalar(base * pulse);
-      obj.updateMatrix();
-      mesh.current.setMatrixAt(i, obj.matrix);
+  useEffect(() => {
+    const mount = mountRef.current;
+    if (!mount) return;
+
+    // ── renderer ──
+    const renderer = new THREE.WebGLRenderer({
+      antialias: false,
+      alpha: true,
+      powerPreference: 'high-performance',
     });
-    mesh.current.instanceMatrix.needsUpdate = true;
-  });
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
+    renderer.setSize(mount.clientWidth, mount.clientHeight);
+    renderer.setClearColor(0x000000, 0);
+    mount.appendChild(renderer.domElement);
 
-  return (
-    <instancedMesh ref={mesh} args={[undefined, undefined, nodes.length]}>
-      <sphereGeometry args={[0.072, 10, 10]} />
-      <meshBasicMaterial color={AMBER} />
-    </instancedMesh>
-  );
-}
+    // ── scene / camera ──
+    const scene  = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(52, mount.clientWidth / mount.clientHeight, 0.1, 100);
+    camera.position.set(0, 0, 9.5);
 
-// ─── edge lines ───────────────────────────────────────────────
-function Edges({ edges, nodes }: { edges: [number, number][]; nodes: THREE.Vector3[] }) {
-  const geo = useMemo(() => {
-    const pos: number[] = [];
-    edges.forEach(([a, b]) => {
-      const na = nodes[a], nb = nodes[b];
-      pos.push(na.x, na.y, na.z, nb.x, nb.y, nb.z);
-    });
-    const g = new THREE.BufferGeometry();
-    g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
-    return g;
-  }, [edges, nodes]);
+    // ── geometry ──
+    const nodes = buildNodes();
+    const edges = buildEdges(nodes);
+    const hubs  = new Set<number>([3, 9, 15, 22, 31, 40, 47, 54].map(s => s % nodes.length));
 
-  return (
-    <lineSegments geometry={geo}>
-      <lineBasicMaterial color={AMBER} transparent opacity={0.13} />
-    </lineSegments>
-  );
-}
+    const group = new THREE.Group();
+    scene.add(group);
 
-// ─── flowing particles ────────────────────────────────────────
-function FlowParticles({ edges, nodes }: { edges: [number, number][]; nodes: THREE.Vector3[] }) {
-  const mesh = useRef<THREE.InstancedMesh>(null!);
-  const obj  = useMemo(() => new THREE.Object3D(), []);
+    // nodes — instanced mesh
+    const nodeMat  = new THREE.MeshBasicMaterial({ color: AMBER });
+    const nodeGeo  = new THREE.SphereGeometry(0.072, 10, 10);
+    const nodeMesh = new THREE.InstancedMesh(nodeGeo, nodeMat, nodes.length);
+    nodeMesh.instanceMatrix.setUsage(THREE.DynamicDrawUsage);
+    group.add(nodeMesh);
 
-  const data = useMemo(() =>
-    edges.map(([a, b], i) => ({
+    // edges — line segments
+    {
+      const pos: number[] = [];
+      edges.forEach(([a, b]) => {
+        pos.push(nodes[a].x, nodes[a].y, nodes[a].z);
+        pos.push(nodes[b].x, nodes[b].y, nodes[b].z);
+      });
+      const geo = new THREE.BufferGeometry();
+      geo.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
+      const mat = new THREE.LineBasicMaterial({ color: AMBER, transparent: true, opacity: 0.13 });
+      group.add(new THREE.LineSegments(geo, mat));
+    }
+
+    // flow particles — instanced mesh
+    const partMat  = new THREE.MeshBasicMaterial({ color: AMBER_GLOW });
+    const partGeo  = new THREE.SphereGeometry(0.048, 7, 7);
+    const partMesh = new THREE.InstancedMesh(partGeo, partMat, edges.length);
+    partMesh.instanceMatrix.setUsage(THREE.DynamicDrawUsage);
+    group.add(partMesh);
+
+    const partData = edges.map(([a, b], i) => ({
       from:   nodes[a],
       to:     nodes[b],
       speed:  0.22 + ((i * 137) % 100) / 100 * 0.45,
       offset: ((i * 83)  % 100) / 100,
-    }))
-  , [edges, nodes]);
+    }));
 
-  useFrame(({ clock }) => {
-    data.forEach((p, i) => {
-      const t = ((clock.elapsedTime * p.speed + p.offset) % 1);
-      obj.position.lerpVectors(p.from, p.to, t);
-      obj.scale.setScalar(1);
-      obj.updateMatrix();
-      mesh.current.setMatrixAt(i, obj.matrix);
-    });
-    mesh.current.instanceMatrix.needsUpdate = true;
-  });
+    // ── mouse parallax ──
+    let mouseX = 0, mouseY = 0;
+    const onMouseMove = (e: MouseEvent) => {
+      mouseX = (e.clientX / window.innerWidth)  * 2 - 1;
+      mouseY = (e.clientY / window.innerHeight) * 2 - 1;
+    };
+    window.addEventListener('mousemove', onMouseMove);
 
-  return (
-    <instancedMesh ref={mesh} args={[undefined, undefined, edges.length]}>
-      <sphereGeometry args={[0.048, 7, 7]} />
-      <meshBasicMaterial color={AMBER_GLOW} />
-    </instancedMesh>
-  );
-}
+    // ── resize ──
+    const onResize = () => {
+      if (!mount) return;
+      camera.aspect = mount.clientWidth / mount.clientHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(mount.clientWidth, mount.clientHeight);
+    };
+    window.addEventListener('resize', onResize);
 
-// ─── scene root ───────────────────────────────────────────────
-function Scene() {
-  const group = useRef<THREE.Group>(null!);
+    // ── animation loop ──
+    const obj = new THREE.Object3D();
+    let animId: number;
+    const startTime = performance.now();
 
-  const nodes = useMemo(buildNodes, []);
-  const edges = useMemo(() => buildEdges(nodes), [nodes]);
-  const hubs  = useMemo(() => {
-    const h = new Set<number>();
-    const seeds = [3, 9, 15, 22, 31, 40, 47, 54];
-    seeds.forEach(s => h.add(s % nodes.length));
-    return h;
-  }, [nodes]);
+    const animate = () => {
+      animId = requestAnimationFrame(animate);
+      const t = (performance.now() - startTime) / 1000;
 
-  useFrame(({ clock, mouse, camera }) => {
-    // Slow dual-axis rotation
-    group.current.rotation.y = clock.elapsedTime * 0.065;
-    group.current.rotation.x = clock.elapsedTime * 0.022;
+      // group rotation
+      group.rotation.y = t * 0.065;
+      group.rotation.x = t * 0.022;
 
-    // Soft mouse parallax on the camera
-    camera.position.x += (mouse.x * 1.8 - camera.position.x) * 0.022;
-    camera.position.y += (mouse.y * 1.2 - camera.position.y) * 0.022;
-    camera.lookAt(0, 0, 0);
-  });
+      // camera parallax
+      camera.position.x += (mouseX * 1.8 - camera.position.x) * 0.022;
+      camera.position.y += (-mouseY * 1.2 - camera.position.y) * 0.022;
+      camera.lookAt(0, 0, 0);
 
-  return (
-    <group ref={group}>
-      <Nodes  nodes={nodes} hubs={hubs} />
-      <Edges  edges={edges} nodes={nodes} />
-      <FlowParticles edges={edges} nodes={nodes} />
-    </group>
-  );
-}
+      // update node matrices
+      nodes.forEach((pos, i) => {
+        const base  = hubs.has(i) ? 1.1 : 0.38 + ((i * 31) % 10) * 0.055;
+        const pulse = hubs.has(i) ? 1 + Math.sin(t * 1.6 + i * 0.9) * 0.32 : 1;
+        obj.position.copy(pos);
+        obj.scale.setScalar(base * pulse);
+        obj.updateMatrix();
+        nodeMesh.setMatrixAt(i, obj.matrix);
+      });
+      nodeMesh.instanceMatrix.needsUpdate = true;
 
-// ─── exported canvas ──────────────────────────────────────────
-export default function NeuralLattice() {
-  return (
-    <Canvas
-      camera={{ position: [0, 0, 9.5], fov: 52 }}
-      dpr={[1, 1.5]}
-      gl={{
-        antialias:       false,
-        alpha:           true,
-        powerPreference: 'high-performance',
-      }}
-      style={{ background: 'transparent' }}
-    >
-      <Scene />
-    </Canvas>
-  );
+      // update particle matrices
+      partData.forEach((p, i) => {
+        const u = ((t * p.speed + p.offset) % 1);
+        obj.position.lerpVectors(p.from, p.to, u);
+        obj.scale.setScalar(1);
+        obj.updateMatrix();
+        partMesh.setMatrixAt(i, obj.matrix);
+      });
+      partMesh.instanceMatrix.needsUpdate = true;
+
+      renderer.render(scene, camera);
+    };
+    animate();
+
+    // ── cleanup ──
+    return () => {
+      cancelAnimationFrame(animId);
+      window.removeEventListener('mousemove', onMouseMove);
+      window.removeEventListener('resize', onResize);
+      renderer.dispose();
+      nodeGeo.dispose();
+      nodeMat.dispose();
+      partGeo.dispose();
+      partMat.dispose();
+      if (mount.contains(renderer.domElement)) {
+        mount.removeChild(renderer.domElement);
+      }
+    };
+  }, []);
+
+  return <div ref={mountRef} style={{ width: '100%', height: '100%' }} />;
 }
