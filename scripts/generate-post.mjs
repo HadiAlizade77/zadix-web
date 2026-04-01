@@ -193,8 +193,9 @@ Return ONLY valid raw JSON — no markdown fences, no explanation, nothing befor
       'X-Title':        'Zadix Auto Blog',
     },
     body: JSON.stringify({
-      model:       'anthropic/claude-opus-4',
-      messages:    [
+      model:    'anthropic/claude-opus-4.6',
+      provider: { order: ['Anthropic'] },   // bypass Bedrock, use native Anthropic API
+      messages: [
         { role: 'system', content: systemPrompt },
         { role: 'user',   content: userPrompt },
       ],
