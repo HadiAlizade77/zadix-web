@@ -1,12 +1,19 @@
 'use client';
 
 import React from 'react';
+import dynamic from 'next/dynamic';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Locale } from '@/lib/i18n';
 import { useVideoModal } from '@/components/ui/video-modal';
+
+// Load 3-D scene client-side only (no SSR)
+const NeuralLattice = dynamic(
+  () => import('@/components/3d/NeuralLattice'),
+  { ssr: false, loading: () => null }
+);
 
 interface HeroProps {
   locale: Locale;
@@ -16,26 +23,24 @@ export default function Hero({ locale }: HeroProps) {
   const { openModal } = useVideoModal();
 
   return (
-    <section className="relative min-h-screen bg-ink flex flex-col justify-end pb-20 lg:pb-28 overflow-hidden">
+    <section className="relative min-h-screen bg-ink overflow-hidden flex flex-col justify-end pb-20 lg:pb-28">
 
-      {/* Subtle grid */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          backgroundImage:
-            'linear-gradient(to right, #E8963C 1px, transparent 1px), linear-gradient(to bottom, #E8963C 1px, transparent 1px)',
-          backgroundSize: '100px 100px',
-          opacity: 0.03,
-        }}
-      />
+      {/* ── 3-D neural lattice ── right 65% on desktop, full bg on mobile */}
+      <div className="absolute inset-0 lg:left-[32%] pointer-events-none">
+        <NeuralLattice />
+      </div>
 
-      {/* Vertical accent line (desktop) */}
-      <div className="hidden lg:block absolute right-[12%] top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-amber/25 to-transparent pointer-events-none" />
+      {/* left gradient — blends 3D into text area */}
+      <div className="absolute inset-y-0 left-0 w-full lg:w-[58%] bg-gradient-to-r from-ink via-ink/95 to-transparent pointer-events-none z-10" />
 
-      {/* Glow behind headline */}
-      <div className="absolute left-0 bottom-1/3 w-[600px] h-[600px] bg-amber/5 rounded-full blur-[120px] pointer-events-none -translate-x-1/2" />
+      {/* mobile overlay — keeps text readable */}
+      <div className="absolute inset-0 bg-ink/55 lg:hidden pointer-events-none z-10" />
 
-      <div className="relative z-10 max-w-container mx-auto px-4 sm:px-6 lg:px-8 w-full pt-28">
+      {/* bottom fade */}
+      <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-ink to-transparent pointer-events-none z-10" />
+
+      {/* ── text content ── */}
+      <div className="relative z-20 max-w-container mx-auto px-4 sm:px-6 lg:px-8 w-full pt-28">
 
         {/* Eyebrow */}
         <motion.div
@@ -55,8 +60,8 @@ export default function Hero({ locale }: HeroProps) {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-          className="font-cormorant font-light text-cream mb-14 leading-[0.88]"
-          style={{ fontSize: 'clamp(3.5rem, 9vw, 9rem)' }}
+          className="font-cormorant font-light text-cream mb-14 leading-[0.88] max-w-2xl"
+          style={{ fontSize: 'clamp(3.5rem, 8.5vw, 8.5rem)' }}
         >
           Automate<br />
           your operations<br />
@@ -68,7 +73,7 @@ export default function Hero({ locale }: HeroProps) {
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.35, ease: 'easeOut' }}
-          className="flex flex-col lg:flex-row items-start lg:items-end justify-between gap-10"
+          className="flex flex-col lg:flex-row items-start lg:items-end justify-between gap-10 max-w-2xl"
         >
           <p className="text-muted font-dm-sans text-xl leading-relaxed max-w-md">
             Production‑ready automations that cut manual work{' '}
@@ -87,12 +92,12 @@ export default function Hero({ locale }: HeroProps) {
           </div>
         </motion.div>
 
-        {/* Scroll indicator */}
+        {/* Scroll hint */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 1.2 }}
-          className="mt-16 flex items-center gap-3 text-muted/50"
+          transition={{ duration: 1, delay: 1.4 }}
+          className="mt-16 flex items-center gap-3 text-muted/40"
         >
           <div className="w-px h-10 bg-gradient-to-b from-transparent to-border-warm" />
           <span className="text-xs font-dm-sans tracking-[0.2em] uppercase">Scroll</span>
