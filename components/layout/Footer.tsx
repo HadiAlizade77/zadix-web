@@ -40,7 +40,6 @@ export default function Footer({ locale }: FooterProps) {
       { name: getTranslation(locale, 'nav.pricing'),   href: '/pricing' },
       { name: getTranslation(locale, 'nav.process'),   href: '/process' },
       { name: getTranslation(locale, 'nav.security'),  href: '/security' },
-      { name: 'Documentation',                          href: '/docs' },
     ],
     legal: [
       { name: 'Privacy Policy',     href: '/privacy' },
