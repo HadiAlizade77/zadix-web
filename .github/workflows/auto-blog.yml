@@ -6,10 +6,13 @@ on:
     - cron: '0 10 * * *'  # 10:00 UTC — afternoon Middle East / morning Europe
     - cron: '0 14 * * *'  # 14:00 UTC — evening Middle East / afternoon Europe
     - cron: '0 18 * * *'  # 18:00 UTC — evening Europe / afternoon US East
-  workflow_dispatch:       # Allow manual trigger from GitHub UI
+  workflow_dispatch:       # Manual trigger from GitHub UI
 
 permissions:
   contents: write
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
   generate-post:
@@ -20,10 +23,10 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Setup Node.js
+      - name: Setup Node.js 24
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '24'
 
       - name: Generate and publish blog post
         env:

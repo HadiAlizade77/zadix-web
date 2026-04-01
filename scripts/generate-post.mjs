@@ -193,13 +193,13 @@ Return ONLY valid raw JSON — no markdown fences, no explanation, nothing befor
       'X-Title':        'Zadix Auto Blog',
     },
     body: JSON.stringify({
-      model:       'anthropic/claude-3.5-sonnet',
+      model:       'anthropic/claude-opus-4',
       messages:    [
         { role: 'system', content: systemPrompt },
         { role: 'user',   content: userPrompt },
       ],
-      temperature: 0.72,
-      max_tokens:  4500,
+      temperature: 0.70,
+      max_tokens:  6000,
     }),
   });
 
