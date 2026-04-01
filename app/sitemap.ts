@@ -1,8 +1,17 @@
 import { MetadataRoute } from 'next'
+import { getAllBlogPosts } from '@/lib/blog-data'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://zadix.ai'
-  
+  const posts = getAllBlogPosts()
+
+  const blogEntries: MetadataRoute.Sitemap = posts.map((post) => ({
+    url: `${baseUrl}/blog/${post.id}`,
+    lastModified: new Date(post.date),
+    changeFrequency: 'monthly',
+    priority: 0.7,
+  }))
+
   return [
     {
       url: baseUrl,
@@ -26,7 +35,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/industries/real-estate`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
-      priority: 0.8,
+      priority: 0.85,
+    },
+    {
+      url: `${baseUrl}/industries/logistics`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.85,
     },
     {
       url: `${baseUrl}/industries/investment`,
@@ -35,7 +50,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/industries/logistics`,
+      url: `${baseUrl}/industries/saas`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.8,
@@ -59,28 +74,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/industries/saas`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
       url: `${baseUrl}/industries/hospitality`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/pricing`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
+      priority: 0.75,
     },
     {
       url: `${baseUrl}/process`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
-      priority: 0.7,
+      priority: 0.75,
     },
     {
       url: `${baseUrl}/case-studies`,
@@ -92,8 +95,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/blog`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
-      priority: 0.7,
+      priority: 0.75,
     },
+    ...blogEntries,
     {
       url: `${baseUrl}/about`,
       lastModified: new Date(),

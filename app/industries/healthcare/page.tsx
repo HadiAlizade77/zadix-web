@@ -5,11 +5,14 @@ import Footer from '@/components/layout/Footer'
 import MobileCTABar from '@/components/layout/MobileCTABar'
 
 export const metadata: Metadata = {
-  title: 'Healthcare AI Automation - Zadix',
-  description: 'Patient intake to claim draft—accurate and compliant. HIPAA-compliant automation for clinics with insurance verification and claims processing.',
+  title: 'Healthcare AI Automation — Patient Intake to Insurance Claims | Zadix',
+  description: 'HIPAA-compliant AI automation for clinics and healthcare providers. Automate patient intake, insurance verification, claims processing, and appointment management.',
+  keywords: 'healthcare AI automation, medical clinic automation, patient intake automation, insurance claims automation, HIPAA compliant automation, healthcare workflow automation, clinic management automation',
+  alternates: { canonical: 'https://zadix.ai/industries/healthcare' },
   openGraph: {
-    title: 'Healthcare AI Automation - Zadix',
-    description: 'Patient intake to claim draft—accurate and compliant. HIPAA-compliant automation for clinics with insurance verification and claims processing.',
+    title: 'Healthcare AI Automation — Patient Intake to Insurance Claims | Zadix',
+    description: 'HIPAA-compliant AI automation for clinics and healthcare providers. Automate patient intake, insurance verification, and claims processing.',
+    url: 'https://zadix.ai/industries/healthcare',
   },
 }
 

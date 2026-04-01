@@ -5,11 +5,14 @@ import Footer from '@/components/layout/Footer'
 import MobileCTABar from '@/components/layout/MobileCTABar'
 
 export const metadata: Metadata = {
-  title: 'Real Estate AI Automation - Zadix',
-  description: 'Multilingual lead processing and qualification for Dubai\'s luxury real estate market. Every lead qualified in 60 seconds, every follow-up on time.',
+  title: 'Real Estate AI Automation — Lead Qualification in 60 Seconds | Zadix',
+  description: 'AI automation for real estate agencies. Qualify multilingual leads in 60 seconds, auto-assign agents, and follow up instantly — 24/7. Stop losing listings to slow response times.',
+  keywords: 'real estate AI automation, property lead qualification automation, real estate CRM automation, real estate agency automation, multilingual lead AI, real estate workflow automation, property management automation',
+  alternates: { canonical: 'https://zadix.ai/industries/real-estate' },
   openGraph: {
-    title: 'Real Estate AI Automation - Zadix',
-    description: 'Multilingual lead processing and qualification for Dubai\'s luxury real estate market. Every lead qualified in 60 seconds, every follow-up on time.',
+    title: 'Real Estate AI Automation — Lead Qualification in 60 Seconds | Zadix',
+    description: 'AI automation for real estate agencies. Qualify multilingual leads in 60 seconds, auto-assign agents, and follow up instantly — 24/7.',
+    url: 'https://zadix.ai/industries/real-estate',
   },
 }
 

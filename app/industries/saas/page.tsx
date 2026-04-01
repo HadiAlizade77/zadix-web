@@ -5,11 +5,14 @@ import Footer from '@/components/layout/Footer'
 import MobileCTABar from '@/components/layout/MobileCTABar'
 
 export const metadata: Metadata = {
-  title: 'B2B SaaS AI Automation - Zadix',
-  description: 'Clean pipeline. Faster revenue. Intelligent lead qualification, automated sales operations, and customer success workflows for B2B SaaS companies.',
+  title: 'B2B SaaS AI Automation — Lead Qualification & Sales Ops | Zadix',
+  description: 'AI automation for B2B SaaS companies. Qualify inbound leads instantly, automate trial-to-paid sequences, and keep your CRM clean — so your sales team focuses on closing.',
+  keywords: 'B2B SaaS automation, SaaS lead qualification AI, sales automation SaaS, CRM automation SaaS, trial conversion automation, SaaS workflow automation, inbound lead automation',
+  alternates: { canonical: 'https://zadix.ai/industries/saas' },
   openGraph: {
-    title: 'B2B SaaS AI Automation - Zadix',
-    description: 'Clean pipeline. Faster revenue. Intelligent lead qualification, automated sales operations, and customer success workflows for B2B SaaS companies.',
+    title: 'B2B SaaS AI Automation — Lead Qualification & Sales Ops | Zadix',
+    description: 'AI automation for B2B SaaS companies. Qualify inbound leads instantly, automate trial-to-paid sequences, and keep your CRM clean.',
+    url: 'https://zadix.ai/industries/saas',
   },
 }
 

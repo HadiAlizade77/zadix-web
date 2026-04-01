@@ -5,11 +5,14 @@ import Footer from '@/components/layout/Footer'
 import MobileCTABar from '@/components/layout/MobileCTABar'
 
 export const metadata: Metadata = {
-  title: 'Book a Demo — Qualify Your Project | Zadix',
-  description: 'Tell us about your process, systems, and goals. We\'ll scope a 7–14 day build.',
+  title: 'Book a Free AI Automation Demo — Scoped in 20 Minutes | Zadix',
+  description: 'Tell us your workflow, systems, and goals. We will scope your automation and deliver a fixed-price proposal in 24 hours. No commitment, no sales pressure.',
+  keywords: 'book AI automation demo, hire AI automation agency, AI automation consultation, workflow automation quote, automate my business, AI workflow scoping call',
+  alternates: { canonical: 'https://zadix.ai/contact' },
   openGraph: {
-    title: 'Book a Demo — Qualify Your Project | Zadix',
-    description: 'Tell us about your process, systems, and goals. We\'ll scope a 7–14 day build.',
+    title: 'Book a Free AI Automation Demo — Scoped in 20 Minutes | Zadix',
+    description: 'Tell us your workflow, systems, and goals. We will scope your automation and deliver a fixed-price proposal in 24 hours.',
+    url: 'https://zadix.ai/contact',
   },
 }
 

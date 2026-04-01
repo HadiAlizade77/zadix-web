@@ -5,11 +5,14 @@ import Footer from '@/components/layout/Footer'
 import MobileCTABar from '@/components/layout/MobileCTABar'
 
 export const metadata: Metadata = {
-  title: 'Purpose‑Built Automations for Your Sector | Zadix',
-  description: 'Real Estate, Investment, Logistics, Healthcare, Legal, EPC, SaaS, Hospitality.',
+  title: 'AI Automation by Industry — Real Estate, Logistics, SaaS, Legal & More | Zadix',
+  description: 'Purpose-built AI automation for every industry. Real estate, investment, logistics, healthcare, legal, construction, SaaS, and hospitality — each with pre-built patterns and 7-day delivery.',
+  keywords: 'AI automation by industry, industry specific automation, vertical AI automation, AI workflow by sector, business automation solutions, sector specific AI',
+  alternates: { canonical: 'https://zadix.ai/industries' },
   openGraph: {
-    title: 'Purpose‑Built Automations for Your Sector | Zadix',
-    description: 'Real Estate, Investment, Logistics, Healthcare, Legal, EPC, SaaS, Hospitality.',
+    title: 'AI Automation by Industry — Real Estate, Logistics, SaaS, Legal & More | Zadix',
+    description: 'Purpose-built AI automation for every industry. Real estate, investment, logistics, healthcare, legal, construction, SaaS, and hospitality.',
+    url: 'https://zadix.ai/industries',
   },
 }
 
