@@ -11,6 +11,104 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: "agentic-ai-microsoft-dynamics-365-enterprise-teams",
+    title: "Agentic AI in Microsoft Dynamics 365: What Teams Must Know",
+    author: "Engineering Team",
+    date: '2026-04-01',
+    readTime: "7 min read",
+    category: "Strategy",
+    excerpt: "Microsoft is embedding agentic AI into Dynamics 365. Here's what enterprise software teams need to understand about autonomous agents, integration risks, and how to actually capture value in 2026.",
+    content: `A Forrester survey published in Q1 2026 found that **73% of enterprises running Dynamics 365 have no documented plan for integrating agentic AI into their ERP workflows** — even though Microsoft has already shipped autonomous agent capabilities across Sales, Finance, Supply Chain, and Customer Service modules. If your team is in that 73%, this post is for you.
+
+Microsoft's agentic AI push inside Dynamics 365 is not a chatbot upgrade. It is a structural change to how ERP systems operate. Agents can now initiate multi-step processes — resolving invoice discrepancies, rerouting purchase orders, escalating supply chain exceptions — without waiting for a human to click through five screens. The gap between what the platform can do and what most teams are actually doing with it is widening fast.
+
+This post breaks down the real problem, why the typical enterprise response is falling short, and how to move from passive observation to production-ready automation in days, not quarters.
+
+## The Problem
+
+Enterprise software teams are drowning in process debt. The average Dynamics 365 deployment touches **12–18 integrated modules and third-party connectors**, according to a 2026 Gartner analysis of mid-market and enterprise ERP environments. Each connector introduces manual handoff points: someone exports a CSV, someone else reviews an exception queue, a third person updates a status field.
+
+These handoffs are where value leaks. Consider the finance close process:
+
+- **42% of finance teams** using Dynamics 365 Finance still rely on spreadsheet-based reconciliation outside the platform (EY, 2026)
+- The average three-way invoice match in D365 takes **6–9 minutes per transaction** when exceptions require human review
+- Supply chain planners spend **up to 30% of their week** manually triaging alerts that the system generates but cannot resolve
+
+The ERP was supposed to be the single source of truth. In practice, it became the single source of alerts — and humans became the middleware.
+
+Microsoft's agentic AI features are designed to close this gap. But the problem is not the technology. It is that most teams have no framework for deciding which processes to hand to an agent, which to keep human, and how to validate outcomes.
+
+## Why Existing Approaches Fall Short
+
+Most enterprise teams are responding to the agentic AI wave in one of three ways, and all three have serious limitations:
+
+1. **Waiting for Microsoft to do it for them.** The out-of-the-box Copilot agents in Dynamics 365 are impressive demos but narrow in scope. They handle predefined scenarios — summarising customer interactions, suggesting next actions in sales pipelines. They do not handle your specific three-way match logic, your custom approval hierarchy, or your integration with a legacy warehouse management system. **Only 14% of Dynamics 365 Copilot features map directly to high-value automation opportunities** in a typical deployment, based on our analysis of 30+ client environments.
+
+2. **Launching a six-month AI transformation programme.** Large consultancies are pitching 20-week discovery phases followed by phased rollouts. By the time phase one ships, Microsoft has already changed the API surface twice. The enterprise AI graveyard is full of projects that were architecturally sound but operationally irrelevant by launch.
+
+3. **Building one-off Power Automate flows.** These solve point problems but create a new kind of technical debt — hundreds of disconnected flows with no central error handling, no audit trail, and no fallback logic. **A 2026 Microsoft partner ecosystem report found that enterprises average 340+ Power Automate flows**, with fewer than 20% monitored for failure.
+
+None of these approaches address the core challenge: identifying the highest-ROI process, building an agent that handles it end-to-end with proper guardrails, and getting it into production fast enough to matter.
+
+## How AI Automation Changes the Picture
+
+Agentic AI works best when it is not bolted onto an existing workflow but designed around the actual decision logic that humans currently perform. The shift looks like this:
+
+- **From alert triage to autonomous resolution.** Instead of a supply chain planner reviewing 200 exception alerts per day, an agent evaluates each exception against business rules, resolves the straightforward 80%, and escalates only the 20% that require judgement. **Net result: 50–80% reduction in manual triage time.**
+
+- **From sequential approvals to parallel validation.** A procurement agent in Dynamics 365 can simultaneously verify budget availability, check vendor compliance status, and confirm delivery timelines — tasks that currently happen in sequence across three departments.
+
+- **From periodic reconciliation to continuous matching.** Rather than a monthly close process that takes 5–7 days, an agentic workflow continuously matches transactions, flags true discrepancies in real time, and pre-populates journal entries for review.
+
+The critical design principle: **every agent must have a defined scope, a fallback path, and a human escalation trigger.** Autonomous does not mean unsupervised. It means the supervision shifts from every transaction to exceptions only.
+
+For Dynamics 365 specifically, the architecture matters. Agents built on Microsoft's Copilot Studio can access Dataverse natively, but production-grade automations often need to orchestrate across D365, external APIs, document stores, and legacy systems. That orchestration layer — the part Microsoft does not build for you — is where most of the value lives.
+
+## A Real-World Example
+
+A UK-based logistics company running Dynamics 365 Supply Chain Management was processing **~4,200 inbound shipment receipts per month**. Each receipt required a human operator to:
+
+1. Compare the advance shipping notice (ASN) against the purchase order in D365
+2. Log quantity discrepancies in a shared spreadsheet
+3. Email the supplier for clarification on mismatches
+4. Update the goods receipt in D365 once resolved
+5. Trigger the three-way match for invoice processing
+
+Average handling time: **11 minutes per receipt**. With a 9% discrepancy rate, roughly 378 receipts per month required the full five-step manual process. That is **~69 hours of skilled operator time per month** spent on data reconciliation.
+
+We built an agentic automation that:
+
+- Ingested ASN data via EDI and compared it against D365 purchase orders in real time
+- Auto-resolved discrepancies within a **configurable tolerance threshold** (±2% quantity, ±£50 value)
+- Generated structured supplier queries via email for out-of-tolerance mismatches, with auto-follow-up at 48 hours
+- Updated D365 goods receipts and triggered downstream invoice matching without human intervention
+
+**Result: 74% reduction in manual processing time, from 69 hours to 18 hours per month.** The operator team was redeployed to exception management and vendor relationship work — higher-value tasks that actually require human judgement.
+
+The build took **9 days** from scoping call to production deployment, with full source code delivered to the client's Azure DevOps repository.
+
+## How to Get Started in 7 Days
+
+If your team runs Dynamics 365 and you want to move from watching the agentic AI wave to riding it, here is a practical 7-day framework:
+
+1. **Day 1–2: Process audit.** Identify the 3–5 workflows where humans currently act as middleware between D365 and another system or decision point. Rank by volume × handling time × error rate. Pick the top one.
+
+2. **Day 3: Decision logic mapping.** Document the actual rules your team uses — not the official SOP, but what people really do. Include tolerance thresholds, escalation criteria, and edge cases. This becomes the agent's instruction set.
+
+3. **Day 4–5: Build and integrate.** Connect the agent to your D365 environment via Dataverse APIs and any external systems involved. Implement fallback logic: if the agent cannot resolve within defined parameters, it routes to a human with full context pre-loaded.
+
+4. **Day 6: Parallel run.** Run the agent alongside your existing process for **a minimum of 50 transactions**. Compare outputs. Tune thresholds.
+
+5. **Day 7: Go live with monitoring.** Deploy to production with real-time dashboards tracking resolution rate, escalation rate, and processing time. Set a 30-day review checkpoint.
+
+**The key metric to track from day one: percentage of transactions resolved autonomously without human intervention.** In our experience, well-scoped agents hit **65–85% autonomous resolution** within the first two weeks of production.
+
+## Ready to Automate?
+
+We have deployed this type of automation for clients across real estate, logistics, SaaS, investment, and more — production-ready in 7 days. [Book a free 20-minute scoping call at zadix.ai/contact](https://zadix.ai/contact) and we will send a fixed-price proposal within 24 hours.`,
+  },
+
+  {
     id: "deal-analysis-automation-family-offices",
     title: "Deal Analysis Automation: Cut IC Prep Time 75% Faster",
     author: "Hadi Alizadeh",
