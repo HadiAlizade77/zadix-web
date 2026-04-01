@@ -83,19 +83,19 @@ export function VideoModal({ videoUrl, title }: VideoModalProps) {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
             transition={{ duration: 0.3 }}
-            className="relative w-full max-w-4xl mx-4 bg-white rounded-2xl shadow-2xl overflow-hidden"
+            className="relative w-full max-w-4xl mx-4 bg-surface-2 rounded-2xl shadow-2xl shadow-black/30 overflow-hidden"
           >
             {/* Header */}
-            <div className="flex items-center justify-between p-6 border-b border-gray-200">
-              <h2 className="text-2xl font-bold text-[#111827]">
+            <div className="flex items-center justify-between p-6 border-b border-border-warm">
+              <h2 className="text-2xl font-bold text-cream">
                 {title || 'Zadix AI Automation Overview'}
               </h2>
               <button
                 onClick={onClose}
-                className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
+                className="p-2 hover:bg-surface-2 rounded-lg transition-colors"
                 aria-label="Close modal"
               >
-                <X className="h-6 w-6 text-gray-600" />
+                <X className="h-6 w-6 text-muted" />
               </button>
             </div>
 
@@ -117,7 +117,7 @@ export function VideoModal({ videoUrl, title }: VideoModalProps) {
                   <div className="text-center">
                     <Play className="h-16 w-16 mx-auto mb-4 opacity-50" />
                     <h3 className="text-xl font-semibold mb-2">Video Coming Soon</h3>
-                    <p className="text-gray-300 mb-6">
+                    <p className="text-muted mb-6">
                       We're preparing a comprehensive overview video that will show you exactly how our AI automation works.
                     </p>
                     <div className="space-y-4 text-left max-w-md mx-auto">
@@ -144,10 +144,10 @@ export function VideoModal({ videoUrl, title }: VideoModalProps) {
             </div>
 
             {/* Footer */}
-            <div className="p-6 bg-gray-50 border-t border-gray-200">
+            <div className="p-6 bg-surface border-t border-border-warm">
               <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
                 <div className="text-center sm:text-left">
-                  <p className="text-[#6B7280] text-sm">
+                  <p className="text-muted text-sm">
                     Want to see a personalized demo with your actual data?
                   </p>
                 </div>

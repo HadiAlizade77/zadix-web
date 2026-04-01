@@ -33,7 +33,7 @@ const WhatWeBuild = () => {
   ];
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-surface">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           className="text-center mb-16"
@@ -42,10 +42,10 @@ const WhatWeBuild = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-[#111827] mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-cream mb-6">
             What We Build
           </h2>
-          <p className="text-xl text-[#6B7280] max-w-3xl mx-auto">
+          <p className="text-xl text-muted max-w-3xl mx-auto">
             Production-grade AI automation systems that integrate seamlessly with your existing tools and processes
           </p>
         </motion.div>
@@ -59,20 +59,20 @@ const WhatWeBuild = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
             >
-              <Card className="h-full hover:shadow-xl transition-all duration-300 group">
+              <Card className="h-full hover:shadow-xl shadow-black/20 transition-all duration-300 group">
                 <CardHeader>
                   <div className={`w-16 h-16 bg-gradient-to-br ${solution.color} rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
                     <solution.icon className="h-8 w-8 text-white" />
                   </div>
                   <CardTitle className="text-2xl mb-3">{solution.title}</CardTitle>
-                  <CardDescription className="text-[#6B7280] leading-relaxed">
+                  <CardDescription className="text-muted leading-relaxed">
                     {solution.description}
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-3">
                     {solution.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-center text-[#6B7280]">
+                      <li key={idx} className="flex items-center text-muted">
                         <div className="w-2 h-2 bg-[#10B981] rounded-full mr-3"></div>
                         {feature}
                       </li>

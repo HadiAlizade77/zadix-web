@@ -33,7 +33,7 @@ const OutcomeStats = () => {
   ];
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-surface">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           className="text-center mb-16"
@@ -42,10 +42,10 @@ const OutcomeStats = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-[#111827] mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-cream mb-6">
             Measurable Business Impact
           </h2>
-          <p className="text-xl text-[#6B7280] max-w-3xl mx-auto">
+          <p className="text-xl text-muted max-w-3xl mx-auto">
             Real outcomes from production AI automation systems
           </p>
         </motion.div>
@@ -60,16 +60,16 @@ const OutcomeStats = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
             >
-              <div className="bg-gradient-to-br from-[#00B3A4] to-[#2563EB] w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6">
+              <div className="bg-gradient-to-br from-amber to-amber-dim w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6">
                 <stat.icon className="h-8 w-8 text-white" />
               </div>
-              <div className="text-4xl md:text-5xl font-bold text-[#111827] mb-2">
+              <div className="text-4xl md:text-5xl font-bold text-cream mb-2">
                 {stat.value}
               </div>
-              <div className="text-lg font-semibold text-[#00B3A4] mb-2">
+              <div className="text-lg font-semibold text-amber mb-2">
                 {stat.label}
               </div>
-              <p className="text-[#6B7280]">
+              <p className="text-muted">
                 {stat.description}
               </p>
             </motion.div>

@@ -140,7 +140,7 @@ const Contact = () => {
 
   if (showSuccess) {
     return (
-      <div className="min-h-screen pt-20 bg-white">
+      <div className="min-h-screen pt-20 bg-ink">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <motion.div
             className="text-center"
@@ -173,7 +173,7 @@ const Contact = () => {
             </div>
 
             {/* WhatsApp Alternative */}
-            <div className="bg-gradient-to-r from-[#00B3A4] to-[#2563EB] rounded-2xl p-6 text-white">
+            <div className="bg-gradient-to-r from-amber to-amber-dim rounded-2xl p-6 text-white">
               <div className="flex items-center justify-center mb-4">
                 <MessageCircle className="h-8 w-8 mr-3" />
                 <h3 className="text-xl font-bold">Prefer WhatsApp?</h3>
@@ -202,13 +202,13 @@ const Contact = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <div className="w-20 h-20 bg-gradient-to-br from-[#00B3A4] to-[#2563EB] rounded-3xl flex items-center justify-center mx-auto mb-8">
+            <div className="w-20 h-20 bg-gradient-to-br from-amber to-amber-dim rounded-3xl flex items-center justify-center mx-auto mb-8">
               <MessageCircle className="h-10 w-10 text-white" />
             </div>
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
               Book a Demo
             </h1>
-            <p className="text-xl text-gray-300 max-w-4xl mx-auto mb-8 leading-relaxed">
+            <p className="text-xl text-muted max-w-4xl mx-auto mb-8 leading-relaxed">
               Tell us about your workflow challenge and we&apos;ll show you exactly how our automation would handle it—with real data and your specific business rules.
             </p>
           </motion.div>
@@ -224,7 +224,7 @@ const Contact = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <Card className="hover:shadow-lg transition-all duration-300">
               <CardContent className="p-6 text-center">
-                <MessageCircle className="h-12 w-12 text-[#00B3A4] mx-auto mb-4" />
+                <MessageCircle className="h-12 w-12 text-amber mx-auto mb-4" />
                 <h4 className="text-lg font-bold text-cream mb-2">WhatsApp</h4>
                 <p className="text-muted mb-4">Quick questions and instant responses</p>
                 <Button asChild>
@@ -237,7 +237,7 @@ const Contact = () => {
             
             <Card className="hover:shadow-lg transition-all duration-300">
               <CardContent className="p-6 text-center">
-                <MessageCircle className="h-12 w-12 text-[#2563EB] mx-auto mb-4" />
+                <MessageCircle className="h-12 w-12 text-amber-dim mx-auto mb-4" />
                 <h4 className="text-lg font-bold text-cream mb-2">Schedule a Call</h4>
                 <p className="text-muted mb-4">Book a time that works for you</p>
                 <Button variant="outline" asChild>
@@ -254,7 +254,7 @@ const Contact = () => {
       {/* Contact Form */}
       <section className="py-20 bg-surface">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Card className="shadow-xl">
+          <Card className="shadow-xl shadow-black/20">
             <CardHeader className="text-center">
               <CardTitle className="text-3xl mb-4">Tell us about your workflow</CardTitle>
               <p className="text-muted text-lg">
@@ -382,7 +382,7 @@ const Contact = () => {
                           value={system}
                           checked={formData.systems.includes(system)}
                           onChange={handleChange}
-                          className="mr-3 h-4 w-4 text-[#00B3A4] focus:ring-[#00B3A4] border-gray-300 rounded"
+                          className="mr-3 h-4 w-4 text-amber focus:ring-amber border-border-warm rounded"
                         />
                         <span className="text-muted">{system}</span>
                       </label>
@@ -474,13 +474,13 @@ const Contact = () => {
                     htmlFor="files"
                     className="block border-2 border-dashed border-border-warm rounded-lg p-6 text-center hover:border-[#00B3A4] transition-colors cursor-pointer"
                   >
-                    <Upload className="h-8 w-8 text-gray-400 mx-auto mb-2" />
+                    <Upload className="h-8 w-8 text-muted/60 mx-auto mb-2" />
                     {formData.files && formData.files.length > 0 ? (
-                      <span className="text-[#00B3A4] text-sm font-medium">
+                      <span className="text-amber text-sm font-medium">
                         {Array.from(formData.files).map(f => f.name).join(', ')}
                       </span>
                     ) : (
-                      <span className="text-gray-500 text-sm">Click to upload or drag and drop</span>
+                      <span className="text-muted text-sm">Click to upload or drag and drop</span>
                     )}
                     <p className="text-xs text-muted mt-2">PDF, DOC, TXT, CSV, XLSX up to 10MB each</p>
                     <input
@@ -522,10 +522,10 @@ const Contact = () => {
                     required
                     checked={formData.consent}
                     onChange={handleChange}
-                    className="mt-1 h-4 w-4 text-[#00B3A4] focus:ring-[#00B3A4] border-gray-300 rounded"
+                    className="mt-1 h-4 w-4 text-amber focus:ring-amber border-border-warm rounded"
                   />
                   <label htmlFor="consent" className="ml-3 text-sm text-muted">
-                    I agree to the <a href="/privacy" className="text-[#00B3A4] hover:underline">Privacy Policy</a> and <a href="/dpa" className="text-[#00B3A4] hover:underline">Data Processing Addendum (DPA)</a> *
+                    I agree to the <a href="/privacy" className="text-amber hover:underline">Privacy Policy</a> and <a href="/dpa" className="text-amber hover:underline">Data Processing Addendum (DPA)</a> *
                   </label>
                 </div>
 

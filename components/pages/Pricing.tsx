@@ -99,11 +99,11 @@ const Pricing = () => {
           >
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
               Fixed Scope,{' '}
-              <span className="bg-gradient-to-r from-[#00B3A4] to-[#2563EB] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-amber to-amber-dim bg-clip-text text-transparent">
                 Fixed Timeline
               </span>
             </h1>
-            <p className="text-xl text-gray-300 max-w-4xl mx-auto mb-8 leading-relaxed">
+            <p className="text-xl text-muted max-w-4xl mx-auto mb-8 leading-relaxed">
               Production-ready AI automation with custom quotes tailored to your workflow. No surprises, no scope creep, no hidden costs.
             </p>
           </motion.div>
@@ -125,17 +125,17 @@ const Pricing = () => {
               >
                 {plan.popular && (
                   <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                    <span className="bg-gradient-to-r from-[#00B3A4] to-[#2563EB] text-white px-4 py-2 rounded-full text-sm font-medium">
+                    <span className="bg-gradient-to-r from-amber to-amber-dim text-white px-4 py-2 rounded-full text-sm font-medium">
                       Most Popular
                     </span>
                   </div>
                 )}
-                <Card className={`h-full ${plan.popular ? 'ring-2 ring-[#00B3A4] shadow-2xl scale-105' : 'hover:shadow-lg'} transition-all duration-300`}>
+                <Card className={`h-full ${plan.popular ? 'ring-2 ring-amber shadow-2xl shadow-black/30 scale-105' : 'hover:shadow-lg'} transition-all duration-300`}>
                   <CardHeader className="text-center pb-4">
                     <CardTitle className="text-2xl mb-2">{plan.name}</CardTitle>
                     <p className="text-muted mb-4">{plan.description}</p>
                     <div className="space-y-2 text-sm">
-                      <div className="flex items-center justify-center text-[#00B3A4]">
+                      <div className="flex items-center justify-center text-amber">
                         <Clock className="h-4 w-4 mr-2" />
                         <span>{plan.deliveryTime}</span>
                       </div>
@@ -152,7 +152,7 @@ const Pricing = () => {
                       ))}
                     </ul>
                     <Button 
-                      className={`w-full ${plan.popular ? 'bg-gradient-to-r from-[#00B3A4] to-[#2563EB]' : ''}`} 
+                      className={`w-full ${plan.popular ? 'bg-gradient-to-r from-amber to-amber-dim' : ''}`} 
                       variant={plan.popular ? 'default' : 'outline'}
                       size="lg"
                       asChild
@@ -199,7 +199,7 @@ const Pricing = () => {
               >
                 <Card className="h-full text-center hover:shadow-lg transition-all duration-300">
                   <CardHeader>
-                    <div className="w-16 h-16 bg-gradient-to-br from-[#00B3A4] to-[#2563EB] rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <div className="w-16 h-16 bg-gradient-to-br from-amber to-amber-dim rounded-2xl flex items-center justify-center mx-auto mb-4">
                       <guarantee.icon className="h-8 w-8 text-white" />
                     </div>
                     <CardTitle className="text-xl mb-3">{guarantee.title}</CardTitle>
@@ -300,7 +300,7 @@ const Pricing = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
               Ready to get started?
             </h2>
-            <p className="text-xl text-gray-300 mb-8">
+            <p className="text-xl text-muted mb-8">
               Book a demo to see exactly how we'll automate your workflow and get a fixed-price proposal
             </p>
             <Button size="xl" asChild>
@@ -309,7 +309,7 @@ const Pricing = () => {
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
-            <p className="text-gray-400 text-sm mt-6">
+            <p className="text-muted/60 text-sm mt-6">
               30-minute demo • No sales pitch • Fixed-price proposal
             </p>
           </motion.div>

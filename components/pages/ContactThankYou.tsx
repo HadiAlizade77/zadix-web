@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/button';
 
 export default function ContactThankYou() {
   return (
-    <div className="min-h-screen pt-20 bg-white">
+    <div className="min-h-screen pt-20 bg-ink">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <motion.div
           className="text-center"
@@ -19,27 +19,27 @@ export default function ContactThankYou() {
             <CheckCircle className="h-10 w-10 text-green-600" />
           </div>
           
-          <h1 className="text-4xl md:text-5xl font-bold text-[#111827] mb-6">
+          <h1 className="text-4xl md:text-5xl font-bold text-cream mb-6">
             Thanks—pick a demo slot
           </h1>
           
-          <p className="text-xl text-[#6B7280] mb-12 max-w-2xl mx-auto">
+          <p className="text-xl text-muted mb-12 max-w-2xl mx-auto">
             We've received your details. Choose a time for a quick walkthrough and scoping call.
           </p>
 
           {/* Calendly Embed Placeholder */}
-          <div className="bg-[#F8FAFC] rounded-2xl p-8 mb-8">
-            <div className="w-full h-96 bg-white rounded-lg border-2 border-dashed border-gray-300 flex items-center justify-center">
+          <div className="bg-surface-2 rounded-2xl p-8 mb-8">
+            <div className="w-full h-96 bg-surface-2 rounded-lg border-2 border-dashed border-border-warm flex items-center justify-center">
               <div className="text-center">
-                <Calendar className="h-12 w-12 text-gray-400 mx-auto mb-4" />
-                <p className="text-gray-500">Calendly embed will appear here</p>
-                <p className="text-sm text-gray-400 mt-2">Integration pending</p>
+                <Calendar className="h-12 w-12 text-muted/60 mx-auto mb-4" />
+                <p className="text-muted">Calendly embed will appear here</p>
+                <p className="text-sm text-muted/60 mt-2">Integration pending</p>
               </div>
             </div>
           </div>
 
           {/* WhatsApp Alternative */}
-          <div className="bg-gradient-to-r from-[#00B3A4] to-[#2563EB] rounded-2xl p-6 text-white">
+          <div className="bg-gradient-to-r from-amber to-amber-dim rounded-2xl p-6 text-white">
             <div className="flex items-center justify-center mb-4">
               <MessageCircle className="h-8 w-8 mr-3" />
               <h3 className="text-xl font-bold">Prefer WhatsApp?</h3>

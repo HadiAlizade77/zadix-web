@@ -41,7 +41,7 @@ const SecurityCompliance = () => {
   ];
 
   return (
-    <section className="py-20 bg-[#F8FAFC]">
+    <section className="py-20 bg-ink">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           className="text-center mb-16"
@@ -50,10 +50,10 @@ const SecurityCompliance = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-[#111827] mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-cream mb-6">
             Enterprise-Grade Security
           </h2>
-          <p className="text-xl text-[#6B7280] max-w-3xl mx-auto">
+          <p className="text-xl text-muted max-w-3xl mx-auto">
             Built for production environments with security, compliance, and observability from day one
           </p>
         </motion.div>
@@ -62,23 +62,23 @@ const SecurityCompliance = () => {
           {securityFeatures.map((feature, index) => (
             <motion.div
               key={feature.title}
-              className="bg-white rounded-2xl p-8 shadow-md hover:shadow-lg transition-all duration-300"
+              className="bg-surface-2 rounded-2xl p-8 shadow-md hover:shadow-lg transition-all duration-300"
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
             >
-              <div className="w-16 h-16 bg-gradient-to-br from-[#00B3A4] to-[#2563EB] rounded-2xl flex items-center justify-center mb-6">
+              <div className="w-16 h-16 bg-gradient-to-br from-amber to-amber-dim rounded-2xl flex items-center justify-center mb-6">
                 <feature.icon className="h-8 w-8 text-white" />
               </div>
-              <h3 className="text-xl font-bold text-[#111827] mb-3">{feature.title}</h3>
-              <p className="text-[#6B7280] leading-relaxed">{feature.description}</p>
+              <h3 className="text-xl font-bold text-cream mb-3">{feature.title}</h3>
+              <p className="text-muted leading-relaxed">{feature.description}</p>
             </motion.div>
           ))}
         </div>
 
         <motion.div
-          className="bg-gradient-to-r from-[#00B3A4] to-[#2563EB] rounded-3xl p-12 text-center text-white"
+          className="bg-gradient-to-r from-amber to-amber-dim rounded-3xl p-12 text-center text-white"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -97,7 +97,7 @@ const SecurityCompliance = () => {
                 Discuss Security Requirements
               </Link>
             </Button>
-            <Button size="xl" variant="outline" className="border-white text-white hover:bg-white hover:text-[#00B3A4]" asChild>
+            <Button size="xl" variant="outline" className="border-cream/40 text-cream hover:bg-cream hover:text-ink" asChild>
               <Link href="/process">
                 View Our Process
               </Link>

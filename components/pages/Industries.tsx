@@ -85,7 +85,7 @@ const Industries = () => {
   return (
     <div className="min-h-screen pt-20">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-[#0B1220] via-[#0F1629] to-[#0B1220]">
+      <section className="py-20 bg-ink">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center"
@@ -95,11 +95,11 @@ const Industries = () => {
           >
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
               Purpose-built agents for{' '}
-              <span className="bg-gradient-to-r from-[#00B3A4] to-[#2563EB] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-amber to-amber-dim bg-clip-text text-transparent">
                 your sector
               </span>
             </h1>
-            <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-xl text-muted max-w-4xl mx-auto leading-relaxed">
               Industry-specific automation workflows designed for sector challenges, regulations, and business processes
             </p>
           </motion.div>
@@ -107,7 +107,7 @@ const Industries = () => {
       </section>
 
       {/* Industries Grid */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-surface">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {industries.map((industry, index) => (
@@ -119,32 +119,32 @@ const Industries = () => {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
                 <Link href={industry.href}>
-                  <Card className="h-full group cursor-pointer hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+                  <Card className="h-full group cursor-pointer hover:shadow-2xl shadow-black/30 transition-all duration-300 hover:-translate-y-2">
                     <CardHeader className="pb-4">
                       <div className="flex items-start justify-between mb-4">
                         <div className={`w-16 h-16 bg-gradient-to-br ${industry.color} rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
                           <industry.icon className="h-8 w-8 text-white" />
                         </div>
                       </div>
-                      <CardTitle className="text-2xl mb-3 group-hover:text-[#00B3A4] transition-colors">
+                      <CardTitle className="text-2xl mb-3 group-hover:text-amber transition-colors">
                         {industry.title}
                       </CardTitle>
-                      <p className="text-lg font-medium text-[#111827] mb-3">{industry.description}</p>
-                      <p className="text-[#6B7280] leading-relaxed">{industry.details}</p>
+                      <p className="text-lg font-medium text-cream mb-3">{industry.description}</p>
+                      <p className="text-muted leading-relaxed">{industry.details}</p>
                     </CardHeader>
                     <CardContent>
                       <div className="mb-6">
-                        <h4 className="font-semibold text-[#111827] mb-3">Typical Outcomes:</h4>
+                        <h4 className="font-semibold text-cream mb-3">Typical Outcomes:</h4>
                         <ul className="space-y-2">
                           {industry.outcomes.map((outcome, idx) => (
-                            <li key={idx} className="flex items-center text-[#6B7280]">
+                            <li key={idx} className="flex items-center text-muted">
                               <div className="w-2 h-2 bg-[#10B981] rounded-full mr-3"></div>
                               {outcome}
                             </li>
                           ))}
                         </ul>
                       </div>
-                      <div className="flex items-center text-[#2563EB] font-medium group-hover:translate-x-2 transition-transform">
+                      <div className="flex items-center text-amber-dim font-medium group-hover:translate-x-2 transition-transform">
                         Explore {industry.title}
                         <ArrowRight className="ml-2 h-5 w-5" />
                       </div>
@@ -158,7 +158,7 @@ const Industries = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-[#F8FAFC]">
+      <section className="py-20 bg-ink">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -166,15 +166,15 @@ const Industries = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-[#111827] mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-cream mb-6">
               Don't see your industry?
             </h2>
-            <p className="text-lg text-[#6B7280] mb-8">
+            <p className="text-lg text-muted mb-8">
               We adapt our automation patterns to any sector. Tell us about your specific workflow challenges.
             </p>
             <Link 
               href="/contact" 
-              className="inline-flex items-center text-[#2563EB] font-medium hover:text-[#1D4ED8] transition-colors group"
+              className="inline-flex items-center text-amber-dim font-medium hover:text-amber transition-colors group"
             >
               Let's discuss your use case
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />

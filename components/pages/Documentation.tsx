@@ -115,7 +115,7 @@ API_KEY="zx_live_your_api_key_here"`
   return (
     <div className="min-h-screen pt-20">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-[#0B1220] via-[#0F1629] to-[#0B1220]">
+      <section className="py-20 bg-ink">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center"
@@ -123,16 +123,16 @@ API_KEY="zx_live_your_api_key_here"`
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <div className="w-20 h-20 bg-gradient-to-br from-[#00B3A4] to-[#2563EB] rounded-3xl flex items-center justify-center mx-auto mb-8">
+            <div className="w-20 h-20 bg-gradient-to-br from-amber to-amber-dim rounded-3xl flex items-center justify-center mx-auto mb-8">
               <Book className="h-10 w-10 text-white" />
             </div>
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
               Developer{' '}
-              <span className="bg-gradient-to-r from-[#00B3A4] to-[#2563EB] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-amber to-amber-dim bg-clip-text text-transparent">
                 Documentation
               </span>
             </h1>
-            <p className="text-xl text-gray-300 max-w-4xl mx-auto mb-8 leading-relaxed">
+            <p className="text-xl text-muted max-w-4xl mx-auto mb-8 leading-relaxed">
               Complete guides, API references, and integration examples for building with Zadix AI automation systems.
             </p>
           </motion.div>
@@ -140,7 +140,7 @@ API_KEY="zx_live_your_api_key_here"`
       </section>
 
       {/* Quick Start */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-surface">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-16"
@@ -149,10 +149,10 @@ API_KEY="zx_live_your_api_key_here"`
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-[#111827] mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-cream mb-6">
               {quickStart.title}
             </h2>
-            <p className="text-xl text-[#6B7280] max-w-3xl mx-auto">
+            <p className="text-xl text-muted max-w-3xl mx-auto">
               Get up and running with Zadix APIs in minutes
             </p>
           </motion.div>
@@ -170,21 +170,21 @@ API_KEY="zx_live_your_api_key_here"`
                   <CardContent className="p-0">
                     <div className="grid grid-cols-1 lg:grid-cols-2">
                       <div className="p-8">
-                        <h3 className="text-2xl font-bold text-[#111827] mb-4">{step.title}</h3>
-                        <p className="text-[#6B7280] leading-relaxed">{step.description}</p>
+                        <h3 className="text-2xl font-bold text-cream mb-4">{step.title}</h3>
+                        <p className="text-muted leading-relaxed">{step.description}</p>
                       </div>
                       <div className="bg-[#1E293B] p-8 relative">
                         <button
                           onClick={() => copyToClipboard(step.code, `step-${index}`)}
-                          className="absolute top-4 right-4 p-2 bg-white/10 hover:bg-white/20 rounded-lg transition-colors"
+                          className="absolute top-4 right-4 p-2 bg-cream/5 hover:bg-white/20 rounded-lg transition-colors"
                         >
                           {copiedCode === `step-${index}` ? (
                             <Check className="h-4 w-4 text-green-400" />
                           ) : (
-                            <Copy className="h-4 w-4 text-gray-300" />
+                            <Copy className="h-4 w-4 text-muted" />
                           )}
                         </button>
-                        <pre className="text-gray-300 text-sm overflow-x-auto">
+                        <pre className="text-muted text-sm overflow-x-auto">
                           <code>{step.code}</code>
                         </pre>
                       </div>
@@ -198,7 +198,7 @@ API_KEY="zx_live_your_api_key_here"`
       </section>
 
       {/* Documentation Sections */}
-      <section className="py-20 bg-[#F8FAFC]">
+      <section className="py-20 bg-ink">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-16"
@@ -207,10 +207,10 @@ API_KEY="zx_live_your_api_key_here"`
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-[#111827] mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-cream mb-6">
               Documentation Sections
             </h2>
-            <p className="text-xl text-[#6B7280] max-w-3xl mx-auto">
+            <p className="text-xl text-muted max-w-3xl mx-auto">
               Comprehensive guides for every aspect of integration
             </p>
           </motion.div>
@@ -224,21 +224,21 @@ API_KEY="zx_live_your_api_key_here"`
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
-                <Card className="h-full hover:shadow-xl transition-all duration-300 group cursor-pointer">
+                <Card className="h-full hover:shadow-xl shadow-black/20 transition-all duration-300 group cursor-pointer">
                   <CardHeader>
-                    <div className="w-16 h-16 bg-gradient-to-br from-[#00B3A4] to-[#2563EB] rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <div className="w-16 h-16 bg-gradient-to-br from-amber to-amber-dim rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
                       <section.icon className="h-8 w-8 text-white" />
                     </div>
-                    <CardTitle className="text-xl mb-3 group-hover:text-[#00B3A4] transition-colors">
+                    <CardTitle className="text-xl mb-3 group-hover:text-amber transition-colors">
                       {section.title}
                     </CardTitle>
-                    <p className="text-[#6B7280] leading-relaxed">{section.description}</p>
+                    <p className="text-muted leading-relaxed">{section.description}</p>
                   </CardHeader>
                   <CardContent>
                     <ul className="space-y-3">
                       {section.items.map((item, idx) => (
-                        <li key={idx} className="flex items-center text-[#6B7280]">
-                          <ChevronRight className="h-4 w-4 mr-2 text-[#00B3A4]" />
+                        <li key={idx} className="flex items-center text-muted">
+                          <ChevronRight className="h-4 w-4 mr-2 text-amber" />
                           {item}
                         </li>
                       ))}
@@ -252,7 +252,7 @@ API_KEY="zx_live_your_api_key_here"`
       </section>
 
       {/* API Examples */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-surface">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-16"
@@ -261,10 +261,10 @@ API_KEY="zx_live_your_api_key_here"`
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-[#111827] mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-cream mb-6">
               Common Integration Patterns
             </h2>
-            <p className="text-xl text-[#6B7280] max-w-3xl mx-auto">
+            <p className="text-xl text-muted max-w-3xl mx-auto">
               Real-world examples of how to integrate Zadix with your systems
             </p>
           </motion.div>
@@ -279,7 +279,7 @@ API_KEY="zx_live_your_api_key_here"`
               <Card>
                 <CardHeader>
                   <CardTitle className="text-xl">Webhook Handler Example</CardTitle>
-                  <p className="text-[#6B7280]">Process incoming webhook notifications</p>
+                  <p className="text-muted">Process incoming webhook notifications</p>
                 </CardHeader>
                 <CardContent>
                   <div className="bg-[#1E293B] rounded-lg p-6 relative">
@@ -305,15 +305,15 @@ API_KEY="zx_live_your_api_key_here"`
   
   res.status(200).send('OK');
 });`, 'webhook')}
-                      className="absolute top-4 right-4 p-2 bg-white/10 hover:bg-white/20 rounded-lg transition-colors"
+                      className="absolute top-4 right-4 p-2 bg-cream/5 hover:bg-white/20 rounded-lg transition-colors"
                     >
                       {copiedCode === 'webhook' ? (
                         <Check className="h-4 w-4 text-green-400" />
                       ) : (
-                        <Copy className="h-4 w-4 text-gray-300" />
+                        <Copy className="h-4 w-4 text-muted" />
                       )}
                     </button>
-                    <pre className="text-gray-300 text-sm overflow-x-auto">
+                    <pre className="text-muted text-sm overflow-x-auto">
                       <code>{`app.post('/webhook', (req, res) => {
   const signature = req.headers['x-zadix-signature'];
   const payload = req.body;
@@ -350,7 +350,7 @@ API_KEY="zx_live_your_api_key_here"`
               <Card>
                 <CardHeader>
                   <CardTitle className="text-xl">Batch Processing</CardTitle>
-                  <p className="text-[#6B7280]">Process multiple documents at once</p>
+                  <p className="text-muted">Process multiple documents at once</p>
                 </CardHeader>
                 <CardContent>
                   <div className="bg-[#1E293B] rounded-lg p-6 relative">
@@ -375,15 +375,15 @@ API_KEY="zx_live_your_api_key_here"`
   const result = await pollBatchStatus(batchId);
   return result;
 };`, 'batch')}
-                      className="absolute top-4 right-4 p-2 bg-white/10 hover:bg-white/20 rounded-lg transition-colors"
+                      className="absolute top-4 right-4 p-2 bg-cream/5 hover:bg-white/20 rounded-lg transition-colors"
                     >
                       {copiedCode === 'batch' ? (
                         <Check className="h-4 w-4 text-green-400" />
                       ) : (
-                        <Copy className="h-4 w-4 text-gray-300" />
+                        <Copy className="h-4 w-4 text-muted" />
                       )}
                     </button>
-                    <pre className="text-gray-300 text-sm overflow-x-auto">
+                    <pre className="text-muted text-sm overflow-x-auto">
                       <code>{`const processBatch = async (documents) => {
   const batchId = await fetch('/api/batch', {
     method: 'POST',
@@ -425,7 +425,7 @@ API_KEY="zx_live_your_api_key_here"`
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
               Need Help with Integration?
             </h2>
-            <p className="text-xl text-gray-300 mb-8">
+            <p className="text-xl text-muted mb-8">
               Our engineering team provides hands-on support for all integrations and custom requirements.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -434,7 +434,7 @@ API_KEY="zx_live_your_api_key_here"`
                   Contact Support
                 </a>
               </Button>
-              <Button size="xl" variant="outline" className="border-white text-white hover:bg-white hover:text-[#0B1220]" asChild>
+              <Button size="xl" variant="outline" className="border-cream/40 text-cream hover:bg-cream hover:text-ink" asChild>
                 <a href="mailto:engineering@zadix.ai?subject=Technical Discussion">
                   Talk to Engineering
                 </a>

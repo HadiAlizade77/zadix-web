@@ -37,7 +37,7 @@ export function LanguageSwitcher({ currentLocale, className }: LanguageSwitcherP
     <div className={cn('relative', className)}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center space-x-2 px-3 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors"
+        className="flex items-center space-x-2 px-3 py-2 text-sm font-medium text-muted hover:text-cream transition-colors"
         aria-label="Select language"
       >
         <Globe className="h-4 w-4" />
@@ -51,14 +51,14 @@ export function LanguageSwitcher({ currentLocale, className }: LanguageSwitcherP
             className="fixed inset-0 z-10"
             onClick={() => setIsOpen(false)}
           />
-          <div className="absolute right-0 top-full mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-20">
+          <div className="absolute right-0 top-full mt-2 w-48 bg-surface-2 rounded-lg shadow-lg border border-border-warm py-2 z-20">
             {locales.map((locale) => (
               <button
                 key={locale}
                 onClick={() => handleLocaleChange(locale)}
                 className={cn(
-                  'w-full text-left px-4 py-2 text-sm hover:bg-gray-50 transition-colors',
-                  currentLocale === locale && 'bg-gray-50 text-accent-teal font-medium'
+                  'w-full text-left px-4 py-2 text-sm hover:bg-surface transition-colors',
+                  currentLocale === locale && 'bg-surface text-accent-teal font-medium'
                 )}
               >
                 {localeNames[locale]}

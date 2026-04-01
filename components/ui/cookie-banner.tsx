@@ -46,15 +46,15 @@ export default function CookieBanner() {
         animate={{ y: 0, opacity: 1 }}
         exit={{ y: 100, opacity: 0 }}
         transition={{ duration: 0.3 }}
-        className="fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-gray-200 shadow-lg"
+        className="fixed bottom-0 left-0 right-0 z-50 bg-surface border-t border-border-warm shadow-lg"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           {!showSettings ? (
             <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
               <div className="flex-1">
-                <p className="text-sm text-[#6B7280] leading-relaxed">
+                <p className="text-sm text-muted leading-relaxed">
                   We use minimal cookies for essential site functions and anonymized analytics. 
-                  <a href="/cookies" className="text-[#00B3A4] hover:underline ml-1">
+                  <a href="/cookies" className="text-amber hover:underline ml-1">
                     Learn more
                   </a>
                 </p>
@@ -75,10 +75,10 @@ export default function CookieBanner() {
           ) : (
             <div className="space-y-4">
               <div className="flex items-center justify-between">
-                <h3 className="text-lg font-semibold text-[#111827]">Cookie Preferences</h3>
+                <h3 className="text-lg font-semibold text-cream">Cookie Preferences</h3>
                 <button
                   onClick={() => setShowSettings(false)}
-                  className="p-2 text-gray-400 hover:text-gray-600"
+                  className="p-2 text-muted/60 hover:text-muted"
                 >
                   <X className="h-5 w-5" />
                 </button>
@@ -87,16 +87,16 @@ export default function CookieBanner() {
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
                   <div>
-                    <h4 className="font-medium text-[#111827]">Essential Cookies</h4>
-                    <p className="text-sm text-[#6B7280]">Required for basic site functionality</p>
+                    <h4 className="font-medium text-cream">Essential Cookies</h4>
+                    <p className="text-sm text-muted">Required for basic site functionality</p>
                   </div>
                   <input type="checkbox" checked disabled className="h-4 w-4" />
                 </div>
                 
                 <div className="flex items-center justify-between">
                   <div>
-                    <h4 className="font-medium text-[#111827]">Analytics Cookies</h4>
-                    <p className="text-sm text-[#6B7280]">Help us improve the site experience</p>
+                    <h4 className="font-medium text-cream">Analytics Cookies</h4>
+                    <p className="text-sm text-muted">Help us improve the site experience</p>
                   </div>
                   <input type="checkbox" className="h-4 w-4" id="analytics" />
                 </div>

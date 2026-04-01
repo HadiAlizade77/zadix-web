@@ -16,7 +16,7 @@ const Blog = () => {
   return (
     <div className="min-h-screen pt-20">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-[#0B1220] via-[#0F1629] to-[#0B1220]">
+      <section className="py-20 bg-ink">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center"
@@ -24,13 +24,13 @@ const Blog = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <div className="w-20 h-20 bg-gradient-to-br from-[#00B3A4] to-[#2563EB] rounded-3xl flex items-center justify-center mx-auto mb-8">
+            <div className="w-20 h-20 bg-gradient-to-br from-amber to-amber-dim rounded-3xl flex items-center justify-center mx-auto mb-8">
               <BookOpen className="h-10 w-10 text-white" />
             </div>
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
               Insights on AI Automation
             </h1>
-            <p className="text-xl text-gray-300 max-w-4xl mx-auto mb-8 leading-relaxed">
+            <p className="text-xl text-muted max-w-4xl mx-auto mb-8 leading-relaxed">
               Practical guides on AI workflows, ROI, and guardrails for enterprises. 
               Real insights from building production automation systems.
             </p>
@@ -41,7 +41,7 @@ const Blog = () => {
                   className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
                     category === 'All'
                       ? 'bg-[#00B3A4] text-white'
-                      : 'bg-white/10 text-gray-300 hover:bg-white/20'
+                      : 'bg-cream/5 text-muted hover:bg-white/20'
                   }`}
                 >
                   {category}
@@ -53,7 +53,7 @@ const Blog = () => {
       </section>
 
       {/* Blog Posts */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-surface">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {posts.map((post, index) => (
@@ -64,7 +64,7 @@ const Blog = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
-                <Card className="h-full hover:shadow-xl transition-all duration-300 group cursor-pointer">
+                <Card className="h-full hover:shadow-xl shadow-black/20 transition-all duration-300 group cursor-pointer">
                   <CardHeader>
                     <div className="flex items-center justify-between mb-4">
                       <span className={`px-3 py-1 rounded-full text-xs font-medium ${
@@ -75,17 +75,17 @@ const Blog = () => {
                       }`}>
                         {post.category}
                       </span>
-                      <span className="text-xs text-[#6B7280]">{post.readTime}</span>
+                      <span className="text-xs text-muted">{post.readTime}</span>
                     </div>
-                    <CardTitle className="text-xl mb-3 group-hover:text-[#00B3A4] transition-colors line-clamp-2">
+                    <CardTitle className="text-xl mb-3 group-hover:text-amber transition-colors line-clamp-2">
                       {post.title}
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-[#6B7280] mb-6 leading-relaxed line-clamp-3">
+                    <p className="text-muted mb-6 leading-relaxed line-clamp-3">
                       {post.excerpt}
                     </p>
-                    <div className="flex items-center justify-between text-sm text-[#6B7280]">
+                    <div className="flex items-center justify-between text-sm text-muted">
                       <div className="flex items-center">
                         <User className="h-4 w-4 mr-2" />
                         {post.author}
@@ -99,7 +99,7 @@ const Blog = () => {
                         })}
                       </div>
                     </div>
-                    <div className="mt-4 flex items-center text-[#2563EB] font-medium group-hover:translate-x-2 transition-transform">
+                    <div className="mt-4 flex items-center text-amber-dim font-medium group-hover:translate-x-2 transition-transform">
                       <Link href={`/blog/${post.id}`}>
                         Read More
                       </Link>
@@ -114,7 +114,7 @@ const Blog = () => {
       </section>
 
       {/* Newsletter CTA */}
-      <section className="py-20 bg-[#F8FAFC]">
+      <section className="py-20 bg-ink">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -122,23 +122,23 @@ const Blog = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-[#111827] mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-cream mb-6">
               Stay Updated on AI Automation
             </h2>
-            <p className="text-lg text-[#6B7280] mb-8">
+            <p className="text-lg text-muted mb-8">
               Get the latest insights on building production AI systems delivered to your inbox
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00B3A4] focus:border-transparent"
+                className="flex-1 px-4 py-3 border border-border-warm rounded-lg focus:outline-none focus:ring-2 focus:ring-amber focus:border-transparent"
               />
               <Button size="lg">
                 Subscribe
               </Button>
             </div>
-            <p className="text-sm text-[#6B7280] mt-4">
+            <p className="text-sm text-muted mt-4">
               No spam. Unsubscribe at any time.
             </p>
           </motion.div>

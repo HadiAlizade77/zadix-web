@@ -79,11 +79,11 @@ const CaseStudies = () => {
           >
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
               Real Results from{' '}
-              <span className="bg-gradient-to-r from-[#00B3A4] to-[#2563EB] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-amber to-amber-dim bg-clip-text text-transparent">
                 Real Clients
               </span>
             </h1>
-            <p className="text-xl text-gray-300 max-w-4xl mx-auto mb-8 leading-relaxed">
+            <p className="text-xl text-muted max-w-4xl mx-auto mb-8 leading-relaxed">
               See how companies are using our AI automation to eliminate busywork and drive measurable business outcomes.
             </p>
           </motion.div>
@@ -102,7 +102,7 @@ const CaseStudies = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: index * 0.2 }}
               >
-                <Card className="overflow-hidden hover:shadow-2xl transition-all duration-300">
+                <Card className="overflow-hidden hover:shadow-2xl shadow-black/30 transition-all duration-300">
                   <CardContent className="p-0">
                     <div className="grid grid-cols-1 lg:grid-cols-2">
                       {/* Content */}
@@ -112,7 +112,7 @@ const CaseStudies = () => {
                             <study.icon className="h-6 w-6 text-white" />
                           </div>
                           <div>
-                            <div className="text-sm font-medium text-[#00B3A4] mb-1">{study.industry}</div>
+                            <div className="text-sm font-medium text-amber mb-1">{study.industry}</div>
                             <h3 className="text-xl font-bold text-cream">{study.company}</h3>
                             <p className="text-sm text-muted">{study.location}</p>
                           </div>
@@ -128,7 +128,7 @@ const CaseStudies = () => {
                           <p className="text-muted leading-relaxed">{study.solution}</p>
                         </div>
 
-                        <div className="bg-[#F8FAFC] rounded-lg p-4 mb-6">
+                        <div className="bg-surface-2 rounded-lg p-4 mb-6">
                           <blockquote className="text-cream font-medium italic">
                             "{study.quote}"
                           </blockquote>
@@ -145,7 +145,7 @@ const CaseStudies = () => {
                         <h4 className="text-2xl font-bold mb-8">Results</h4>
                         <div className="space-y-6">
                           {study.results.map((result, idx) => (
-                            <div key={idx} className="border-b border-white/20 pb-4 last:border-b-0">
+                            <div key={idx} className="border-b border-cream/20 pb-4 last:border-b-0">
                               <div className="text-3xl font-bold mb-1">{result.metric}</div>
                               <div className="text-lg font-medium mb-1">{result.label}</div>
                               <div className="text-sm opacity-80">{result.improvement}</div>
@@ -191,7 +191,7 @@ const CaseStudies = () => {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
                 <div className="text-5xl font-bold text-cream mb-2">{metric.number}</div>
-                <div className="text-lg font-semibold text-[#00B3A4] mb-2">{metric.label}</div>
+                <div className="text-lg font-semibold text-amber mb-2">{metric.label}</div>
                 <p className="text-muted">{metric.description}</p>
               </motion.div>
             ))}
@@ -200,7 +200,7 @@ const CaseStudies = () => {
       </section>
 
       {/* Measurement Note */}
-      <section className="py-16 bg-surface border-t border-gray-100">
+      <section className="py-16 bg-surface border-t border-border-warm">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -219,7 +219,7 @@ const CaseStudies = () => {
                 </Link>
               </Button>
             </div>
-            <div className="mt-8 bg-[#F8FAFC] rounded-lg p-6">
+            <div className="mt-8 bg-surface-2 rounded-lg p-6">
               <blockquote className="text-cream font-medium italic">
                 "The team delivered exactly on scope and timeline."
               </blockquote>

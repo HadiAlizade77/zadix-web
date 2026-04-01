@@ -123,7 +123,7 @@ const Careers = () => {
   return (
     <div className="min-h-screen pt-20">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-[#0B1220] via-[#0F1629] to-[#0B1220]">
+      <section className="py-20 bg-ink">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center"
@@ -133,11 +133,11 @@ const Careers = () => {
           >
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
               Build the Future of{' '}
-              <span className="bg-gradient-to-r from-[#00B3A4] to-[#2563EB] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-amber to-amber-dim bg-clip-text text-transparent">
                 AI Automation
               </span>
             </h1>
-            <p className="text-xl text-gray-300 max-w-4xl mx-auto mb-8 leading-relaxed">
+            <p className="text-xl text-muted max-w-4xl mx-auto mb-8 leading-relaxed">
               Join our team of senior engineers building production-ready AI automation systems that eliminate busywork for businesses worldwide.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -147,7 +147,7 @@ const Careers = () => {
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
               </Button>
-              <Button size="xl" variant="outline" className="bg-white/10 border-white/20 text-white hover:bg-white/20" asChild>
+              <Button size="xl" variant="outline" className="bg-cream/5 border-cream/20 text-cream hover:bg-cream/10" asChild>
                 <Link href="/about">Learn About Us</Link>
               </Button>
             </div>
@@ -156,7 +156,7 @@ const Careers = () => {
       </section>
 
       {/* Company Values */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-surface">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-16"
@@ -165,10 +165,10 @@ const Careers = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-[#111827] mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-cream mb-6">
               Our Values
             </h2>
-            <p className="text-xl text-[#6B7280] max-w-3xl mx-auto">
+            <p className="text-xl text-muted max-w-3xl mx-auto">
               The principles that guide how we work and build together
             </p>
           </motion.div>
@@ -177,14 +177,14 @@ const Careers = () => {
             {values.map((value, index) => (
               <motion.div
                 key={value.title}
-                className="bg-[#F8FAFC] rounded-2xl p-8"
+                className="bg-surface-2 rounded-2xl p-8"
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
-                <h3 className="text-xl font-bold text-[#111827] mb-3">{value.title}</h3>
-                <p className="text-[#6B7280] leading-relaxed">{value.description}</p>
+                <h3 className="text-xl font-bold text-cream mb-3">{value.title}</h3>
+                <p className="text-muted leading-relaxed">{value.description}</p>
               </motion.div>
             ))}
           </div>
@@ -192,7 +192,7 @@ const Careers = () => {
       </section>
 
       {/* Benefits */}
-      <section className="py-20 bg-[#F8FAFC]">
+      <section className="py-20 bg-ink">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-16"
@@ -201,10 +201,10 @@ const Careers = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-[#111827] mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-cream mb-6">
               Why Join Zadix
             </h2>
-            <p className="text-xl text-[#6B7280] max-w-3xl mx-auto">
+            <p className="text-xl text-muted max-w-3xl mx-auto">
               We offer more than just a job—we offer the opportunity to shape the future of business automation
             </p>
           </motion.div>
@@ -220,13 +220,13 @@ const Careers = () => {
               >
                 <Card className="h-full text-center hover:shadow-lg transition-all duration-300">
                   <CardHeader>
-                    <div className="w-16 h-16 bg-gradient-to-br from-[#00B3A4] to-[#2563EB] rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <div className="w-16 h-16 bg-gradient-to-br from-amber to-amber-dim rounded-2xl flex items-center justify-center mx-auto mb-4">
                       <benefit.icon className="h-8 w-8 text-white" />
                     </div>
                     <CardTitle className="text-xl mb-3">{benefit.title}</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-[#6B7280] leading-relaxed">{benefit.description}</p>
+                    <p className="text-muted leading-relaxed">{benefit.description}</p>
                   </CardContent>
                 </Card>
               </motion.div>
@@ -236,7 +236,7 @@ const Careers = () => {
       </section>
 
       {/* Open Positions */}
-      <section id="open-positions" className="py-20 bg-white">
+      <section id="open-positions" className="py-20 bg-surface">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-16"
@@ -245,10 +245,10 @@ const Careers = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-[#111827] mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-cream mb-6">
               Open Positions
             </h2>
-            <p className="text-xl text-[#6B7280] max-w-3xl mx-auto">
+            <p className="text-xl text-muted max-w-3xl mx-auto">
               Join our growing team and help build the next generation of AI automation systems
             </p>
           </motion.div>
@@ -262,13 +262,13 @@ const Careers = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
-                <Card className="hover:shadow-xl transition-all duration-300">
+                <Card className="hover:shadow-xl shadow-black/20 transition-all duration-300">
                   <CardContent className="p-8">
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                       {/* Job Info */}
                       <div className="lg:col-span-1">
-                        <h3 className="text-2xl font-bold text-[#111827] mb-4">{position.title}</h3>
-                        <div className="space-y-3 text-[#6B7280]">
+                        <h3 className="text-2xl font-bold text-cream mb-4">{position.title}</h3>
+                        <div className="space-y-3 text-muted">
                           <div className="flex items-center">
                             <MapPin className="h-5 w-5 mr-2" />
                             <span>{position.location}</span>
@@ -292,14 +292,14 @@ const Careers = () => {
 
                       {/* Job Details */}
                       <div className="lg:col-span-2">
-                        <p className="text-[#6B7280] mb-6 leading-relaxed">{position.description}</p>
+                        <p className="text-muted mb-6 leading-relaxed">{position.description}</p>
                         
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                           <div>
-                            <h4 className="font-semibold text-[#111827] mb-3">Requirements</h4>
+                            <h4 className="font-semibold text-cream mb-3">Requirements</h4>
                             <ul className="space-y-2">
                               {position.requirements.map((req, idx) => (
-                                <li key={idx} className="flex items-start text-[#6B7280] text-sm">
+                                <li key={idx} className="flex items-start text-muted text-sm">
                                   <div className="w-1.5 h-1.5 bg-[#00B3A4] rounded-full mr-3 mt-2"></div>
                                   {req}
                                 </li>
@@ -308,10 +308,10 @@ const Careers = () => {
                           </div>
                           
                           <div>
-                            <h4 className="font-semibold text-[#111827] mb-3">Responsibilities</h4>
+                            <h4 className="font-semibold text-cream mb-3">Responsibilities</h4>
                             <ul className="space-y-2">
                               {position.responsibilities.map((resp, idx) => (
-                                <li key={idx} className="flex items-start text-[#6B7280] text-sm">
+                                <li key={idx} className="flex items-start text-muted text-sm">
                                   <div className="w-1.5 h-1.5 bg-[#2563EB] rounded-full mr-3 mt-2"></div>
                                   {resp}
                                 </li>
@@ -341,7 +341,7 @@ const Careers = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
               Don't see the right role?
             </h2>
-            <p className="text-xl text-gray-300 mb-8">
+            <p className="text-xl text-muted mb-8">
               We're always looking for exceptional talent. Send us your resume and tell us how you'd like to contribute.
             </p>
             <Button size="xl" variant="secondary" asChild>

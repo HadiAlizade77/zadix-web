@@ -77,7 +77,7 @@ const Solutions = () => {
   return (
     <div className="min-h-screen pt-20">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-[#0B1220] via-[#0F1629] to-[#0B1220]">
+      <section className="py-20 bg-ink">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center"
@@ -87,11 +87,11 @@ const Solutions = () => {
           >
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
               From inbox to system‑of‑record—
-              <span className="bg-gradient-to-r from-[#00B3A4] to-[#2563EB] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-amber to-amber-dim bg-clip-text text-transparent">
                 automated, approved, auditable
               </span>
             </h1>
-            <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-xl text-muted max-w-4xl mx-auto leading-relaxed">
               We build automations that understand your documents and emails, make decisions with your rules, route approvals, and safely update the systems your business runs on.
             </p>
           </motion.div>
@@ -99,7 +99,7 @@ const Solutions = () => {
       </section>
 
       {/* Solution Pillars */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-surface">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-16"
@@ -108,10 +108,10 @@ const Solutions = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-[#111827] mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-cream mb-6">
               Five Pillars of Reliable Automation
             </h2>
-            <p className="text-xl text-[#6B7280] max-w-3xl mx-auto">
+            <p className="text-xl text-muted max-w-3xl mx-auto">
               Every automation we build includes these essential components for production reliability
             </p>
           </motion.div>
@@ -125,18 +125,18 @@ const Solutions = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
-                <Card className="h-full hover:shadow-xl transition-all duration-300">
+                <Card className="h-full hover:shadow-xl shadow-black/20 transition-all duration-300">
                   <CardHeader>
-                    <div className="w-16 h-16 bg-gradient-to-br from-[#00B3A4] to-[#2563EB] rounded-2xl flex items-center justify-center mb-4">
+                    <div className="w-16 h-16 bg-gradient-to-br from-amber to-amber-dim rounded-2xl flex items-center justify-center mb-4">
                       <pillar.icon className="h-8 w-8 text-white" />
                     </div>
                     <CardTitle className="text-xl mb-3">{pillar.title}</CardTitle>
-                    <p className="text-[#6B7280] leading-relaxed">{pillar.description}</p>
+                    <p className="text-muted leading-relaxed">{pillar.description}</p>
                   </CardHeader>
                   <CardContent>
                     <ul className="space-y-2">
                       {pillar.features.map((feature, idx) => (
-                        <li key={idx} className="flex items-center text-[#6B7280]">
+                        <li key={idx} className="flex items-center text-muted">
                           <div className="w-1.5 h-1.5 bg-[#00B3A4] rounded-full mr-3"></div>
                           {feature}
                         </li>
@@ -151,7 +151,7 @@ const Solutions = () => {
       </section>
 
       {/* Use Cases */}
-      <section className="py-20 bg-[#F8FAFC]">
+      <section className="py-20 bg-ink">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-16"
@@ -160,10 +160,10 @@ const Solutions = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-[#111827] mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-cream mb-6">
               Common Use Cases
             </h2>
-            <p className="text-xl text-[#6B7280] max-w-3xl mx-auto">
+            <p className="text-xl text-muted max-w-3xl mx-auto">
               Proven automation patterns that deliver immediate value
             </p>
           </motion.div>
@@ -172,16 +172,16 @@ const Solutions = () => {
             {useCases.map((useCase, index) => (
               <motion.div
                 key={useCase.title}
-                className="bg-white rounded-2xl p-8 shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100"
+                className="bg-surface-2 rounded-2xl p-8 shadow-md hover:shadow-lg transition-all duration-300 border border-border-warm"
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
-                <h3 className="text-xl font-bold text-[#111827] mb-3">{useCase.title}</h3>
-                <p className="text-[#6B7280] mb-4 leading-relaxed">{useCase.description}</p>
+                <h3 className="text-xl font-bold text-cream mb-3">{useCase.title}</h3>
+                <p className="text-muted mb-4 leading-relaxed">{useCase.description}</p>
                 <div className="bg-gradient-to-r from-[#00B3A4]/10 to-[#2563EB]/10 rounded-lg p-3">
-                  <span className="text-sm font-medium text-[#00B3A4]">Typical outcome: {useCase.outcome}</span>
+                  <span className="text-sm font-medium text-amber">Typical outcome: {useCase.outcome}</span>
                 </div>
               </motion.div>
             ))}
@@ -190,7 +190,7 @@ const Solutions = () => {
       </section>
 
       {/* Comprehensive Integration Showcase */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-surface">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-16"
@@ -199,10 +199,10 @@ const Solutions = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-[#111827] mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-cream mb-6">
               400+ Integrations Available
             </h2>
-            <p className="text-xl text-[#6B7280] max-w-3xl mx-auto">
+            <p className="text-xl text-muted max-w-3xl mx-auto">
               Connect your automation to virtually any service or application. Here's what's possible with n8n's integration ecosystem.
             </p>
           </motion.div>
@@ -216,7 +216,7 @@ const Solutions = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <h3 className="text-2xl font-bold text-[#111827] mb-8 text-center">Communication & Collaboration</h3>
+              <h3 className="text-2xl font-bold text-cream mb-8 text-center">Communication & Collaboration</h3>
               <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
                 {[
                   { name: 'Slack', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/slack.svg' },
@@ -234,7 +234,7 @@ const Solutions = () => {
                 ].map((service, index) => (
                   <motion.div
                     key={service.name}
-                    className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 flex flex-col items-center group"
+                    className="bg-surface-2 rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 flex flex-col items-center group"
                     initial={{ opacity: 0, scale: 0.9 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
@@ -243,7 +243,7 @@ const Solutions = () => {
                     <div className="w-12 h-12 mb-3 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                       <img src={service.logo} alt={service.name} className="w-8 h-8 object-contain" />
                     </div>
-                    <span className="text-sm font-medium text-[#6B7280] text-center">{service.name}</span>
+                    <span className="text-sm font-medium text-muted text-center">{service.name}</span>
                   </motion.div>
                 ))}
               </div>
@@ -256,7 +256,7 @@ const Solutions = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <h3 className="text-2xl font-bold text-[#111827] mb-8 text-center">CRM & Sales</h3>
+              <h3 className="text-2xl font-bold text-cream mb-8 text-center">CRM & Sales</h3>
               <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
                 {[
                   { name: 'Salesforce', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/salesforce.svg' },
@@ -274,7 +274,7 @@ const Solutions = () => {
                 ].map((service, index) => (
                   <motion.div
                     key={service.name}
-                    className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 flex flex-col items-center group"
+                    className="bg-surface-2 rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 flex flex-col items-center group"
                     initial={{ opacity: 0, scale: 0.9 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
@@ -283,7 +283,7 @@ const Solutions = () => {
                     <div className="w-12 h-12 mb-3 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                       <img src={service.logo} alt={service.name} className="w-8 h-8 object-contain" />
                     </div>
-                    <span className="text-sm font-medium text-[#6B7280] text-center">{service.name}</span>
+                    <span className="text-sm font-medium text-muted text-center">{service.name}</span>
                   </motion.div>
                 ))}
               </div>
@@ -296,7 +296,7 @@ const Solutions = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <h3 className="text-2xl font-bold text-[#111827] mb-8 text-center">E-commerce & Payments</h3>
+              <h3 className="text-2xl font-bold text-cream mb-8 text-center">E-commerce & Payments</h3>
               <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
                 {[
                   { name: 'Shopify', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/shopify.svg' },
@@ -314,7 +314,7 @@ const Solutions = () => {
                 ].map((service, index) => (
                   <motion.div
                     key={service.name}
-                    className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 flex flex-col items-center group"
+                    className="bg-surface-2 rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 flex flex-col items-center group"
                     initial={{ opacity: 0, scale: 0.9 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
@@ -323,7 +323,7 @@ const Solutions = () => {
                     <div className="w-12 h-12 mb-3 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                       <img src={service.logo} alt={service.name} className="w-8 h-8 object-contain" />
                     </div>
-                    <span className="text-sm font-medium text-[#6B7280] text-center">{service.name}</span>
+                    <span className="text-sm font-medium text-muted text-center">{service.name}</span>
                   </motion.div>
                 ))}
               </div>
@@ -336,7 +336,7 @@ const Solutions = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <h3 className="text-2xl font-bold text-[#111827] mb-8 text-center">Cloud & Development</h3>
+              <h3 className="text-2xl font-bold text-cream mb-8 text-center">Cloud & Development</h3>
               <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
                 {[
                   { name: 'AWS', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/asana.svg' },
@@ -354,7 +354,7 @@ const Solutions = () => {
                 ].map((service, index) => (
                   <motion.div
                     key={service.name}
-                    className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 flex flex-col items-center group"
+                    className="bg-surface-2 rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 flex flex-col items-center group"
                     initial={{ opacity: 0, scale: 0.9 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
@@ -363,7 +363,7 @@ const Solutions = () => {
                     <div className="w-12 h-12 mb-3 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                       <img src={service.logo} alt={service.name} className="w-8 h-8 object-contain" />
                     </div>
-                    <span className="text-sm font-medium text-[#6B7280] text-center">{service.name}</span>
+                    <span className="text-sm font-medium text-muted text-center">{service.name}</span>
                   </motion.div>
                 ))}
               </div>
@@ -376,7 +376,7 @@ const Solutions = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <h3 className="text-2xl font-bold text-[#111827] mb-8 text-center">Databases & Storage</h3>
+              <h3 className="text-2xl font-bold text-cream mb-8 text-center">Databases & Storage</h3>
               <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
                 {[
                   { name: 'MySQL', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/mysql.svg' },
@@ -394,7 +394,7 @@ const Solutions = () => {
                 ].map((service, index) => (
                   <motion.div
                     key={service.name}
-                    className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 flex flex-col items-center group"
+                    className="bg-surface-2 rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 flex flex-col items-center group"
                     initial={{ opacity: 0, scale: 0.9 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
@@ -403,7 +403,7 @@ const Solutions = () => {
                     <div className="w-12 h-12 mb-3 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                       <img src={service.logo} alt={service.name} className="w-8 h-8 object-contain" />
                     </div>
-                    <span className="text-sm font-medium text-[#6B7280] text-center">{service.name}</span>
+                    <span className="text-sm font-medium text-muted text-center">{service.name}</span>
                   </motion.div>
                 ))}
               </div>
@@ -416,7 +416,7 @@ const Solutions = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <h3 className="text-2xl font-bold text-[#111827] mb-8 text-center">Marketing & Analytics</h3>
+              <h3 className="text-2xl font-bold text-cream mb-8 text-center">Marketing & Analytics</h3>
               <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
                 {[
                   { name: 'Google Analytics', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/googleanalytics.svg' },
@@ -434,7 +434,7 @@ const Solutions = () => {
                 ].map((service, index) => (
                   <motion.div
                     key={service.name}
-                    className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 flex flex-col items-center group"
+                    className="bg-surface-2 rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 flex flex-col items-center group"
                     initial={{ opacity: 0, scale: 0.9 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
@@ -443,7 +443,7 @@ const Solutions = () => {
                     <div className="w-12 h-12 mb-3 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                       <img src={service.logo} alt={service.name} className="w-8 h-8 object-contain" />
                     </div>
-                    <span className="text-sm font-medium text-[#6B7280] text-center">{service.name}</span>
+                    <span className="text-sm font-medium text-muted text-center">{service.name}</span>
                   </motion.div>
                 ))}
               </div>
@@ -456,7 +456,7 @@ const Solutions = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <h3 className="text-2xl font-bold text-[#111827] mb-8 text-center">Productivity & Office</h3>
+              <h3 className="text-2xl font-bold text-cream mb-8 text-center">Productivity & Office</h3>
               <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
                 {[
                   { name: 'Google Workspace', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/google.svg' },
@@ -474,7 +474,7 @@ const Solutions = () => {
                 ].map((service, index) => (
                   <motion.div
                     key={service.name}
-                    className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 flex flex-col items-center group"
+                    className="bg-surface-2 rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 flex flex-col items-center group"
                     initial={{ opacity: 0, scale: 0.9 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
@@ -483,7 +483,7 @@ const Solutions = () => {
                     <div className="w-12 h-12 mb-3 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                       <img src={service.logo} alt={service.name} className="w-8 h-8 object-contain" />
                     </div>
-                    <span className="text-sm font-medium text-[#6B7280] text-center">{service.name}</span>
+                    <span className="text-sm font-medium text-muted text-center">{service.name}</span>
                   </motion.div>
                 ))}
               </div>
@@ -496,7 +496,7 @@ const Solutions = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <h3 className="text-2xl font-bold text-[#111827] mb-8 text-center">Enterprise & ERP</h3>
+              <h3 className="text-2xl font-bold text-cream mb-8 text-center">Enterprise & ERP</h3>
               <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
                 {[
                   { name: 'SAP', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/sap.svg' },
@@ -514,7 +514,7 @@ const Solutions = () => {
                 ].map((service, index) => (
                   <motion.div
                     key={service.name}
-                    className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 flex flex-col items-center group"
+                    className="bg-surface-2 rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 flex flex-col items-center group"
                     initial={{ opacity: 0, scale: 0.9 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
@@ -523,7 +523,7 @@ const Solutions = () => {
                     <div className="w-12 h-12 mb-3 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                       <img src={service.logo} alt={service.name} className="w-8 h-8 object-contain" />
                     </div>
-                    <span className="text-sm font-medium text-[#6B7280] text-center">{service.name}</span>
+                    <span className="text-sm font-medium text-muted text-center">{service.name}</span>
                   </motion.div>
                 ))}
               </div>
@@ -536,7 +536,7 @@ const Solutions = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <h3 className="text-2xl font-bold text-[#111827] mb-8 text-center">AI & Machine Learning</h3>
+              <h3 className="text-2xl font-bold text-cream mb-8 text-center">AI & Machine Learning</h3>
               <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
                 {[
                   { name: 'OpenAI', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/openai.svg' },
@@ -554,7 +554,7 @@ const Solutions = () => {
                 ].map((service, index) => (
                   <motion.div
                     key={service.name}
-                    className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 flex flex-col items-center group"
+                    className="bg-surface-2 rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 flex flex-col items-center group"
                     initial={{ opacity: 0, scale: 0.9 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
@@ -563,7 +563,7 @@ const Solutions = () => {
                     <div className="w-12 h-12 mb-3 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                       <img src={service.logo} alt={service.name} className="w-8 h-8 object-contain" />
                     </div>
-                    <span className="text-sm font-medium text-[#6B7280] text-center">{service.name}</span>
+                    <span className="text-sm font-medium text-muted text-center">{service.name}</span>
                   </motion.div>
                 ))}
               </div>
@@ -576,7 +576,7 @@ const Solutions = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <h3 className="text-2xl font-bold text-[#111827] mb-8 text-center">Business Applications</h3>
+              <h3 className="text-2xl font-bold text-cream mb-8 text-center">Business Applications</h3>
               <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
                 {[
                   { name: 'QuickBooks', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/quickbooks.svg' },
@@ -594,7 +594,7 @@ const Solutions = () => {
                 ].map((service, index) => (
                   <motion.div
                     key={service.name}
-                    className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 flex flex-col items-center group"
+                    className="bg-surface-2 rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 flex flex-col items-center group"
                     initial={{ opacity: 0, scale: 0.9 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
@@ -603,7 +603,7 @@ const Solutions = () => {
                     <div className="w-12 h-12 mb-3 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                       <img src={service.logo} alt={service.name} className="w-8 h-8 object-contain" />
                     </div>
-                    <span className="text-sm font-medium text-[#6B7280] text-center">{service.name}</span>
+                    <span className="text-sm font-medium text-muted text-center">{service.name}</span>
                   </motion.div>
                 ))}
               </div>
@@ -616,7 +616,7 @@ const Solutions = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <h3 className="text-2xl font-bold text-[#111827] mb-8 text-center">Communication Platforms</h3>
+              <h3 className="text-2xl font-bold text-cream mb-8 text-center">Communication Platforms</h3>
               <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
                 {[
                   { name: 'Telegram', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/telegram.svg' },
@@ -634,7 +634,7 @@ const Solutions = () => {
                 ].map((service, index) => (
                   <motion.div
                     key={service.name}
-                    className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 flex flex-col items-center group"
+                    className="bg-surface-2 rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 flex flex-col items-center group"
                     initial={{ opacity: 0, scale: 0.9 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
@@ -643,7 +643,7 @@ const Solutions = () => {
                     <div className="w-12 h-12 mb-3 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                       <img src={service.logo} alt={service.name} className="w-8 h-8 object-contain" />
                     </div>
-                    <span className="text-sm font-medium text-[#6B7280] text-center">{service.name}</span>
+                    <span className="text-sm font-medium text-muted text-center">{service.name}</span>
                   </motion.div>
                 ))}
               </div>
@@ -656,7 +656,7 @@ const Solutions = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <h3 className="text-2xl font-bold text-[#111827] mb-8 text-center">Development Tools</h3>
+              <h3 className="text-2xl font-bold text-cream mb-8 text-center">Development Tools</h3>
               <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
                 {[
                   { name: 'Jenkins', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/jenkins.svg' },
@@ -674,7 +674,7 @@ const Solutions = () => {
                 ].map((service, index) => (
                   <motion.div
                     key={service.name}
-                    className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 flex flex-col items-center group"
+                    className="bg-surface-2 rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 flex flex-col items-center group"
                     initial={{ opacity: 0, scale: 0.9 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
@@ -683,7 +683,7 @@ const Solutions = () => {
                     <div className="w-12 h-12 mb-3 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                       <img src={service.logo} alt={service.name} className="w-8 h-8 object-contain" />
                     </div>
-                    <span className="text-sm font-medium text-[#6B7280] text-center">{service.name}</span>
+                    <span className="text-sm font-medium text-muted text-center">{service.name}</span>
                   </motion.div>
                 ))}
               </div>
@@ -696,7 +696,7 @@ const Solutions = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <h3 className="text-2xl font-bold text-[#111827] mb-8 text-center">Finance & Accounting</h3>
+              <h3 className="text-2xl font-bold text-cream mb-8 text-center">Finance & Accounting</h3>
               <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
                 {[
                   { name: 'Plaid', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/visa.svg' },
@@ -714,7 +714,7 @@ const Solutions = () => {
                 ].map((service, index) => (
                   <motion.div
                     key={service.name}
-                    className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 flex flex-col items-center group"
+                    className="bg-surface-2 rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 flex flex-col items-center group"
                     initial={{ opacity: 0, scale: 0.9 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
@@ -723,7 +723,7 @@ const Solutions = () => {
                     <div className="w-12 h-12 mb-3 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                       <img src={service.logo} alt={service.name} className="w-8 h-8 object-contain" />
                     </div>
-                    <span className="text-sm font-medium text-[#6B7280] text-center">{service.name}</span>
+                    <span className="text-sm font-medium text-muted text-center">{service.name}</span>
                   </motion.div>
                 ))}
               </div>
@@ -736,7 +736,7 @@ const Solutions = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <h3 className="text-2xl font-bold text-[#111827] mb-8 text-center">Security & Identity</h3>
+              <h3 className="text-2xl font-bold text-cream mb-8 text-center">Security & Identity</h3>
               <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
                 {[
                   { name: 'Auth0', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/auth0.svg' },
@@ -754,7 +754,7 @@ const Solutions = () => {
                 ].map((service, index) => (
                   <motion.div
                     key={service.name}
-                    className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 flex flex-col items-center group"
+                    className="bg-surface-2 rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 flex flex-col items-center group"
                     initial={{ opacity: 0, scale: 0.9 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
@@ -763,7 +763,7 @@ const Solutions = () => {
                     <div className="w-12 h-12 mb-3 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                       <img src={service.logo} alt={service.name} className="w-8 h-8 object-contain" />
                     </div>
-                    <span className="text-sm font-medium text-[#6B7280] text-center">{service.name}</span>
+                    <span className="text-sm font-medium text-muted text-center">{service.name}</span>
                   </motion.div>
                 ))}
               </div>
@@ -776,7 +776,7 @@ const Solutions = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <h3 className="text-2xl font-bold text-[#111827] mb-8 text-center">IoT & Hardware</h3>
+              <h3 className="text-2xl font-bold text-cream mb-8 text-center">IoT & Hardware</h3>
               <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
                 {[
                   { name: 'Arduino', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@15.12.0/icons/arduino.svg' },
@@ -794,7 +794,7 @@ const Solutions = () => {
                 ].map((service, index) => (
                   <motion.div
                     key={service.name}
-                    className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 flex flex-col items-center group"
+                    className="bg-surface-2 rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 flex flex-col items-center group"
                     initial={{ opacity: 0, scale: 0.9 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
@@ -803,7 +803,7 @@ const Solutions = () => {
                     <div className="w-12 h-12 mb-3 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                       <img src={service.logo} alt={service.name} className="w-8 h-8 object-contain" />
                     </div>
-                    <span className="text-sm font-medium text-[#6B7280] text-center">{service.name}</span>
+                    <span className="text-sm font-medium text-muted text-center">{service.name}</span>
                   </motion.div>
                 ))}
               </div>
@@ -813,7 +813,7 @@ const Solutions = () => {
       </section>
 
       {/* Beyond Standard Integrations */}
-      <section className="py-20 bg-[#F8FAFC]">
+      <section className="py-20 bg-ink">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-16"
@@ -822,10 +822,10 @@ const Solutions = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-[#111827] mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-cream mb-6">
               Beyond the Standard List
             </h2>
-            <p className="text-xl text-[#6B7280] max-w-3xl mx-auto">
+            <p className="text-xl text-muted max-w-3xl mx-auto">
               Don't see your specific tool? Our integration capabilities extend far beyond pre-built connectors.
             </p>
           </motion.div>
@@ -862,13 +862,13 @@ const Solutions = () => {
               >
                 <Card className="h-full text-center hover:shadow-lg transition-all duration-300">
                   <CardHeader>
-                    <div className="w-16 h-16 bg-gradient-to-br from-[#00B3A4] to-[#2563EB] rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <div className="w-16 h-16 bg-gradient-to-br from-amber to-amber-dim rounded-2xl flex items-center justify-center mx-auto mb-4">
                       <capability.icon className="h-8 w-8 text-white" />
                     </div>
                     <CardTitle className="text-xl mb-3">{capability.title}</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-[#6B7280] leading-relaxed">{capability.description}</p>
+                    <p className="text-muted leading-relaxed">{capability.description}</p>
                   </CardContent>
                 </Card>
               </motion.div>
@@ -877,7 +877,7 @@ const Solutions = () => {
 
           {/* Enterprise & Legacy */}
           <motion.div
-            className="bg-gradient-to-br from-[#00B3A4] to-[#2563EB] rounded-3xl p-12 text-white"
+            className="bg-gradient-to-br from-amber to-amber-dim rounded-3xl p-12 text-white"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -914,7 +914,7 @@ const Solutions = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-surface">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -922,10 +922,10 @@ const Solutions = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-[#111827] mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-cream mb-6">
               Ready to Connect Everything?
             </h2>
-            <p className="text-lg text-[#6B7280] mb-8">
+            <p className="text-lg text-muted mb-8">
               Contact us to discuss your specific integration needs and discover how we can streamline your entire digital ecosystem.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

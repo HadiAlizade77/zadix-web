@@ -16,7 +16,7 @@ interface PricingSnapshotProps {
 
 export default function PricingSnapshot({ locale }: PricingSnapshotProps) {
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-surface">
       <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           className="text-center mb-16"
@@ -45,27 +45,27 @@ export default function PricingSnapshot({ locale }: PricingSnapshotProps) {
             >
               {tier.popular && (
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                  <span className="bg-gradient-to-r from-accent-teal to-accent-blue text-white px-4 py-2 rounded-full text-sm font-medium">
+                  <span className="bg-gradient-to-r from-amber to-amber-dim text-white px-4 py-2 rounded-full text-sm font-medium">
                     Most Popular
                   </span>
                 </div>
               )}
-              <Card className={`h-full ${tier.popular ? 'ring-2 ring-accent-teal shadow-xl' : 'hover:shadow-lg'} transition-all duration-300`}>
+              <Card className={`h-full ${tier.popular ? 'ring-2 ring-accent-teal shadow-xl shadow-black/20' : 'hover:shadow-lg'} transition-all duration-300`}>
                 <CardHeader className="text-center">
                   <CardTitle className="text-2xl mb-2">{tier.name}</CardTitle>
-                  <p className="text-gray-600">{tier.description}</p>
+                  <p className="text-muted">{tier.description}</p>
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-4 mb-8">
                     {tier.features.slice(0, 4).map((feature, idx) => (
                       <li key={idx} className="flex items-start">
                         <Check className="h-5 w-5 text-success mr-3 mt-0.5 flex-shrink-0" />
-                        <span className="text-gray-600">{feature}</span>
+                        <span className="text-muted">{feature}</span>
                       </li>
                     ))}
                   </ul>
                   <Button 
-                    className={`w-full ${tier.popular ? 'bg-gradient-to-r from-accent-teal to-accent-blue' : ''}`} 
+                    className={`w-full ${tier.popular ? 'bg-gradient-to-r from-amber to-amber-dim' : ''}`} 
                     variant={tier.popular ? 'default' : 'outline'}
                     size="lg"
                     asChild

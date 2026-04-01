@@ -120,7 +120,7 @@ export default function Header({ locale }: HeaderProps) {
                           exit={{ opacity: 0, y: 8 }}
                           transition={{ duration: 0.15 }}
                           className={cn(
-                            'absolute top-full mt-1 w-72 bg-surface border border-border-warm rounded-xl shadow-2xl shadow-black/50 py-2 z-50',
+                            'absolute top-full mt-1 w-72 bg-surface border border-border-warm rounded-xl shadow-2xl shadow-black/30 shadow-black/50 py-2 z-50',
                             isRtlLocale(currentLocale) ? 'left-0' : 'right-0'
                           )}
                         >

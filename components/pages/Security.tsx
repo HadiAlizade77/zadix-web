@@ -71,7 +71,7 @@ const Security = () => {
   return (
     <div className="min-h-screen pt-20">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-[#0B1220] via-[#0F1629] to-[#0B1220]">
+      <section className="py-20 bg-ink">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center"
@@ -79,16 +79,16 @@ const Security = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <div className="w-20 h-20 bg-gradient-to-br from-[#00B3A4] to-[#2563EB] rounded-3xl flex items-center justify-center mx-auto mb-8">
+            <div className="w-20 h-20 bg-gradient-to-br from-amber to-amber-dim rounded-3xl flex items-center justify-center mx-auto mb-8">
               <Shield className="h-10 w-10 text-white" />
             </div>
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
               SOC‑aligned controls{' '}
-              <span className="bg-gradient-to-r from-[#00B3A4] to-[#2563EB] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-amber to-amber-dim bg-clip-text text-transparent">
                 by default
               </span>
             </h1>
-            <p className="text-xl text-gray-300 max-w-4xl mx-auto mb-8 leading-relaxed">
+            <p className="text-xl text-muted max-w-4xl mx-auto mb-8 leading-relaxed">
               We implement SOC‑aligned controls by default so every action is traceable and safe.
             </p>
           </motion.div>
@@ -96,7 +96,7 @@ const Security = () => {
       </section>
 
       {/* Security Controls */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-surface">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-16"
@@ -105,10 +105,10 @@ const Security = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-[#111827] mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-cream mb-6">
               Security Controls
             </h2>
-            <p className="text-xl text-[#6B7280] max-w-3xl mx-auto">
+            <p className="text-xl text-muted max-w-3xl mx-auto">
               Comprehensive security framework designed for enterprise requirements
             </p>
           </motion.div>
@@ -122,18 +122,18 @@ const Security = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
-                <Card className="h-full hover:shadow-xl transition-all duration-300">
+                <Card className="h-full hover:shadow-xl shadow-black/20 transition-all duration-300">
                   <CardHeader>
-                    <div className="w-16 h-16 bg-gradient-to-br from-[#00B3A4] to-[#2563EB] rounded-2xl flex items-center justify-center mb-4">
+                    <div className="w-16 h-16 bg-gradient-to-br from-amber to-amber-dim rounded-2xl flex items-center justify-center mb-4">
                       <control.icon className="h-8 w-8 text-white" />
                     </div>
                     <CardTitle className="text-xl mb-3">{control.title}</CardTitle>
-                    <p className="text-[#6B7280] leading-relaxed">{control.description}</p>
+                    <p className="text-muted leading-relaxed">{control.description}</p>
                   </CardHeader>
                   <CardContent>
                     <ul className="space-y-2">
                       {control.details.map((detail, idx) => (
-                        <li key={idx} className="flex items-center text-[#6B7280] text-sm">
+                        <li key={idx} className="flex items-center text-muted text-sm">
                           <div className="w-1.5 h-1.5 bg-[#00B3A4] rounded-full mr-3"></div>
                           {detail}
                         </li>
@@ -148,7 +148,7 @@ const Security = () => {
       </section>
 
       {/* Compliance Features */}
-      <section className="py-20 bg-[#F8FAFC]">
+      <section className="py-20 bg-ink">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-16"
@@ -157,10 +157,10 @@ const Security = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-[#111827] mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-cream mb-6">
               Compliance & Privacy
             </h2>
-            <p className="text-xl text-[#6B7280] max-w-3xl mx-auto">
+            <p className="text-xl text-muted max-w-3xl mx-auto">
               Privacy-first design with comprehensive compliance capabilities
             </p>
           </motion.div>
@@ -169,18 +169,18 @@ const Security = () => {
             {complianceFeatures.map((feature, index) => (
               <motion.div
                 key={feature.title}
-                className="bg-white rounded-2xl p-8 shadow-md hover:shadow-lg transition-all duration-300 text-center"
+                className="bg-surface-2 rounded-2xl p-8 shadow-md hover:shadow-lg transition-all duration-300 text-center"
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
               >
-                <div className="w-16 h-16 bg-gradient-to-br from-[#00B3A4] to-[#2563EB] rounded-2xl flex items-center justify-center mx-auto mb-6">
+                <div className="w-16 h-16 bg-gradient-to-br from-amber to-amber-dim rounded-2xl flex items-center justify-center mx-auto mb-6">
                   <feature.icon className="h-8 w-8 text-white" />
                 </div>
-                <h3 className="text-xl font-bold text-[#111827] mb-3">{feature.title}</h3>
-                <p className="text-[#6B7280] mb-4 leading-relaxed">{feature.description}</p>
-                <span className="inline-block px-3 py-1 bg-[#00B3A4]/10 text-[#00B3A4] rounded-full text-sm font-medium">
+                <h3 className="text-xl font-bold text-cream mb-3">{feature.title}</h3>
+                <p className="text-muted mb-4 leading-relaxed">{feature.description}</p>
+                <span className="inline-block px-3 py-1 bg-[#00B3A4]/10 text-amber rounded-full text-sm font-medium">
                   {feature.availability}
                 </span>
               </motion.div>
@@ -189,17 +189,17 @@ const Security = () => {
 
           {/* Data Processing */}
           <motion.div
-            className="bg-white rounded-2xl p-8 shadow-md"
+            className="bg-surface-2 rounded-2xl p-8 shadow-md"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h3 className="text-2xl font-bold text-[#111827] mb-6">Data Processing & Retention</h3>
+            <h3 className="text-2xl font-bold text-cream mb-6">Data Processing & Retention</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div>
-                <h4 className="text-lg font-semibold text-[#111827] mb-4">PII Minimization</h4>
-                <ul className="space-y-2 text-[#6B7280]">
+                <h4 className="text-lg font-semibold text-cream mb-4">PII Minimization</h4>
+                <ul className="space-y-2 text-muted">
                   <li>• Collect only necessary data</li>
                   <li>• Automatic data anonymization</li>
                   <li>• Configurable retention periods</li>
@@ -207,8 +207,8 @@ const Security = () => {
                 </ul>
               </div>
               <div>
-                <h4 className="text-lg font-semibold text-[#111827] mb-4">Backup & Recovery</h4>
-                <ul className="space-y-2 text-[#6B7280]">
+                <h4 className="text-lg font-semibold text-cream mb-4">Backup & Recovery</h4>
+                <ul className="space-y-2 text-muted">
                   <li>• Encrypted backups</li>
                   <li>• Point-in-time recovery</li>
                   <li>• Cross-region replication</li>
@@ -221,7 +221,7 @@ const Security = () => {
       </section>
 
       {/* DPA Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-surface">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -229,7 +229,7 @@ const Security = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h3 className="text-2xl font-bold text-[#111827] mb-4">Compliance & Data</h3>
+            <h3 className="text-2xl font-bold text-cream mb-4">Compliance & Data</h3>
             <p className="text-lg mb-6 opacity-90">
               We minimize PII, honor data retention requests, and provide a <strong>DPA</strong> on request.
             </p>

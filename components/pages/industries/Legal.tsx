@@ -69,7 +69,7 @@ const Legal = () => {
   return (
     <div className="min-h-screen pt-20">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-[#0B1220] via-[#0F1629] to-[#0B1220]">
+      <section className="py-20 bg-ink">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center"
@@ -82,11 +82,11 @@ const Legal = () => {
             </div>
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
               Legal{' '}
-              <span className="bg-gradient-to-r from-[#00B3A4] to-[#2563EB] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-amber to-amber-dim bg-clip-text text-transparent">
                 AI Automation
               </span>
             </h1>
-            <p className="text-xl text-gray-300 max-w-4xl mx-auto mb-8 leading-relaxed">
+            <p className="text-xl text-muted max-w-4xl mx-auto mb-8 leading-relaxed">
               Contracts and corporate changes—structured and searchable. Automated contract analysis, clause extraction, and compliance monitoring for law firms.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -96,7 +96,7 @@ const Legal = () => {
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
-              <Button size="xl" variant="outline" className="bg-white/10 border-white/20 text-white hover:bg-white/20" asChild>
+              <Button size="xl" variant="outline" className="bg-cream/5 border-cream/20 text-cream hover:bg-cream/10" asChild>
                 <Link href="/case-studies">View Case Studies</Link>
               </Button>
             </div>
@@ -105,7 +105,7 @@ const Legal = () => {
       </section>
 
       {/* Features */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-surface">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-16"
@@ -114,10 +114,10 @@ const Legal = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-[#111827] mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-cream mb-6">
               Built for Legal Excellence
             </h2>
-            <p className="text-xl text-[#6B7280] max-w-3xl mx-auto">
+            <p className="text-xl text-muted max-w-3xl mx-auto">
               Sophisticated automation for sophisticated legal work
             </p>
           </motion.div>
@@ -139,7 +139,7 @@ const Legal = () => {
                     <CardTitle className="text-xl mb-3">{feature.title}</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-[#6B7280] leading-relaxed">{feature.description}</p>
+                    <p className="text-muted leading-relaxed">{feature.description}</p>
                   </CardContent>
                 </Card>
               </motion.div>
@@ -149,7 +149,7 @@ const Legal = () => {
       </section>
 
       {/* Workflow */}
-      <section className="py-20 bg-[#F8FAFC]">
+      <section className="py-20 bg-ink">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-16"
@@ -158,10 +158,10 @@ const Legal = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-[#111827] mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-cream mb-6">
               From Document to Decision
             </h2>
-            <p className="text-xl text-[#6B7280] max-w-3xl mx-auto">
+            <p className="text-xl text-muted max-w-3xl mx-auto">
               Streamlined legal document processing with intelligent analysis
             </p>
           </motion.div>
@@ -176,12 +176,12 @@ const Legal = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
-                <div className="bg-white rounded-2xl p-6 shadow-md hover:shadow-lg transition-all duration-300 text-center">
+                <div className="bg-surface-2 rounded-2xl p-6 shadow-md hover:shadow-lg transition-all duration-300 text-center">
                   <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-violet-500 rounded-xl flex items-center justify-center mx-auto mb-4">
                     <span className="text-white font-bold text-lg">{item.step}</span>
                   </div>
-                  <h3 className="text-lg font-bold text-[#111827] mb-3">{item.title}</h3>
-                  <p className="text-[#6B7280] text-sm leading-relaxed">{item.description}</p>
+                  <h3 className="text-lg font-bold text-cream mb-3">{item.title}</h3>
+                  <p className="text-muted text-sm leading-relaxed">{item.description}</p>
                 </div>
                 {index < workflow.length - 1 && (
                   <div className="hidden md:block absolute top-1/2 -right-4 w-8 h-0.5 bg-gradient-to-r from-purple-500 to-violet-500 transform -translate-y-1/2"></div>
@@ -193,7 +193,7 @@ const Legal = () => {
       </section>
 
       {/* Outcomes */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-surface">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-16"
@@ -202,10 +202,10 @@ const Legal = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-[#111827] mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-cream mb-6">
               Legal Impact
             </h2>
-            <p className="text-xl text-[#6B7280] max-w-3xl mx-auto">
+            <p className="text-xl text-muted max-w-3xl mx-auto">
               Measurable improvements in legal document processing and analysis
             </p>
           </motion.div>
@@ -220,9 +220,9 @@ const Legal = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
-                <div className="text-5xl font-bold text-[#111827] mb-2">{outcome.metric}</div>
+                <div className="text-5xl font-bold text-cream mb-2">{outcome.metric}</div>
                 <div className="text-lg font-semibold text-purple-600 mb-2">{outcome.label}</div>
-                <p className="text-[#6B7280]">{outcome.description}</p>
+                <p className="text-muted">{outcome.description}</p>
               </motion.div>
             ))}
           </div>

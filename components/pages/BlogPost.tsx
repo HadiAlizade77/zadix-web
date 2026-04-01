@@ -26,13 +26,13 @@ const BlogPost = ({ post }: BlogPostProps) => {
       .map((line, index) => {
         // Headers
         if (line.startsWith('# ')) {
-          return <h1 key={index} className="text-4xl font-bold text-[#111827] mt-12 mb-6">{line.slice(2)}</h1>;
+          return <h1 key={index} className="text-4xl font-bold text-cream mt-12 mb-6">{line.slice(2)}</h1>;
         }
         if (line.startsWith('## ')) {
-          return <h2 key={index} className="text-3xl font-bold text-[#111827] mt-10 mb-4">{line.slice(3)}</h2>;
+          return <h2 key={index} className="text-3xl font-bold text-cream mt-10 mb-4">{line.slice(3)}</h2>;
         }
         if (line.startsWith('### ')) {
-          return <h3 key={index} className="text-2xl font-bold text-[#111827] mt-8 mb-3">{line.slice(4)}</h3>;
+          return <h3 key={index} className="text-2xl font-bold text-cream mt-8 mb-3">{line.slice(4)}</h3>;
         }
         
         // Code blocks
@@ -42,16 +42,16 @@ const BlogPost = ({ post }: BlogPostProps) => {
         
         // Lists
         if (line.startsWith('- ')) {
-          return <li key={index} className="text-[#6B7280] mb-2">{line.slice(2)}</li>;
+          return <li key={index} className="text-muted mb-2">{line.slice(2)}</li>;
         }
         
         // Bold text
         if (line.includes('**')) {
           const parts = line.split('**');
           return (
-            <p key={index} className="text-[#6B7280] mb-4 leading-relaxed">
+            <p key={index} className="text-muted mb-4 leading-relaxed">
               {parts.map((part, i) => 
-                i % 2 === 1 ? <strong key={i} className="font-semibold text-[#111827]">{part}</strong> : part
+                i % 2 === 1 ? <strong key={i} className="font-semibold text-cream">{part}</strong> : part
               )}
             </p>
           );
@@ -59,7 +59,7 @@ const BlogPost = ({ post }: BlogPostProps) => {
         
         // Regular paragraphs
         if (line.trim() && !line.startsWith('#') && !line.startsWith('```')) {
-          return <p key={index} className="text-[#6B7280] mb-4 leading-relaxed">{line}</p>;
+          return <p key={index} className="text-muted mb-4 leading-relaxed">{line}</p>;
         }
         
         return null;
@@ -83,11 +83,11 @@ const BlogPost = ({ post }: BlogPostProps) => {
   return (
     <div className="min-h-screen pt-20">
       {/* Back to Blog */}
-      <section className="py-8 bg-[#F8FAFC] border-b border-gray-200">
+      <section className="py-8 bg-ink border-b border-border-warm">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <Link 
             href="/blog" 
-            className="inline-flex items-center text-[#6B7280] hover:text-[#00B3A4] transition-colors"
+            className="inline-flex items-center text-muted hover:text-amber transition-colors"
           >
             <ArrowLeft className="h-4 w-4 mr-2" />
             Back to Blog
@@ -96,7 +96,7 @@ const BlogPost = ({ post }: BlogPostProps) => {
       </section>
 
       {/* Article Header */}
-      <section className="py-12 bg-white">
+      <section className="py-12 bg-surface">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -114,15 +114,15 @@ const BlogPost = ({ post }: BlogPostProps) => {
               </span>
             </div>
             
-            <h1 className="text-4xl md:text-5xl font-bold text-[#111827] mb-6 leading-tight">
+            <h1 className="text-4xl md:text-5xl font-bold text-cream mb-6 leading-tight">
               {post.title}
             </h1>
             
-            <p className="text-xl text-[#6B7280] mb-8 leading-relaxed">
+            <p className="text-xl text-muted mb-8 leading-relaxed">
               {post.excerpt}
             </p>
             
-            <div className="flex flex-wrap items-center gap-6 text-[#6B7280] pb-8 border-b border-gray-200">
+            <div className="flex flex-wrap items-center gap-6 text-muted pb-8 border-b border-border-warm">
               <div className="flex items-center">
                 <User className="h-5 w-5 mr-2" />
                 <span>{post.author}</span>
@@ -145,7 +145,7 @@ const BlogPost = ({ post }: BlogPostProps) => {
       </section>
 
       {/* Article Content */}
-      <section className="py-12 bg-white">
+      <section className="py-12 bg-surface">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="prose prose-lg max-w-none"
@@ -161,7 +161,7 @@ const BlogPost = ({ post }: BlogPostProps) => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-[#00B3A4] to-[#2563EB]">
+      <section className="py-16 bg-gradient-to-r from-amber to-amber-dim">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -186,9 +186,9 @@ const BlogPost = ({ post }: BlogPostProps) => {
       </section>
 
       {/* Related Posts */}
-      <section className="py-16 bg-[#F8FAFC]">
+      <section className="py-16 bg-ink">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h3 className="text-2xl font-bold text-[#111827] mb-8">Related Posts</h3>
+          <h3 className="text-2xl font-bold text-cream mb-8">Related Posts</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {relatedPosts.map((relatedPost, index) => (
               <motion.div
@@ -199,14 +199,14 @@ const BlogPost = ({ post }: BlogPostProps) => {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
                 <Link href={relatedPost.href}>
-                  <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 group">
+                  <div className="bg-surface-2 rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 group">
                     <span className={`px-3 py-1 rounded-full text-xs font-medium mb-3 inline-block ${
                       relatedPost.category === 'Engineering' ? 'bg-blue-100 text-blue-800' :
                       'bg-purple-100 text-purple-800'
                     }`}>
                       {relatedPost.category}
                     </span>
-                    <h4 className="text-lg font-bold text-[#111827] group-hover:text-[#00B3A4] transition-colors">
+                    <h4 className="text-lg font-bold text-cream group-hover:text-amber transition-colors">
                       {relatedPost.title}
                     </h4>
                   </div>

@@ -50,7 +50,7 @@ const About = () => {
   return (
     <div className="min-h-screen pt-20">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-[#0B1220] via-[#0F1629] to-[#0B1220]">
+      <section className="py-20 bg-ink">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center"
@@ -60,16 +60,16 @@ const About = () => {
           >
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
               Engineers first.{' '}
-              <span className="bg-gradient-to-r from-[#00B3A4] to-[#2563EB] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-amber to-amber-dim bg-clip-text text-transparent">
                 Outcomes always.
               </span>
             </h1>
-            <p className="text-xl text-gray-300 max-w-4xl mx-auto mb-8 leading-relaxed">
+            <p className="text-xl text-muted max-w-4xl mx-auto mb-8 leading-relaxed">
               Zadix was founded to deliver production-ready AI automations to businesses — 
               with a clear focus on measurable impact and enterprise reliability.
               <p>Registered in England and Wales No. 16792922 ·</p>
             </p>
-            <div className="flex items-center justify-center text-gray-300 mb-8">
+            <div className="flex items-center justify-center text-muted mb-8">
               <MapPin className="h-5 w-5 mr-2" />
               <p>© 2026 Zadix AI Ltd · 71-75 Shelton Street, Covent Garden, London WC2H 9JQ, United Kingdom ·</p>
             </div>
@@ -78,7 +78,7 @@ const About = () => {
       </section>
 
       {/* Story Block */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-surface">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center"
@@ -87,7 +87,7 @@ const About = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <blockquote className="text-2xl md:text-3xl text-[#111827] leading-relaxed font-medium italic mb-8">
+            <blockquote className="text-2xl md:text-3xl text-cream leading-relaxed font-medium italic mb-8">
               "We've spent years building complex enterprise systems — from facility management platforms to AI-powered analytics — and saw how much time gets lost in repetitive processes. Zadix exists to fix that. Our mission is simple: cut manual work by 50–80% in the first 30 days, without compromising compliance or control."
             </blockquote>
           </motion.div>
@@ -95,7 +95,7 @@ const About = () => {
       </section>
 
       {/* Values */}
-      <section className="py-20 bg-[#F8FAFC]">
+      <section className="py-20 bg-ink">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-16"
@@ -104,10 +104,10 @@ const About = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-[#111827] mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-cream mb-6">
               Our Values
             </h2>
-            <p className="text-xl text-[#6B7280] max-w-3xl mx-auto">
+            <p className="text-xl text-muted max-w-3xl mx-auto">
               The principles that guide how we build and deliver AI automation systems
             </p>
           </motion.div>
@@ -123,13 +123,13 @@ const About = () => {
               >
                 <Card className="h-full text-center hover:shadow-lg transition-all duration-300">
                   <CardHeader>
-                    <div className="w-16 h-16 bg-gradient-to-br from-[#00B3A4] to-[#2563EB] rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <div className="w-16 h-16 bg-gradient-to-br from-amber to-amber-dim rounded-2xl flex items-center justify-center mx-auto mb-4">
                       <value.icon className="h-8 w-8 text-white" />
                     </div>
                     <CardTitle className="text-2xl mb-4">{value.title}</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-[#6B7280] leading-relaxed">{value.description}</p>
+                    <p className="text-muted leading-relaxed">{value.description}</p>
                   </CardContent>
                 </Card>
               </motion.div>
@@ -139,7 +139,7 @@ const About = () => {
       </section>
 
       {/* Team */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-surface">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-16"
@@ -148,10 +148,10 @@ const About = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-[#111827] mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-cream mb-6">
               Our Team
             </h2>
-            <p className="text-xl text-[#6B7280] max-w-3xl mx-auto">
+            <p className="text-xl text-muted max-w-3xl mx-auto">
               Senior engineers and process experts building production-ready automation systems
             </p>
           </motion.div>
@@ -175,10 +175,10 @@ const About = () => {
                       />
                     </div>
                     <CardTitle className="text-xl mb-2">{member.name}</CardTitle>
-                    <p className="text-[#00B3A4] font-medium">{member.role}</p>
+                    <p className="text-amber font-medium">{member.role}</p>
                   </CardHeader>
                   <CardContent className="text-center">
-                    <p className="text-[#6B7280] leading-relaxed">{member.description}</p>
+                    <p className="text-muted leading-relaxed">{member.description}</p>
                   </CardContent>
                 </Card>
               </motion.div>
@@ -213,7 +213,7 @@ const About = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
               Ready to work with us?
             </h2>
-            <p className="text-xl text-gray-300 mb-8">
+            <p className="text-xl text-muted mb-8">
               Let's discuss how we can automate your business operations with production-ready AI systems
             </p>
             <Button size="xl" asChild>

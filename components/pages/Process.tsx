@@ -79,7 +79,7 @@ const Process = () => {
   return (
     <div className="min-h-screen pt-20">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-[#0B1220] via-[#0F1629] to-[#0B1220]">
+      <section className="py-20 bg-ink">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center"
@@ -89,11 +89,11 @@ const Process = () => {
           >
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
               7-Day{' '}
-              <span className="bg-gradient-to-r from-[#00B3A4] to-[#2563EB] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-amber to-amber-dim bg-clip-text text-transparent">
                 Delivery Process
               </span>
             </h1>
-            <p className="text-xl text-gray-300 max-w-4xl mx-auto mb-8 leading-relaxed">
+            <p className="text-xl text-muted max-w-4xl mx-auto mb-8 leading-relaxed">
               From requirements to production-ready automation in 7 days. Daily updates, sandbox access by Day 3, complete handover with documentation.
             </p>
           </motion.div>
@@ -101,7 +101,7 @@ const Process = () => {
       </section>
 
       {/* Process Timeline */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-surface">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-16"
@@ -110,10 +110,10 @@ const Process = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-[#111827] mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-cream mb-6">
               Our 7-Day Process
             </h2>
-            <p className="text-xl text-[#6B7280] max-w-3xl mx-auto">
+            <p className="text-xl text-muted max-w-3xl mx-auto">
               A proven methodology that delivers production-ready automation systems
             </p>
           </motion.div>
@@ -127,25 +127,25 @@ const Process = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: index * 0.2 }}
               >
-                <Card className="hover:shadow-xl transition-all duration-300">
+                <Card className="hover:shadow-xl shadow-black/20 transition-all duration-300">
                   <CardContent className="p-8">
                     <div className="flex flex-col md:flex-row items-start md:items-center">
                       <div className="flex items-center mb-4 md:mb-0 md:mr-8">
-                        <div className="w-16 h-16 bg-gradient-to-br from-[#00B3A4] to-[#2563EB] rounded-2xl flex items-center justify-center mr-4">
+                        <div className="w-16 h-16 bg-gradient-to-br from-amber to-amber-dim rounded-2xl flex items-center justify-center mr-4">
                           <step.icon className="h-8 w-8 text-white" />
                         </div>
                         <div>
-                          <div className="text-sm font-medium text-[#00B3A4] mb-1">{step.day}</div>
-                          <h3 className="text-xl font-bold text-[#111827]">{step.title}</h3>
+                          <div className="text-sm font-medium text-amber mb-1">{step.day}</div>
+                          <h3 className="text-xl font-bold text-cream">{step.title}</h3>
                         </div>
                       </div>
                       <div className="flex-1">
-                        <p className="text-[#6B7280] mb-4 leading-relaxed">{step.description}</p>
+                        <p className="text-muted mb-4 leading-relaxed">{step.description}</p>
                         <div className="flex flex-wrap gap-2">
                           {step.deliverables.map((deliverable, idx) => (
                             <span
                               key={idx}
-                              className="px-3 py-1 bg-[#00B3A4]/10 text-[#00B3A4] rounded-full text-sm font-medium"
+                              className="px-3 py-1 bg-[#00B3A4]/10 text-amber rounded-full text-sm font-medium"
                             >
                               {deliverable}
                             </span>
@@ -162,7 +162,7 @@ const Process = () => {
       </section>
 
       {/* Process Principles */}
-      <section className="py-20 bg-[#F8FAFC]">
+      <section className="py-20 bg-ink">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-16"
@@ -171,10 +171,10 @@ const Process = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-[#111827] mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-cream mb-6">
               Our Process Principles
             </h2>
-            <p className="text-xl text-[#6B7280] max-w-3xl mx-auto">
+            <p className="text-xl text-muted max-w-3xl mx-auto">
               How we ensure transparency, quality, and successful delivery
             </p>
           </motion.div>
@@ -193,7 +193,7 @@ const Process = () => {
                     <CardTitle className="text-lg mb-3">{principle.title}</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-[#6B7280] leading-relaxed">{principle.description}</p>
+                    <p className="text-muted leading-relaxed">{principle.description}</p>
                   </CardContent>
                 </Card>
               </motion.div>
@@ -203,7 +203,7 @@ const Process = () => {
       </section>
 
       {/* Acceptance Criteria */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-surface">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-16"
@@ -212,10 +212,10 @@ const Process = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-[#111827] mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-cream mb-6">
               Acceptance Criteria
             </h2>
-            <p className="text-xl text-[#6B7280] max-w-3xl mx-auto">
+            <p className="text-xl text-muted max-w-3xl mx-auto">
               Clear success metrics and quality standards for every delivery
             </p>
           </motion.div>
@@ -235,19 +235,19 @@ const Process = () => {
                   <ul className="space-y-3">
                     <li className="flex items-center">
                       <CheckCircle className="h-5 w-5 text-[#10B981] mr-3" />
-                      <span className="text-[#6B7280]">Success metric defined (e.g., hours saved, response time)</span>
+                      <span className="text-muted">Success metric defined (e.g., hours saved, response time)</span>
                     </li>
                     <li className="flex items-center">
                       <CheckCircle className="h-5 w-5 text-[#10B981] mr-3" />
-                      <span className="text-[#6B7280]">Latency/accuracy bands agreed</span>
+                      <span className="text-muted">Latency/accuracy bands agreed</span>
                     </li>
                     <li className="flex items-center">
                       <CheckCircle className="h-5 w-5 text-[#10B981] mr-3" />
-                      <span className="text-[#6B7280]">≥ 20 representative test cases</span>
+                      <span className="text-muted">≥ 20 representative test cases</span>
                     </li>
                     <li className="flex items-center">
                       <CheckCircle className="h-5 w-5 text-[#10B981] mr-3" />
-                      <span className="text-[#6B7280]">Error budget and alerting configured</span>
+                      <span className="text-muted">Error budget and alerting configured</span>
                     </li>
                   </ul>
                 </CardContent>
@@ -265,10 +265,10 @@ const Process = () => {
                   <CardTitle className="text-xl">Runbooks & Rollback</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-[#6B7280] mb-4">
+                  <p className="text-muted mb-4">
                     We ship with runbooks, rollback steps, idempotency keys, retries/dead‑letter queues, and rate limits so changes are safe and reversible.
                   </p>
-                  <ul className="space-y-2 text-sm text-[#6B7280]">
+                  <ul className="space-y-2 text-sm text-muted">
                     <li>• Emergency rollback procedures</li>
                     <li>• Idempotency for safe retries</li>
                     <li>• Dead letter queue handling</li>
@@ -283,7 +283,7 @@ const Process = () => {
       </section>
 
       {/* What You Get */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-surface">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -292,17 +292,17 @@ const Process = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-[#111827] mb-6">
+              <h2 className="text-4xl md:text-5xl font-bold text-cream mb-6">
                 What You Get
               </h2>
-              <p className="text-xl text-[#6B7280] mb-8 leading-relaxed">
+              <p className="text-xl text-muted mb-8 leading-relaxed">
                 Complete ownership and control of your automation system with everything needed for long-term success.
               </p>
               <ul className="space-y-4">
                 {whatYouGet.map((item, index) => (
                   <li key={index} className="flex items-center">
                     <CheckCircle className="h-6 w-6 text-[#10B981] mr-3 flex-shrink-0" />
-                    <span className="text-[#6B7280]">{item}</span>
+                    <span className="text-muted">{item}</span>
                   </li>
                 ))}
               </ul>
@@ -314,7 +314,7 @@ const Process = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <Card className="bg-gradient-to-br from-[#00B3A4] to-[#2563EB] text-white">
+              <Card className="bg-gradient-to-br from-amber to-amber-dim text-white">
                 <CardContent className="p-8">
                   <Calendar className="h-12 w-12 mb-6" />
                   <h3 className="text-2xl font-bold mb-4">Ready to Start?</h3>
@@ -335,7 +335,7 @@ const Process = () => {
       </section>
 
       {/* FAQ */}
-      <section className="py-20 bg-[#F8FAFC]">
+      <section className="py-20 bg-ink">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-16"
@@ -344,7 +344,7 @@ const Process = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-[#111827] mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-cream mb-6">
               Common Questions
             </h2>
           </motion.div>
@@ -377,8 +377,8 @@ const Process = () => {
               >
                 <Card>
                   <CardContent className="p-6">
-                    <h3 className="text-lg font-bold text-[#111827] mb-3">{faq.question}</h3>
-                    <p className="text-[#6B7280] leading-relaxed">{faq.answer}</p>
+                    <h3 className="text-lg font-bold text-cream mb-3">{faq.question}</h3>
+                    <p className="text-muted leading-relaxed">{faq.answer}</p>
                   </CardContent>
                 </Card>
               </motion.div>
