@@ -278,7 +278,7 @@ const Pricing = () => {
               </div>
               <div className="text-center">
                 <h4 className="font-semibold text-[#111827] mb-2">Uptime target</h4>
-                <p className="text-[#6B7280] text-sm">e.g., 99.5% (define if applicable)</p>
+                <p className="text-[#6B7280] text-sm">99.5% uptime guaranteed</p>
               </div>
               <div className="text-center">
                 <h4 className="font-semibold text-[#111827] mb-2">Change windows</h4>

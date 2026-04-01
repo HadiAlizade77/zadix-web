@@ -214,9 +214,9 @@ const CaseStudies = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" variant="outline" asChild>
-                <a href="#" target="_blank" rel="noopener noreferrer">
-                  Download one‑pager (PDF)
-                </a>
+                <Link href="/contact">
+                  Book a Demo
+                </Link>
               </Button>
             </div>
             <div className="mt-8 bg-[#F8FAFC] rounded-lg p-6">

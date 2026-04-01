@@ -160,15 +160,16 @@ const Contact = () => {
               We&apos;ve received your details. Choose a time for a quick walkthrough and scoping call.
             </p>
 
-            {/* Calendly Embed Placeholder */}
-            <div className="bg-[#F8FAFC] rounded-2xl p-8 mb-8">
-              <div className="w-full h-96 bg-white rounded-lg border-2 border-dashed border-gray-300 flex items-center justify-center">
-                <div className="text-center">
-                  <MessageCircle className="h-12 w-12 text-gray-400 mx-auto mb-4" />
-                  <p className="text-gray-500">Calendly embed will appear here</p>
-                  <p className="text-sm text-gray-400 mt-2">Integration pending</p>
-                </div>
-              </div>
+            {/* Calendly Embed */}
+            <div className="bg-[#F8FAFC] rounded-2xl p-4 mb-8 overflow-hidden">
+              <iframe
+                src="https://calendly.com/admin-zadix/meeting-with-zadix-ai?hide_gdpr_banner=1"
+                width="100%"
+                height="700"
+                frameBorder="0"
+                title="Book a demo slot"
+                className="rounded-lg"
+              />
             </div>
 
             {/* WhatsApp Alternative */}
@@ -469,15 +470,29 @@ const Contact = () => {
                   <label htmlFor="files" className="block text-sm font-medium text-[#111827] mb-2">
                     Upload sample docs/emails (optional)
                   </label>
-                  <div className="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center hover:border-[#00B3A4] transition-colors opacity-50">
-                    <div className="text-center">
-                      <div className="text-gray-400 mb-2">📎</div>
-                      <span className="text-gray-400 text-sm">File upload coming soon</span>
-                    </div>
-                    <p className="text-xs text-[#6B7280] mt-2">
-                      PDF, DOC, TXT, CSV, XLSX up to 10MB each
-                    </p>
-                  </div>
+                  <label
+                    htmlFor="files"
+                    className="block border-2 border-dashed border-gray-300 rounded-lg p-6 text-center hover:border-[#00B3A4] transition-colors cursor-pointer"
+                  >
+                    <Upload className="h-8 w-8 text-gray-400 mx-auto mb-2" />
+                    {formData.files && formData.files.length > 0 ? (
+                      <span className="text-[#00B3A4] text-sm font-medium">
+                        {Array.from(formData.files).map(f => f.name).join(', ')}
+                      </span>
+                    ) : (
+                      <span className="text-gray-500 text-sm">Click to upload or drag and drop</span>
+                    )}
+                    <p className="text-xs text-[#6B7280] mt-2">PDF, DOC, TXT, CSV, XLSX up to 10MB each</p>
+                    <input
+                      type="file"
+                      id="files"
+                      name="files"
+                      multiple
+                      accept=".pdf,.doc,.docx,.txt,.csv,.xlsx"
+                      onChange={handleChange}
+                      className="sr-only"
+                    />
+                  </label>
                 </div>
 
                 {/* Message */}

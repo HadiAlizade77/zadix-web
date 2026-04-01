@@ -14,26 +14,24 @@ const clientLogos = [
   return (
     <section className="py-12 bg-gray-50 border-y border-gray-200 relative z-10">
       <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
-          {/* Coming Soon Banner */}
-          <div className="w-full text-center mb-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="inline-flex items-center bg-gray-100 rounded-full px-6 py-3"
-            >
-              <span className="text-gray-600 text-sm">Case studies launching Q4 2025 — check back soon</span>
-            </motion.div>
-          </div>
+        <div className="flex flex-col items-center gap-8">
+          {/* Heading */}
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="text-sm font-medium text-gray-500 uppercase tracking-widest"
+          >
+            Trusted by teams across industries
+          </motion.p>
 
           {/* Client Logos */}
           <div className="flex items-center justify-center gap-8 flex-wrap w-full">
             {clientLogos.map((logo, index) => (
               <motion.div
                 key={logo.name}
-                className="flex flex-col items-center gap-3 opacity-60 hover:opacity-80 transition-opacity"
+                className="flex flex-col items-center gap-3 opacity-80 hover:opacity-100 transition-opacity"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -43,7 +41,7 @@ const clientLogos = [
                   <img
                     src={logo.url}
                     alt={logo.alt}
-                    className="max-w-full max-h-full object-contain filter grayscale opacity-60"
+                    className="max-w-full max-h-full object-contain filter grayscale"
                   />
                 </div>
                 <span className="text-xs font-inter text-gray-500 text-center font-medium">
@@ -52,6 +50,18 @@ const clientLogos = [
               </motion.div>
             ))}
           </div>
+
+          {/* Link to case studies */}
+          <motion.a
+            href="/case-studies"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.6 }}
+            className="text-sm text-[#00B3A4] hover:underline font-medium"
+          >
+            See client results →
+          </motion.a>
         </div>
       </div>
     </section>
