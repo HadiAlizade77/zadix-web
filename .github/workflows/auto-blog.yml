@@ -1,0 +1,40 @@
+name: Auto-Publish Blog Post
+
+on:
+  schedule:
+    - cron: '0 6 * * *'   # 06:00 UTC — morning Middle East
+    - cron: '0 10 * * *'  # 10:00 UTC — afternoon Middle East / morning Europe
+    - cron: '0 14 * * *'  # 14:00 UTC — evening Middle East / afternoon Europe
+    - cron: '0 18 * * *'  # 18:00 UTC — evening Europe / afternoon US East
+  workflow_dispatch:       # Allow manual trigger from GitHub UI
+
+permissions:
+  contents: write
+
+jobs:
+  generate-post:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Generate and publish blog post
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          NEWSAPI_KEY: ${{ secrets.NEWSAPI_KEY }}
+        run: node scripts/generate-post.mjs
+
+      - name: Commit and push if post was added
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add lib/blog-data.ts
+          git diff --cached --quiet || git commit -m "auto: publish blog post $(date +'%Y-%m-%d %H:%M UTC')"
+          git push
