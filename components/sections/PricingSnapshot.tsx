@@ -28,7 +28,7 @@ export default function PricingSnapshot({ locale }: PricingSnapshotProps) {
           <h2 className="text-h2 font-sora text-headline-slate mb-6">
             Fixed Scope, Fixed Timeline
           </h2>
-          <p className="text-body text-gray-600 max-w-3xl mx-auto">
+          <p className="text-body text-muted max-w-3xl mx-auto">
             Custom quotes tailored to your workflow. 30-day value guarantee. No surprises, no scope creep.
           </p>
         </motion.div>

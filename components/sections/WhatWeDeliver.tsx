@@ -2,8 +2,6 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Workflow, Brain, Zap } from 'lucide-react';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Locale } from '@/lib/i18n';
 
 interface WhatWeDeliverProps {
@@ -13,63 +11,72 @@ interface WhatWeDeliverProps {
 export default function WhatWeDeliver({ locale }: WhatWeDeliverProps) {
   const deliverables = [
     {
-      icon: Workflow,
       title: 'Workflow Automation',
-      description: 'Intake → extract → validate → route → update—without the busywork.',
-      color: 'from-accent-teal to-accent-blue',
+      description: 'Intake → extract → validate → route → update—without the busywork. Every step documented, every action logged.',
     },
     {
-      icon: Brain,
       title: 'Decision Support',
-      description: 'Context‑aware recommendations with simple approvals so you stay in control.',
-      color: 'from-purple-500 to-pink-500',
+      description: 'Context‑aware recommendations with simple approvals so you stay in control. AI suggests, humans decide.',
     },
     {
-      icon: Zap,
       title: 'System Integration',
-      description: 'Your inbox, docs, CRM/ERP, and databases working together end‑to‑end.',
-      color: 'from-orange-500 to-red-500',
+      description: 'Your inbox, docs, CRM/ERP, and databases working together end‑to‑end. No more manual data transfer.',
     },
   ];
 
   return (
-    <section className="py-20 bg-paper">
+    <section className="py-24 bg-ink">
       <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8">
+
+        {/* Section label */}
         <motion.div
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          className="flex items-center gap-4 mb-16"
+          initial={{ opacity: 0, x: -16 }}
+          whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.5 }}
         >
-          <h2 className="text-h2 font-sora text-headline-slate mb-6">
+          <span className="w-8 h-px bg-amber" />
+          <span className="text-amber text-xs font-dm-sans font-medium tracking-[0.25em] uppercase">
             What We Deliver
-          </h2>
-          <p className="text-body text-gray-600 max-w-3xl mx-auto">
-            Production-ready automation systems that integrate seamlessly with your existing tools and processes
-          </p>
+          </span>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <motion.h2
+          className="font-cormorant font-light text-cream mb-16 leading-tight"
+          style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)' }}
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+        >
+          Production-ready automation<br />
+          <em className="text-amber not-italic">built for your workflow.</em>
+        </motion.h2>
+
+        {/* Cards — grid with gaps becoming visible borders */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-px bg-border-warm border border-border-warm">
           {deliverables.map((item, index) => (
             <motion.div
               key={item.title}
-              initial={{ opacity: 0, y: 40 }}
+              className="bg-ink p-10 lg:p-12 group hover:bg-surface transition-colors duration-300"
+              initial={{ opacity: 0, y: 32 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
+              transition={{ duration: 0.6, delay: index * 0.15 }}
             >
-              <Card className="h-full hover:shadow-xl transition-all duration-300 group">
-                <CardHeader className="text-center">
-                  <div className={`w-16 h-16 bg-gradient-to-br ${item.color} rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                    <item.icon className="h-8 w-8 text-white" />
-                  </div>
-                  <CardTitle className="text-xl mb-3">{item.title}</CardTitle>
-                </CardHeader>
-                <CardContent className="text-center">
-                  <p className="text-gray-600 leading-relaxed">{item.description}</p>
-                </CardContent>
-              </Card>
+              <div
+                className="font-cormorant font-light text-amber/20 leading-none mb-6 group-hover:text-amber/60 transition-colors duration-300 select-none"
+                style={{ fontSize: '5rem' }}
+              >
+                0{index + 1}
+              </div>
+              <h3 className="font-cormorant font-medium text-cream text-2xl mb-4 group-hover:text-amber transition-colors duration-300">
+                {item.title}
+              </h3>
+              <p className="text-muted font-dm-sans leading-relaxed text-sm">
+                {item.description}
+              </p>
             </motion.div>
           ))}
         </div>

@@ -10,33 +10,32 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant = 'default', size = 'md', asChild = false, children, ...props }, ref) => {
-    const baseClasses = 'inline-flex items-center justify-center rounded-lg font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none whitespace-nowrap';
-    
+    const baseClasses =
+      'inline-flex items-center justify-center font-dm-sans font-medium tracking-wide transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-ink disabled:opacity-40 disabled:pointer-events-none whitespace-nowrap';
+
     const variants = {
-      default: 'bg-gradient-to-r from-[#00B3A4] to-[#2563EB] text-white hover:shadow-lg hover:scale-105 focus:ring-[#00B3A4]',
-      outline: 'border-2 border-[#2563EB] text-[#2563EB] hover:bg-[#2563EB] hover:text-white focus:ring-[#2563EB]',
-      secondary: 'bg-[#F8FAFC] text-[#111827] hover:bg-[#E5E7EB] focus:ring-[#6B7280]'
+      default:
+        'bg-amber text-ink hover:bg-amber/90 focus:ring-amber',
+      outline:
+        'border border-border-warm text-cream hover:border-amber hover:text-amber focus:ring-amber bg-transparent',
+      secondary:
+        'bg-surface text-cream hover:bg-surface-2 border border-border-warm focus:ring-border-warm',
     };
 
     const sizes = {
-      sm: 'px-3 py-2 text-sm',
-      md: 'px-4 py-2 text-base',
-      lg: 'px-6 py-3 text-lg',
-      xl: 'px-8 py-4 text-xl'
+      sm:  'px-4 py-2 text-sm rounded-lg',
+      md:  'px-5 py-2.5 text-base rounded-lg',
+      lg:  'px-6 py-3 text-base rounded-lg',
+      xl:  'px-8 py-4 text-lg rounded-lg',
     };
 
-    const classes = cn(
-      baseClasses,
-      variants[variant],
-      sizes[size],
-      className
-    );
+    const classes = cn(baseClasses, variants[variant], sizes[size], className);
 
     if (asChild && React.isValidElement(children)) {
       return React.cloneElement(children, {
         className: cn(classes, (children.props as any).className),
         ref,
-        ...props
+        ...props,
       } as any);
     }
 
@@ -49,5 +48,4 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 );
 
 Button.displayName = 'Button';
-
 export { Button };

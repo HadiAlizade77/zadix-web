@@ -2,9 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
 import { Locale } from '@/lib/i18n';
-import { cn } from '@/lib/utils';
 
 interface HowItWorksProps {
   locale: Locale;
@@ -12,72 +10,64 @@ interface HowItWorksProps {
 
 export default function HowItWorks({ locale }: HowItWorksProps) {
   const steps = [
-    {
-      number: '1',
-      title: 'Connect',
-      description: 'your email, docs, and systems',
-      color: 'from-blue-500 to-cyan-500'
-    },
-    {
-      number: '2',
-      title: 'Understand', 
-      description: 'we extract what matters',
-      color: 'from-purple-500 to-pink-500'
-    },
-    {
-      number: '3',
-      title: 'Approve',
-      description: 'you confirm critical actions',
-      color: 'from-green-500 to-emerald-500'
-    },
-    {
-      number: '4',
-      title: 'Update',
-      description: 'records changed, tasks done',
-      color: 'from-orange-500 to-red-500'
-    },
+    { title: 'Connect',   description: 'Your email, documents, and existing systems become inputs.' },
+    { title: 'Understand', description: 'We extract what matters—structured data from unstructured noise.' },
+    { title: 'Approve',   description: 'You confirm critical actions before anything is committed.' },
+    { title: 'Update',    description: 'Records changed, tasks done, stakeholders notified automatically.' },
   ];
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-24 bg-surface">
       <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8">
+
+        {/* Section label */}
         <motion.div
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          className="flex items-center gap-4 mb-6"
+          initial={{ opacity: 0, x: -16 }}
+          whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.5 }}
         >
-          <h2 className="text-h2 font-sora text-headline-slate mb-6">
+          <span className="w-8 h-px bg-amber" />
+          <span className="text-amber text-xs font-dm-sans font-medium tracking-[0.25em] uppercase">
             How It Works
-          </h2>
-          <p className="text-body text-gray-600 max-w-3xl mx-auto">
-            From document to decision in minutes, not hours
-          </p>
+          </span>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <motion.h2
+          className="font-cormorant font-light text-cream mb-16 leading-tight"
+          style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)' }}
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+        >
+          From document to decision<br />
+          <em className="text-amber not-italic">in minutes, not hours.</em>
+        </motion.h2>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-border-warm border border-border-warm">
           {steps.map((step, index) => (
             <motion.div
-              key={step.number}
-              className="relative"
-              initial={{ opacity: 0, y: 40 }}
+              key={step.title}
+              className="bg-surface p-8 lg:p-10 group hover:bg-surface-2 transition-colors duration-300"
+              initial={{ opacity: 0, y: 32 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
+              transition={{ duration: 0.6, delay: index * 0.12 }}
             >
-              <div className="bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition-all duration-300 text-center border border-gray-100">
-                <div className={`w-20 h-20 bg-gradient-to-br ${step.color} rounded-2xl flex items-center justify-center mx-auto mb-6`}>
-                  <span className="text-white font-bold text-xl">{step.number}</span>
-                </div>
-                
-                <h3 className="text-xl font-bold font-sora text-headline-slate mb-4">
-                  {step.title}
-                </h3>
-                <p className="text-gray-600 leading-relaxed">
-                  {step.description}
-                </p>
+              <div
+                className="font-cormorant font-light text-border-warm leading-none mb-8 group-hover:text-amber/15 transition-colors duration-300 select-none"
+                style={{ fontSize: '6rem' }}
+              >
+                0{index + 1}
               </div>
+              <h3 className="font-cormorant font-medium text-cream text-2xl mb-3">
+                {step.title}
+              </h3>
+              <p className="text-muted font-dm-sans text-sm leading-relaxed">
+                {step.description}
+              </p>
             </motion.div>
           ))}
         </div>

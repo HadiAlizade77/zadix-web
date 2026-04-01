@@ -69,7 +69,7 @@ const CaseStudies = () => {
   return (
     <div className="min-h-screen pt-20">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-[#0B1220] via-[#0F1629] to-[#0B1220]">
+      <section className="py-20 bg-ink">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center"
@@ -91,7 +91,7 @@ const CaseStudies = () => {
       </section>
 
       {/* Case Studies */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-surface">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="space-y-16">
             {caseStudies.map((study, index) => (
@@ -113,28 +113,28 @@ const CaseStudies = () => {
                           </div>
                           <div>
                             <div className="text-sm font-medium text-[#00B3A4] mb-1">{study.industry}</div>
-                            <h3 className="text-xl font-bold text-[#111827]">{study.company}</h3>
-                            <p className="text-sm text-[#6B7280]">{study.location}</p>
+                            <h3 className="text-xl font-bold text-cream">{study.company}</h3>
+                            <p className="text-sm text-muted">{study.location}</p>
                           </div>
                         </div>
 
                         <div className="mb-6">
-                          <h4 className="font-semibold text-[#111827] mb-2">Challenge</h4>
-                          <p className="text-[#6B7280] leading-relaxed">{study.challenge}</p>
+                          <h4 className="font-semibold text-cream mb-2">Challenge</h4>
+                          <p className="text-muted leading-relaxed">{study.challenge}</p>
                         </div>
 
                         <div className="mb-6">
-                          <h4 className="font-semibold text-[#111827] mb-2">Solution</h4>
-                          <p className="text-[#6B7280] leading-relaxed">{study.solution}</p>
+                          <h4 className="font-semibold text-cream mb-2">Solution</h4>
+                          <p className="text-muted leading-relaxed">{study.solution}</p>
                         </div>
 
                         <div className="bg-[#F8FAFC] rounded-lg p-4 mb-6">
-                          <blockquote className="text-[#111827] font-medium italic">
+                          <blockquote className="text-cream font-medium italic">
                             "{study.quote}"
                           </blockquote>
                         </div>
 
-                        <div className="flex items-center text-sm text-[#6B7280]">
+                        <div className="flex items-center text-sm text-muted">
                           <Clock className="h-4 w-4 mr-2" />
                           <span>Delivered in {study.timeline}</span>
                         </div>
@@ -163,7 +163,7 @@ const CaseStudies = () => {
       </section>
 
       {/* Overall Metrics */}
-      <section className="py-20 bg-[#F8FAFC]">
+      <section className="py-20 bg-ink">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-16"
@@ -172,10 +172,10 @@ const CaseStudies = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-[#111827] mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-cream mb-6">
               Overall Impact
             </h2>
-            <p className="text-xl text-[#6B7280] max-w-3xl mx-auto">
+            <p className="text-xl text-muted max-w-3xl mx-auto">
               Aggregate results across all our automation projects
             </p>
           </motion.div>
@@ -190,9 +190,9 @@ const CaseStudies = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
-                <div className="text-5xl font-bold text-[#111827] mb-2">{metric.number}</div>
+                <div className="text-5xl font-bold text-cream mb-2">{metric.number}</div>
                 <div className="text-lg font-semibold text-[#00B3A4] mb-2">{metric.label}</div>
-                <p className="text-[#6B7280]">{metric.description}</p>
+                <p className="text-muted">{metric.description}</p>
               </motion.div>
             ))}
           </div>
@@ -200,7 +200,7 @@ const CaseStudies = () => {
       </section>
 
       {/* Measurement Note */}
-      <section className="py-16 bg-white border-t border-gray-100">
+      <section className="py-16 bg-surface border-t border-gray-100">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -208,8 +208,8 @@ const CaseStudies = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h3 className="text-2xl font-bold text-[#111827] mb-4">How we measured</h3>
-            <p className="text-lg text-[#6B7280] mb-8">
+            <h3 className="text-2xl font-bold text-cream mb-4">How we measured</h3>
+            <p className="text-lg text-muted mb-8">
               We compared pre‑automation baselines with a 30‑day post‑launch window using the same workload characteristics.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -220,10 +220,10 @@ const CaseStudies = () => {
               </Button>
             </div>
             <div className="mt-8 bg-[#F8FAFC] rounded-lg p-6">
-              <blockquote className="text-[#111827] font-medium italic">
+              <blockquote className="text-cream font-medium italic">
                 "The team delivered exactly on scope and timeline."
               </blockquote>
-              <cite className="text-[#6B7280] text-sm mt-2 block">
+              <cite className="text-muted text-sm mt-2 block">
                 — <strong>Head of Ops, Property Group</strong>
               </cite>
             </div>
@@ -232,7 +232,7 @@ const CaseStudies = () => {
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-surface">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -240,10 +240,10 @@ const CaseStudies = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-[#111827] mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-cream mb-6">
               Ready to join our success stories?
             </h2>
-            <p className="text-lg text-[#6B7280] mb-8">
+            <p className="text-lg text-muted mb-8">
               See how we can automate your specific workflow with a personalized demo
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

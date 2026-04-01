@@ -152,16 +152,16 @@ const Contact = () => {
               <CheckCircle className="h-10 w-10 text-green-600" />
             </div>
             
-            <h1 className="text-4xl md:text-5xl font-bold text-[#111827] mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold text-cream mb-6">
               Thanks—pick a demo slot
             </h1>
             
-            <p className="text-xl text-[#6B7280] mb-12 max-w-2xl mx-auto">
+            <p className="text-xl text-muted mb-12 max-w-2xl mx-auto">
               We&apos;ve received your details. Choose a time for a quick walkthrough and scoping call.
             </p>
 
             {/* Calendly Embed */}
-            <div className="bg-[#F8FAFC] rounded-2xl p-4 mb-8 overflow-hidden">
+            <div className="bg-surface-2 rounded-2xl p-4 mb-8 overflow-hidden">
               <iframe
                 src="https://calendly.com/admin-zadix/meeting-with-zadix-ai?hide_gdpr_banner=1"
                 width="100%"
@@ -194,7 +194,7 @@ const Contact = () => {
   return (
     <div className="min-h-screen pt-20">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-[#0B1220] via-[#0F1629] to-[#0B1220]">
+      <section className="py-20 bg-ink">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center"
@@ -216,17 +216,17 @@ const Contact = () => {
       </section>
 
   {/* Alternative Contact Methods */}
-      <section className="pt-16 pb-8 bg-[#F8FAFC]">
+      <section className="pt-16 pb-8 bg-surface">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h3 className="text-2xl font-bold text-[#111827] mb-8">
+          <h3 className="text-2xl font-bold text-cream mb-8">
             Prefer to chat directly?
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <Card className="hover:shadow-lg transition-all duration-300">
               <CardContent className="p-6 text-center">
                 <MessageCircle className="h-12 w-12 text-[#00B3A4] mx-auto mb-4" />
-                <h4 className="text-lg font-bold text-[#111827] mb-2">WhatsApp</h4>
-                <p className="text-[#6B7280] mb-4">Quick questions and instant responses</p>
+                <h4 className="text-lg font-bold text-cream mb-2">WhatsApp</h4>
+                <p className="text-muted mb-4">Quick questions and instant responses</p>
                 <Button asChild>
                   <a href="https://wa.me/+447418635600" target="_blank" rel="noopener noreferrer">
                     Chat Now
@@ -238,8 +238,8 @@ const Contact = () => {
             <Card className="hover:shadow-lg transition-all duration-300">
               <CardContent className="p-6 text-center">
                 <MessageCircle className="h-12 w-12 text-[#2563EB] mx-auto mb-4" />
-                <h4 className="text-lg font-bold text-[#111827] mb-2">Schedule a Call</h4>
-                <p className="text-[#6B7280] mb-4">Book a time that works for you</p>
+                <h4 className="text-lg font-bold text-cream mb-2">Schedule a Call</h4>
+                <p className="text-muted mb-4">Book a time that works for you</p>
                 <Button variant="outline" asChild>
                   <a href="https://calendly.com/admin-zadix/meeting-with-zadix-ai" target="_blank" rel="noopener noreferrer">
                     View Calendar
@@ -252,12 +252,12 @@ const Contact = () => {
       </section>
 
       {/* Contact Form */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-surface">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <Card className="shadow-xl">
             <CardHeader className="text-center">
               <CardTitle className="text-3xl mb-4">Tell us about your workflow</CardTitle>
-              <p className="text-[#6B7280] text-lg">
+              <p className="text-muted text-lg">
                 The more details you provide, the better we can tailor the demo to your specific needs
               </p>
             </CardHeader>
@@ -266,7 +266,7 @@ const Contact = () => {
                 {/* Basic Info */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-[#111827] mb-2">
+                    <label htmlFor="name" className="block text-sm font-medium text-cream mb-2">
                       Name *
                     </label>
                     <input
@@ -276,12 +276,12 @@ const Contact = () => {
                       required
                       value={formData.name}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00B3A4] focus:border-transparent"
+                      className="w-full px-4 py-3 border border-border-warm bg-surface-2 text-cream rounded-lg focus:outline-none focus:ring-2 focus:ring-amber focus:border-transparent"
                       placeholder="John Doe"
                     />
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-[#111827] mb-2">
+                    <label htmlFor="email" className="block text-sm font-medium text-cream mb-2">
                       Work Email *
                     </label>
                     <input
@@ -291,7 +291,7 @@ const Contact = () => {
                       required
                       value={formData.email}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00B3A4] focus:border-transparent"
+                      className="w-full px-4 py-3 border border-border-warm bg-surface-2 text-cream rounded-lg focus:outline-none focus:ring-2 focus:ring-amber focus:border-transparent"
                       placeholder="john@company.com"
                     />
                   </div>
@@ -299,7 +299,7 @@ const Contact = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="company" className="block text-sm font-medium text-[#111827] mb-2">
+                    <label htmlFor="company" className="block text-sm font-medium text-cream mb-2">
                       Company *
                     </label>
                     <input
@@ -309,12 +309,12 @@ const Contact = () => {
                       required
                       value={formData.company}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00B3A4] focus:border-transparent"
+                      className="w-full px-4 py-3 border border-border-warm bg-surface-2 text-cream rounded-lg focus:outline-none focus:ring-2 focus:ring-amber focus:border-transparent"
                       placeholder="Acme Corp"
                     />
                   </div>
                   <div>
-                    <label htmlFor="role" className="block text-sm font-medium text-[#111827] mb-2">
+                    <label htmlFor="role" className="block text-sm font-medium text-cream mb-2">
                       Role *
                     </label>
                     <input
@@ -324,7 +324,7 @@ const Contact = () => {
                       required
                       value={formData.role}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00B3A4] focus:border-transparent"
+                      className="w-full px-4 py-3 border border-border-warm bg-surface-2 text-cream rounded-lg focus:outline-none focus:ring-2 focus:ring-amber focus:border-transparent"
                       placeholder="Operations Manager"
                     />
                   </div>
@@ -332,7 +332,7 @@ const Contact = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="phone" className="block text-sm font-medium text-[#111827] mb-2">
+                    <label htmlFor="phone" className="block text-sm font-medium text-cream mb-2">
                       Phone / WhatsApp
                     </label>
                     <input
@@ -341,12 +341,12 @@ const Contact = () => {
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00B3A4] focus:border-transparent"
+                      className="w-full px-4 py-3 border border-border-warm bg-surface-2 text-cream rounded-lg focus:outline-none focus:ring-2 focus:ring-amber focus:border-transparent"
                       placeholder="+1 (555) 123-4567"
                     />
                   </div>
                   <div>
-                    <label htmlFor="industry" className="block text-sm font-medium text-[#111827] mb-2">
+                    <label htmlFor="industry" className="block text-sm font-medium text-cream mb-2">
                       Industry *
                     </label>
                     <select
@@ -355,7 +355,7 @@ const Contact = () => {
                       required
                       value={formData.industry}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00B3A4] focus:border-transparent"
+                      className="w-full px-4 py-3 border border-border-warm bg-surface-2 text-cream rounded-lg focus:outline-none focus:ring-2 focus:ring-amber focus:border-transparent"
                     >
                       <option value="">Select your industry</option>
                       {industries.map((industry) => (
@@ -369,10 +369,10 @@ const Contact = () => {
 
                 {/* Systems in Use */}
                 <div>
-                  <label className="block text-sm font-medium text-[#111827] mb-3">
+                  <label className="block text-sm font-medium text-cream mb-3">
                     Systems in use (CRM/ERP/Helpdesk/DB) *
                   </label>
-                  <p className="text-sm text-[#6B7280] mb-3">Choose the tools you use today</p>
+                  <p className="text-sm text-muted mb-3">Choose the tools you use today</p>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                     {systemOptions.map((system) => (
                       <label key={system} className="flex items-center">
@@ -384,7 +384,7 @@ const Contact = () => {
                           onChange={handleChange}
                           className="mr-3 h-4 w-4 text-[#00B3A4] focus:ring-[#00B3A4] border-gray-300 rounded"
                         />
-                        <span className="text-[#6B7280]">{system}</span>
+                        <span className="text-muted">{system}</span>
                       </label>
                     ))}
                   </div>
@@ -393,7 +393,7 @@ const Contact = () => {
                 {/* Process Details */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="volume" className="block text-sm font-medium text-[#111827] mb-2">
+                    <label htmlFor="volume" className="block text-sm font-medium text-cream mb-2">
                       Process volume *
                     </label>
                     <input
@@ -403,13 +403,13 @@ const Contact = () => {
                       required
                       value={formData.volume}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00B3A4] focus:border-transparent"
+                      className="w-full px-4 py-3 border border-border-warm bg-surface-2 text-cream rounded-lg focus:outline-none focus:ring-2 focus:ring-amber focus:border-transparent"
                       placeholder="e.g., 120 RFQs/week, 300 invoices/month"
                     />
-                    <p className="text-xs text-[#6B7280] mt-1">Estimate your daily/weekly workload</p>
+                    <p className="text-xs text-muted mt-1">Estimate your daily/weekly workload</p>
                   </div>
                   <div>
-                    <label htmlFor="sensitivity" className="block text-sm font-medium text-[#111827] mb-2">
+                    <label htmlFor="sensitivity" className="block text-sm font-medium text-cream mb-2">
                       Contains PII/PHI? *
                     </label>
                     <select
@@ -418,7 +418,7 @@ const Contact = () => {
                       required
                       value={formData.sensitivity}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00B3A4] focus:border-transparent"
+                      className="w-full px-4 py-3 border border-border-warm bg-surface-2 text-cream rounded-lg focus:outline-none focus:ring-2 focus:ring-amber focus:border-transparent"
                     >
                       <option value="">Select sensitivity level</option>
                       <option value="No">No sensitive data</option>
@@ -431,7 +431,7 @@ const Contact = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="deadline" className="block text-sm font-medium text-[#111827] mb-2">
+                    <label htmlFor="deadline" className="block text-sm font-medium text-cream mb-2">
                       Target deadline
                     </label>
                     <input
@@ -440,12 +440,12 @@ const Contact = () => {
                       name="deadline"
                       value={formData.deadline}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00B3A4] focus:border-transparent"
+                      className="w-full px-4 py-3 border border-border-warm bg-surface-2 text-cream rounded-lg focus:outline-none focus:ring-2 focus:ring-amber focus:border-transparent"
                       placeholder="Q2 2024, End of March, ASAP"
                     />
                   </div>
                   <div>
-                    <label htmlFor="budget" className="block text-sm font-medium text-[#111827] mb-2">
+                    <label htmlFor="budget" className="block text-sm font-medium text-cream mb-2">
                       Budget bracket
                     </label>
                     <select
@@ -453,7 +453,7 @@ const Contact = () => {
                       name="budget"
                       value={formData.budget}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00B3A4] focus:border-transparent"
+                      className="w-full px-4 py-3 border border-border-warm bg-surface-2 text-cream rounded-lg focus:outline-none focus:ring-2 focus:ring-amber focus:border-transparent"
                     >
                       <option value="">Helps us recommend the right package</option>
                       <option value="5-10k">$5k - $10k</option>
@@ -461,18 +461,18 @@ const Contact = () => {
                       <option value="20-50k">$20k - $50k</option>
                       <option value="50k+">$50k+</option>
                     </select>
-                    <p className="text-xs text-[#6B7280] mt-1">Helps us recommend the right package</p>
+                    <p className="text-xs text-muted mt-1">Helps us recommend the right package</p>
                   </div>
                 </div>
 
                 {/* File Upload */}
                 <div>
-                  <label htmlFor="files" className="block text-sm font-medium text-[#111827] mb-2">
+                  <label htmlFor="files" className="block text-sm font-medium text-cream mb-2">
                     Upload sample docs/emails (optional)
                   </label>
                   <label
                     htmlFor="files"
-                    className="block border-2 border-dashed border-gray-300 rounded-lg p-6 text-center hover:border-[#00B3A4] transition-colors cursor-pointer"
+                    className="block border-2 border-dashed border-border-warm rounded-lg p-6 text-center hover:border-[#00B3A4] transition-colors cursor-pointer"
                   >
                     <Upload className="h-8 w-8 text-gray-400 mx-auto mb-2" />
                     {formData.files && formData.files.length > 0 ? (
@@ -482,7 +482,7 @@ const Contact = () => {
                     ) : (
                       <span className="text-gray-500 text-sm">Click to upload or drag and drop</span>
                     )}
-                    <p className="text-xs text-[#6B7280] mt-2">PDF, DOC, TXT, CSV, XLSX up to 10MB each</p>
+                    <p className="text-xs text-muted mt-2">PDF, DOC, TXT, CSV, XLSX up to 10MB each</p>
                     <input
                       type="file"
                       id="files"
@@ -498,7 +498,7 @@ const Contact = () => {
                 {/* Message */}
                 <div>
                   <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-[#111827] mb-2">
+                    <label htmlFor="message" className="block text-sm font-medium text-cream mb-2">
                       Describe your workflow challenge
                     </label>
                     <textarea
@@ -507,7 +507,7 @@ const Contact = () => {
                       rows={4}
                       value={formData.message}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00B3A4] focus:border-transparent"
+                      className="w-full px-4 py-3 border border-border-warm bg-surface-2 text-cream rounded-lg focus:outline-none focus:ring-2 focus:ring-amber focus:border-transparent"
                       placeholder="Tell us about the manual process you'd like to automate..."
                     />
                   </div>
@@ -524,7 +524,7 @@ const Contact = () => {
                     onChange={handleChange}
                     className="mt-1 h-4 w-4 text-[#00B3A4] focus:ring-[#00B3A4] border-gray-300 rounded"
                   />
-                  <label htmlFor="consent" className="ml-3 text-sm text-[#6B7280]">
+                  <label htmlFor="consent" className="ml-3 text-sm text-muted">
                     I agree to the <a href="/privacy" className="text-[#00B3A4] hover:underline">Privacy Policy</a> and <a href="/dpa" className="text-[#00B3A4] hover:underline">Data Processing Addendum (DPA)</a> *
                   </label>
                 </div>

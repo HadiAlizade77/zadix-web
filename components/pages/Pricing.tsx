@@ -89,7 +89,7 @@ const Pricing = () => {
   return (
     <div className="min-h-screen pt-20">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-[#0B1220] via-[#0F1629] to-[#0B1220]">
+      <section className="py-20 bg-ink">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center"
@@ -111,7 +111,7 @@ const Pricing = () => {
       </section>
 
       {/* Pricing Plans */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-surface">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
             {plans.map((plan, index) => (
@@ -133,13 +133,13 @@ const Pricing = () => {
                 <Card className={`h-full ${plan.popular ? 'ring-2 ring-[#00B3A4] shadow-2xl scale-105' : 'hover:shadow-lg'} transition-all duration-300`}>
                   <CardHeader className="text-center pb-4">
                     <CardTitle className="text-2xl mb-2">{plan.name}</CardTitle>
-                    <p className="text-[#6B7280] mb-4">{plan.description}</p>
+                    <p className="text-muted mb-4">{plan.description}</p>
                     <div className="space-y-2 text-sm">
                       <div className="flex items-center justify-center text-[#00B3A4]">
                         <Clock className="h-4 w-4 mr-2" />
                         <span>{plan.deliveryTime}</span>
                       </div>
-                      <div className="text-[#6B7280]">{plan.ideal}</div>
+                      <div className="text-muted">{plan.ideal}</div>
                     </div>
                   </CardHeader>
                   <CardContent>
@@ -147,7 +147,7 @@ const Pricing = () => {
                       {plan.features.map((feature, idx) => (
                         <li key={idx} className="flex items-start">
                           <Check className="h-5 w-5 text-[#10B981] mr-3 mt-0.5 flex-shrink-0" />
-                          <span className="text-[#6B7280]">{feature}</span>
+                          <span className="text-muted">{feature}</span>
                         </li>
                       ))}
                     </ul>
@@ -171,7 +171,7 @@ const Pricing = () => {
       </section>
 
       {/* Guarantees */}
-      <section className="py-20 bg-[#F8FAFC]">
+      <section className="py-20 bg-ink">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-16"
@@ -180,10 +180,10 @@ const Pricing = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-[#111827] mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-cream mb-6">
               Our Guarantees
             </h2>
-            <p className="text-xl text-[#6B7280] max-w-3xl mx-auto">
+            <p className="text-xl text-muted max-w-3xl mx-auto">
               We stand behind our work with industry-leading guarantees
             </p>
           </motion.div>
@@ -205,7 +205,7 @@ const Pricing = () => {
                     <CardTitle className="text-xl mb-3">{guarantee.title}</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-[#6B7280] leading-relaxed">{guarantee.description}</p>
+                    <p className="text-muted leading-relaxed">{guarantee.description}</p>
                   </CardContent>
                 </Card>
               </motion.div>
@@ -215,7 +215,7 @@ const Pricing = () => {
       </section>
 
       {/* Add-ons */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-surface">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-16"
@@ -224,10 +224,10 @@ const Pricing = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-[#111827] mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-cream mb-6">
               Optional Add-ons
             </h2>
-            <p className="text-xl text-[#6B7280] max-w-3xl mx-auto">
+            <p className="text-xl text-muted max-w-3xl mx-auto">
               Extend your automation with additional services
             </p>
           </motion.div>
@@ -245,43 +245,43 @@ const Pricing = () => {
             ].map((addon, index) => (
               <motion.div
                 key={addon.name}
-                className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-all duration-300"
+                className="bg-surface-2 border border-border-warm rounded-xl p-6 hover:shadow-lg transition-all duration-300"
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
-                <h3 className="text-lg font-bold text-[#111827] mb-2">{addon.name}</h3>
-                <p className="text-[#6B7280] text-sm">{addon.description}</p>
+                <h3 className="text-lg font-bold text-cream mb-2">{addon.name}</h3>
+                <p className="text-muted text-sm">{addon.description}</p>
               </motion.div>
             ))}
           </div>
 
           {/* Enterprise SLA */}
           <motion.div
-            className="bg-[#F8FAFC] rounded-2xl p-8"
+            className="bg-surface rounded-2xl p-8"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h3 className="text-2xl font-bold text-[#111827] mb-6 text-center">SLA (Enterprise)</h3>
+            <h3 className="text-2xl font-bold text-cream mb-6 text-center">SLA (Enterprise)</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               <div className="text-center">
-                <h4 className="font-semibold text-[#111827] mb-2">Incident response</h4>
-                <p className="text-[#6B7280] text-sm">business hours or 24/7 (per plan)</p>
+                <h4 className="font-semibold text-cream mb-2">Incident response</h4>
+                <p className="text-muted text-sm">business hours or 24/7 (per plan)</p>
               </div>
               <div className="text-center">
-                <h4 className="font-semibold text-[#111827] mb-2">Uptime target</h4>
-                <p className="text-[#6B7280] text-sm">99.5% uptime guaranteed</p>
+                <h4 className="font-semibold text-cream mb-2">Uptime target</h4>
+                <p className="text-muted text-sm">99.5% uptime guaranteed</p>
               </div>
               <div className="text-center">
-                <h4 className="font-semibold text-[#111827] mb-2">Change windows</h4>
-                <p className="text-[#6B7280] text-sm">defined maintenance windows</p>
+                <h4 className="font-semibold text-cream mb-2">Change windows</h4>
+                <p className="text-muted text-sm">defined maintenance windows</p>
               </div>
               <div className="text-center">
-                <h4 className="font-semibold text-[#111827] mb-2">Support channel</h4>
-                <p className="text-[#6B7280] text-sm">email + WhatsApp + ticketing</p>
+                <h4 className="font-semibold text-cream mb-2">Support channel</h4>
+                <p className="text-muted text-sm">email + WhatsApp + ticketing</p>
               </div>
             </div>
           </motion.div>
@@ -289,7 +289,7 @@ const Pricing = () => {
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-gradient-to-r from-[#0B1220] via-[#0F1629] to-[#0B1220]">
+      <section className="py-20 bg-ink">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}

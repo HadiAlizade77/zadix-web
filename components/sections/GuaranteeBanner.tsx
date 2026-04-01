@@ -2,9 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Shield } from 'lucide-react';
 import { Locale } from '@/lib/i18n';
-import { getTranslation } from '@/lib/translations';
 
 interface GuaranteeBannerProps {
   locale: Locale;
@@ -12,20 +10,26 @@ interface GuaranteeBannerProps {
 
 export default function GuaranteeBanner({ locale }: GuaranteeBannerProps) {
   return (
-    <section className="py-16 bg-gradient-to-r from-accent-teal to-accent-blue">
+    <section className="py-16 bg-amber">
       <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          className="text-center text-white"
-          initial={{ opacity: 0, y: 30 }}
+          className="flex flex-col md:flex-row items-center justify-between gap-6"
+          initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.7 }}
         >
-          <div className="flex items-center justify-center mb-6">
-            <Shield className="h-12 w-12 mr-4" />
-            <h2 className="text-3xl md:text-4xl font-bold font-sora">30‑day value guarantee</h2>
+          <div>
+            <p className="text-ink/60 font-dm-sans text-xs font-medium tracking-[0.25em] uppercase mb-2">
+              Our Promise
+            </p>
+            <h2 className="font-cormorant font-medium text-ink leading-tight"
+              style={{ fontSize: 'clamp(2rem, 4vw, 3.25rem)' }}
+            >
+              30-day value guarantee
+            </h2>
           </div>
-          <p className="text-xl max-w-4xl mx-auto leading-relaxed">
+          <p className="text-ink/70 font-dm-sans text-lg max-w-sm text-center md:text-right leading-relaxed">
             If you don't see measurable time saved, we keep working until you do.
           </p>
         </motion.div>

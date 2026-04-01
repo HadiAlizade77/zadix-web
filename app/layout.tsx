@@ -1,18 +1,21 @@
 import type { Metadata } from 'next';
-import { Inter, Sora } from 'next/font/google';
+import { Cormorant_Garamond, DM_Sans } from 'next/font/google';
 import './globals.css';
 import { cn } from '@/lib/utils';
 import CookieBanner from '@/components/ui/cookie-banner';
 
-const inter = Inter({ 
+const cormorant = Cormorant_Garamond({
   subsets: ['latin'],
-  variable: '--font-inter',
+  variable: '--font-cormorant',
+  weight: ['300', '400', '500', '600', '700'],
+  style: ['normal', 'italic'],
   display: 'swap',
 });
 
-const sora = Sora({ 
+const dmSans = DM_Sans({
   subsets: ['latin'],
-  variable: '--font-sora',
+  variable: '--font-dm-sans',
+  weight: ['300', '400', '500', '600'],
   display: 'swap',
 });
 
@@ -79,7 +82,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={cn(inter.variable, sora.variable)} suppressHydrationWarning>
+    <html lang="en" className={cn(cormorant.variable, dmSans.variable)} suppressHydrationWarning>
       <head>
         <link rel="icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
@@ -114,7 +117,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={cn('min-h-screen bg-white font-inter antialiased')}>
+      <body className={cn('min-h-screen bg-ink text-cream font-dm-sans antialiased')}>
         {children}
         <CookieBanner />
       </body>
