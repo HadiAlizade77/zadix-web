@@ -11,7 +11,6 @@ const Pricing = () => {
   const plans = [
     {
       name: 'Starter',
-      price: '$3,900',
       description: 'Perfect for single workflow automation',
       features: [
         'One automation workflow',
@@ -27,7 +26,6 @@ const Pricing = () => {
     },
     {
       name: 'Pro',
-      price: '$12,900',
       description: 'Most popular for growing businesses',
       features: [
         'Up to 3 automation workflows',
@@ -45,7 +43,6 @@ const Pricing = () => {
     },
     {
       name: 'Enterprise',
-      price: '$28k+',
       description: 'For complex, multi-department automation',
       features: [
         'Unlimited workflows',
@@ -107,7 +104,7 @@ const Pricing = () => {
               </span>
             </h1>
             <p className="text-xl text-gray-300 max-w-4xl mx-auto mb-8 leading-relaxed">
-              Transparent pricing for production-ready AI automation. No surprises, no scope creep, no hidden costs.
+              Production-ready AI automation with custom quotes tailored to your workflow. No surprises, no scope creep, no hidden costs.
             </p>
           </motion.div>
         </div>
@@ -136,7 +133,6 @@ const Pricing = () => {
                 <Card className={`h-full ${plan.popular ? 'ring-2 ring-[#00B3A4] shadow-2xl scale-105' : 'hover:shadow-lg'} transition-all duration-300`}>
                   <CardHeader className="text-center pb-4">
                     <CardTitle className="text-2xl mb-2">{plan.name}</CardTitle>
-                    <div className="text-5xl font-bold text-[#111827] mb-2">{plan.price}</div>
                     <p className="text-[#6B7280] mb-4">{plan.description}</p>
                     <div className="space-y-2 text-sm">
                       <div className="flex items-center justify-center text-[#00B3A4]">
@@ -238,14 +234,14 @@ const Pricing = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
             {[
-              { name: 'Additional workflow', price: '$2,500', description: 'Extra automation workflow' },
-              { name: 'Custom integration', price: '$1,500', description: 'Specialized system connection' },
-              { name: 'Advanced evaluations', price: '$1,000', description: 'Quality metrics & monitoring' },
-              { name: 'Custom dashboard', price: '$2,000', description: 'Branded analytics interface' },
-              { name: 'Region pinning', price: '$500', description: 'Data residency controls' },
-              { name: 'High availability / disaster recovery', price: '$3,000', description: 'HA/DR setup' },
-              { name: '24/7 on‑call', price: '$1,500/month', description: 'Emergency support coverage' },
-              { name: 'Extended training', price: '$2,000', description: 'Team training workshop' }
+              { name: 'Additional workflow', description: 'Extra automation workflow' },
+              { name: 'Custom integration', description: 'Specialized system connection' },
+              { name: 'Advanced evaluations', description: 'Quality metrics & monitoring' },
+              { name: 'Custom dashboard', description: 'Branded analytics interface' },
+              { name: 'Region pinning', description: 'Data residency controls' },
+              { name: 'High availability / disaster recovery', description: 'HA/DR setup' },
+              { name: '24/7 on‑call', description: 'Emergency support coverage' },
+              { name: 'Extended training', description: 'Team training workshop' }
             ].map((addon, index) => (
               <motion.div
                 key={addon.name}
@@ -256,7 +252,6 @@ const Pricing = () => {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
                 <h3 className="text-lg font-bold text-[#111827] mb-2">{addon.name}</h3>
-                <div className="text-2xl font-bold text-[#00B3A4] mb-3">{addon.price}</div>
                 <p className="text-[#6B7280] text-sm">{addon.description}</p>
               </motion.div>
             ))}

@@ -139,7 +139,6 @@ export const pricingTiers = [
   {
     id: 'starter',
     name: 'Starter',
-    price: '$3,900',
     description: 'Perfect for single workflow automation',
     features: [
       'One automation workflow',
@@ -156,7 +155,6 @@ export const pricingTiers = [
   {
     id: 'pro',
     name: 'Pro',
-    price: '$12,900',
     description: 'Most popular for growing businesses',
     features: [
       'Up to 3 automation workflows',
@@ -175,7 +173,6 @@ export const pricingTiers = [
   {
     id: 'enterprise',
     name: 'Enterprise',
-    price: '$28k+',
     description: 'For complex, multi-department automation',
     features: [
       'Unlimited workflows',
@@ -195,12 +192,12 @@ export const pricingTiers = [
 ];
 
 export const addOns = [
-  { name: 'Additional Workflow', price: '$2,500', description: 'Extra automation workflow' },
-  { name: 'Custom Integration', price: '$1,500', description: 'Specialized system connection' },
-  { name: 'Advanced Evaluations', price: '$1,000', description: 'Quality metrics & monitoring' },
-  { name: 'Custom Dashboard', price: '$2,000', description: 'Branded analytics interface' },
-  { name: 'Region Pinning', price: '$500', description: 'Data residency controls' },
-  { name: 'HA/DR Setup', price: '$3,000', description: 'High availability & disaster recovery' },
-  { name: '24/7 On-call', price: '$1,500/month', description: 'Emergency support coverage' },
-  { name: 'Extended Training', price: '$2,000', description: 'Team training workshop' },
+  { name: 'Additional Workflow', description: 'Extra automation workflow' },
+  { name: 'Custom Integration', description: 'Specialized system connection' },
+  { name: 'Advanced Evaluations', description: 'Quality metrics & monitoring' },
+  { name: 'Custom Dashboard', description: 'Branded analytics interface' },
+  { name: 'Region Pinning', description: 'Data residency controls' },
+  { name: 'HA/DR Setup', description: 'High availability & disaster recovery' },
+  { name: '24/7 On-call', description: 'Emergency support coverage' },
+  { name: 'Extended Training', description: 'Team training workshop' },
 ];

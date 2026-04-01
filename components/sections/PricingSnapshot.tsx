@@ -29,7 +29,7 @@ export default function PricingSnapshot({ locale }: PricingSnapshotProps) {
             Fixed Scope, Fixed Timeline
           </h2>
           <p className="text-body text-gray-600 max-w-3xl mx-auto">
-            Transparent pricing with 30-day value guarantee. No surprises, no scope creep.
+            Custom quotes tailored to your workflow. 30-day value guarantee. No surprises, no scope creep.
           </p>
         </motion.div>
 
@@ -53,7 +53,6 @@ export default function PricingSnapshot({ locale }: PricingSnapshotProps) {
               <Card className={`h-full ${tier.popular ? 'ring-2 ring-accent-teal shadow-xl' : 'hover:shadow-lg'} transition-all duration-300`}>
                 <CardHeader className="text-center">
                   <CardTitle className="text-2xl mb-2">{tier.name}</CardTitle>
-                  <div className="text-4xl font-bold font-sora text-headline-slate mb-2">{tier.price}</div>
                   <p className="text-gray-600">{tier.description}</p>
                 </CardHeader>
                 <CardContent>
@@ -89,10 +88,7 @@ export default function PricingSnapshot({ locale }: PricingSnapshotProps) {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <div className="text-lg font-medium text-[#111827] mb-6">
-            <span className="text-[#00B3A4]">Starter $3,900</span> • <span className="text-[#2563EB]">Pro $12,900</span> • <span className="text-[#6B7280]">Enterprise $28k+</span>
-          </div>
-          <Link 
+          <Link
             href="/pricing" 
             className="inline-flex items-center text-accent-blue font-medium hover:text-accent-teal transition-colors group"
           >
