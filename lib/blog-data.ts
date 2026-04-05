@@ -11,6 +11,97 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: "back-office-automation-buying-guide-2026",
+    title: "Back-Office Automation Buying Guide: 5 Criteria That Matter in 2026",
+    author: "Engineering Team",
+    date: '2026-04-05',
+    readTime: "6 min read",
+    category: "Engineering",
+    excerpt: "80% of back-office processing cost hides in the 20% of exceptions RPA can't handle. Here's how to evaluate autonomous automation tools that actually work.",
+    content: `The finance director at a mid-market logistics company told us last quarter that her team spends **eleven hours every week** reconciling freight invoices against purchase orders — not because the volume is high, but because 1 in 5 invoices has a line-item discrepancy that no existing bot can resolve. She is not alone. A 2026 Deloitte survey found that **73 percent of CFOs** still classify their back-office operations as "partially manual," even after investing in at least one automation platform.
+
+If you are evaluating tools to automate accounts payable, HR onboarding, procurement approvals, or financial close processes, this guide gives you the five criteria that separate tools worth buying from tools that create a second maintenance problem.
+
+## The Problem
+
+Back-office work is deceptively complex. On the surface, it looks like data entry: move a number from an invoice into an ERP, match a candidate's documents against a checklist, route an approval to the right manager. But the real cost sits in the exceptions.
+
+Gartner's 2026 back-office benchmark puts it bluntly: **the 20 percent of transactions that deviate from the happy path consume 80 percent of total processing cost**. These are the invoices with mismatched PO numbers, the onboarding packets missing a single compliance document, the journal entries that need a human to interpret a vendor's non-standard format.
+
+For a 200-person company processing 3,000 invoices per month, that means roughly 600 invoices require manual intervention. At an average handling time of 12 minutes each, you are looking at **120 hours of skilled labour per month** — just on AP exceptions. Multiply that across HR, finance, and procurement, and back-office exception handling becomes one of the largest hidden labour costs on the P&L.
+
+## Why Existing Approaches Fall Short
+
+Traditional RPA promised to fix this. The pitch was compelling: record a human clicking through screens, replay it thousands of times. But RPA bots are essentially screen-scraping macros. They break when a UI changes, they cannot interpret unstructured data, and they have zero capacity to make judgement calls.
+
+Here is what we see in practice when clients come to us after an RPA rollout:
+
+- **Maintenance overhead of 30–40 percent of initial build cost annually** — every system update, every form redesign triggers bot failures
+- **Exception queues that grow, not shrink** — because the bot routes anything it cannot parse to a human, and the exception logic was never the focus
+- **Vendor lock-in** — most enterprise RPA platforms charge per-bot licensing fees of **$8,000–$15,000 per year**, and you do not own the underlying automation logic
+- **No learning loop** — a traditional bot that fails on invoice format #47 will fail on it again tomorrow, and the day after that
+
+The result is what one operations manager we work with calls "automation theatre": dashboards that show bots running, but a back-office team that is the same size it was two years ago.
+
+## How AI Automation Changes the Picture
+
+The shift in 2026 is from scripted automation to **autonomous process automation (APA)** — systems that combine document understanding, decision logic, and large language models to handle the full spectrum of a process, including exceptions.
+
+Here are the five evaluation criteria we use internally and recommend to every client:
+
+1. **Exception resolution rate** — Can the tool handle at least 70 percent of exceptions without human escalation? If it only automates the happy path, you are buying an expensive conveyor belt that still dumps the hard work on your team.
+
+2. **Unstructured data handling** — Back-office documents are messy: scanned PDFs, email attachments, handwritten notes on delivery receipts. The tool must parse these natively, not require pre-formatted inputs.
+
+3. **Decision transparency** — When the system approves a three-way match or flags a compliance gap, can your team see exactly why? **92 percent of finance leaders** in a 2026 PwC survey said explainability is a non-negotiable requirement for any AI touching financial data.
+
+4. **Integration depth** — Does it connect to your ERP, HRIS, and communication tools via API, or does it rely on screen scraping? API-native integrations are **4x more reliable** and 60 percent faster to deploy.
+
+5. **Source code ownership** — If the vendor disappears or doubles their pricing, can you keep running the automation? This is the criterion most buyers skip and most regret.
+
+Any tool that scores well on all five is worth a pilot. Anything that fails on more than one is a future migration project waiting to happen.
+
+## A Real-World Example
+
+A UK-based investment management firm processing **1,200 fund administration documents per month** came to us after their RPA implementation plateaued at 55 percent straight-through processing. The remaining 45 percent — NAV reconciliation discrepancies, non-standard custodian statements, and multi-currency settlement exceptions — still required a team of four analysts working full-time.
+
+We built an autonomous pipeline with three components:
+
+- **Document ingestion layer** — An AI model trained on 14 custodian statement formats that extracts structured data from PDFs and Excel files with **97.3 percent field-level accuracy**
+- **Reconciliation engine** — Logic that matches extracted values against the fund accounting system, applies tolerance rules, and auto-resolves discrepancies below a configurable threshold
+- **Exception triage module** — For the remaining cases, the system classifies the exception type, pulls supporting evidence from prior resolutions, and presents the analyst with a recommended action
+
+Results after 60 days in production:
+
+- **Straight-through processing rose from 55 to 88 percent**
+- **Average exception resolution time dropped from 18 minutes to 4 minutes** (for the cases still requiring human review)
+- **Monthly analyst hours on reconciliation fell from 640 to 155** — a reduction of **75 percent**
+- The firm redeployed two of the four analysts to client-facing portfolio support roles
+
+The entire build took **11 days**, the firm owns the full source code, and the system has processed over 8,500 documents since launch with zero critical failures.
+
+## How to Get Started in 7 Days
+
+You do not need a six-month transformation programme. Here is the process we follow to get a back-office automation into production within one to two weeks:
+
+1. **Day 1–2: Process audit** — We map the target workflow end-to-end, including every exception path. We need access to 50–100 sample documents or transactions and 30 minutes with the person who currently handles exceptions.
+
+2. **Day 3: Architecture proposal** — You receive a fixed-price scope document specifying inputs, outputs, integrations, exception handling logic, and accuracy targets. No ambiguity, no open-ended retainers.
+
+3. **Day 4–6: Build and integrate** — We develop the automation, connect it to your existing systems via API, and run it against your sample data. You see intermediate results daily.
+
+4. **Day 7: Production deployment and handover** — The automation goes live with monitoring dashboards. You receive the full source code, documentation, and a 30-day guarantee covering any defects or edge cases that surface.
+
+5. **Day 8–30: Stabilisation** — We monitor performance metrics, tune exception handling logic based on real production data, and ensure the system meets or exceeds the accuracy targets in the original scope.
+
+The key constraint is focus. We automate **one well-defined process per engagement** — not an entire department. Once that process is running reliably, you decide whether to expand.
+
+## Ready to Automate?
+
+We have deployed this type of automation for clients across real estate, logistics, SaaS, investment, and more — production-ready in 7 days. [Book a free 20-minute scoping call at zadix.ai/contact](https://zadix.ai/contact) and we will send a fixed-price proposal within 24 hours.`,
+  },
+
+  {
     id: "autonomous-process-automation-tools-back-office-1",
     title: "Autonomous Process Automation Tools for Back-Office 2026",
     author: "Hadi Alizadeh",
